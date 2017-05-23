@@ -49,7 +49,7 @@
             <div class="col-sm-8 text-left" id="ColunaDoMeio">
                 <!-- <img src="../img/SGS_Background.png">-->
                 <form action="./../Control/inserirUsuario.php" method="post">
-                <fieldset>
+                <fieldset >
                     <legend><p id="labelsLogin">Cadastro</p></legend>
                     <div class="col-md-12">
                         <div class="editor-label col-md-2" id="userLabel">

@@ -40,43 +40,59 @@
 </nav>
 
 <div class="corpo">
-    <div class="container-fluid text-center">
-        <div class="row content">
-            <fieldset style="  width: 300px;">
-                <div class="col-sm-2 sidenav zeroPadding">
+
+    <fieldset style=" width: 300px;" id="navbarLeft">
+        <div class="col-sm-2 sidenav zeroPadding">
+            <div>
+                <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
+                <ul class="btn-group" role="group">
                     <div>
-                        <h1 style="text-align: center">Cadastrar</h1>
-                            <ul class="btn-group" role="group">
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBar">Disciplina</button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBar">Item</button>
-                                </div>
-                            </ul>
-                        <h1>Consultar</h1>
-                            <ul class="btn-group" role="group">
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBar">Usuário</button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBar">Disciplina</button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBar">Sala</button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBar">Calendário</button>
-                                </div>
-                            </ul>
+                        <button type="button" class="btn btn-default" id="leftNavBarButtons">Disciplina</button>
                     </div>
-                </div>
-            </fieldset>
-        <div class="col-sm-8 text-left" id="ColunaDoMeio">
+                    <div>
+                        <button type="button" class="btn btn-default" id="leftNavBarButtons">Item</button>
+                    </div>
+                </ul>
+
+                <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
+
+                <ul class="btn-group" role="group">
+                    <div>
+                        <button type="button" class="btn btn-default" id="leftNavBarButtons">Usuário</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default" id="leftNavBarButtons">Disciplina</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default" id="leftNavBarButtons">Sala</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default" id="leftNavBarButtons">Calendário</button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="container-fluid text-center">
+
+        <div class="row content">
+
+            <div class="col-sm-8 text-left" id="ColunaDoMeio">
+
+                <fieldset id="boxDoMeio">
+                    <div class="col-sm-2 sidenav zeroPadding">
+
+
+                    </div>
+                </fieldset>
+
+            </div>
 
         </div>
-        </div>
+
     </div>
+
 </div>
 
 <footer class="container-fluid containet-fixed-bottom text-center" id="footer">

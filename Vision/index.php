@@ -64,7 +64,7 @@
 
             <form action="./../Control/autenticacao.php" method="post">
 
-            <fieldset>
+            <fieldset >
                 <legend><p id="labelsLogin">Login</p></legend>
 
                 <div class="col-md-12">

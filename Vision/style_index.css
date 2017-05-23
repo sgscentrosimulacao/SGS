@@ -115,9 +115,29 @@ footer {
     color: white;
 }
 
-#leftNavBar{
+#leftNavBarButtons{
     background-color: #80bcb6;
     color: white;
     height: 50px;
     width: 200px;
+
+}
+
+#navbarLeft{
+    left: 0;
+    right: 0;
+    margin-left: 5px;
+}
+
+#alinhadoCentro{
+    width: 270px;
+    display: block;
+}
+
+#boxDoMeio{
+    margin-left: 350px;
+    width: 100%;
+    left: 0;
+    right: 0;
+
 }
