@@ -93,6 +93,10 @@ footer {
 
 #footerImgRight{
     width: 100%;
+    padding-top: 15px;
+}
+#footerText{
+    padding-top: 40px;
 }
 
 .ativo{

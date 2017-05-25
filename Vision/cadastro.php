@@ -49,8 +49,10 @@
             <div class="col-sm-8 text-left" id="ColunaDoMeio">
                 <!-- <img src="../img/SGS_Background.png">-->
                 <form action="./../Control/inserirUsuario.php" method="post">
-                <fieldset >
+
+                <fieldset>
                     <legend><p id="labelsLogin">Cadastro</p></legend>
+
                     <div class="col-md-12">
                         <div class="editor-label col-md-2" id="userLabel">
                             <label for="userLabel" id="labelsLogin">Usuário</label>
@@ -61,7 +63,6 @@
                         </div>
                     </div>
 
-
                     <div class="col-md-12">
                         <div class="editor-label col-md-2" id="senhaLabel">
                             <label for="senhaLabel" id="labelsLogin">Senha</label>
@@ -69,7 +70,6 @@
                         <div class="editor-label form-inline" id="senha" style="padding-bottom:5px">
                             <input class="form-control" id="fieldSenha" name="fieldSenha" placeholder="Insira uma senha"
                                    style="width:100%" type="password" >
-                            <!--150px-->
                         </div>
                     </div>
 
@@ -103,7 +103,8 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12">
+
+                    <!--<div class="col-md-12">
                         <div class="editor-label col-md-2" id="cpfLabel">
                             <label for="cpfLabel" id="labelsLogin">CPF</label>
                         </div>
@@ -111,15 +112,41 @@
                             <input class="form-control" id="fieldCpf" name="fieldCpf" placeholder="Digite seu CPF"
                                    style="width: 100%" type="text" >
                         </div>
-                    </div>
+                    </div>-->
 
-                    <div class="col-md-12">
+                    <!--<div class="col-md-12">
                         <div class="editor-label col-md-2" id="telefoneLabel">
                             <label for="telefoneLabel" id="labelsLogin">Telefone</label>
                         </div>
                         <div class="editor-label form-inline" id="telefoneLabel" style="padding-bottom:5px">
                             <input class="form-control" id="fieldTelefone" name="fieldTelefone" maxlength="15" placeholder="Digite seu telefone"
                                    style="width: 100%" type="text" >
+                        </div>
+                    </div>-->
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-2" id="numeroConLabel" style="">
+                            <label for="numeroConLabel" id="labelsLogin">Profissão</label>
+                        </div>
+                        <div class="dropdown col-md-4" style="">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                Profissão<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Médico</a></li>
+                                <li><a href="#">Enfermeiro</a></li>
+                                <li><a href="#">Fiosioterapeuta</a></li>
+                            </ul>
+                        </div>
+                        <div class="editor-label col-md-2" id="instituicaoLabel" style="padding-left: 0px">
+                            <label for="instituicaoLabel" id="labelsLogin">Instituição</label>
+                        </div>
+                        <div class="dropdown col-md-4" style="">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                Instituição <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">UFCSPA</a></li>
+                                <li><a href="#">Santa Casa</a></li>
+                            </ul>
                         </div>
                     </div>
 
@@ -133,32 +160,20 @@
                         </div>
                     </div>
 
-                    <!--<div class="col-md-12">
-                        <div class="editor-label col-md-6" id="numeroConLabel">
-                            <label for="numeroConLabel" id="labelsLogin">Profissão</label>
+
+
+
+                    <div class="col-md-12" style="margin-left:30px">
+                        <div class="col-md-4">
                         </div>
-                        <div class="editor-label form-inline" id="numeroConLabel" style="padding-bottom:5px">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Escolha
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Médico</a></li>
-                                    <li><a href="#">Fisioterapeuta</a></li>
-                                    <li><a href="#">Enfermeiro</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>-->
+                        <div class="col-md-4">
 
-
-
-                    <div style="margin-left:30px">
-                        <p style="margin-bottom:10px">
                             <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
-                        </p>
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
                     </div>
 
 

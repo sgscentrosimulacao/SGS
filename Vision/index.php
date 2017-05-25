@@ -55,16 +55,13 @@
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav zeroPadding">
-            <!--<p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>-->
+
+
         </div>
         <div class="col-sm-8 text-left" id="ColunaDoMeio">
-           <!-- <img src="../img/SGS_Background.png">-->
-
             <form action="./../Control/autenticacao.php" method="post">
 
-            <fieldset >
+            <fieldset>
                 <legend><p id="labelsLogin">Login</p></legend>
 
                 <div class="col-md-12">
@@ -90,7 +87,6 @@
                         <p style="margin-left: 40%"><input type="checkbox" name="mostrarSenha" id="mostrarSenha"
                                                            value="Mostrar senha">Mostrar senha</p>
 
-
                     </div>
                 </div>
 
@@ -107,22 +103,13 @@
         </div>
         <div class="col-sm-2 sidenav zeroPadding"></div>
 
-       <!--<div class="col-sm-2 sidenav">
-                <div class="well">
-                    <p>TESTE</p>
-                </div>
-                <div class="well">
-                    <p>TESTE</p>
-                </div>
-        </div>-->
     </div>
 </div>
 </div>
 <footer class="container-fluid containet-fixed-bottom text-center" id="footer">
-    <!-- -->
     <div class="row">
         <div class="col-md-4" id="footerDivLeft">
-            <!--<img src="../img/informatica-biomedica-5.png" id="footerImgLeft">-->
+
         </div>
         <div class="col-md-4" id="footerText">
             <p>Powered by Informática Biomédica - UFCSPA</p>
@@ -136,7 +123,6 @@
 
 </body>
 </html>
-
 <?php
 
 
