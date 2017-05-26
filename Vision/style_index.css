@@ -121,17 +121,13 @@ footer {
 
 
 #navbarLeft{
-    width: 50%;
     left: 0;
     right: 0;
-    margin-left: 2%;
-    margin-bottom: 25%;
 }
 
 #leftNavBarButtons{
     background-color: #80bcb6;
     color: white;
-    height: 50px;
     width: 150%;
     position: relative;
 
@@ -142,9 +138,3 @@ footer {
     display: block;
 }
 
-
-.setPrincipal{
-    width: 75%;
-    margin-left: 20%;
-
-}

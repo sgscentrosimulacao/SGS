@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12">
+                    <!--<div class="col-md-12">
                         <div class="editor-label col-md-2" id="telefoneLabel">
                             <label for="telefoneLabel" id="labelsLogin">Telefone</label>
                         </div>
@@ -111,31 +111,27 @@
                             <input class="form-control" id="fieldTelefone" name="fieldTelefone" maxlength="15" placeholder="Digite seu telefone"
                                    style="width: 100%" type="text" >
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="col-md-12">
-                        <div class="editor-label col-md-2" id="profLabel" style="">
-                            <label for="profLabel" id="labelsLogin">Profissão</label>
+                        <div class="editor-label col-md-2" id="conLabel" style="">
+                            <label for="conLabel" id="labelsLogin">Conselho</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                Profissão<span class="caret"></span></button>
-                            <ul class="dropdown-menu" name="dropProfissao">
-                                <li value="medico"><a>Médico</a></li>
-                                <li value="enfermeiro"><a>Enfermeiro</a></li>
-                                <li value="fisioterapeuta"><a>Fiosioterapeuta</a></li>
-                            </ul>
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropConselho">
+                                <option value="1">CREMERS</option>
+                                <option value="2">COREN-RS</option>
+                                <option value="3">CREFITO-5</option>
+                            </select>
                         </div>
                         <div class="editor-label col-md-2" id="instituicaoLabel" style="padding-left: 0px">
                             <label for="instituicaoLabel" id="labelsLogin">Instituição</label>
                         </div>
-                        <div class="dropdown col-md-4" style="">
-                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                Instituição <span class="caret"></span></button>
-                            <ul class="dropdown-menu" name="dropInstituicao">
-                                <li value="ufcspa"><a href="#">UFCSPA</a></li>
-                                <li value="santacasa"><a href="#">Santa Casa</a></li>
-                            </ul>
+                        <div class="col-md-4">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
+                                <option value="1">UFCSPA</option>
+                                <option value="2">Santa Casa</option>
+                            </select>
                         </div>
                     </div>
 

@@ -1,0 +1,154 @@
+/*
+Created: 26/05/2017
+Modified: 26/05/2017
+Project: SGS_Centro_Simulacao
+Model: MySQL 5.6
+Database: MySQL 5.6
+*/
+
+
+-- Create tables section -------------------------------------------------
+
+-- Table tb_usuario
+
+CREATE TABLE `tb_usuario`
+(
+  `idUsuario` Int NOT NULL AUTO_INCREMENT,
+  `usuario` Char(50) NOT NULL,
+  `senha` Char(50) NOT NULL,
+  `nomeUsuario` Char(100) NOT NULL,
+  `email` Char(50) NOT NULL,
+  `numeroConselho` Char(20) NOT NULL,
+  `idConselho` Int NOT NULL,
+  `idInstituicao` Int NOT NULL,
+  PRIMARY KEY (`idUsuario`,`idConselho`,`idInstituicao`)
+)
+;
+
+ALTER TABLE `tb_usuario` ADD UNIQUE `UK_usuario` (`usuario`)
+;
+
+-- Table tb_conselho
+
+CREATE TABLE `tb_conselho`
+(
+  `idConselho` Int NOT NULL AUTO_INCREMENT,
+  `nomeConselho` Char(100) NOT NULL,
+  PRIMARY KEY (`idConselho`)
+)
+;
+
+-- Table tb_disciplina
+
+CREATE TABLE `tb_disciplina`
+(
+  `idDisciplina` Int NOT NULL AUTO_INCREMENT,
+  `nomeDisciplina` Char(100) NOT NULL,
+  `descricao` Char(200) NOT NULL,
+  `visibilidade` Int NOT NULL,
+  `qntAlunos` Int NOT NULL,
+  `idCurso` Int NOT NULL,
+  `idUsuario` Int NOT NULL,
+  `idConselho` Int NOT NULL,
+  `idInstituicao` Int,
+  PRIMARY KEY (`idDisciplina`,`idCurso`)
+)
+;
+
+CREATE INDEX `IX_Relationship5` ON `tb_disciplina` (`idUsuario`,`idConselho`,`idInstituicao`)
+;
+
+-- Table tb_cursos
+
+CREATE TABLE `tb_cursos`
+(
+  `idCurso` Int NOT NULL,
+  `nomeCurso` Char(30) NOT NULL
+)
+;
+
+ALTER TABLE `tb_cursos` ADD  PRIMARY KEY (`idCurso`)
+;
+
+-- Table tb_aulas
+
+CREATE TABLE `tb_aulas`
+(
+  `idAula` Int NOT NULL AUTO_INCREMENT,
+  `nomeAula` Char(100) NOT NULL,
+  `descricaoAula` Char(100) NOT NULL,
+  `horario` Time NOT NULL,
+  `data` Date NOT NULL,
+  `cenario` Char(100) NOT NULL,
+  `idDisciplina` Int,
+  `idCurso` Int,
+  PRIMARY KEY (`idAula`)
+)
+;
+
+CREATE INDEX `IX_Relationship6` ON `tb_aulas` (`idDisciplina`,`idCurso`)
+;
+
+-- Table tb_sala
+
+CREATE TABLE `tb_sala`
+(
+  `idSala` Int NOT NULL AUTO_INCREMENT,
+  `nomeSala` Char(50) NOT NULL,
+  `descricaoSala` Char(100) NOT NULL,
+  `idAula` Int,
+  PRIMARY KEY (`idSala`)
+)
+;
+
+CREATE INDEX `IX_Relationship7` ON `tb_sala` (`idAula`)
+;
+
+-- Table tb_inventario
+
+CREATE TABLE `tb_inventario`
+(
+  `idPeca` Int NOT NULL AUTO_INCREMENT,
+  `nomePeca` Char(100) NOT NULL,
+  `descricao` Char(200) NOT NULL,
+  `idSala` Int,
+  PRIMARY KEY (`idPeca`)
+)
+;
+
+CREATE INDEX `IX_Relationship8` ON `tb_inventario` (`idSala`)
+;
+
+-- Table tb_instituicao
+
+CREATE TABLE `tb_instituicao`
+(
+  `idInstituicao` Int NOT NULL AUTO_INCREMENT,
+  `nomeInstituicao` Char(50) NOT NULL,
+  PRIMARY KEY (`idInstituicao`)
+)
+;
+
+-- Create relationships section ------------------------------------------------- 
+
+ALTER TABLE `tb_usuario` ADD CONSTRAINT `Cons_User_FK` FOREIGN KEY (`idConselho`) REFERENCES `tb_conselho` (`idConselho`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `tb_disciplina` ADD CONSTRAINT `Curs_Disci_FK` FOREIGN KEY (`idCurso`) REFERENCES `tb_cursos` (`idCurso`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `tb_disciplina` ADD CONSTRAINT `User_Disci_FK` FOREIGN KEY (`idUsuario`, `idConselho`, `idInstituicao`) REFERENCES `tb_usuario` (`idUsuario`, `idConselho`, `idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `tb_aulas` ADD CONSTRAINT `Disci_Aula_FK` FOREIGN KEY (`idDisciplina`, `idCurso`) REFERENCES `tb_disciplina` (`idDisciplina`, `idCurso`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `tb_sala` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idAula`) REFERENCES `tb_aulas` (`idAula`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `tb_inventario` ADD CONSTRAINT `Sala_Inven_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituicao`) REFERENCES `tb_instituicao` (`idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+

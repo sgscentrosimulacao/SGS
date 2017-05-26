@@ -20,16 +20,13 @@ function autenticarUsuario(){
         header("Location: ../Vision/paginaPrincipal.php");
 
     }else{
-
         echo '<SCRIPT>
                     confirm("Usuário ou senha inválidos!");
                     window.location.href = "../Vision/index.php";
               </SCRIPT>';
     }
     fecharDatabase($conn);
-
 }
-
 ?>
 
 
