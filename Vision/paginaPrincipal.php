@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
-                <li class="active navbar-inverse ativo"><a href="cadastro.php" id="navbarLetras">Cadastrar</a></li>
+                <li class="inativo navbar-inverse ativo"><a href="paginaPrincipal.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
             <!--<ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,8 @@
         </div>
             <div class="col-md-10">
                 <fieldset >
-                    <div>
+                    <div class="row">
+                    <div class="col-md-12">
                         <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
                         <ul class="btn-group" role="group">
                             <div>
@@ -72,6 +73,7 @@
                                 <button type="button" class="btn btn-default" id="leftNavBarButtons">Calendário</button>
                             </div>
                         </ul>
+                    </div>
                     </div>
                 </fieldset>
             </div>

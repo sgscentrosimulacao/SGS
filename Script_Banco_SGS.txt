@@ -152,3 +152,22 @@ ALTER TABLE `tb_inventario` ADD CONSTRAINT `Sala_Inven_FK` FOREIGN KEY (`idSala`
 ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituicao`) REFERENCES `tb_instituicao` (`idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
+
+
+INSERT INTO `tb_instituicao` (`idInstituicao`, `nomeInstituicao`) VALUES (NULL, 'UFCSPA')
+;
+
+INSERT INTO `tb_instituicao` (`idInstituicao`, `nomeInstituicao`) VALUES (NULL, 'Santa Casa')
+;
+
+
+
+INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'CREMERS')
+;
+
+INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'COREN-RS')
+;
+
+INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'CREFITO-5')
+;
+
