@@ -50,7 +50,7 @@
                 <!-- <img src="../img/SGS_Background.png">-->
                 <form action="./../Control/inserirUsuario.php" method="post">
 
-                <fieldset>
+                <fieldset style="margin-bottom: 25%">
                     <legend><p id="labelsLogin">Cadastro</p></legend>
 
                     <div class="col-md-12">
@@ -103,18 +103,7 @@
                         </div>
                     </div>
 
-
-                    <!--<div class="col-md-12">
-                        <div class="editor-label col-md-2" id="cpfLabel">
-                            <label for="cpfLabel" id="labelsLogin">CPF</label>
-                        </div>
-                        <div class="editor-label form-inline" id="cpfLabel" style="padding-bottom:5px">
-                            <input class="form-control" id="fieldCpf" name="fieldCpf" placeholder="Digite seu CPF"
-                                   style="width: 100%" type="text" >
-                        </div>
-                    </div>-->
-
-                    <!--<div class="col-md-12">
+                    <div class="col-md-12">
                         <div class="editor-label col-md-2" id="telefoneLabel">
                             <label for="telefoneLabel" id="labelsLogin">Telefone</label>
                         </div>
@@ -122,19 +111,19 @@
                             <input class="form-control" id="fieldTelefone" name="fieldTelefone" maxlength="15" placeholder="Digite seu telefone"
                                    style="width: 100%" type="text" >
                         </div>
-                    </div>-->
+                    </div>
 
                     <div class="col-md-12">
-                        <div class="editor-label col-md-2" id="numeroConLabel" style="">
-                            <label for="numeroConLabel" id="labelsLogin">Profissão</label>
+                        <div class="editor-label col-md-2" id="profLabel" style="">
+                            <label for="profLabel" id="labelsLogin">Profissão</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                                 Profissão<span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Médico</a></li>
-                                <li><a href="#">Enfermeiro</a></li>
-                                <li><a href="#">Fiosioterapeuta</a></li>
+                            <ul class="dropdown-menu" name="dropProfissao">
+                                <li value="medico"><a>Médico</a></li>
+                                <li value="enfermeiro"><a>Enfermeiro</a></li>
+                                <li value="fisioterapeuta"><a>Fiosioterapeuta</a></li>
                             </ul>
                         </div>
                         <div class="editor-label col-md-2" id="instituicaoLabel" style="padding-left: 0px">
@@ -143,9 +132,9 @@
                         <div class="dropdown col-md-4" style="">
                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                                 Instituição <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">UFCSPA</a></li>
-                                <li><a href="#">Santa Casa</a></li>
+                            <ul class="dropdown-menu" name="dropInstituicao">
+                                <li value="ufcspa"><a href="#">UFCSPA</a></li>
+                                <li value="santacasa"><a href="#">Santa Casa</a></li>
                             </ul>
                         </div>
                     </div>

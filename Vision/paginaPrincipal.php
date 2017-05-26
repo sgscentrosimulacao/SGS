@@ -28,21 +28,21 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="inativo"><a href="index.php" id="navbarLetras">Página Inicial</a></li>
+                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
                 <li class="active navbar-inverse ativo"><a href="cadastro.php" id="navbarLetras">Cadastrar</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+            </ul>-->
         </div>
     </div>
 </nav>
 
 <div class="corpo">
+    <div class="col-md-4 sidenav zeroPadding">
+        <fieldset id="navbarLeft">
 
-    <fieldset style=" width: 300px;" id="navbarLeft">
-        <div class="col-sm-2 sidenav zeroPadding">
             <div>
                 <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
                 <ul class="btn-group" role="group">
@@ -71,26 +71,21 @@
                     </div>
                 </ul>
             </div>
-        </div>
-    </fieldset>
+        </fieldset>
+    </div>
 
-    <div class="container-fluid text-center">
-
-        <div class="row content">
-
-            <div class="col-sm-8 text-left" id="ColunaDoMeio">
-
-                <fieldset id="boxDoMeio">
-                    <div class="col-sm-2 sidenav zeroPadding">
-
-
-                    </div>
-                </fieldset>
-
+    <div class="col-md-8 setPrincipal">
+        <fieldset style="left: 0; right: 0">
+            <div class="col-md-4">
+                Teste
             </div>
-
-        </div>
-
+            <div class="col-md-4">
+Teste
+            </div>
+            <div class="col-md-4">
+Teste
+            </div>
+        </fieldset>
     </div>
 
 </div>

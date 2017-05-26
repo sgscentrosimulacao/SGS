@@ -119,29 +119,32 @@ footer {
     color: white;
 }
 
+
+#navbarLeft{
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin-left: 2%;
+    margin-bottom: 25%;
+}
+
 #leftNavBarButtons{
     background-color: #80bcb6;
     color: white;
     height: 50px;
-    width: 200px;
+    width: 150%;
+    position: relative;
 
-}
-
-#navbarLeft{
-    left: 0;
-    right: 0;
-    margin-left: 5px;
 }
 
 #alinhadoCentro{
-    width: 270px;
+    width: 200px;
     display: block;
 }
 
-#boxDoMeio{
-    margin-left: 350px;
-    width: 100%;
-    left: 0;
-    right: 0;
+
+.setPrincipal{
+    width: 75%;
+    margin-left: 20%;
 
 }
