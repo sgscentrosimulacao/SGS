@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style_index.css">
-    <title>SGS - Página Principal</title>
+    <title>SGS - Cadastro Disciplina</title>
 </head>
 <body>
 <nav class="navbar">
@@ -55,7 +55,7 @@
                             </div>
                             <div>
                                 <a href="cadastroDisciplina.php"><button type="button" class="btn btn-default"
-                                                                         id="leftNavBarButtons">Disciplina</button></a>
+                                                                         id="leftNavBarButtonsAtivo">Disciplina</button></a>
                             </div>
                             <div>
                                 <a href="cadastroItem.php"><button type="button" class="btn btn-default"
@@ -71,7 +71,7 @@
                             </div>
                             <div>
                                 <a href="cadastroSala.php"><button type="button" class="btn btn-default"
-                                                                       id="leftNavBarButtons">Sala</button></a>
+                                                                   id="leftNavBarButtons">Sala</button></a>
                             </div>
 
 
@@ -83,7 +83,7 @@
 
                             <div>
                                 <a href="consultaUsuario.php"><button type="button" class="btn btn-default"
-                                                                        id="leftNavBarButtons"> Usuário</button></a>
+                                                                      id="leftNavBarButtons"> Usuário</button></a>
                             </div>
                             <div>
                                 <a href="consultaDisciplina.php"><button type="button" class="btn btn-default"
@@ -98,7 +98,7 @@
                                                                           id="leftNavBarButtons">Instituicão</button></a>
                             </div>
                             <div>
-                                <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
+                                <a href="consultaConselho.php"><button type="button" class="btn btn-default"
                                                                        id="leftNavBarButtons">Conselho</button></a>
                             </div>
                             <div>
@@ -118,7 +118,7 @@
     <div class="col-md-8 zeroPadding">
         <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
             <div class="col-md-12">
-                <img src="../img/SGS_LogoMarca.png" style="display: block; margin-left: auto; margin-right: auto;">
+                Cadastro Disciplina
             </div>
         </fieldset>
     </div>

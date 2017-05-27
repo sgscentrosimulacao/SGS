@@ -40,42 +40,70 @@
 </nav>
 
 <div class="row">
-    <div class="col-md-4 zeroPadding">
+    <div class="col-md-4">
         <div class="row">
-            <div class="col-md-2" style="float: none">
-
-            </div>
-            <div class="col-md-10" style="float: none" >
-                <fieldset style="left: 0; margin-left: 50px; margin-right: 50px">
+            <div class="col-md-12">
+                <fieldset style="left: 0; margin-left: 50px;">
                     <div class="row">
                         <div class="col-sm-12">
+
                             <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
+
                             <div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons"><a href="cadastroUsuario.php"> Usuário</a></button>
+                                <a href="cadastroUsuarioPP.php"><button type="button" class="btn btn-default"
+                                                                        id="leftNavBarButtonsAtivo"> Usuário</button></a>
                             </div>
                             <div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBarButtons">Disciplina</button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBarButtons">Item</button>
-                                </div>
-                                <div>
-                                    <button type="button" class="btn btn-default" id="leftNavBarButtons">Instituicão</button>
-                                </div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Conselho</button>
+                                <a href="cadastroDisciplina.php"><button type="button" class="btn btn-default"
+                                                                         id="leftNavBarButtons">Disciplina</button></a>
                             </div>
+                            <div>
+                                <a href="cadastroItem.php"><button type="button" class="btn btn-default"
+                                                                   id="leftNavBarButtons">Item</button></a>
+                            </div>
+                            <div>
+                                <a href="cadastroInstituicao.php"><button type="button" class="btn btn-default"
+                                                                          id="leftNavBarButtons">Instituicão</button></a>
+                            </div>
+                            <div>
+                                <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
+                                                                       id="leftNavBarButtons">Conselho</button></a>
+                            </div>
+                            <div>
+                                <a href="cadastroSala.php"><button type="button" class="btn btn-default"
+                                                                   id="leftNavBarButtons">Sala</button></a>
+                            </div>
+
+
 
 
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
+
+
+
                             <div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Usuário</button>
+                                <a href="consultaUsuario.php"><button type="button" class="btn btn-default"
+                                                                      id="leftNavBarButtons"> Usuário</button></a>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Disciplina</button>
+                                <a href="consultaDisciplina.php"><button type="button" class="btn btn-default"
+                                                                         id="leftNavBarButtons">Disciplina</button></a>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Sala</button>
+                                <a href="consultaItem.php"><button type="button" class="btn btn-default"
+                                                                   id="leftNavBarButtons">Item</button></a>
+                            </div>
+                            <div>
+                                <a href="consultaInstituicao.php"><button type="button" class="btn btn-default"
+                                                                          id="leftNavBarButtons">Instituicão</button></a>
+                            </div>
+                            <div>
+                                <a href="consultaConselho.php"><button type="button" class="btn btn-default"
+                                                                       id="leftNavBarButtons">Conselho</button></a>
+                            </div>
+                            <div>
+                                <a href="consultaSala.php"><button type="button" class="btn btn-default"
+                                                                   id="leftNavBarButtons">Sala</button></a>
                             </div>
                             <div>
                                 <button type="button" class="btn btn-default" id="leftNavBarButtons">Calendário</button>
@@ -84,17 +112,12 @@
                     </div>
                 </fieldset>
             </div>
-
-            <div class="col-md-2">
-
-            </div>
         </div>
     </div>
+    <div class="col-md-8">
+        <div class="col-md-12">
 
-    <div class="col-md-8 zeroPadding">
-        <div class="col-md-12" id="divConteudoMeio">
-
-            <form action="./../Control/inserirUsuario.php" method="post">
+            <form action="./../Control/inserirUsuarioPP.php" method="post">
 
                 <fieldset style="margin-bottom: 25%">
                     <legend><p id="labelsLogin">Cadastro</p></legend>
