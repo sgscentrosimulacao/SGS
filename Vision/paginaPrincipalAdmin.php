@@ -51,7 +51,7 @@
                         <div class="col-sm-12">
                             <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
                             <div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons"><a href="cadastroUsuario.php"> Usuário</a></button>
+                                <button type="button" class="btn btn-default" id="leftNavBarButtons"><a href="cadastroUsuarioPP.php"> Usuário</a></button>
                             </div>
                             <div>
                             <div>
@@ -97,13 +97,16 @@
 
             </div>
             <div class="col-md-8">
+
+
                 <img src="../img/SGS_LogoMarca.png">
+
+
             </div>
             <div class="col-md-2">
             </div>
         </fieldset>
     </div>
-
 </div>
 
 <footer class="container-fluid containet-fixed-bottom text-center" id="footer">

@@ -137,3 +137,11 @@ footer {
     font-size: 50%;
 }
 
+#divConteudoMeio{
+    padding: .35em .625em .75em;
+    margin: 0 2px;
+    margin-top: 20px;
+    border: 5px solid #80bcb6;
+    border-radius:10px;
+    position: absolute;
+}
