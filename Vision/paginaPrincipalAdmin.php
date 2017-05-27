@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
-                <li class="inativo navbar-inverse ativo"><a href="paginaPrincipal.php" id="navbarLetras">Página Principal</a></li>
+                <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
             <!--<ul class="nav navbar-nav navbar-right">
@@ -42,24 +42,32 @@
 <div class="row">
     <div class="col-md-4 zeroPadding">
         <div class="row">
-        <div class="col-md-1">
-            Teste
+        <div class="col-md-2" style="float: none">
+
         </div>
-            <div class="col-md-10">
-                <fieldset >
+            <div class="col-md-10" style="float: none" >
+                <fieldset style="left: 0; margin-left: 50px; margin-right: 50px">
                     <div class="row">
-                    <div class="col-md-12">
-                        <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
-                        <ul class="btn-group" role="group">
+                        <div class="col-sm-12">
+                            <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
+                            <div>
+                                <button type="button" class="btn btn-default" id="leftNavBarButtons"><a href="cadastroUsuario.php"> Usuário</a></button>
+                            </div>
+                            <div>
                             <div>
                                 <button type="button" class="btn btn-default" id="leftNavBarButtons">Disciplina</button>
                             </div>
                             <div>
                                 <button type="button" class="btn btn-default" id="leftNavBarButtons">Item</button>
                             </div>
-                        </ul>
-                        <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-                        <ul class="btn-group" role="group">
+                            <div>
+                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Instituicão</button>
+                            </div>
+                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Conselho</button>
+                            </div>
+
+
+                            <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
                             <div>
                                 <button type="button" class="btn btn-default" id="leftNavBarButtons">Usuário</button>
                             </div>
@@ -72,28 +80,26 @@
                             <div>
                                 <button type="button" class="btn btn-default" id="leftNavBarButtons">Calendário</button>
                             </div>
-                        </ul>
-                    </div>
+                        </div>
                     </div>
                 </fieldset>
             </div>
 
-            <div class="col-md-1">
-            Teste
+            <div class="col-md-2">
+
         </div>
         </div>
     </div>
 
-    <div class="col-md-8 ">
-        <fieldset style="left: 0; right: 0">
-            <div class="col-md-4">
-                Teste
+    <div class="col-md-8 zeroPadding">
+        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
+            <div class="col-md-2">
+
             </div>
-            <div class="col-md-4">
-Teste
+            <div class="col-md-8">
+                <img src="../img/SGS_LogoMarca.png">
             </div>
-            <div class="col-md-4">
-Teste
+            <div class="col-md-2">
             </div>
         </fieldset>
     </div>

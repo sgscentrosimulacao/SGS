@@ -33,19 +33,19 @@ function inserirUsuario(){
             }else{
                 echo '<SCRIPT>
                         confirm("O usuário não pode ser inserido!");
-                        window.location.href = "../Vision/cadastro.php";
+                        window.location.href = "../Vision/cadastroUsuario.php";
                       </SCRIPT>';
             }
         }else{
             echo '<SCRIPT>
                         confirm("Senhas digitadas não são iguais!");
-                        window.location.href = "../Vision/cadastro.php";
+                        window.location.href = "../Vision/cadastroUsuario.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastro.php";
+                        window.location.href = "../Vision/cadastroUsuario.php";
                         
                       </SCRIPT>';
     }

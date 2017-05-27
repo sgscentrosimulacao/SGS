@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="inativo"><a href="index.php" id="navbarLetras">Página Inicial</a></li>
-                <li class="active navbar-inverse ativo"><a href="cadastro.php" id="navbarLetras">Cadastrar</a></li>
+                <li class="active navbar-inverse ativo"><a href="cadastroUsuario.php" id="navbarLetras">Cadastrar</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

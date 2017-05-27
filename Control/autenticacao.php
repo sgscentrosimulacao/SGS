@@ -17,7 +17,7 @@ function autenticarUsuario(){
 
     if($verificacao->num_rows>0){
 
-        header("Location: ../Vision/paginaPrincipal.php");
+        header("Location: ../Vision/paginaPrincipalAdmin.php");
 
     }else{
         echo '<SCRIPT>

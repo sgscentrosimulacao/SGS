@@ -123,18 +123,17 @@ footer {
 #navbarLeft{
     left: 0;
     right: 0;
+    float: none;
 }
 
 #leftNavBarButtons{
     background-color: #80bcb6;
     color: white;
-    width: 150%;
-    position: relative;
-
+    width: 100%;
 }
 
 #alinhadoCentro{
-    width: 200px;
     display: block;
+    font-size: 50%;
 }
 

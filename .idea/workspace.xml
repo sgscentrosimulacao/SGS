@@ -66,56 +66,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cadastro.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Vision/cadastro.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-395">
-              <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autenticacao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Control/autenticacao.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Vision/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1129">
-              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+            <state relative-caret-position="34">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inserirUsuario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Control/inserirUsuario.php">
+      <file leaf-file-name="paginaPrincipalAdmin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-              <folding>
-                <marker date="1495817552018" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
-                <marker date="1495817552018" expanded="true" signature="1011:1185" ph="..." />
-                <marker date="1495817552018" expanded="true" signature="1243:1417" ph="..." />
-                <marker date="1495817552018" expanded="true" signature="1463:1661" ph="..." />
-              </folding>
+              <caret line="51" column="57" lean-forward="false" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controleDoBanco.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Control/controleDoBanco.php">
+      <file leaf-file-name="style_index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vision/style_index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="418">
+              <caret line="136" column="19" lean-forward="true" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -140,13 +115,14 @@
         <option value="$PROJECT_DIR$/Control/autenticacao.php" />
         <option value="$PROJECT_DIR$/Vision/index.php" />
         <option value="$PROJECT_DIR$/Control/inserirUsuario.php" />
-        <option value="$PROJECT_DIR$/Vision/style_index.css" />
-        <option value="$PROJECT_DIR$/Vision/paginaPrincipal.php" />
         <option value="$PROJECT_DIR$/TesteBruno/styleDoBruno.css" />
         <option value="$PROJECT_DIR$/TesteBruno/testeBruno.php" />
         <option value="$PROJECT_DIR$/May/estilosDaPaginaMay.css" />
         <option value="$PROJECT_DIR$/May/paginaDaMay.php" />
         <option value="$PROJECT_DIR$/Vision/cadastro.php" />
+        <option value="$PROJECT_DIR$/Vision/paginaPrincipal.php" />
+        <option value="$PROJECT_DIR$/Vision/style_index.css" />
+        <option value="$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php" />
       </list>
     </option>
   </component>
@@ -179,7 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,7 +198,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,11 +220,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.paginaDaMay.php">
+  <component name="RunManager">
     <configuration default="false" name="index.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SGS/Vision/index.php">
       <method />
     </configuration>
-    <configuration default="false" name="paginaPrincipal.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SGS/Vision/paginaPrincipal.php">
+    <configuration default="false" name="paginaPrincipalAdmin.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SGS/Vision/paginaPrincipalAdmin.php">
       <method />
     </configuration>
     <configuration default="false" name="testeBruno.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SGS/TesteBruno/testeBruno.php">
@@ -326,16 +302,16 @@
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.paginaPrincipal.php" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.paginaPrincipalAdmin.php" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.testeBruno.php" />
       <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.paginaDaMay.php" />
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.paginaDaMay.php" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.testeBruno.php" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.paginaPrincipal.php" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.paginaPrincipalAdmin.php" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.paginaDaMay.php" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.testeBruno.php" />
       </list>
     </recent_temporary>
   </component>
@@ -364,11 +340,12 @@
       <workItem from="1495717764738" duration="285000" />
       <workItem from="1495753072484" duration="9318000" />
       <workItem from="1495817953183" duration="5200000" />
+      <workItem from="1495840509025" duration="5080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44069000" />
+    <option name="totallyTimeSpent" value="49149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,18 +358,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.50292826" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49707174" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49707174" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17423134" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12445095" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14568081" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12225476" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -420,7 +396,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipal.php">
+    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
           <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
@@ -440,7 +416,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -468,7 +449,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipal.php">
+    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
           <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
@@ -488,7 +469,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -516,7 +502,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipal.php">
+    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
           <caret line="65" column="32" lean-forward="false" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
@@ -536,7 +522,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1000">
           <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-          <folding />
+          <folding>
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -556,7 +547,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipal.php">
+    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1520">
           <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
@@ -580,7 +571,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/cadastro.php">
+    <entry file="file://$PROJECT_DIR$/Vision/cadastroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3340">
           <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
@@ -608,11 +599,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/cadastro.php">
+    <entry file="file://$PROJECT_DIR$/Vision/cadastroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2346">
           <caret line="138" column="56" lean-forward="false" selection-start-line="138" selection-start-column="56" selection-end-line="138" selection-end-column="56" />
@@ -620,7 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/cadastro.php">
+    <entry file="file://$PROJECT_DIR$/Vision/cadastroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2346">
           <caret line="138" column="122" lean-forward="false" selection-start-line="138" selection-start-column="122" selection-end-line="138" selection-end-column="122" />
@@ -656,11 +652,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/cadastro.php">
+    <entry file="file://$PROJECT_DIR$/Vision/cadastroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -672,7 +673,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
+          <folding>
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -705,58 +711,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TesteBruno/styleDoBruno.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TesteBruno/testeBruno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/style_index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/May/estilosDaPaginaMay.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/May/paginaDaMay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TesteBruno/styleDoBruno.css" />
+    <entry file="file://$PROJECT_DIR$/TesteBruno/testeBruno.php" />
+    <entry file="file://$PROJECT_DIR$/May/estilosDaPaginaMay.css" />
+    <entry file="file://$PROJECT_DIR$/May/paginaDaMay.php" />
     <entry file="file://$PROJECT_DIR$/Control/controleDoBanco.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -764,12 +726,12 @@
     <entry file="file://$PROJECT_DIR$/Control/inserirUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding>
-            <marker date="1495817552018" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
-            <marker date="1495817552018" expanded="true" signature="1011:1185" ph="..." />
-            <marker date="1495817552018" expanded="true" signature="1243:1417" ph="..." />
-            <marker date="1495817552018" expanded="true" signature="1463:1661" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="514:729" ph="INSERT INTO tb_usuario... " />
+            <marker date="1495845614763" expanded="true" signature="1011:1192" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1250:1431" ph="..." />
+            <marker date="1495845614763" expanded="true" signature="1477:1682" ph="..." />
           </folding>
         </state>
       </provider>
@@ -777,23 +739,39 @@
     <entry file="file://$PROJECT_DIR$/Control/autenticacao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vision/cadastroUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vision/style_index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="136" column="19" lean-forward="true" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vision/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1129">
-          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vision/cadastro.php">
+    <entry file="file://$PROJECT_DIR$/Vision/paginaPrincipalAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-395">
-          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="51" column="57" lean-forward="false" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
           <folding />
         </state>
       </provider>

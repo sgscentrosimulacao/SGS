@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="active navbar-inverse ativo"><a href="index.php" id="navbarLetras">Página Inicial</a></li>
-                <li class="inativo"><a href="cadastro.php" id="navbarLetras">Cadastrar</a></li>
+                <li class="inativo"><a href="cadastroUsuario.php" id="navbarLetras">Cadastrar</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -93,7 +93,7 @@
                 <div style="margin-left:30px">
                     <p style="margin-bottom:10px">
                         <input id="logar" type="submit" value="Entrar" class="btn btn-success">
-                        <a class="btn btn-info" href="cadastro.php" id="semConta">Cadastrar</a>
+                        <a class="btn btn-info" href="cadastroUsuario.php" id="semConta">Cadastrar</a>
                         <a class="btn btn-warning" href="#">Esqueci minha senha</a>
                     </p>
                 </div>
