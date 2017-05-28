@@ -1,3 +1,7 @@
+<?php
+include "../Control/sessionControl.php";
+?>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -28,10 +32,24 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
                 <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
+                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
             </ul>
+
+            <ul class="nav navbar-nav navbar-right" id="labelUsuario">
+                <li>
+                    <h4><span class="label label-default">
+                        <?php
+
+                        echo "Olá, ".$_SESSION['nomeUsuario'];
+
+
+                        ?>
+                    </span></h4>
+                </li>
+            </ul>
+
 
             <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -117,11 +135,35 @@
     </div>
 
     <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
+
+        <form action="../Control/inserirConselho.php" method="post">
+
             <div class="col-md-12">
-                Cadastro Conselho
+                <fieldset>
+                    <legend id="labelsLogin"> Cadastrar Conselho</legend>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-6">
+                            <label for="nomeConselho" id="labelsLogin">Nome do Conselho</label>
+                        </div>
+                        <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <input class="form-control" id="fieldNomeConselho" name="fieldNomeConselho"
+                                   placeholder="Insira o nome do conselho" style="width: 100%" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="margin-left:30px">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+
+                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-        </fieldset>
+        </form>
     </div>
 </div>
 

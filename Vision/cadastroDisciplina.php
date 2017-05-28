@@ -194,11 +194,11 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group col-md-12">
-                            <label for="descricaoLabel" id="labelsLogin">Descrição</label>
+                            <label for="descricaoDisciLabel" id="labelsLogin">Descrição</label>
                         </div>
                         <div class="form-group" id="descricaoLabel">
-                        <textarea class="form-control" rows="5" id="descricaoLabel" style="width: 100%"
-                                  placeholder="Insira a descrição da disciplina" name="fieldDescricao"></textarea>
+                        <textarea class="form-control" rows="5" id="descricaoDisciLabel" style="width: 100%"
+                                  placeholder="Insira a descrição da disciplina" name="fieldDescricaoDisci"></textarea>
                         </div>
                     </div>
 

@@ -154,11 +154,19 @@ ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituic
 
 
 
+
+
+
+
 INSERT INTO `tb_instituicao` (`idInstituicao`, `nomeInstituicao`) VALUES (NULL, 'UFCSPA')
 ;
 
 INSERT INTO `tb_instituicao` (`idInstituicao`, `nomeInstituicao`) VALUES (NULL, 'Santa Casa')
 ;
+
+
+
+
 
 
 
@@ -170,6 +178,11 @@ INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'COREN-RS
 
 INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'CREFITO-5')
 ;
+
+
+
+
+
 
 
 INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('1', 'Biomedicina - diurno');
@@ -203,3 +216,22 @@ INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('14', 'Química Medicina
 INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('15', 'Tecnologia em Alimentos');
 
 INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('16', 'Toxicologia Analítica');
+
+
+
+
+
+
+
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('1', 'Consultório', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('2', 'Debriefing', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('3', 'Emergência', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('4', 'Habilidades', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('5', 'Realidade Virtual', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('6', 'Simulacão Avançada', '--------', NULL);

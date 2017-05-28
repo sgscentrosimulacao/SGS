@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+include "../Control/sessionControl.php";
+?>
+
+
+    <!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
@@ -28,10 +33,23 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
                 <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
+                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right" id="labelUsuario">
+                <li>
+                    <h4><span class="label label-default">
+                        <?php
+
+                        echo "Olá, ".$_SESSION['nomeUsuario'];
+
+
+                        ?>
+                    </span></h4>
+                </li>
+            </ul>
+
             <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>-->
@@ -116,11 +134,63 @@
     </div>
 
     <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
+
+        <form action="../Control/inserirItem.php" method="post">
+
             <div class="col-md-12">
-                Cadastro Item
+                <fieldset>
+                    <legend id="labelsLogin"> Cadastrar no Inventário</legend>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-6">
+                            <label for="nomePecaLabel" id="labelsLogin">Nome da peça</label>
+                        </div>
+                        <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <input class="form-control" id="fieldNomePeca" name="fieldNomePeca"
+                                   placeholder="Insira o nome da peça" style="width: 100%" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-2" id="salaLabel" style="">
+                            <label for="salaLabel" id="labelsLogin">Sala</label>
+                        </div>
+                        <div class="dropdown col-md-6" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
+                                    style="width: 100%">
+                                <option value="1">Consultório</option>
+                                <option value="2">Debriefing</option>
+                                <option value="3">Emergência</option>
+                                <option value="4">Habilidades</option>
+                                <option value="5">Realidade Virtual</option>
+                                <option value="6">Simulação Avançada</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <label for="descricaoPecaLabel" id="labelsLogin">Descrição</label>
+                        </div>
+                        <div class="form-group" id="descricaoPecaLabel">
+                        <textarea class="form-control" rows="5" id="descricaoPecaLabel" style="width: 100%"
+                                  placeholder="Insira a descrição da peça" name="fieldDescricaoPeca"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="margin-left:30px">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+
+                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-        </fieldset>
+        </form>
     </div>
 </div>
 

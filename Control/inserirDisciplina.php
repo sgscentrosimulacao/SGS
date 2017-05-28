@@ -17,7 +17,7 @@ function inserirDisciplina(){
         $visibilidade = 0;
     }
 
-    $descricao = $_POST['fieldDescricao'];
+    $descricao = $_POST['fieldDescricaoDisci'];
 
     $idUsuario = $_SESSION['idUsuario'];
     $idConselho = $_SESSION['idConselho'];
@@ -37,10 +37,18 @@ function inserirDisciplina(){
                         confirm("Disciplina cadastrada no sistema!");
                         window.location.href = "../Vision/cadastroDisciplina.php";
                       </SCRIPT>';
+        }else{
+            echo '<SCRIPT>
+                        confirm("Erro ao cadastrar a disciplina no banco de dados!");
+                        window.location.href = "../Vision/cadastroDisciplina.php";
+                      </SCRIPT>';
         }
+    }else{
+        echo '<SCRIPT>
+                        confirm("Algum campo não foi preenchido!");
+                        window.location.href = "../Vision/cadastroDisciplina.php";
+                      </SCRIPT>';
     }
-
 }
-
 
 ?>

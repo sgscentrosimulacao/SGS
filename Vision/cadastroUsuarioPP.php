@@ -137,7 +137,7 @@
             <form action="./../Control/inserirUsuarioPP.php" method="post">
 
                 <fieldset style="margin-bottom: 25%">
-                    <legend><p id="labelsLogin">Cadastro</p></legend>
+                    <legend><p id="labelsLogin">Cadastrar Usuário</p></legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-2" id="userLabel">
@@ -264,8 +264,6 @@
 </html>
 
 <?php
-if ($_GET["logout"]){
-    session_destroy();
-}
+
 
 ?>
