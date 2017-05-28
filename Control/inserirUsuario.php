@@ -29,7 +29,13 @@ function inserirUsuario(){
     if ($usuario and $senha and $cSenha and $nome and $email and $numeroConselho){
         if ($senha == $cSenha){
             if ($conn->query($inserirUsuario)==true){
-                header("Location: ../Vision/index.php");
+                //header("Location: ../Vision/index.php");
+
+                echo '<SCRIPT>
+                        confirm("O usuário não pode ser inserido!");
+                        window.location.href = "../Vision/index.php";
+                      </SCRIPT>';
+
             }else{
                 echo '<SCRIPT>
                         confirm("O usuário não pode ser inserido!");

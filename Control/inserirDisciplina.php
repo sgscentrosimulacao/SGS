@@ -2,6 +2,40 @@
 
 require "../Control/controleDoBanco.php";
 
+inserirDisciplina();
+
+
+function inserirDisciplina(){
+
+    $nomeDisci = $_POST['fieldNomeDisci'];
+    $qntAlunos = $_POST['fieldQntAlunos'];
+    $curso = $_POST['dropCurso'];
+    $visibilidade = $_POST['fieldVisibilidade'];
+
+    if ($visibilidade != "1"){
+        $visibilidade = 0;
+    }
+
+    $descricao = $_POST['fieldDescricao'];
+
+
+    $conn = abrirDatabase();
+
+    $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso,
+                                                                                idUsuario, idConselho, idInstituicao)
+                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$curso}',1,1,1)";
+
+    if ($nomeDisci and $qntAlunos and $curso and $descricao){
+        if ($conn->query($inserirDisciplina)==true){
+
+            echo '<SCRIPT>
+                        confirm("Disciplina cadastrada no sistema!");
+                        window.location.href = "../Vision/cadastroDisciplina.php";
+                      </SCRIPT>';
+        }
+    }
+
+}
 
 
 ?>

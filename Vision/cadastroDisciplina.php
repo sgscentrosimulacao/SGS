@@ -170,7 +170,7 @@
 
                         </div>
                         <div class="col-md-6 checkbox">
-                            <label><input type="checkbox" value="">Disciplina visível para todos</label>
+                            <label><input type="checkbox" value="1" name="fieldVisibilidade">Disciplina visível para todos</label>
                         </div>
 
                     </div>

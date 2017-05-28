@@ -23,4 +23,21 @@ function fecharDatabase($conn){
 
     }
 }
+
+function acessoAoBanco($usuario, $senha){
+
+    $testeUsuario = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}'";
+
+    $conn = abrirDatabase();
+    $verifica = $conn->query($testeUsuario);
+
+    fecharDatabase($conn);
+
+    if ($verifica->num_rows>0){
+
+        $conn = abrirDatabase();
+        return $conn;
+    }
+
+}
 ?>
