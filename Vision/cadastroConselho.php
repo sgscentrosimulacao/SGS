@@ -32,6 +32,7 @@
                 <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
+
             <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>-->

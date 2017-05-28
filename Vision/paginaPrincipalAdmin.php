@@ -1,3 +1,7 @@
+<?php
+    include "../Control/sessionControl.php";
+?>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -28,9 +32,22 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
                 <li class="navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
+                <li class="inativo"><a href="index.php" id="navbarLetras" name="logout">Logout</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" id="labelUsuario">
+                <li>
+                    <h4><span class="label label-default">
+                        <?php
+
+                            echo "Olá, ".$_SESSION['nomeUsuario'];
+
+
+                        ?>
+                    </span></h4>
+                </li>
             </ul>
             <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -142,6 +159,8 @@
 </html>
 
 <?php
-
+    if ($_GET["logout"]){
+        session_destroy();
+    }
 
 ?>

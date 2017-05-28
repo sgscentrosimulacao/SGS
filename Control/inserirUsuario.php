@@ -32,7 +32,7 @@ function inserirUsuario(){
                 //header("Location: ../Vision/index.php");
 
                 echo '<SCRIPT>
-                        confirm("O usuário não pode ser inserido!");
+                        confirm("O usuário foi inserido no sistema!");
                         window.location.href = "../Vision/index.php";
                       </SCRIPT>';
 

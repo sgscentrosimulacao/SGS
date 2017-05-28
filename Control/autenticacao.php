@@ -3,7 +3,6 @@ require "../Control/controleDoBanco.php";
 
 autenticarUsuario();
 
-
 function autenticarUsuario(){
 
     $usuario = $_POST['fieldUser'];
@@ -15,8 +14,22 @@ function autenticarUsuario(){
 
     $verificacao = $conn->query($VerificarUsuario);
 
+    $query = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}'";
+    $teste = $conn->query($query);
+
+    $row = mysqli_fetch_row($teste);
+
     if($verificacao->num_rows>0){
 
+        session_start();
+        $_SESSION['idUsuario'] = $row[0];
+        $_SESSION['usuario'] = $row[1];
+        $_SESSION['senha'] = $row[2];
+        $_SESSION['nomeUsuario'] = $row[3];
+        $_SESSION['email'] = $row[4];
+        $_SESSION['numeroConselho'] = $row[5];
+        $_SESSION['idConselho'] = $row[6];
+        $_SESSION['idInstituicao'] = $row[7];
         header("Location: ../Vision/paginaPrincipalAdmin.php");
 
     }else{
@@ -27,6 +40,24 @@ function autenticarUsuario(){
     }
     fecharDatabase($conn);
 }
+
+/*function mandarId(){
+    $query = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}'";
+    $teste = $conn->query($query);
+
+    $resultados = mysqli_fetch_array($teste);
+
+    $_SESSION['id'] = $resultados['idUsuario'];
+    $_SESSION['usuario'] = $resultados['usuario'];
+    $_SESSION['senha'] = $resultados['senha'];
+    $_SESSION['nomeUsuario'] = $resultados['nomeUsuario'];
+
+
+    return $resultados;
+
+}*/
+
+
 ?>
 
 

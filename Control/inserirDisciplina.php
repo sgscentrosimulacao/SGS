@@ -1,6 +1,7 @@
 <?php
 
 require "../Control/controleDoBanco.php";
+include "sessionControl.php";
 
 inserirDisciplina();
 
@@ -18,12 +19,16 @@ function inserirDisciplina(){
 
     $descricao = $_POST['fieldDescricao'];
 
+    $idUsuario = $_SESSION['idUsuario'];
+    $idConselho = $_SESSION['idConselho'];
+    $idInstituicao = $_SESSION['idInstituicao'];
 
     $conn = abrirDatabase();
 
     $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso,
                                                                                 idUsuario, idConselho, idInstituicao)
-                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$curso}',1,1,1)";
+                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$curso}','{$idUsuario}',
+                                                                            '{$idConselho}','{$idInstituicao}')";
 
     if ($nomeDisci and $qntAlunos and $curso and $descricao){
         if ($conn->query($inserirDisciplina)==true){

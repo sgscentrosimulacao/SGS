@@ -101,7 +101,7 @@ footer {
 }
 
 .ativo{
-    background-color: #5cb3fd;
+    background-color: #447d8d;
 
 }
 
@@ -112,7 +112,8 @@ footer {
 }
 
 #navbarLetras:hover{
-    color: black;
+    color: white;
+    background-color: #72b4c8;
 
 }
 
