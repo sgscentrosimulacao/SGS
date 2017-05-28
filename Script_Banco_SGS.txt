@@ -171,3 +171,35 @@ INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'COREN-RS
 INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'CREFITO-5')
 ;
 
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('1', 'Biomedicina - diurno');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('2', 'Biomedicina - noturno');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('3', 'Enfermagem');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('4', 'Farmácia');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('5', 'Física Médica');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('6', 'Fisioterapia');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('7', 'Fonoaudiologia');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('8', 'Gastronomia');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('9', 'Gestão em Saúde');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('10', 'Informática Biomédica');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('11', 'Medicina');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('12', 'Nutrição');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('13', 'Psicologia');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('14', 'Química Medicinal');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('15', 'Tecnologia em Alimentos');
+
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('16', 'Toxicologia Analítica');

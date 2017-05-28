@@ -45,6 +45,7 @@ fieldset {
     position: absolute;
     left: 20%;
     right:20%;
+    margin-bottom: 130px;
 }
 #labelsLogin{
     color: #bf3056;
@@ -138,6 +139,7 @@ footer {
     background-color: #447d8d;
     color: white;
     width: 100%;
+    height: 60px;
 }
 
 #alinhadoCentro{

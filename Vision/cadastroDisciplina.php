@@ -116,11 +116,89 @@
     </div>
 
     <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
+
+        <form action="../Control/inserirDisciplina.php" method="post">
+
             <div class="col-md-12">
-                Cadastro Disciplina
+                <fieldset>
+                    <legend id="labelsLogin"> Cadastrar Disciplina</legend>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-6">
+                            <label for="nomeDisciLabel" id="labelsLogin">Nome da disciplina</label>
+                        </div>
+                        <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <input class="form-control" id="fieldNomeDisci" name="fieldNomeDisci"
+                                   placeholder="Insira o nome da disciplina" style="width: 100%" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-6">
+                            <label for="qntAlunosLabel" id="labelsLogin">Quantidade de alunos</label>
+                        </div>
+                        <div class="form-group" id="qntAlunosLabel">
+                            <input class="form-control" id="fieldQntAlunos" name="fieldQntAlunos"
+                                   placeholder="Insira a quantidade de alunos" style="width: 100%" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-2" id="cursoLabel" style="">
+                            <label for="cursoLabel" id="labelsLogin">Curso</label>
+                        </div>
+                        <div class="dropdown col-md-4" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropCurso"
+                                    style="width: 100%">
+                                <option value="1">Biomedicina - diurno</option>
+                                <option value="2">Biomedicina - noturno</option>
+                                <option value="3">Enfermagem</option>
+                                <option value="4">Farmácia</option>
+                                <option value="5">Física Médica</option>
+                                <option value="6">Fisioterapia</option>
+                                <option value="7">Fonoaudiologia</option>
+                                <option value="8">Gastronomia</option>
+                                <option value="9">Gestão em Saúde</option>
+                                <option value="10">Informática Biomédica</option>
+                                <option value="11">Medicina</option>
+                                <option value="12">Nutrição</option>
+                                <option value="13">Psicologia</option>
+                                <option value="14">Química Medicinal</option>
+                                <option value="15">Tecnologia em Alimentos</option>
+                                <option value="16">Toxicologia Analítica</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-6 checkbox">
+                            <label><input type="checkbox" value="">Disciplina visível para todos</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <label for="descricaoLabel" id="labelsLogin">Descrição</label>
+                        </div>
+                        <div class="form-group" id="descricaoLabel">
+                        <textarea class="form-control" rows="5" id="descricaoLabel" style="width: 100%"
+                                  placeholder="Insira a descrição da disciplina" name="fieldDescricao"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="margin-left:30px">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+
+                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-        </fieldset>
+        </form>
     </div>
 </div>
 
