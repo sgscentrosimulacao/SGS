@@ -1,3 +1,7 @@
+<?php
+include "../Control/sessionControl.php";
+include "../Control/selectUsuario.php";
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -28,9 +32,21 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
                 <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
+                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="labelUsuario">
+                <li>
+                    <h4><span class="label label-default">
+                        <?php
+
+                        echo "Olá, ".$_SESSION['nomeUsuario'];
+
+
+                        ?>
+                    </span></h4>
+                </li>
             </ul>
             <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -116,11 +132,38 @@
     </div>
 
     <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
-            <div class="col-md-12">
-                Consulta Usuário
-            </div>
-        </fieldset>
+        <form action="consultaUsuario.php" method="post">
+            <fieldset>
+                <legend id="labelsLogin">Consulta de Usuário</legend>
+
+                <div class="col-md-12">
+                    <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                        <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
+                    </div>
+                    <div class="dropdown col-md-8" style="">
+                        <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                            <option value="1">Nome</option>
+                            <option value="2">Usuário</option>
+                            <option value="3">E-mail</option>
+                            <option value="4">Conselho</option>
+                            <option value="5">Numero Conselho</option>
+                            <option value="6">Instituição</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
+                                   placeholder="Insira sua consulta" style="width: 100%" type="text">
+                        </div>
+                        <div class="col-md-4">
+                            <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </div>
 
@@ -143,5 +186,11 @@
 
 <?php
 
+
+        echo "oi";
+    /* fetch object array */
+    while ($row = mysqli_fetch_row($result)) {
+        echo $row[1];
+    }
 
 ?>
