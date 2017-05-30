@@ -93,10 +93,10 @@ include "navbar.php";
         </div>
     </div>
 
-    <div class="col-md-8 zeroPadding teste inline">
+    <div class="col-md-8 zeroPadding teste">
         <div>
             <form action="consultaUsuario.php" method="post">
-                <fieldset>
+                <fieldset id="consulta">
                     <legend id="labelsLogin">Consulta de Usuário</legend>
 
                     <div class="col-md-12">
@@ -105,12 +105,11 @@ include "navbar.php";
                         </div>
                         <div class="dropdown col-md-8" style="">
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
-                                <option value="0">Escolha</option>
-                                <option value="1">Nome</option>
+                                <option value="1">Nome Completo</option>
                                 <option value="2">Usuário</option>
                                 <option value="3">E-mail</option>
                                 <option value="4">Conselho</option>
-                                <option value="5">Numero Conselho</option>
+                                <option value="5">Nº Conselho</option>
                                 <option value="6">Instituição</option>
                             </select>
                         </div>
@@ -132,7 +131,7 @@ include "navbar.php";
 
         <div>
             <div class="col-md-12" style="width: 100%;">
-            <fieldset id="tabela">
+            <fieldset >
                 <table class="table">
                     <tr>
                         <th>ID</th>
@@ -140,21 +139,26 @@ include "navbar.php";
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Conselho</th>
-                        <th>Nº Conselho</th>
+                        <th>NºConselho</th>
                         <th>Instituição</th>
+                        <th>Editar</th>
+                        <th>Remover</th>
                     </tr>
                     <?php
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>
-                                   <td>".$row['idUsuario']."</td>
-                                   <td>".$row['usuario']."</td>
-                                   <td>".$row['nomeUsuario']."</td>
-                                   <td>".$row['email']."</td>
-                                   <td>".$row['idConselho']."</td>
-                                   <td>".$row['numeroConselho']."</td>
-                                   <td>".$row['idInstituicao']."</td>    
-                            </tr>";
-                    }?>
+                                   <td>{$row['idUsuario']}</td>
+                                   <td>{$row['usuario']}</td>
+                                   <td>{$row['nomeUsuario']}</td>
+                                   <td>{$row['email']}</td>
+                                   <td>{$row['nomeConselho']}</td>
+                                   <td>{$row['numeroConselho']}</td>
+                                   <td>{$row['nomeInstituicao']}</td>    
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                              </tr>";
+                    }
+                    ?>
                 </table>
             </fieldset>
             </div>

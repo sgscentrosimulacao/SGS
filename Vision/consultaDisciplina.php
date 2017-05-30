@@ -1,5 +1,6 @@
 <?php
 include "../Control/sessionControl.php";
+include "../Control/selectDisciplina.php";
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -92,12 +93,73 @@ include "navbar.php";
         </div>
     </div>
 
-    <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
-            <div class="col-md-12">
-                Consulta Disciplina
+    <div class="col-md-8 zeroPadding teste">
+        <div>
+            <form action="consultaDisciplina.php" method="post">
+                <fieldset id="consulta">
+                    <legend id="labelsLogin">Consulta de Usuário</legend>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                            <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
+                        </div>
+                        <div class="dropdown col-md-8" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                                <option value="1">Nome Disciplina</option>
+                                <option value="2">Curso</option>
+                                <option value="3">Instituição</option>
+                                <option value="4">Regente</option>
+                                <option value="5">Numero Conselho</option>
+                                <option value="6">Instituição</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
+                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
+                            </div>
+                            <div class="col-md-4">
+                                <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div>
+            <div class="col-md-12" style="width: 100%;">
+                <fieldset>
+                    <legend id="labelsLogin">Consulta</legend>
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome Disc.</th>
+                            <th>Descrição</th>
+                            <th>Visibilidade</th>
+                            <th>Alunos</th>
+                            <th>Curso</th>
+                            <th>Regente</th>
+                        </tr>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>
+                                   <td>".$row['idDisciplina']."</td>
+                                   <td>".$row['nomeDisciplina']."</td>
+                                   <td>".$row['descricao']."</td>
+                                   <td>".$row['visibilidade']."</td>
+                                   <td>".$row['qntAlunos']."</td>
+                                   <td>".$row['nomeCurso']."</td>
+                                   <td>".$row['nomeUsuario']."</td>    
+                            </tr>";
+                        }?>
+                    </table>
+                </fieldset>
             </div>
-        </fieldset>
+        </div>
+
     </div>
 </div>
 <?php

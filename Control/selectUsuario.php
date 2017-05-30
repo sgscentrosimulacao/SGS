@@ -8,32 +8,68 @@ function consultarUsuario()
 {
     $conn = abrirDatabase();
     if(isset($_POST['fieldPesquisar']) && $_POST['fieldPesquisar'] != null){
-        $pesquisa = $_POST['fieldPesquisar'];
+
+
+        $pesquisa = strtoupper ($_POST['fieldPesquisar']);
         $dropTipoPesquisa = $_POST['dropTipoPesquisa'];
 
         switch ($dropTipoPesquisa) {
 
             case 1:
-                $selectUsuario = "SELECT * FROM tb_usuario WHERE nomeUsuario = '{$pesquisa}'";
+
+                $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                                        LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                                        LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                                    
+                                        WHERE UPPER(tb_usuario.nomeUsuario) LIKE '%{$pesquisa}%'";
                 break;
             case 2:
-                $selectUsuario = "SELECT * FROM tb_usuario WHERE usuario = '{$pesquisa}'";
+                $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                                        LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                                        LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                                    
+                                        WHERE UPPER(tb_usuario.usuario) LIKE '%{$pesquisa}%'";
                 break;
             case 3:
-                $selectUsuario = "SELECT * FROM tb_usuario WHERE email = '{$pesquisa}'";
+                $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                                        LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                                        LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                                    
+                                        WHERE UPPER(tb_usuario.email) LIKE '%{$pesquisa}%'";
                 break;
             case 4:
-                $selectUsuario = "SELECT * FROM tb_usuario WHERE idConselho = '{$pesquisa}'";
+                $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                                        LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                                        LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                                    
+                                        WHERE UPPER(tb_conselho.nomeConselho) LIKE '%{$pesquisa}%'";
                 break;
             case 5:
-                $selectUsuario = "SELECT * FROM tb_usuario WHERE numeroConselho = '{$pesquisa}'";
+                $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                                        LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                                        LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                                    
+                                        WHERE UPPER(tb_usuario.numeroConselho) LIKE '%{$pesquisa}%'";
                 break;
             case 6:
-                $selectUsuario = "SELECT * FROM tb_usuario WHERE idInstituicao = '{$pesquisa}'";
+                $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                                        LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                                        LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                                    
+                                        WHERE UPPER(tb_instituicao.nomeInstituicao) LIKE '%{$pesquisa}%'";
                 break;
         }
     }else{
-        $selectUsuario = "SELECT * FROM tb_usuario";
+        $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+
+                LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
+                LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao";
     }
 
         return mysqli_query($conn, $selectUsuario);
