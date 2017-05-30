@@ -92,7 +92,6 @@
 
                     </div>
                 </div>
-
                 <div style="margin-left:30px">
                     <p style="margin-bottom:10px">
                         <input id="logar" type="submit" value="Entrar" class="btn btn-success">

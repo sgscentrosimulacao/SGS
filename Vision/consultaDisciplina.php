@@ -97,7 +97,7 @@ include "navbar.php";
         <div>
             <form action="consultaDisciplina.php" method="post">
                 <fieldset id="consulta">
-                    <legend id="labelsLogin">Consulta de Usuário</legend>
+                    <legend id="labelsLogin">Consulta de Disciplina</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
@@ -142,6 +142,9 @@ include "navbar.php";
                             <th>Alunos</th>
                             <th>Curso</th>
                             <th>Regente</th>
+                            <th>Editar</th>
+                            <th>Remover</th>
+
                         </tr>
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -152,7 +155,9 @@ include "navbar.php";
                                    <td>".$row['visibilidade']."</td>
                                    <td>".$row['qntAlunos']."</td>
                                    <td>".$row['nomeCurso']."</td>
-                                   <td>".$row['nomeUsuario']."</td>    
+                                   <td>".$row['nomeUsuario']."</td> 
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
                             </tr>";
                         }?>
                     </table>
