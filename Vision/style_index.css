@@ -156,3 +156,10 @@ footer {
     border-radius:10px;
     position: absolute;
 }
+
+
+.teste fieldset{
+
+    position: relative;
+    left:0;
+}

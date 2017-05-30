@@ -14,53 +14,15 @@ include "../Control/selectUsuario.php";
     <title>SGS - Consulta Usuário</title>
 </head>
 <body>
-<nav class="navbar">
-    <!--navbar-fixed-top-->
-    <div class="container-fluid">
-        <div class="navbar-header" id="navLogo">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
-                    style="background-color: #55a1fd">
-                <span class="icon-bar" style="background-color: #a0c7e7"></span>
-                <span class="icon-bar" style="background-color: #a0c7e7"></span>
-                <span class="icon-bar" style="background-color: #a0c7e7"></span>
-            </button>
-
-            <a class="navbar-brand zeroPadding" href="index.php"><img src="..\img\SGS_Logo.png"
-                                                                      id="logoImg"></a>
-            <div class="col-lg" id="divLogo"></div>
-
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
-                <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
-                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" id="labelUsuario">
-                <li>
-                    <h4><span class="label label-default">
-                        <?php
-
-                        echo "Olá, ".$_SESSION['nomeUsuario'];
-
-
-                        ?>
-                    </span></h4>
-                </li>
-            </ul>
-            <!--<ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>-->
-        </div>
-    </div>
-</nav>
-
-<div class="row">
+<?php
+include "navbar.php";
+?>
+<div>
     <div class="col-md-4">
-        <div class="row">
+        <div>
             <div class="col-md-12">
                 <fieldset style="left: 0; margin-left: 50px;">
-                    <div class="row">
+                    <div>
                         <div class="col-sm-12">
 
                             <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
@@ -131,66 +93,77 @@ include "../Control/selectUsuario.php";
         </div>
     </div>
 
-    <div class="col-md-8 zeroPadding">
-        <form action="consultaUsuario.php" method="post">
-            <fieldset>
-                <legend id="labelsLogin">Consulta de Usuário</legend>
+    <div class="col-md-8 zeroPadding teste inline">
+        <div>
+            <form action="consultaUsuario.php" method="post">
+                <fieldset>
+                    <legend id="labelsLogin">Consulta de Usuário</legend>
 
-                <div class="col-md-12">
-                    <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
-                        <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
-                    </div>
-                    <div class="dropdown col-md-8" style="">
-                        <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
-                            <option value="1">Nome</option>
-                            <option value="2">Usuário</option>
-                            <option value="3">E-mail</option>
-                            <option value="4">Conselho</option>
-                            <option value="5">Numero Conselho</option>
-                            <option value="6">Instituição</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
-                                   placeholder="Insira sua consulta" style="width: 100%" type="text">
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                            <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
                         </div>
-                        <div class="col-md-4">
-                            <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
+                        <div class="dropdown col-md-8" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                                <option value="0">Escolha</option>
+                                <option value="1">Nome</option>
+                                <option value="2">Usuário</option>
+                                <option value="3">E-mail</option>
+                                <option value="4">Conselho</option>
+                                <option value="5">Numero Conselho</option>
+                                <option value="6">Instituição</option>
+                            </select>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
+                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
+                            </div>
+                            <div class="col-md-4">
+                                <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div>
+            <div class="col-md-12" style="width: 100%;">
+            <fieldset id="tabela">
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuário</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Conselho</th>
+                        <th>Nº Conselho</th>
+                        <th>Instituição</th>
+                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                                   <td>".$row['idUsuario']."</td>
+                                   <td>".$row['usuario']."</td>
+                                   <td>".$row['nomeUsuario']."</td>
+                                   <td>".$row['email']."</td>
+                                   <td>".$row['idConselho']."</td>
+                                   <td>".$row['numeroConselho']."</td>
+                                   <td>".$row['idInstituicao']."</td>    
+                            </tr>";
+                    }?>
+                </table>
             </fieldset>
-        </form>
+            </div>
+        </div>
+
     </div>
 </div>
-
-<footer class="container-fluid containet-fixed-bottom text-center" id="footer">
-    <div class="row">
-        <div class="col-md-4" id="footerDivLeft">
-            <!--<img src="../img/informatica-biomedica-5.png" id="footerImgLeft">-->
-        </div>
-        <div class="col-md-4" id="footerText">
-            <p>Powered by Informática Biomédica - UFCSPA</p>
-        </div>
-        <div class="col-md-4" id="footerDivRight">
-            <img src="../img/UFCSPA MINI.png" id="footerImgRight">
-        </div>
-    </div>
-
-</footer>
+<?php
+include "footer.php";
+?>
 </body>
 </html>
-
-<?php
-
-
-        echo "oi";
-    /* fetch object array */
-    while ($row = mysqli_fetch_row($result)) {
-        echo $row[1];
-    }
-
-?>

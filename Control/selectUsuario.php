@@ -1,17 +1,15 @@
 <?php
 require "../Control/controleDoBanco.php";
-$result = null;
 
-    consultarUsuario();
+
+   $result = consultarUsuario();
 
 function consultarUsuario()
 {
     $conn = abrirDatabase();
-    if(isset($_POST['fieldPesquisar'])){
+    if(isset($_POST['fieldPesquisar']) && $_POST['fieldPesquisar'] != null){
         $pesquisa = $_POST['fieldPesquisar'];
         $dropTipoPesquisa = $_POST['dropTipoPesquisa'];
-
-
 
         switch ($dropTipoPesquisa) {
 
@@ -38,9 +36,6 @@ function consultarUsuario()
         $selectUsuario = "SELECT * FROM tb_usuario";
     }
 
-        $result = mysqli_query($conn, $selectUsuario);
-
-        //
-
+        return mysqli_query($conn, $selectUsuario);
 }
 ?>

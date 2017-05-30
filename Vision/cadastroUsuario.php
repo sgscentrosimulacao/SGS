@@ -174,21 +174,9 @@
         </div>
     </div>
 </div>
-<footer class="container-fluid containet-fixed-bottom text-center" id="footer">
-    <!-- -->
-    <div class="row">
-        <div class="col-md-4" id="footerDivLeft">
-            <!--<img src="../img/informatica-biomedica-5.png" id="footerImgLeft">-->
-        </div>
-        <div class="col-md-4" id="footerText">
-            <p>Powered by Informática Biomédica - UFCSPA</p>
-        </div>
-        <div class="col-md-4" id="footerDivRight">
-            <img src="../img/UFCSPA MINI.png" id="footerImgRight" href="ufcspa.edu.br">
-        </div>
-    </div>
-
-</footer>
+<?php
+include "footer.php";
+?>
 </body>
 </html>
 <?php
