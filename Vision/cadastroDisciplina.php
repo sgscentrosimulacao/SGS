@@ -1,5 +1,6 @@
 <?php
     include "../Control/sessionControl.php";
+    include "../Control/showDisciplinas.php";
 ?>
 
 <!doctype html>
@@ -7,11 +8,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="style_index.css">
-    <script src="teste.js"></script>
+    <script src="controlers.js"></script>
 
     <title>SGS - Cadastro Disciplina</title>
 </head>
@@ -198,50 +201,64 @@ include "navbar.php";
                     </div>
 
                     <div class="col-md-12">
-                        <div class="editor-label col-md-3">
-                            <label for="nomeAulaLabel" id="labelsLogin">Data</label>
+                        <div class="col-md-6 zeroPadding">
+                            <div class="editor-label col-md-6">
+                                <label for="dataInicioLabel" id="labelsLogin">Data de início</label>
+                            </div>
+                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                                <input class="form-control" type="text" name="fieldDataInicio" id="fieldDataInicio"
+                                       placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )" />
+                            </div>
                         </div>
-                        <div class="input-group date col-md-3">
-                            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-                        </div>
-                        <div class="editor-label col-md-3">
-                            <label for="nomeAulaLabel" id="labelsLogin">Data</label>
-                        </div>
-                        <div class="input-group date col-md-3">
-                            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        <div class="col-md-6 zeroPadding">
+                            <div class="editor-label col-md-6">
+                                <label for="dataFimLabel" id="labelsLogin">Data de Termino</label>
+                            </div>
+                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                                <input class="form-control" type="text" name="fieldDataFim" id="fieldDataFim"
+                                       placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )" />
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <div class="editor-label col-md-2" id="cursoLabel" style="">
-                            <label for="cursoLabel" id="labelsLogin">Curso</label>
+                        <div class="col-md-6 zeroPadding">
+                            <div class="editor-label col-md-6">
+                                <label for="horaInicioLabel" id="labelsLogin">Hora de início</label>
+                            </div>
+                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                                <input class="form-control" type="text" name="fieldHoraInicio" id="fieldHoraInicio"
+                                       placeholder="hh:mm" maxlength="5" onkeypress="mascaraHorario( this, event )" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 zeroPadding">
+                            <div class="editor-label col-md-6">
+                                <label for="dataFimLabel" id="labelsLogin">Hora de Termino</label>
+                            </div>
+                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                                <input class="form-control" type="text" name="fieldHoraFim" id="fieldHoraFim"
+                                       placeholder="hh:mm" maxlength="5" onkeypress="mascaraHorario( this, event )" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-2" id="disciplinaLabel" style="">
+                            <label for="disciplinaLabel" id="labelsLogin">Disciplina</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropCurso"
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropDisciplina"
                                     style="width: 100%">
-                                <option value="1">Biomedicina - diurno</option>
-                                <option value="2">Biomedicina - noturno</option>
-                                <option value="3">Enfermagem</option>
-                                <option value="4">Farmácia</option>
-                                <option value="5">Física Médica</option>
-                                <option value="6">Fisioterapia</option>
-                                <option value="7">Fonoaudiologia</option>
-                                <option value="8">Gastronomia</option>
-                                <option value="9">Gestão em Saúde</option>
-                                <option value="10">Informática Biomédica</option>
-                                <option value="11">Medicina</option>
-                                <option value="12">Nutrição</option>
-                                <option value="13">Psicologia</option>
-                                <option value="14">Química Medicinal</option>
-                                <option value="15">Tecnologia em Alimentos</option>
-                                <option value="16">Toxicologia Analítica</option>
+                                <?php
+                                $count=0;
+                                while ($row = mysqli_fetch_assoc($result2)) {
+
+                                    echo "<option value=\"{$count}\">".$row['nomeDisciplina']."</option>";
+                                    $count++;
+                                }?>
                             </select>
-
                         </div>
-                        <div class="col-md-6 checkbox">
-                            <label><input type="checkbox" value="1" name="fieldVisibilidade">Disciplina visível para todos</label>
-                        </div>
-
                     </div>
 
                     <div class="col-md-12">

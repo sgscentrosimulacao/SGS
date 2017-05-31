@@ -62,12 +62,10 @@ CREATE INDEX `IX_Relationship5` ON `tb_disciplina` (`idUsuario`,`idConselho`,`id
 
 CREATE TABLE `tb_cursos`
 (
-  `idCurso` Int NOT NULL,
-  `nomeCurso` Char(30) NOT NULL
+  `idCurso` Int NOT NULL AUTO_INCREMENT,
+  `nomeCurso` Char(30) NOT NULL,
+  PRIMARY KEY (`idCurso`)
 )
-;
-
-ALTER TABLE `tb_cursos` ADD  PRIMARY KEY (`idCurso`)
 ;
 
 -- Table tb_aulas
@@ -77,11 +75,13 @@ CREATE TABLE `tb_aulas`
   `idAula` Int NOT NULL AUTO_INCREMENT,
   `nomeAula` Char(100) NOT NULL,
   `descricaoAula` Char(100) NOT NULL,
-  `horario` Time NOT NULL,
-  `data` Date NOT NULL,
+  `horarioInicio` Varchar(20) NOT NULL,
+  `dataInicio` Varchar(20) NOT NULL,
   `cenario` Char(100) NOT NULL,
   `idDisciplina` Int,
   `idCurso` Int,
+  `horarioFim` Char(20),
+  `dataFim` Char(20),
   PRIMARY KEY (`idAula`)
 )
 ;
@@ -156,8 +156,6 @@ ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituic
 
 
 
-
-
 INSERT INTO `tb_instituicao` (`idInstituicao`, `nomeInstituicao`) VALUES (NULL, 'UFCSPA')
 ;
 
@@ -185,53 +183,53 @@ INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'CREFITO-
 
 
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('1', 'Biomedicina - diurno');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Biomedicina - diurno');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('2', 'Biomedicina - noturno');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Biomedicina - noturno');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('3', 'Enfermagem');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Enfermagem');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('4', 'Farmácia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Farmácia');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('5', 'Física Médica');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Física Médica');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('6', 'Fisioterapia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Fisioterapia');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('7', 'Fonoaudiologia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Fonoaudiologia');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('8', 'Gastronomia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Gastronomia');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('9', 'Gestão em Saúde');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Gestão em Saúde');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('10', 'Informática Biomédica');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Informática Biomédica');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('11', 'Medicina');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Medicina');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('12', 'Nutrição');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Nutrição');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('13', 'Psicologia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Psicologia');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('14', 'Química Medicinal');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Química Medicinal');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('15', 'Tecnologia em Alimentos');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Tecnologia em Alimentos');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES ('16', 'Toxicologia Analítica');
-
-
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Toxicologia Analítica');
 
 
 
 
 
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('1', 'Consultório', '--------', NULL);
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('2', 'Debriefing', '--------', NULL);
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('3', 'Emergência', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Consultório', '--------', NULL);
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('4', 'Habilidades', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Debriefing', '--------', NULL);
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('5', 'Realidade Virtual', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Emergência', '--------', NULL);
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES ('6', 'Simulacão Avançada', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Habilidades', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Realidade Virtual', '--------', NULL);
+
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Simulacão Avançada', '--------', NULL);

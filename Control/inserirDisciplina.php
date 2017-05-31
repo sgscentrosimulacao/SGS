@@ -23,6 +23,7 @@ function inserirDisciplina(){
     $idConselho = $_SESSION['idConselho'];
     $idInstituicao = $_SESSION['idInstituicao'];
 
+
     $conn = abrirDatabase();
 
     $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso,
