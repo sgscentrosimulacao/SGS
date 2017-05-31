@@ -1,5 +1,4 @@
 <?php
-    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,9 +13,7 @@
 
 </head>
 <body>
-
 <nav class="navbar">
-    <!--navbar-fixed-top-->
     <div class="container-fluid">
         <div class="navbar-header" id="navLogo">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
@@ -25,11 +22,9 @@
                 <span class="icon-bar" style="background-color: #a0c7e7"></span>
                 <span class="icon-bar" style="background-color: #a0c7e7"></span>
             </button>
-
             <a class="navbar-brand zeroPadding" href="index.php"><img src="..\img\SGS_Logo.png"
                                                            id="logoImg"></a>
             <div class="col-lg" id="divLogo"></div>
-
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
@@ -43,13 +38,11 @@
         </div>
     </div>
 </nav>
-
 <header class="business-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-12" id="logoImgTop">
 
-                <!--<h1 class="tagline">Business Name or Tagline</h1>-->
             </div>
         </div>
     </div>
@@ -58,8 +51,6 @@
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav zeroPadding">
-
-
         </div>
         <div class="col-sm-8 text-left" id="ColunaDoMeio">
             <form action="./../Control/autenticacao.php" method="post">
@@ -89,7 +80,6 @@
 
                         <p style="margin-left: 40%"><input type="checkbox" name="mostrarSenha" id="mostrarSenha"
                                                            value="Mostrar senha">Mostrar senha</p>
-
                     </div>
                 </div>
                 <div style="margin-left:30px">
@@ -113,7 +103,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-<?php
-
-
-?>

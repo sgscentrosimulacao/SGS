@@ -129,8 +129,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-
-?>

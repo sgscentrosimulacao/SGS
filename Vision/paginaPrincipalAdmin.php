@@ -1,7 +1,6 @@
 <?php
     include "../Control/sessionControl.php";
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -15,7 +14,6 @@
 </head>
 <body>
 <nav class="navbar">
-    <!--navbar-fixed-top-->
     <div class="container-fluid">
         <div class="navbar-header" id="navLogo">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
@@ -44,24 +42,20 @@
 
                             echo "Olá, ".$_SESSION['nomeUsuario'];
 
-
+                            echo "<a class=\"label label-default\" href='../Control/logout.php'>Sair</a>";
                         ?>
                     </span></h4>
                 </li>
             </ul>
-            <!--<ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>-->
         </div>
     </div>
 </nav>
-
-<div class="row">
+<div>
     <div class="col-md-4">
-        <div class="row">
+        <div>
             <div class="col-md-12">
                 <fieldset style="left: 0; margin-left: 50px;">
-                    <div class="row">
+                    <div>
                         <div class="col-sm-12">
 
                             <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
@@ -92,10 +86,7 @@
                             </div>
 
 
-
-
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
 
 
                             <div>
@@ -131,7 +122,6 @@
             </div>
         </div>
     </div>
-
     <div class="col-md-8 zeroPadding">
         <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
             <div class="col-md-12">
@@ -145,10 +135,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-    if ($_GET["logout"]){
-        session_destroy();
-    }
-
-?>

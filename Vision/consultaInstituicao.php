@@ -53,10 +53,7 @@ include "navbar.php";
                             </div>
 
 
-
-
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
 
 
                             <div>
@@ -92,7 +89,6 @@ include "navbar.php";
             </div>
         </div>
     </div>
-
     <div class="col-md-8 zeroPadding teste">
         <div>
             <form action="consultaInstituicao.php" method="post">
@@ -123,7 +119,6 @@ include "navbar.php";
                 </fieldset>
             </form>
         </div>
-
         <div>
             <div class="col-md-12" style="width: 100%;">
                 <fieldset>
@@ -132,8 +127,8 @@ include "navbar.php";
                         <tr>
                             <th>ID</th>
                             <th>Nome Instituição</th>
-                            <th>Editar</th>
-                            <th>Remover</th>
+                            <th class="text-center" >Editar</th>
+                            <th class="text-center">Remover</th>
 
                         </tr>
                         <?php
@@ -149,7 +144,6 @@ include "navbar.php";
                 </fieldset>
             </div>
         </div>
-
     </div>
 </div>
 <?php
@@ -157,8 +151,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-
-?>

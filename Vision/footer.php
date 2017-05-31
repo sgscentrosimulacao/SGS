@@ -13,11 +13,5 @@
 </footer>
 
 <?php
-/**
- * Created by PhpStorm.
- * User: carlos
- * Date: 30/05/2017
- * Time: 10:27
- */
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-    include "../Control/sessionControl.php";
+include "../Control/sessionControl.php";
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -52,10 +52,7 @@ include "navbar.php";
                             </div>
 
 
-
-
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
 
 
                             <div>
@@ -93,9 +90,7 @@ include "navbar.php";
     </div>
     <div class="col-md-8">
         <div class="col-md-12">
-
             <form action="./../Control/inserirUsuarioPP.php" method="post">
-
                 <fieldset style="margin-bottom: 25%">
                     <legend><p id="labelsLogin">Cadastrar Usuário</p></legend>
 
@@ -149,16 +144,6 @@ include "navbar.php";
                         </div>
                     </div>
 
-                    <!--<div class="col-md-12">
-                        <div class="editor-label col-md-2" id="telefoneLabel">
-                            <label for="telefoneLabel" id="labelsLogin">Telefone</label>
-                        </div>
-                        <div class="editor-label form-inline" id="telefoneLabel" style="padding-bottom:5px">
-                            <input class="form-control" id="fieldTelefone" name="fieldTelefone" maxlength="15" placeholder="Digite seu telefone"
-                                   style="width: 100%" type="text" >
-                        </div>
-                    </div>-->
-
                     <div class="col-md-12">
                         <div class="editor-label col-md-2" id="conLabel" style="">
                             <label for="conLabel" id="labelsLogin">Conselho</label>
@@ -210,8 +195,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-
-?>

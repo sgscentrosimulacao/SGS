@@ -1,8 +1,7 @@
 <?php
 include "../Control/sessionControl.php";
 ?>
-
-    <!doctype html>
+<!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
@@ -53,10 +52,7 @@ include "navbar.php";
                             </div>
 
 
-
-
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
 
 
                             <div>
@@ -92,11 +88,8 @@ include "navbar.php";
             </div>
         </div>
     </div>
-
     <div class="col-md-8 zeroPadding">
-
         <form action="../Control/inserirItem.php" method="post">
-
             <div class="col-md-12">
                 <fieldset>
                     <legend id="labelsLogin"> Cadastrar no Inventário</legend>
@@ -158,8 +151,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-
-?>

@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style_index.css">
+    <script src="teste.js"></script>
+
     <title>SGS - Cadastro Disciplina</title>
 </head>
 <body>
@@ -93,11 +95,12 @@ include "navbar.php";
         </div>
     </div>
 
-    <div class="col-md-8 zeroPadding">
+    <div class="col-md-8 zeroPadding teste">
 
-        <form action="../Control/inserirDisciplina.php" method="post">
-
+        <div>
             <div class="col-md-12">
+
+            <form action="../Control/inserirDisciplina.php" method="post">
                 <fieldset>
                     <legend id="labelsLogin"> Cadastrar Disciplina</legend>
 
@@ -175,8 +178,108 @@ include "navbar.php";
                         </div>
                     </div>
                 </fieldset>
+            </form>
             </div>
-        </form>
+        </div>
+        <div>
+            <div class="col-md-12">
+            <form action="../Control/inserirAula.php" method="post">
+                <fieldset>
+                    <legend id="labelsLogin"> Cadastrar Aulas</legend>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-6">
+                            <label for="nomeAulaLabel" id="labelsLogin">Nome da aula</label>
+                        </div>
+                        <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <input class="form-control" id="fieldNomeAula" name="fieldNomeAula"
+                                   placeholder="Insira o nome da aula" style="width: 100%" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-3">
+                            <label for="nomeAulaLabel" id="labelsLogin">Data</label>
+                        </div>
+                        <div class="input-group date col-md-3">
+                            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        </div>
+                        <div class="editor-label col-md-3">
+                            <label for="nomeAulaLabel" id="labelsLogin">Data</label>
+                        </div>
+                        <div class="input-group date col-md-3">
+                            <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-2" id="cursoLabel" style="">
+                            <label for="cursoLabel" id="labelsLogin">Curso</label>
+                        </div>
+                        <div class="dropdown col-md-4" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropCurso"
+                                    style="width: 100%">
+                                <option value="1">Biomedicina - diurno</option>
+                                <option value="2">Biomedicina - noturno</option>
+                                <option value="3">Enfermagem</option>
+                                <option value="4">Farmácia</option>
+                                <option value="5">Física Médica</option>
+                                <option value="6">Fisioterapia</option>
+                                <option value="7">Fonoaudiologia</option>
+                                <option value="8">Gastronomia</option>
+                                <option value="9">Gestão em Saúde</option>
+                                <option value="10">Informática Biomédica</option>
+                                <option value="11">Medicina</option>
+                                <option value="12">Nutrição</option>
+                                <option value="13">Psicologia</option>
+                                <option value="14">Química Medicinal</option>
+                                <option value="15">Tecnologia em Alimentos</option>
+                                <option value="16">Toxicologia Analítica</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-6 checkbox">
+                            <label><input type="checkbox" value="1" name="fieldVisibilidade">Disciplina visível para todos</label>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <label for="cenarioLabel" id="labelsLogin">Cenário</label>
+                        </div>
+                        <div class="form-group" id="cenarioLabel">
+                        <textarea class="form-control" rows="5" id="cenarioLabel" style="width: 100%"
+                                  placeholder="Insira o cenário da aula" name="fieldCenarioAula"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <label for="descricaoAulaLabel" id="labelsLogin">Descrição</label>
+                        </div>
+                        <div class="form-group" id="descricaoAulaLabel">
+                        <textarea class="form-control" rows="5" id="descricaoAulaLabel" style="width: 100%"
+                                  placeholder="Insira a descrição da aula" name="fieldDescricaoAula"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="margin-left:30px">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+
+                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        </div>
     </div>
 </div>
 <?php
@@ -184,8 +287,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-
-<?php
-
-?>

@@ -1,7 +1,7 @@
 <?php
 include "../Control/sessionControl.php";
+include "../Control/selectSala.php";
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -53,10 +53,7 @@ include "navbar.php";
                             </div>
 
 
-
-
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
 
 
                             <div>
@@ -92,13 +89,61 @@ include "navbar.php";
             </div>
         </div>
     </div>
-
-    <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
-            <div class="col-md-12">
-                Consulta Sala
+    <div class="col-md-8 zeroPadding teste">
+        <div>
+            <form action="consultaSala.php" method="post">
+                <fieldset id="consulta">
+                    <legend id="labelsLogin">Consulta de Sala</legend>
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                            <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
+                        </div>
+                        <div class="dropdown col-md-8" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                                <option value="1">Nome Sala</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
+                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
+                            </div>
+                            <div class="col-md-4">
+                                <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <div class="col-md-12" style="width: 100%;">
+                <fieldset>
+                    <legend id="labelsLogin">Consulta</legend>
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome Sala</th>
+                            <th>Descrição</th>
+                            <th class="text-center" >Editar</th>
+                            <th class="text-center">Remover</th>
+                        </tr>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>
+                                   <td>".$row['idSala']."</td>
+                                   <td>".$row['nomeSala']."</td>
+                                   <td>".$row['descricaoSala']."</td>
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                            </tr>";
+                        }?>
+                    </table>
+                </fieldset>
             </div>
-        </fieldset>
+        </div>
     </div>
 </div>
 <?php
@@ -106,8 +151,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-
-?>

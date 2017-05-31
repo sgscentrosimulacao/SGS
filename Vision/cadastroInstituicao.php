@@ -53,10 +53,7 @@ include "navbar.php";
                             </div>
 
 
-
-
                             <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
 
 
                             <div>
@@ -96,7 +93,6 @@ include "navbar.php";
     <div class="col-md-8 zeroPadding">
 
         <form action="../Control/inserirInstituicao.php" method="post">
-
             <div class="col-md-12">
                 <fieldset>
                     <legend id="labelsLogin"> Cadastrar Instituição</legend>
@@ -130,8 +126,3 @@ include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-
-?>

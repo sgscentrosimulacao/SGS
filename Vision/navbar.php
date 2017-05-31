@@ -27,25 +27,11 @@
 
                         echo "Olá, ".$_SESSION['nomeUsuario'];
 
-
+                        echo "<a class=\"label label-default\" href='../Control/logout.php'>Sair</a>";
                         ?>
                     </span></h4>
                 </li>
             </ul>
-            <!--<ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>-->
         </div>
     </div>
 </nav>
-
-
-<?php
-/**
- * Created by PhpStorm.
- * User: carlos
- * Date: 30/05/2017
- * Time: 10:29
- */
-
-?>
