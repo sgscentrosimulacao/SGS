@@ -134,6 +134,7 @@ include "navbar.php";
                             <th>Alunos</th>
                             <th>Curso</th>
                             <th>Regente</th>
+                            <th>Visualizar</th>
                             <th class="text-center" >Editar</th>
                             <th class="text-center">Remover</th>
 
@@ -148,10 +149,53 @@ include "navbar.php";
                                    <td>".$row['qntAlunos']."</td>
                                    <td>".$row['nomeCurso']."</td>
                                    <td>".$row['nomeUsuario']."</td> 
+                                   <td class=\"text-center\"><a href=\"?id={$row['idDisciplina']}\">Aulas</a></td>
                                    <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
                                    <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
                             </tr>";
-                        }?>
+                        }
+
+                        ?>
+                    </table>
+
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome Aula</th>
+                            <th>Descrição</th>
+                            <th>Hora Inicio</th>
+                            <th>Hora Fim</th>
+                            <th>Data Inicio</th>
+                            <th>Data Fim</th>
+                            <th>Cenário</th>
+                            <th>Curso</th>
+                            <th class="text-center" >Editar</th>
+                            <th class="text-center">Remover</th>
+                        </tr>
+
+                    <?php
+
+
+
+                    if(isset($_GET['id']))
+                        while ($row = mysqli_fetch_assoc($result2)) {
+                            echo " <tr>
+                               <td>".$row['idAula']."</td>
+                               <td>".$row['nomeAula']."</td>
+                               <td>".$row['descricaoAula']."</td>
+                               <td>".$row['horarioInicio']."</td>
+                               <td>".$row['horarioFim']."</td>
+                               <td>".$row['dataInicio']."</td>
+                               <td>".$row['dataFim']."</td> 
+                               <td>".$row['cenario']."</td> 
+                               <td>".$row['nomeCurso']."</td> 
+                               <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                               <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                        </tr>";
+                        }
+
+
+                    ?>
                     </table>
                 </fieldset>
             </div>

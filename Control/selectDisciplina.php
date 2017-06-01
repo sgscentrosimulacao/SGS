@@ -3,7 +3,7 @@ require "../Control/controleDoBanco.php";
 
 
 $result = consultarDisciplina();
-
+$resutl2 = consultarAulas();
 function consultarDisciplina()
 {
     $conn = abrirDatabase();
@@ -67,5 +67,21 @@ function consultarDisciplina()
     }
 
     return mysqli_query($conn, $selectUsuario);
+}
+
+
+function consultarAulas(){
+
+    $idSelecionado = $_GET['id'];
+
+    $selectAulas = "SELECT tb_aulas.idAula,tb_aulas.nomeAula,tb_aulas.descricaoAula,tb_aulas.horarioInicio,tb_aulas.horarioFim,tb_aulas.dataInicio,tb_aulas.dataFim,tb_aulas.cenario,tb_cursos.nomeCurso FROM tb_aulas
+	                    LEFT JOIN tb_cursos ON tb_aulas.idCurso = tb_cursos.idCurso
+                        WHERE tb_aulas.idDisciplina = '{$idSelecionado}'";
+
+    $conn = abrirDatabase();
+
+
+    return mysqli_query($conn, $selectAulas);
+
 }
 ?>
