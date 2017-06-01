@@ -187,7 +187,7 @@ include "navbar.php";
         <div>
             <div class="col-md-12">
             <form action="../Control/inserirAula.php" method="post">
-                <fieldset>
+                <fieldset style="margin-bottom: 120px">
                     <legend id="labelsLogin"> Cadastrar Aulas</legend>
 
                     <div class="col-md-12">
@@ -242,7 +242,6 @@ include "navbar.php";
                         </div>
                     </div>
 
-
                     <div class="col-md-12">
                         <div class="editor-label col-md-2" id="disciplinaLabel" style="">
                             <label for="disciplinaLabel" id="labelsLogin">Disciplina</label>
@@ -254,7 +253,7 @@ include "navbar.php";
                                 $count=0;
                                 while ($row = mysqli_fetch_assoc($result2)) {
 
-                                    echo "<option value=\"{$count}\">".$row['nomeDisciplina']."</option>";
+                                    echo "<option value=\"{$row['nomeDisciplina']}\">".$row['nomeDisciplina']."</option>";
                                     $count++;
                                 }?>
                             </select>

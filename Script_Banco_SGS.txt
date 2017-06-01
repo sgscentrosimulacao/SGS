@@ -1,6 +1,6 @@
 /*
 Created: 26/05/2017
-Modified: 26/05/2017
+Modified: 31/05/2017
 Project: SGS_Centro_Simulacao
 Model: MySQL 5.6
 Database: MySQL 5.6
@@ -76,12 +76,12 @@ CREATE TABLE `tb_aulas`
   `nomeAula` Char(100) NOT NULL,
   `descricaoAula` Char(100) NOT NULL,
   `horarioInicio` Varchar(20) NOT NULL,
+  `horarioFim` Char(20) NOT NULL,
   `dataInicio` Varchar(20) NOT NULL,
+  `dataFim` Char(20) NOT NULL,
   `cenario` Char(100) NOT NULL,
-  `idDisciplina` Int,
-  `idCurso` Int,
-  `horarioFim` Char(20),
-  `dataFim` Char(20),
+  `idDisciplina` Int NOT NULL,
+  `idCurso` Int NOT NULL,
   PRIMARY KEY (`idAula`)
 )
 ;
@@ -151,6 +151,7 @@ ALTER TABLE `tb_inventario` ADD CONSTRAINT `Sala_Inven_FK` FOREIGN KEY (`idSala`
 
 ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituicao`) REFERENCES `tb_instituicao` (`idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
+
 
 
 

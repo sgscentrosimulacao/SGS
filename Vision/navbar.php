@@ -18,7 +18,6 @@
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="inativo navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
-                <li class="inativo"><a href="index.php" id="navbarLetras">Logout</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="labelUsuario">
                 <li>

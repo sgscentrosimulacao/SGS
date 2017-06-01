@@ -103,10 +103,7 @@ include "navbar.php";
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
                                 <option value="1">Nome Disciplina</option>
                                 <option value="2">Curso</option>
-                                <option value="3">Instituição</option>
                                 <option value="4">Regente</option>
-                                <option value="5">Numero Conselho</option>
-                                <option value="6">Instituição</option>
                             </select>
                         </div>
                     </div>
