@@ -8,9 +8,19 @@ inserirDisciplina();
 
 function inserirDisciplina(){
 
+    $conn = abrirDatabase();
+
     $nomeDisci = $_POST['fieldNomeDisci'];
     $qntAlunos = $_POST['fieldQntAlunos'];
-    $curso = $_POST['dropCurso'];
+
+    $valorDropCurso = $_POST['dropCurso'];
+    $selectIdCurso = "SELECT tb_cursos.idCurso FROM tb_cursos
+                        	WHERE tb_cursos.nomeCurso = '{$valorDropCurso}'";
+    $curso = $conn->query($selectIdCurso);
+
+    $idCurso = mysqli_fetch_row($curso);
+
+
     $visibilidade = $_POST['fieldVisibilidade'];
 
     if ($visibilidade != "1"){
@@ -24,14 +34,13 @@ function inserirDisciplina(){
     $idInstituicao = $_SESSION['idInstituicao'];
 
 
-    $conn = abrirDatabase();
 
     $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso,
                                                                                 idUsuario, idConselho, idInstituicao)
-                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$curso}','{$idUsuario}',
+                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$idCurso[0]}','{$idUsuario}',
                                                                             '{$idConselho}','{$idInstituicao}')";
 
-    if ($nomeDisci and $qntAlunos and $curso and $descricao){
+    if ($nomeDisci and $qntAlunos and $descricao){
         if ($conn->query($inserirDisciplina)==true){
 
             echo '<SCRIPT>

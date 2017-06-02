@@ -1,8 +1,7 @@
 <?php
     include "../Control/sessionControl.php";
-    include "../Control/showDisciplinas.php";
+    include "../Control/showDrops.php";
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -134,22 +133,11 @@ include "navbar.php";
                         <div class="dropdown col-md-4" style="">
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropCurso"
                                     style="width: 100%">
-                                <option value="1">Biomedicina - diurno</option>
-                                <option value="2">Biomedicina - noturno</option>
-                                <option value="3">Enfermagem</option>
-                                <option value="4">Farmácia</option>
-                                <option value="5">Física Médica</option>
-                                <option value="6">Fisioterapia</option>
-                                <option value="7">Fonoaudiologia</option>
-                                <option value="8">Gastronomia</option>
-                                <option value="9">Gestão em Saúde</option>
-                                <option value="10">Informática Biomédica</option>
-                                <option value="11">Medicina</option>
-                                <option value="12">Nutrição</option>
-                                <option value="13">Psicologia</option>
-                                <option value="14">Química Medicinal</option>
-                                <option value="15">Tecnologia em Alimentos</option>
-                                <option value="16">Toxicologia Analítica</option>
+                                <?php
+                                while ($row = mysqli_fetch_assoc($resultCurso)) {
+                                    echo "<option value=\"{$row['nomeCurso']}\">".$row['nomeCurso']."</option>";
+                                }?>
+
                             </select>
 
                         </div>
@@ -250,11 +238,8 @@ include "navbar.php";
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropDisciplina"
                                     style="width: 100%">
                                 <?php
-                                $count=0;
-                                while ($row = mysqli_fetch_assoc($result2)) {
-
-                                    echo "<option value=\"{$row['nomeDisciplina']}\">".$row['nomeDisciplina']."</option>";
-                                    $count++;
+                                while ($row2 = mysqli_fetch_assoc($resultDisciplina)) {
+                                    echo "<option value=\"{$row2['nomeDisciplina']}\">".$row2['nomeDisciplina']."</option>";
                                 }?>
                             </select>
                         </div>
