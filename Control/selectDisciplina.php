@@ -1,7 +1,6 @@
 <?php
 require "../Control/controleDoBanco.php";
 
-
 $result = consultarDisciplina();
 $resutl2 = consultarAulas();
 function consultarDisciplina()
@@ -72,6 +71,7 @@ function consultarDisciplina()
 
 function consultarAulas(){
 
+    if(isset($_GET['id'])){
     $idSelecionado = $_GET['id'];
 
     $selectAulas = "SELECT tb_aulas.idAula,tb_aulas.nomeAula,tb_aulas.descricaoAula,tb_aulas.horarioInicio,tb_aulas.horarioFim,tb_aulas.dataInicio,tb_aulas.dataFim,tb_aulas.cenario,tb_cursos.nomeCurso FROM tb_aulas
@@ -82,6 +82,10 @@ function consultarAulas(){
 
 
     return mysqli_query($conn, $selectAulas);
+    }else{
+
+    }
+
 
 }
 ?>
