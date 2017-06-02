@@ -5,6 +5,8 @@ require "../Control/controleDoBanco.php";
 $resultDisciplina = showDisciplina();
 $resultCurso = showCursos();
 $resultSalas = showSalas();
+$resultConselho = showConselhos();
+$resultInstituicao = showInstituicao();
 
 
 function showDisciplina(){
@@ -25,7 +27,6 @@ function showCursos(){
 
     $conn = abrirDatabase();
 
-
     $selectCursos= "SELECT tb_cursos.nomeCurso FROM tb_cursos";
 
     $query = mysqli_query($conn, $selectCursos);
@@ -39,7 +40,6 @@ function showSalas(){
 
     $conn = abrirDatabase();
 
-
     $selectSalas= "SELECT tb_sala.nomeSala FROM tb_sala";
 
     $query = mysqli_query($conn, $selectSalas);
@@ -47,5 +47,32 @@ function showSalas(){
     fecharDatabase($conn);
 
     return $query;
+}
+
+function showConselhos(){
+
+    $conn = abrirDatabase();
+
+    $selectConselho= "SELECT tb_conselho.nomeConselho FROM tb_conselho";
+
+    $query = mysqli_query($conn, $selectConselho);
+
+    fecharDatabase($conn);
+
+    return $query;
+}
+
+function showInstituicao(){
+
+    $conn = abrirDatabase();
+
+    $selectConselho= "SELECT tb_instituicao.nomeInstituicao FROM tb_instituicao";
+
+    $query = mysqli_query($conn, $selectConselho);
+
+    fecharDatabase($conn);
+
+    return $query;
+
 }
 ?>

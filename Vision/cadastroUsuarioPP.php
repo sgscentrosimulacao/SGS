@@ -1,5 +1,6 @@
 <?php
-include "../Control/sessionControl.php";
+    include "../Control/sessionControl.php";
+    include "../Control/showDrops.php";
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -150,9 +151,10 @@ include "navbar.php";
                         </div>
                         <div class="dropdown col-md-4" style="">
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropConselho">
-                                <option value="1">CREMERS</option>
-                                <option value="2">COREN-RS</option>
-                                <option value="3">CREFITO-5</option>
+                                <?php
+                                while ($row = mysqli_fetch_assoc($resultConselho)) {
+                                    echo "<option value=\"{$row['nomeConselho']}\">".$row['nomeConselho']."</option>";
+                                }?>
                             </select>
                         </div>
                         <div class="editor-label col-md-2" id="instituicaoLabel" style="padding-left: 0px">
@@ -160,8 +162,11 @@ include "navbar.php";
                         </div>
                         <div class="col-md-4">
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
-                                <option value="1">UFCSPA</option>
-                                <option value="2">Santa Casa</option>
+                                <?php
+                                while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
+                                    echo "<option value=\"{$row2['nomeInstituicao']}\">".$row2['nomeInstituicao']."</option>";
+                                }?>
+
                             </select>
                         </div>
                     </div>
