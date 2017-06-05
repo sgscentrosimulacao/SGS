@@ -6,7 +6,7 @@ autenticarUsuario();
 function autenticarUsuario(){
 
     $usuario = $_POST['fieldUser'];
-    $senha = $_POST['fieldSenha'];
+    $senha = sha1($_POST['fieldSenha']);
 
     $conn = abrirDatabase();
 

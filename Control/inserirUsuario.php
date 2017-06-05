@@ -8,7 +8,7 @@ function inserirUsuario(){
     $conn = abrirDatabase();
 
     $usuario = $_POST['fieldUser'];
-    $senha = $_POST['fieldSenha'];
+    $senha = sha1($_POST['fieldSenha']);
     $nome = $_POST['fieldNome'];
     $email = $_POST['fieldEmail'];
     $numeroConselho = $_POST['fieldNumeroCon'];
@@ -30,7 +30,7 @@ function inserirUsuario(){
 
 
     //Não inserir no banco. Só para verificação
-    $cSenha = $_POST['fieldCSenha'];
+    $cSenha = sha1($_POST['fieldCSenha']);
 
 
     $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao) 

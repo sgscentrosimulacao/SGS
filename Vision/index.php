@@ -80,6 +80,10 @@
 
                         <p style="margin-left: 40%"><input type="checkbox" name="mostrarSenha" id="mostrarSenha"
                                                            value="Mostrar senha">Mostrar senha</p>
+
+
+
+
                     </div>
                 </div>
                 <div style="margin-left:30px">
