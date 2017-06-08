@@ -7,10 +7,6 @@ TAREFAS A FAZER
 
 INDEX: 
  - Esqueci minha senha;
- - Mostrar senha;
-
-Cadastrar: 
- - Normas de uso;
 
 Página Principal:
  - Inserção de cursos;

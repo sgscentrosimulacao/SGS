@@ -8,10 +8,11 @@ function inserirUsuario(){
     $conn = abrirDatabase();
 
     $usuario = $_POST['fieldUser'];
-    $senha = $_POST['fieldSenha'];
+    $senha = sha1($_POST['fieldSenha']);
     $nome = $_POST['fieldNome'];
     $email = $_POST['fieldEmail'];
     $numeroConselho = $_POST['fieldNumeroCon'];
+    $ciente = 1;
 
     $valorDropCurso = $_POST['dropConselho'];
     $selectIdConselho = "SELECT tb_conselho.idConselho FROM tb_conselho
@@ -30,10 +31,10 @@ function inserirUsuario(){
 
 
     //Não inserir no banco. Só para verificação
-    $cSenha = $_POST['fieldCSenha'];
+    $cSenha = sha1($_POST['fieldCSenha']);
 
-    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao) 
-        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}')";
+    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente) 
+        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','{$ciente}')";
 
 
 

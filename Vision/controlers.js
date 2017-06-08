@@ -33,3 +33,12 @@ function mascaraHorario( campo, e )
             campo.value = hora;
     }
 }
+
+
+function mostraSenha(field ,campo){
+    if (field.checked){
+        document.getElementById(campo).type = "text";
+    }else{
+        document.getElementById(campo).type = "password";
+    }
+}

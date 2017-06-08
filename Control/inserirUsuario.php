@@ -12,6 +12,7 @@ function inserirUsuario(){
     $nome = $_POST['fieldNome'];
     $email = $_POST['fieldEmail'];
     $numeroConselho = $_POST['fieldNumeroCon'];
+    $ciente = (isset($_POST['estouCiente']))?1:0;
 
     $valorDropCurso = $_POST['dropConselho'];
     $selectIdConselho = "SELECT tb_conselho.idConselho FROM tb_conselho
@@ -33,34 +34,41 @@ function inserirUsuario(){
     $cSenha = sha1($_POST['fieldCSenha']);
 
 
-    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao) 
-        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}')";
+    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente)
+        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','$ciente')";
 
 
 
 
 
     if ($usuario and $senha and $cSenha and $nome and $email and $numeroConselho){
-        if ($senha == $cSenha){
-            if ($conn->query($inserirUsuario)==true){
-                //header("Location: ../Vision/index.php");
+        if ($ciente ==1){
+            if ($senha == $cSenha){
+                if ($conn->query($inserirUsuario)==true){
+                    //header("Location: ../Vision/index.php");
 
-                echo '<SCRIPT>
-                        confirm("O usuário foi inserido no sistema!");
-                        window.location.href = "../Vision/index.php";
-                      </SCRIPT>';
+                    echo '<SCRIPT>
+                            confirm("O usuário foi inserido no sistema!");
+                            window.location.href = "../Vision/index.php";
+                          </SCRIPT>';
 
+                }else{
+                    echo '<SCRIPT>
+                            confirm("O usuário não pode ser inserido no sistema!");
+                            window.location.href = "../Vision/cadastroUsuario.php";
+                          </SCRIPT>';
+                }
             }else{
                 echo '<SCRIPT>
-                        confirm("O usuário não pode ser inserido no sistema!");
-                        window.location.href = "../Vision/cadastroUsuario.php";
-                      </SCRIPT>';
+                            confirm("Senhas digitadas não são iguais!");
+                            window.location.href = "../Vision/cadastroUsuario.php";
+                          </SCRIPT>';
             }
         }else{
-            echo '<SCRIPT>
-                        confirm("Senhas digitadas não são iguais!");
-                        window.location.href = "../Vision/cadastroUsuario.php";
-                      </SCRIPT>';
+            echo     '<SCRIPT>
+                            confirm("É necessário aceitar os termos de uso!");
+                            window.location.href = "../Vision/cadastroUsuario.php";
+                          </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>

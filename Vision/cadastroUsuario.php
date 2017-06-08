@@ -133,6 +133,27 @@
                             </div>
                         </div>
 
+                        <div class="col-md-12">
+                            <div class="form-group text-center col-md-12">
+                                <label for="termosDeUsoLabel" id="labelsLogin">Termos de uso</label>
+                            </div>
+                            <div class="form-group" id="termosDeUsoLabel">
+                        <textarea class="form-control disabled" rows="5" id="termosDeUsoLabel" style="width: 100%"
+                                  placeholder="Para utilizar as salas no Centro de Simulação UFCSPA/ISCMPA, você deve estar ciente da necessidade de cumprimento de todas as regras descritas no Regimento Interno de uso do Centro de Simulação e seguir o fluxo do processo."
+                                  name="fieldTermosDeUso" disabled></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-center" style="padding-bottom: 10px">
+                            <div class="col-md-2">
+                                <a class="btn btn-danger" href="../Regimento.pdf">Regimento</a>
+                            </div>
+                            <div class="col-md-10">
+                                <p style="margin-left: 40%"><input type="checkbox" name="estouCiente" id="estouCiente"
+                                                               value="1">Eu estou ciente e concordo com os termos de uso</p>
+                            </div>
+                        </div>
+
                         <div class="col-md-12" style="margin-left:30px">
                             <div class="col-md-4">
                             </div>
