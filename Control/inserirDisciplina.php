@@ -42,7 +42,6 @@ function inserirDisciplina(){
 
     if ($nomeDisci and $qntAlunos and $descricao){
         if ($conn->query($inserirDisciplina)==true){
-
             echo '<SCRIPT>
                         confirm("Disciplina cadastrada no sistema!");
                         window.location.href = "../Vision/cadastroDisciplina.php";

@@ -1,6 +1,6 @@
 /*
 Created: 26/05/2017
-Modified: 01/06/2017
+Modified: 08/06/2017
 Project: SGS_Centro_Simulacao
 Model: MySQL 5.6
 Database: MySQL 5.6
@@ -83,11 +83,15 @@ CREATE TABLE `tb_aulas`
   `idCurso` Int NOT NULL,
   `horarioFim` Char(20) NOT NULL,
   `dataFim` Char(20) NOT NULL,
+  `idSala` Int NOT NULL,
   PRIMARY KEY (`idAula`)
 )
 ;
 
 CREATE INDEX `IX_Relationship6` ON `tb_aulas` (`idDisciplina`,`idCurso`)
+;
+
+CREATE INDEX `IX_Relationship10` ON `tb_aulas` (`idSala`)
 ;
 
 -- Table tb_sala
@@ -97,12 +101,8 @@ CREATE TABLE `tb_sala`
   `idSala` Int NOT NULL AUTO_INCREMENT,
   `nomeSala` Char(50) NOT NULL,
   `descricaoSala` Char(100) NOT NULL,
-  `idAula` Int,
   PRIMARY KEY (`idSala`)
 )
-;
-
-CREATE INDEX `IX_Relationship7` ON `tb_sala` (`idAula`)
 ;
 
 -- Table tb_inventario
@@ -144,18 +144,14 @@ ALTER TABLE `tb_disciplina` ADD CONSTRAINT `User_Disci_FK` FOREIGN KEY (`idUsuar
 ALTER TABLE `tb_aulas` ADD CONSTRAINT `Disci_Aula_FK` FOREIGN KEY (`idDisciplina`, `idCurso`) REFERENCES `tb_disciplina` (`idDisciplina`, `idCurso`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `tb_sala` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idAula`) REFERENCES `tb_aulas` (`idAula`) ON DELETE RESTRICT ON UPDATE RESTRICT
-;
-
 ALTER TABLE `tb_inventario` ADD CONSTRAINT `Sala_Inven_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
 ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituicao`) REFERENCES `tb_instituicao` (`idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-
-
-
+ALTER TABLE `tb_aulas` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
 
 
@@ -225,14 +221,14 @@ INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Toxicologia Anal
 
 
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Consultório', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Consultório', '---');
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Debriefing', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Debriefing', '---');
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Emergência', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Emergência', '---');
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Habilidades', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Habilidades', '---');
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Realidade Virtual', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Realidade Virtual', '---');
 
-INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`, `idAula`) VALUES (NULL, 'Simulacão Avançada', '--------', NULL);
+INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Simulacão Avançada', '---');

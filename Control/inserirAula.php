@@ -36,9 +36,17 @@ function inserirAula(){
     $idCurso = mysqli_fetch_row($parseIdCurso);
 
 
+    $valorDropSala = $_POST['dropSala'];
+    $selectIdSala = "SELECT tb_sala.idSala FROM tb_sala
+                        	WHERE tb_sala.nomeSala = '{$valorDropSala}'";
+    $sala = $conn->query($selectIdSala);
 
-    $inserirDisciplina = "INSERT INTO tb_aulas(nomeAula, descricaoAula, horarioInicio, dataInicio, cenario, idDisciplina, idCurso, horarioFim, dataFim)
-                            VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$idDisciplina[0]}','{$idCurso[0]}','{$horaFim}','{$dataFim}')";
+    $idSala = mysqli_fetch_row($sala);
+
+
+
+    $inserirDisciplina = "INSERT INTO tb_aulas(nomeAula, descricaoAula, horarioInicio, dataInicio, cenario, idDisciplina, idCurso, horarioFim, dataFim, idSala)
+                            VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$idDisciplina[0]}','{$idCurso[0]}','{$horaFim}','{$dataFim}','{$idSala[0]}')";
 
 
     if ($nomeAula and $dataInicio and $dataFim and $horaInicio and $horaFim){

@@ -243,6 +243,18 @@ include "navbar.php";
                                 }?>
                             </select>
                         </div>
+                        <div class="editor-label col-md-2" id="salaLabel" style="">
+                            <label for="salaLabel" id="labelsLogin">Sala</label>
+                        </div>
+                        <div class="dropdown col-md-4" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
+                                    style="width: 100%">
+                                <?php
+                                while ($row3 = mysqli_fetch_assoc($resultSalas)) {
+                                    echo "<option value=\"{$row3['nomeSala']}\">".$row3['nomeSala']."</option>";
+                                }?>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="col-md-12">

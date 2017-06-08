@@ -4,6 +4,7 @@ TAREFAS A FAZER
 
 ? = Será;
 ( = Se possivel;
+* = URGENTE;
 
 INDEX: 
  - Esqueci minha senha;
@@ -14,23 +15,23 @@ Página Principal:
 
 Cadastro Disciplina:
  - Inserir possibilidade de mais horas;
- - Sala que aula utilizará;
  - (Tabela onde ira adicionando aulas relacionadas a disciplina)
 
 Cadastrar Item:
  - ? Selecionar sala a ser vinculado ? 
+ - Quantidade ****
  
 Consultar Sala:
  - Order by data e horário;
 
 Geral:
- - CALENDÁRIO;
+ - CALENDÁRIO *****;
+ - Agenda com todos horários de aulas *****;
+ - Visibilidade das Disciplinas*****;
+ - Permissões de visibilidade -> Tela principal e Tela principal ADMIN *****;
+ - Implementar campos de "editar" e "remover" das tabelas *****
+ - PDF do plano de ensino -> BLOB *****;
  - RESPONSIVIDADE;
  - Página SOBRE;
- - Agenda com todos horários de aulas;
- - Visibilidade das Disciplinas;
- - Permissões de visibilidade -> Tela principal e Tela principal ADMIN;
- - Implementar campos de "editar" e "remover" das tabelas;
- - PDF do plano de ensino -> BLOB;
  - Implementar grabfocus nos devidos lugares;
  - Não apagar campos ao errar a inserção;
