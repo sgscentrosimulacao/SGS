@@ -113,7 +113,8 @@
                                                                    id="leftNavBarButtons">Sala</button></a>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-default" id="leftNavBarButtons">Calendário</button>
+                                <a href="calendario.php"><button type="button" class="btn btn-default"
+                                                                 id="leftNavBarButtons">Calendário</button></a>
                             </div>
                         </div>
                     </div>

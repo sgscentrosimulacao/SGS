@@ -1,6 +1,5 @@
 <?php
 include "../Control/sessionControl.php";
-include "../Control/selectItem.php"
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -11,12 +10,14 @@ include "../Control/selectItem.php"
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style_index.css">
-    <title>SGS - Consulta Item</title>
+    <script src="controlers.js"></script>
+    <title>Calendário</title>
 </head>
 <body>
 <?php
 include "navbar.php";
 ?>
+
 <div>
     <div class="col-md-4">
         <div>
@@ -66,14 +67,14 @@ include "navbar.php";
                             </div>
                             <div>
                                 <a href="consultaItem.php"><button type="button" class="btn btn-default"
-                                                                   id="leftNavBarButtonsAtivo">Item</button></a>
+                                                                   id="leftNavBarButtons">Item</button></a>
                             </div>
                             <div>
                                 <a href="consultaInstituicao.php"><button type="button" class="btn btn-default"
                                                                           id="leftNavBarButtons">Instituicão</button></a>
                             </div>
                             <div>
-                                <a href="consultaConselho.php"><button type="button" class="btn btn-default"
+                                <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
                                                                        id="leftNavBarButtons">Conselho</button></a>
                             </div>
                             <div>
@@ -82,7 +83,7 @@ include "navbar.php";
                             </div>
                             <div>
                                 <a href="calendario.php"><button type="button" class="btn btn-default"
-                                                                 id="leftNavBarButtons">Calendário</button></a>
+                                                                 id="leftNavBarButtonsAtivo">Calendário</button></a>
                             </div>
                         </div>
                     </div>
@@ -90,70 +91,19 @@ include "navbar.php";
             </div>
         </div>
     </div>
-    <div class="col-md-8 zeroPadding teste">
-        <div>
-            <form action="consultaItem.php" method="post">
-                <fieldset id="consulta">
-                    <legend id="labelsLogin">Consulta de Item</legend>
-
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
-                            <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
-                        </div>
-                        <div class="dropdown col-md-8" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
-                                <option value="1">Nome Peça</option>
-                                <option value="2">Sala</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
-                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-        <div>
-            <div class="col-md-12" style="width: 100%;">
-                <fieldset>
-                    <legend id="labelsLogin">Consulta</legend>
-                    <table class="table">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome Peça</th>
-                            <th>Descrição</th>
-                            <th>Sala</th>
-                            <th class="text-center" >Editar</th>
-                            <th class="text-center">Remover</th>
-                        </tr>
-                        <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                                   <td>".$row['idPeca']."</td>
-                                   <td>".$row['nomePeca']."</td>
-                                   <td>".$row['descricao']."</td>
-                                   <td>".$row['nomeSala']."</td>
-                                   <td class=\"text-center\" ><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                            </tr>";
-                        }?>
-                    </table>
-                </fieldset>
-            </div>
-        </div>
+    <div class="col-md-8 zeroPadding">
 
     </div>
 </div>
+
+
+
 <?php
 include "footer.php";
 ?>
 </body>
 </html>
+
+<?php
+
+?>
