@@ -1,5 +1,5 @@
 <?php
-
+    include "conexaoCalendario.php";
     function num($num){
         return ($num < 10) ? '0'.$num : $num;
     }
@@ -9,15 +9,13 @@
         $tabela = $info['tabela'];
         $data = $info['data'];
         $titulo = $info['titulo'];
-        $link = $info['link'];
-        $eventos = $pdo->prepare("SELECT * FROM `".$tabela."` WHERE `".$data."` >= NOW()");
+        $eventos = $pdo->prepare("SELECT * FROM tb_aulas WHERE `".$data."` >= NOW()");
         $eventos->execute();
         $retorno = array();
         while($row = $eventos->fetchObject()){
             $dataArr = date('Y-m-d', strtotime($row->{$data}));
             $retorno[$dataArr] = array(
-                'titulo' => $row->{$titulo},
-                'link' => $row->{$link}
+                'titulo' => $row->{$titulo}
             );
         }
         return $retorno;
@@ -73,11 +71,11 @@
                 $arrayRetorno[$i][$n] = $weekMonth;
             }
         }
-        echo '<a href="#" id="volta">&laquo;</a><a href="#" id="vai">&raquo;</a>';
+        echo '<a class="btn" href="#" id="volta">&laquo;</a><a class="btn" href="#" id="vai">&raquo;</a>';
         echo '<table class="table table-hover">';
         foreach($arrayMes as $num => $mes){
             echo '<tbody id="mes_'.$num.'" class="mes">';
-            echo '<tr class="mes_title text-center" id="tituloCalendario"><td colspan="7">'.$mes.'</td></tr>';
+            echo '<tr class="mes_title text-center"><td colspan="7"><span class="label text-center tituloCalendario">'.$mes.'</span></td></tr>';
             echo '<tr class="dias_title">';
             foreach($diasSemana as $i => $day){
                 echo '<td>'.$day.'</td>';
@@ -99,7 +97,7 @@
                     $date = date('Y').'-'.$month.'-'.$dayNow;
                     if(in_array($date, array_keys($eventos))){
                         $evento = $eventos[$date];
-                        echo '<td class="evento"><a href="'.$evento['link'].'" title="'.$evento['titulo'].'">'.$numero.'</a></td>';
+                        echo '<td class="evento"><a title="'.$evento['titulo'].'">'.$numero.'</a></td>';
                     }else{
                         echo '<td class="dia_'.$numero.'">'.$numero.'</td>';
                     }
@@ -116,81 +114,4 @@
         echo '</table>';
     }
 
-
-/*    function diasMeses(){
-        $retorno = array();
-
-        for ($i=1; $i<=12; $i++){
-            $retorno[$i] = cal_days_in_month(CAL_GREGORIAN, $i, date('Y'));
-        }
-
-        return $retorno;
-    }
-
-    function montaCalendario(){
-
-        $daysWeek = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
-
-        $diasSemana = array('Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb');
-
-        $meses = array(1=>'Janeiro', 2=>'Fevereiro', 3=>'Março', 4=>'Abril', 5=>'Maio',
-                        6=>'Junho', 7=>'Julho', 8=>'Agosto', 9=>'Setembro', 10=>'Outubro',
-                        11=>'Novembro', 12=>'Dezembro');
-
-
-        $diasMeses = diasMeses();
-
-        $arrayRetorno = array();
-
-        for ($i=1;$i<=12; $i++){
-            $arrayRetorno[$i] = array();
-            for ($n=1;$n<=$diasMeses[$i]; $n++){
-                $dayMonth = gregoriantojd($i,$n,date('Y'));
-                $weekMonth = substr(jddayofweek($dayMonth,1),0,3);
-
-                if ($weekMonth == 'Mun'){
-                    $weekMonth = 'Mon';
-                }
-
-                $arrayRetorno[$i][$n] = $weekMonth;
-
-            }
-
-        }
-
-        echo "<table>";
-
-        foreach ($meses as $num=> $mes)
-            echo '<tbody id="mes_'.$num.'" class="mes">';
-
-            echo '<tr><td colspan="7">'.$mes.'</td></tr><tr>';
-
-            foreach ($diasSemana as $i=>$day){
-
-                echo '<td>'.$day.'</td>';
-            }
-
-            echo '</tr><tr>';
-            $y=0;
-            foreach ($arrayRetorno[$num] as $numero => $dia){
-
-                $y++;
-                if ($numero == 1){
-                    $qtd = array_search($dia, $daysWeek);
-                    for ($i=1; $i<=$qtd; $i++){
-                        echo '<td></td>';
-                        $y+=1;
-
-                    }
-                }
-                echo '<td>'.$numero.'</td>';
-
-                if($y==7){
-                    $y=0;
-                    echo '</tr><tr>';
-                }
-            }
-            echo '</tr></tbody>';
-        echo "</table>";
-    }*/
 ?>

@@ -10,7 +10,7 @@ include "../Control/selectDisciplina.php";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="../css/style_index.css">
     <title>SGS - Consulta Disciplina</title>
 </head>
 <body>
@@ -162,7 +162,7 @@ include "navbar.php";
                 <?php
                 if(isset($_GET['id'])){
                 echo "
-                <fieldset>
+                <fieldset  style=\"margin-bottom: 150px\">
                     <legend id=\"labelsLogin\">Aulas</legend>
                     <table class=\"table\">
                         <tr>
@@ -193,11 +193,10 @@ include "navbar.php";
                                <td>".$row2['nomeCurso']."</td> 
                                <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
                                <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                        </tr>
+                        </tr>";}
+                    echo "
                     </table>
-                </fieldset>";}
-                }else{
-
+                </fieldset>";
                 }
                 ?>
             </div>

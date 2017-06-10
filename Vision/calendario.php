@@ -1,6 +1,11 @@
 <?php
 include "../Control/sessionControl.php";
-include "controleCalendario.php";
+include "../Control/controleCalendario.php";
+$info = array(
+        'tabela'=> 'tb_aulas',
+        'data' => 'dataInicio',
+        'titulo'=> 'nomeAula',);
+
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -10,8 +15,10 @@ include "controleCalendario.php";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style_index.css">
-    <script src="controlers.js"></script>
+    <link rel="stylesheet" href="../css/style_index.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/controlers.js"></script>
+
     <title>Calendário</title>
 </head>
 <body>
@@ -92,13 +99,23 @@ include "navbar.php";
             </div>
         </div>
     </div>
-    <div class="col-md-8 zeroPadding">
+    <div class="col-md-8     zeroPadding">
         <fieldset>
-            <legend id="labelsLogin">Calendário de Reservas</legend>
+            <legend class="text-center" id="labelsLogin">Calendário de Reservas - 2017</legend>
 
-            <?php
-                montaCalendario();
-            ?>
+            <div class="calendario">
+                <?php
+                $eventos = montaEventos($info);
+                montaCalendario($eventos);
+                ?>
+                <div class="legends">
+                    <span class="legenda"><span class="blue"></span> Aulas Marcadas</span>
+                    <span class="legenda"><span class="red"></span> Hoje</span>
+                </div>
+            </div>
+
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/functions.js"></script>
 
         </fieldset>
     </div>

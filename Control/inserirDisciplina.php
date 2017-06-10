@@ -20,12 +20,7 @@ function inserirDisciplina(){
 
     $idCurso = mysqli_fetch_row($curso);
 
-
-    $visibilidade = $_POST['fieldVisibilidade'];
-
-    if ($visibilidade != "1"){
-        $visibilidade = 0;
-    }
+    $visibilidade = (isset($_POST['fieldVisibilidade']))?1:0;
 
     $descricao = $_POST['fieldDescricaoDisci'];
 

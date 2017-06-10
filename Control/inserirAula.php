@@ -9,10 +9,19 @@ inserirAula();
 function inserirAula(){
 
     $nomeAula = $_POST['fieldNomeAula'];
-    $dataInicio = $_POST['fieldDataInicio'];
-    $dataFim = $_POST['fieldDataFim'];
-    $horaInicio = $_POST['fieldHoraInicio'];
-    $horaFim = $_POST['fieldHoraFim'];
+
+    $dmaI = explode('/',($_POST['fieldDataInicio']));
+    $dataInicio= $dmaI[2]."-".$dmaI[1]."-".$dmaI[0]."";
+
+    $dmaF = explode('/',($_POST['fieldDataFim']));
+    $dataFim= $dmaF[2]."-".$dmaF[1]."-".$dmaF[0]."";
+
+
+    $hmI = explode(':',($_POST['fieldHoraInicio']));
+    $horaInicio = $hmI[0].":".$hmI[1].":00";
+
+    $hmF = explode(':',($_POST['fieldHoraFim']));
+    $horaFim = $hmF[0].":".$hmF[1].":00";
     $cenario = $_POST['fieldCenarioAula'];
     $descricaoAula = $_POST['fieldDescricaoAula'];
     $dropDisciplina = $_POST['dropDisciplina'];
