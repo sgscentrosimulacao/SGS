@@ -35,39 +35,51 @@
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="8" name="horario">
+    <column id="19" parent="8" name="horarioInicio">
       <Position>4</Position>
-      <DataType>time|0</DataType>
+      <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="8" name="data">
+    <column id="20" parent="8" name="horarioFim">
       <Position>5</Position>
-      <DataType>date|0</DataType>
+      <DataType>char(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="8" name="cenario">
+    <column id="21" parent="8" name="dataInicio">
       <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="8" name="dataFim">
+      <Position>7</Position>
+      <DataType>char(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="8" name="cenario">
+      <Position>8</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="8" name="idDisciplina">
-      <Position>7</Position>
+    <column id="24" parent="8" name="idDisciplina">
+      <Position>9</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="8" name="idCurso">
-      <Position>8</Position>
+    <column id="25" parent="8" name="idCurso">
+      <Position>10</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="24" parent="8" name="IX_Relationship6">
+    <index id="26" parent="8" name="IX_Relationship6">
       <ColNames>idDisciplina
 idCurso</ColNames>
     </index>
-    <key id="25" parent="8" name="PRIMARY">
+    <key id="27" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idAula</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="26" parent="8" name="Disci_Aula_FK">
+    <foreign-key id="28" parent="8" name="Disci_Aula_FK">
       <ColNames>idDisciplina
 idCurso</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
@@ -75,103 +87,104 @@ idCurso</ColNames>
       <RefColNames>idDisciplina
 idCurso</RefColNames>
     </foreign-key>
-    <column id="27" parent="9" name="idConselho">
+    <column id="29" parent="9" name="idConselho">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="28" parent="9" name="nomeConselho">
+    <column id="30" parent="9" name="nomeConselho">
       <Position>2</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="29" parent="9" name="PRIMARY">
+    <key id="31" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idConselho</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="30" parent="10" name="idCurso">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="31" parent="10" name="nomeCurso">
-      <Position>2</Position>
-      <DataType>char(30)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="32" parent="10" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>idCurso</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="33" parent="11" name="idDisciplina">
+    <column id="32" parent="10" name="idCurso">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="34" parent="11" name="nomeDisciplina">
+    <column id="33" parent="10" name="nomeCurso">
+      <Position>2</Position>
+      <DataType>char(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="34" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idCurso</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="11" name="idDisciplina">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="11" name="nomeDisciplina">
       <Position>2</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="11" name="descricao">
+    <column id="37" parent="11" name="descricao">
       <Position>3</Position>
       <DataType>char(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="11" name="visibilidade">
+    <column id="38" parent="11" name="visibilidade">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="11" name="qntAlunos">
+    <column id="39" parent="11" name="qntAlunos">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="11" name="idCurso">
+    <column id="40" parent="11" name="idCurso">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="39" parent="11" name="idUsuario">
+    <column id="41" parent="11" name="idUsuario">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="40" parent="11" name="idConselho">
+    <column id="42" parent="11" name="idConselho">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="11" name="idInstituicao">
+    <column id="43" parent="11" name="idInstituicao">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="42" parent="11" name="Curs_Disci_FK">
+    <index id="44" parent="11" name="Curs_Disci_FK">
       <ColNames>idCurso</ColNames>
     </index>
-    <index id="43" parent="11" name="IX_Relationship5">
+    <index id="45" parent="11" name="IX_Relationship5">
       <ColNames>idUsuario
 idConselho
 idInstituicao</ColNames>
     </index>
-    <key id="44" parent="11" name="PRIMARY">
+    <key id="46" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idDisciplina
 idCurso</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="45" parent="11" name="Curs_Disci_FK">
+    <foreign-key id="47" parent="11" name="Curs_Disci_FK">
       <ColNames>idCurso</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_cursos</RefTableName>
       <RefColNames>idCurso</RefColNames>
     </foreign-key>
-    <foreign-key id="46" parent="11" name="User_Disci_FK">
+    <foreign-key id="48" parent="11" name="User_Disci_FK">
       <ColNames>idUsuario
 idConselho
 idInstituicao</ColNames>
@@ -181,159 +194,159 @@ idInstituicao</ColNames>
 idConselho
 idInstituicao</RefColNames>
     </foreign-key>
-    <column id="47" parent="12" name="idInstituicao">
+    <column id="49" parent="12" name="idInstituicao">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="48" parent="12" name="nomeInstituicao">
+    <column id="50" parent="12" name="nomeInstituicao">
       <Position>2</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="49" parent="12" name="PRIMARY">
+    <key id="51" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idInstituicao</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="50" parent="13" name="idPeca">
+    <column id="52" parent="13" name="idPeca">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="51" parent="13" name="nomePeca">
+    <column id="53" parent="13" name="nomePeca">
       <Position>2</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="52" parent="13" name="descricao">
+    <column id="54" parent="13" name="descricao">
       <Position>3</Position>
       <DataType>char(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="53" parent="13" name="idSala">
+    <column id="55" parent="13" name="idSala">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="54" parent="13" name="IX_Relationship8">
+    <index id="56" parent="13" name="IX_Relationship8">
       <ColNames>idSala</ColNames>
     </index>
-    <key id="55" parent="13" name="PRIMARY">
+    <key id="57" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idPeca</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="56" parent="13" name="Sala_Inven_FK">
+    <foreign-key id="58" parent="13" name="Sala_Inven_FK">
       <ColNames>idSala</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_sala</RefTableName>
       <RefColNames>idSala</RefColNames>
     </foreign-key>
-    <column id="57" parent="14" name="idSala">
+    <column id="59" parent="14" name="idSala">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="58" parent="14" name="nomeSala">
+    <column id="60" parent="14" name="nomeSala">
       <Position>2</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="59" parent="14" name="descricaoSala">
+    <column id="61" parent="14" name="descricaoSala">
       <Position>3</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="60" parent="14" name="idAula">
+    <column id="62" parent="14" name="idAula">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="61" parent="14" name="IX_Relationship7">
+    <index id="63" parent="14" name="IX_Relationship7">
       <ColNames>idAula</ColNames>
     </index>
-    <key id="62" parent="14" name="PRIMARY">
+    <key id="64" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idSala</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="63" parent="14" name="Aula_Sala_FK">
+    <foreign-key id="65" parent="14" name="Aula_Sala_FK">
       <ColNames>idAula</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_aulas</RefTableName>
       <RefColNames>idAula</RefColNames>
     </foreign-key>
-    <column id="64" parent="15" name="idUsuario">
+    <column id="66" parent="15" name="idUsuario">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="65" parent="15" name="usuario">
+    <column id="67" parent="15" name="usuario">
       <Position>2</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="66" parent="15" name="senha">
+    <column id="68" parent="15" name="senha">
       <Position>3</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="67" parent="15" name="nomeUsuario">
+    <column id="69" parent="15" name="nomeUsuario">
       <Position>4</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="68" parent="15" name="email">
+    <column id="70" parent="15" name="email">
       <Position>5</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="15" name="numeroConselho">
+    <column id="71" parent="15" name="numeroConselho">
       <Position>6</Position>
       <DataType>char(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="15" name="idConselho">
+    <column id="72" parent="15" name="idConselho">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="71" parent="15" name="idInstituicao">
+    <column id="73" parent="15" name="idInstituicao">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="72" parent="15" name="Cons_User_FK">
+    <index id="74" parent="15" name="Cons_User_FK">
       <ColNames>idConselho</ColNames>
     </index>
-    <index id="73" parent="15" name="Inst_User_FK">
+    <index id="75" parent="15" name="Inst_User_FK">
       <ColNames>idInstituicao</ColNames>
     </index>
-    <index id="74" parent="15" name="UK_usuario">
+    <index id="76" parent="15" name="UK_usuario">
       <ColNames>usuario</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="75" parent="15" name="PRIMARY">
+    <key id="77" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuario
 idConselho
 idInstituicao</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="76" parent="15" name="UK_usuario">
+    <key id="78" parent="15" name="UK_usuario">
       <ColNames>usuario</ColNames>
       <UnderlyingIndexName>UK_usuario</UnderlyingIndexName>
     </key>
-    <foreign-key id="77" parent="15" name="Cons_User_FK">
+    <foreign-key id="79" parent="15" name="Cons_User_FK">
       <ColNames>idConselho</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_conselho</RefTableName>
       <RefColNames>idConselho</RefColNames>
     </foreign-key>
-    <foreign-key id="78" parent="15" name="Inst_User_FK">
+    <foreign-key id="80" parent="15" name="Inst_User_FK">
       <ColNames>idInstituicao</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_instituicao</RefTableName>

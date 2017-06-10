@@ -1,5 +1,6 @@
 <?php
 include "../Control/sessionControl.php";
+include "controleCalendario.php";
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -92,7 +93,14 @@ include "navbar.php";
         </div>
     </div>
     <div class="col-md-8 zeroPadding">
+        <fieldset>
+            <legend id="labelsLogin">Calendário de Reservas</legend>
 
+            <?php
+                montaCalendario();
+            ?>
+
+        </fieldset>
     </div>
 </div>
 
