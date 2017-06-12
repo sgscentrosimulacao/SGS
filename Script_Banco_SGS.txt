@@ -1,6 +1,6 @@
 /*
 Created: 26/05/2017
-Modified: 08/06/2017
+Modified: 12/06/2017
 Project: SGS_Centro_Simulacao
 Model: MySQL 5.6
 Database: MySQL 5.6
@@ -76,13 +76,13 @@ CREATE TABLE `tb_aulas`
   `idAula` Int NOT NULL AUTO_INCREMENT,
   `nomeAula` Char(100) NOT NULL,
   `descricaoAula` Char(100) NOT NULL,
-  `horarioInicio` Varchar(20) NOT NULL,
-  `dataInicio` Varchar(20) NOT NULL,
+  `horarioInicio` Time NOT NULL,
+  `dataInicio` Date NOT NULL,
   `cenario` Char(100) NOT NULL,
   `idDisciplina` Int NOT NULL,
   `idCurso` Int NOT NULL,
-  `horarioFim` Char(20) NOT NULL,
-  `dataFim` Char(20) NOT NULL,
+  `horarioFim` Time NOT NULL,
+  `dataFim` Date NOT NULL,
   `idSala` Int NOT NULL,
   PRIMARY KEY (`idAula`)
 )
@@ -113,6 +113,7 @@ CREATE TABLE `tb_inventario`
   `nomePeca` Char(100) NOT NULL,
   `descricao` Char(200) NOT NULL,
   `idSala` Int,
+  `quantidade` Int NOT NULL,
   PRIMARY KEY (`idPeca`)
 )
 ;
@@ -152,6 +153,11 @@ ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituic
 
 ALTER TABLE `tb_aulas` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
+
+
+
+
+
 
 
 
