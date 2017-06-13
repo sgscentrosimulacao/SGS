@@ -100,7 +100,7 @@ include "navbar.php";
         </div>
     </div>
     <div class="col-md-8     zeroPadding">
-        <fieldset>
+        <fieldset style="position: inherit; left: 0;right: 0">
             <legend class="text-center" id="labelsLogin">Calendário de Reservas - 2017</legend>
 
             <div class="calendario">
@@ -118,6 +118,11 @@ include "navbar.php";
             <script type="text/javascript" src="js/functions.js"></script>
 
         </fieldset>
+        <?php
+        echo "<div>";
+            mostraAulas();
+        echo "</div>";
+        ?>
     </div>
 </div>
 

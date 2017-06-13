@@ -117,55 +117,56 @@
             echo '</tr></tbody>';
         }
         echo '</table>';
-        mostraAulas();
+
+
     }
 
     function mostraAulas(){
 
         include "selectDisciplina.php";
 
-
         if(isset($_GET['id'])){
             echo "
-        <fieldset style=\"margin-bottom: 150px; margin-top: 60px; left: 0; right: 0\">
-            <legend id=\"labelsLogin\">Aulas</legend>
-            <table class=\"table\">
-                <tr>
-                    <th>ID</th>
-                    <th>Nome Aula</th>
-                    <th>Data Inicio</th>
-                    <th>Data Fim</th>
-                    <th>Hora Inicio</th>
-                    <th>Hora Fim</th>
-                    <th>Nome Disciplina</th>
-                    <th>Curso</th>
-                    <th>Sala</th>
-                    <th class=\"text-center\" >Editar</th>
-                    <th class=\"text-center\">Remover</th>
-                </tr>";
+            <fieldset style='left: 0; right: 0; position: inherit;' >
+                <legend id=\"labelsLogin\">Aulas</legend>
+                <table class=\"table\">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Aula</th>
+                        <th>Data Inicio</th>
+                        <th>Data Fim</th>
+                        <th>Hora Inicio</th>
+                        <th>Hora Fim</th>
+                        <th>Nome Disciplina</th>
+                        <th>Curso</th>
+                        <th>Sala</th>
+                        <th class=\"text-center\" >Editar</th>
+                        <th class=\"text-center\">Remover</th>
+                    </tr>";
 
 
 
-            while ($row = mysqli_fetch_assoc($result3)) {
-                echo " <tr>
-                       <td>".$row['idAula']."</td>
-                       <td>".$row['nomeAula']."</td>
-                       <td>".$row['dataInicio']."</td>
-                       <td>".$row['dataFim']."</td>
-                       <td>".$row['horarioInicio']."</td>
-                       <td>".$row['horarioFim']."</td>
-                       <td>".$row['nomeDisciplina']."</td> 
-                       <td>".$row['nomeCurso']."</td> 
-                       <td>".$row['nomeSala']."</td> 
-                       <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                       <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                </tr>";}
-            echo "
-            </table>
-        </fieldset>";
+                while ($row = mysqli_fetch_assoc($result3)) {
+                    echo " <tr>
+                           <td>".$row['idAula']."</td>
+                           <td>".$row['nomeAula']."</td>
+                           <td>".$row['dataInicio']."</td>
+                           <td>".$row['dataFim']."</td>
+                           <td>".$row['horarioInicio']."</td>
+                           <td>".$row['horarioFim']."</td>
+                           <td>".$row['nomeDisciplina']."</td> 
+                           <td>".$row['nomeCurso']."</td> 
+                           <td>".$row['nomeSala']."</td> 
+                           <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                           <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                    </tr>";}
+                echo "
+                </table>
+            </fieldset>";
         }else{
 
         }
     }
+
 
 ?>
