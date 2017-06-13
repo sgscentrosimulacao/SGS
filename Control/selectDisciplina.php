@@ -1,8 +1,12 @@
 <?php
-require "../Control/controleDoBanco.php";
+require "controleDoBanco.php";
 
 $result = consultarDisciplina();
 $resutl2 = consultarAulas();
+$result3 = consultarAulasData();
+
+
+
 function consultarDisciplina()
 {
     $conn = abrirDatabase();
@@ -82,6 +86,34 @@ function consultarAulas(){
 
 
     return mysqli_query($conn, $selectAulas);
+    }else{
+
+    }
+
+
+}
+
+function consultarAulasData(){
+
+    if(isset($_GET['id'])){
+        $dataSelecionada = $_GET['id'];
+
+
+
+        $selectAulas = "SELECT tb_aulas.idAula, tb_aulas.nomeAula, tb_aulas.dataInicio, tb_aulas.dataFim, 
+                                tb_aulas.horarioInicio, tb_aulas.horarioFim, tb_disciplina.nomeDisciplina,
+                                 tb_cursos.nomeCurso, tb_sala.nomeSala FROM tb_aulas 
+
+                            LEFT JOIN tb_cursos ON tb_aulas.idCurso = tb_cursos.idCurso
+                            LEFT JOIN tb_sala ON tb_aulas.idSala = tb_sala.idSala
+                            LEFT JOIN tb_disciplina ON tb_aulas.idDisciplina = tb_disciplina.idDisciplina
+
+		                      WHERE tb_aulas.dataInicio = '{$dataSelecionada}'";
+
+        $conn = abrirDatabase();
+
+
+        return mysqli_query($conn, $selectAulas);
     }else{
 
     }

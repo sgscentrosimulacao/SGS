@@ -16,13 +16,9 @@ Página Principal:
 Cadastro Disciplina:
  - Inserir possibilidade de mais horas;
  - (Tabela onde ira adicionando aulas relacionadas a disciplina)
-
-Cadastrar Item:
- - ? Selecionar sala a ser vinculado ? 
- - Quantidade ****
  
 Consultar Sala:
- - Order by data e horário;
+ - (Order by data e horário;)
 
 Geral:
  - Agenda com todos horários de aulas *****;

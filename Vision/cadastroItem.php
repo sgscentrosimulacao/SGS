@@ -107,20 +107,26 @@ include "navbar.php";
                     </div>
 
                     <div class="col-md-12">
-                        <div class="editor-label col-md-2" id="salaLabel" style="">
+                        <div class="col-md-3">
+                                <label for="quantidadeLabel" id="labelsLogin">Quantidade</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" id="fieldQuantidade" name="fieldQuantidade"
+                                       placeholder="Insira quantidade" style="width: 100%" type="number">
+                        </div>
+                        <div class="editor-label col-md-1" id="salaLabel" style="">
                             <label for="salaLabel" id="labelsLogin">Sala</label>
                         </div>
-                        <div class="dropdown col-md-6" style="">
+                        <div class="dropdown col-md-4" style="">
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
                                     style="width: 100%">
                                 <?php
                                 while ($row = mysqli_fetch_assoc($resultSalas)) {
                                     echo "<option value=\"{$row['nomeSala']}\">".$row['nomeSala']."</option>";
                                 }?>
-
                             </select>
-
                         </div>
+
                     </div>
 
                     <div class="col-md-12">

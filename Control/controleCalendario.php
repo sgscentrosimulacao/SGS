@@ -1,5 +1,8 @@
 <?php
     include "conexaoCalendario.php";
+
+
+
     function num($num){
         return ($num < 10) ? '0'.$num : $num;
     }
@@ -84,6 +87,7 @@
             $y = 0;
             foreach($arrayRetorno[$num] as $numero => $dia){
                 $y++;
+
                 if($numero == 1){
                     $qtd = array_search($dia, $daysWeek);
                     for($i=1; $i<=$qtd; $i++){
@@ -97,10 +101,11 @@
                     $date = date('Y').'-'.$month.'-'.$dayNow;
                     if(in_array($date, array_keys($eventos))){
                         $evento = $eventos[$date];
-                        echo '<td class="evento"><a title="'.$evento['titulo'].'">'.$numero.'</a></td>';
+                        echo '<td class="evento"><a href="?id='.'2017'.'-'.$month.'-'.$numero.'" title="'.$evento['titulo'].'">'.$numero.'</a></td>';
                     }else{
                         echo '<td class="dia_'.$numero.'">'.$numero.'</td>';
                     }
+
                 }else{
                     echo '<td class="dia_'.$numero.'">'.$numero.'</td>';
                 }
@@ -112,6 +117,55 @@
             echo '</tr></tbody>';
         }
         echo '</table>';
+        mostraAulas();
+    }
+
+    function mostraAulas(){
+
+        include "selectDisciplina.php";
+
+
+        if(isset($_GET['id'])){
+            echo "
+        <fieldset style=\"margin-bottom: 150px; margin-top: 60px; left: 0; right: 0\">
+            <legend id=\"labelsLogin\">Aulas</legend>
+            <table class=\"table\">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome Aula</th>
+                    <th>Data Inicio</th>
+                    <th>Data Fim</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fim</th>
+                    <th>Nome Disciplina</th>
+                    <th>Curso</th>
+                    <th>Sala</th>
+                    <th class=\"text-center\" >Editar</th>
+                    <th class=\"text-center\">Remover</th>
+                </tr>";
+
+
+
+            while ($row = mysqli_fetch_assoc($result3)) {
+                echo " <tr>
+                       <td>".$row['idAula']."</td>
+                       <td>".$row['nomeAula']."</td>
+                       <td>".$row['dataInicio']."</td>
+                       <td>".$row['dataFim']."</td>
+                       <td>".$row['horarioInicio']."</td>
+                       <td>".$row['horarioFim']."</td>
+                       <td>".$row['nomeDisciplina']."</td> 
+                       <td>".$row['nomeCurso']."</td> 
+                       <td>".$row['nomeSala']."</td> 
+                       <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                       <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                </tr>";}
+            echo "
+            </table>
+        </fieldset>";
+        }else{
+
+        }
     }
 
 ?>

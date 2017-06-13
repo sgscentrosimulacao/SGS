@@ -17,13 +17,13 @@ function consultarItem()
 
             case 1:
 
-                $selectUsuario = "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.descricao, tb_sala.nomeSala FROM tb_inventario
+                $selectUsuario = "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.descricao, tb_sala.nomeSala, tb_inventario.quantidade FROM tb_inventario
                                     LEFT JOIN tb_sala ON tb_inventario.idSala = tb_sala.idSala
                                     
                                     WHERE UPPER(tb_inventario.nomePeca) LIKE '%{$pesquisa}%'";
                                 break;
             case 2:
-                $selectUsuario = "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.descricao, tb_sala.nomeSala FROM tb_inventario
+                $selectUsuario = "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.descricao, tb_sala.nomeSala, tb_inventario.quantidade FROM tb_inventario
                                     LEFT JOIN tb_sala ON tb_inventario.idSala = tb_sala.idSala
                                     
                                     WHERE UPPER(tb_sala.nomeSala) LIKE '%{$pesquisa}%'";
@@ -31,7 +31,7 @@ function consultarItem()
                 break;
         }
     }else{
-        $selectUsuario = "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.descricao, tb_sala.nomeSala FROM tb_inventario
+        $selectUsuario = "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.descricao, tb_sala.nomeSala, tb_inventario.quantidade FROM tb_inventario
                                     LEFT JOIN tb_sala ON tb_inventario.idSala = tb_sala.idSala";
     }
 

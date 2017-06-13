@@ -4,7 +4,7 @@ include "../Control/controleCalendario.php";
 $info = array(
         'tabela'=> 'tb_aulas',
         'data' => 'dataInicio',
-        'titulo'=> 'nomeAula',);
+        'titulo'=> 'nomeAula');
 
 ?>
 <!doctype html>

@@ -111,7 +111,7 @@ include "navbar.php";
                         <div class="row">
                             <div class="col-md-8">
                                 <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
-                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
+                                       placeholder="Insira sua consulta" style="margin-top:10px;width: 100%" type="text">
                             </div>
                             <div class="col-md-4">
                                 <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
@@ -131,6 +131,7 @@ include "navbar.php";
                             <th>Nome Peça</th>
                             <th>Descrição</th>
                             <th>Sala</th>
+                            <th>Quantidade</th>
                             <th class="text-center" >Editar</th>
                             <th class="text-center">Remover</th>
                         </tr>
@@ -141,6 +142,7 @@ include "navbar.php";
                                    <td>".$row['nomePeca']."</td>
                                    <td>".$row['descricao']."</td>
                                    <td>".$row['nomeSala']."</td>
+                                   <td>".$row['quantidade']."</td>
                                    <td class=\"text-center\" ><i class=\"glyphicon glyphicon-pencil\"></i></td>
                                    <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
                             </tr>";

@@ -11,6 +11,7 @@ function inserirItem(){
 
     $nomePeça = $_POST['fieldNomePeca'];
     $descricaoPeca = $_POST['fieldDescricaoPeca'];
+    $quantidade = $_POST['fieldQuantidade'];
 
     $valorDropSala = $_POST['dropSala'];
     $selectIdSala = "SELECT tb_sala.idSala FROM tb_sala
@@ -19,10 +20,10 @@ function inserirItem(){
 
     $idSala = mysqli_fetch_row($sala);
 
-    $inserirItem = "INSERT INTO tb_inventario(nomePeca, descricao, idSala) VALUES ('{$nomePeça}','{$descricaoPeca}','{$idSala[0]}')";
+    $inserirItem = "INSERT INTO tb_inventario(nomePeca, descricao, idSala, quantidade) VALUES ('{$nomePeça}','{$descricaoPeca}','{$idSala[0]}','{$quantidade}')";
 
 
-    if ($nomePeça and $descricaoPeca){
+    if ($nomePeça and $descricaoPeca and $quantidade){
 
         if ($conn->query($inserirItem)== true){
             echo '<SCRIPT>
