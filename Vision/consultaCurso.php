@@ -131,7 +131,7 @@ include "navMenu.php";
         </div>
         <div>
             <div class="col-md-12" style="width: 100%;">
-                <fieldset style="margin-bottom: 150px">
+                <fieldset style="margin-bottom: 150px;">
                     <legend id="labelsLogin">Consulta</legend>
                     <table class="table">
                         <tr>

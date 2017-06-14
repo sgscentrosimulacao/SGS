@@ -102,7 +102,7 @@ include "navMenu.php";
     <div class="col-md-8 zeroPadding teste">
         <div>
             <form action="consultaSala.php" method="post">
-                <fieldset id="consulta">
+                <fieldset id="fieldsetPositionNone">
                     <legend id="labelsLogin">Consulta de Sala</legend>
                     <div class="col-md-12">
                         <div class="editor-label col-md-4" id="tipoPesquisaLabel" style=" margin-top:10px;">
@@ -130,7 +130,7 @@ include "navMenu.php";
         </div>
         <div>
             <div class="col-md-12" style="width: 100%;">
-                <fieldset style="margin-bottom: 150px;">
+                <fieldset id="fieldsetPositionNone">
                     <legend id="labelsLogin">Consulta</legend>
                     <table class="table">
                         <tr>

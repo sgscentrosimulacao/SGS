@@ -108,7 +108,7 @@ include "navMenu.php";
         </div>
     </div>
     <div class="col-md-8     zeroPadding">
-        <fieldset style="position: inherit; left: 0;right: 0">
+        <fieldset id="fieldsetPositionNone">
             <legend class="text-center" id="labelsLogin">Calendário de Reservas - 2017</legend>
 
             <div class="calendario">

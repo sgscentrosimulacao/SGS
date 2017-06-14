@@ -113,7 +113,7 @@ include "navMenu.php";
             <div class="col-md-12">
 
             <form action="../Control/inserirDisciplina.php" method="post">
-                <fieldset>
+                <fieldset id="fieldsetPositionNone" style="margin-bottom: 0;">
                     <legend id="labelsLogin"> Cadastrar Disciplina</legend>
 
                     <div class="col-md-12">
@@ -185,7 +185,7 @@ include "navMenu.php";
         <div>
             <div class="col-md-12">
             <form action="../Control/inserirAula.php" method="post">
-                <fieldset style="margin-bottom: 150px">
+                <fieldset id="fieldsetPositionNone">
                     <legend id="labelsLogin"> Cadastrar Aulas</legend>
 
                     <div class="col-md-12">

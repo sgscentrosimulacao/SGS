@@ -102,7 +102,7 @@ include "navMenu.php";
     <div class="col-md-8 zeroPadding teste">
         <div>
             <form action="consultaConselho.php" method="post">
-                <fieldset id="consulta">
+                <fieldset id="fieldsetPositionNone">
                     <legend id="labelsLogin">Consulta de Conselho</legend>
                     <div class="col-md-12">
                         <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">

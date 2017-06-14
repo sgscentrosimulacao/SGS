@@ -20,7 +20,7 @@ include "../Control/selectDisciplina.php";
         <div class="col-md-8 zeroPadding teste">
             <div>
                 <div class="col-md-12" style="width: 100%;">
-                    <fieldset>
+                    <fieldset id="fieldsetPositionNone">
                         <legend id="labelsLogin">Consulta Aula</legend>
                         <table class="table">
                             <tr>

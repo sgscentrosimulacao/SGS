@@ -135,38 +135,39 @@ include "navMenu.php";
             </form>
         </div>
         <div>
-            <div class="col-md-12" style="width: 100%;">
-            <fieldset >
+            <fieldset>
                 <table class="table">
                     <tr>
-                        <th>ID</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
                         <th>Usuário</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">E-mail</th>
                         <th>Conselho</th>
-                        <th>NºConselho</th>
-                        <th>Instituição</th>
-                        <th class="text-center" >Editar</th>
-                        <th class="text-center">Remover</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">NºConselho</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Instituição</th>
+                        <th class="text-center visible-lg visible-md visible-sm hidden-xs hidden-sm" >Editar</th>
+                        <th class="text-center visible-lg visible-md visible-sm hidden-xs hidden-sm">Remover</th>
+                        <th></th>
                     </tr>
                     <?php
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>
-                                   <td>{$row['idUsuario']}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['idUsuario']}</td>
                                    <td>{$row['usuario']}</td>
                                    <td>{$row['nomeUsuario']}</td>
-                                   <td>{$row['email']}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['email']}</td>
                                    <td>{$row['nomeConselho']}</td>
-                                   <td>{$row['numeroConselho']}</td>
-                                   <td>{$row['nomeInstituicao']}</td>    
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['numeroConselho']}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['nomeInstituicao']}</td>    
+                                   <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                                   <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                                   <td class=\"text-center hidden-lg hidden-md hidden-sm\"><a class='btn btn-info btn-circle'><i class=\"glyphicon glyphicon-pencil\"></i></a></td>
+                                   
                               </tr>";
                     }
                     ?>
                 </table>
             </fieldset>
-            </div>
         </div>
 
     </div>

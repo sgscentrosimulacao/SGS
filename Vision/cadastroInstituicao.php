@@ -104,7 +104,7 @@ include "navMenu.php";
 
         <form action="../Control/inserirInstituicao.php" method="post">
             <div class="col-md-12">
-                <fieldset>
+                <fieldset id="fieldsetPositionNone">
                     <legend id="labelsLogin"> Cadastrar Instituição</legend>
 
                     <div class="col-md-12">

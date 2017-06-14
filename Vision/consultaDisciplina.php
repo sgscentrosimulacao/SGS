@@ -100,37 +100,35 @@ include "navMenu.php";
         </div>
     </div>
     <div class="col-md-8 zeroPadding teste">
-        <div>
-            <form action="consultaDisciplina.php" method="post">
-                <fieldset id="consulta">
-                    <legend id="labelsLogin">Consulta de Disciplina</legend>
+        <form action="consultaDisciplina.php" method="post">
+            <fieldset id="fieldsetPositionNone">
+                <legend id="labelsLogin">Consulta de Disciplina</legend>
 
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
-                            <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
+                <div class="col-md-12">
+                    <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                        <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
+                    </div>
+                    <div class="dropdown col-md-8" style="">
+                        <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                            <option value="1">Nome Disciplina</option>
+                            <option value="2">Curso</option>
+                            <option value="4">Regente</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
+                                   placeholder="Insira sua consulta" style="width: 100%" type="text">
                         </div>
-                        <div class="dropdown col-md-8" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
-                                <option value="1">Nome Disciplina</option>
-                                <option value="2">Curso</option>
-                                <option value="4">Regente</option>
-                            </select>
+                        <div class="col-md-4">
+                            <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
-                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+                </div>
+            </fieldset>
+        </form>
         <div>
             <div class="col-md-12" style="width: 100%;">
                 <fieldset style="margin-bottom: 150px;">
@@ -210,7 +208,6 @@ include "navMenu.php";
                 ?>
             </div>
         </div>
-
     </div>
 </div>
 <?php

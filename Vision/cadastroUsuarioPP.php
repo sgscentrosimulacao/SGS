@@ -102,7 +102,7 @@ include "navMenu.php";
     <div class="col-md-8">
         <div class="col-md-12">
             <form action="./../Control/inserirUsuarioPP.php" method="post">
-                <fieldset style="margin-bottom: 150px">
+                <fieldset id="fieldsetPositionNone">
                     <legend><p id="labelsLogin">Cadastrar Usuário</p></legend>
 
                     <div class="col-md-12">

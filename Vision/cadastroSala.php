@@ -102,7 +102,7 @@ include "navMenu.php";
     <div class="col-md-8 zeroPadding">
         <form action="../Control/inserirSala.php" method="post">
             <div class="col-md-12">
-                <fieldset>
+                <fieldset id="fieldsetPositionNone">
                     <legend id="labelsLogin"> Cadastrar Sala</legend>
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">
