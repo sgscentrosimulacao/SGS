@@ -20,9 +20,10 @@
 <body>
 <?php
 include "navbar.php";
+include "navMenu.php";
 ?>
 <div>
-    <div class="col-md-4">
+    <div class="col-md-4 visible-lg visible-md visible-sm hidden-xs hidden-sm">
         <div>
             <div class="col-md-12">
                 <fieldset style="left: 0; margin-left: 50px;">
@@ -176,7 +177,7 @@ include "navbar.php";
         <div>
             <div class="col-md-12">
             <form action="../Control/inserirAula.php" method="post">
-                <fieldset style="margin-bottom: 120px">
+                <fieldset style="margin-bottom: 150px">
                     <legend id="labelsLogin"> Cadastrar Aulas</legend>
 
                     <div class="col-md-12">

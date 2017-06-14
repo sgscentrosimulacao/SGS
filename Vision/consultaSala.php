@@ -16,9 +16,10 @@ include "../Control/selectSala.php";
 <body>
 <?php
 include "navbar.php";
+include "navMenu.php";
 ?>
 <div>
-    <div class="col-md-4">
+    <div class="col-md-4 visible-lg visible-md visible-sm hidden-xs hidden-sm">
         <div>
             <div class="col-md-12">
                 <fieldset style="left: 0; margin-left: 50px;">
@@ -96,7 +97,7 @@ include "navbar.php";
                 <fieldset id="consulta">
                     <legend id="labelsLogin">Consulta de Sala</legend>
                     <div class="col-md-12">
-                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style=" margin-top:10px;">
                             <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
                         </div>
                         <div class="dropdown col-md-8" style="">
@@ -121,7 +122,7 @@ include "navbar.php";
         </div>
         <div>
             <div class="col-md-12" style="width: 100%;">
-                <fieldset>
+                <fieldset style="margin-bottom: 150px;">
                     <legend id="labelsLogin">Consulta</legend>
                     <table class="table">
                         <tr>

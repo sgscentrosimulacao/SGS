@@ -49,11 +49,14 @@
         </div>
     </div>
 </nav>
+<?php
+    include "navMenu.php";
+?>
 <div>
-    <div class="col-md-4">
+    <div class="col-md-4 visible-lg visible-md visible-sm hidden-xs hidden-sm">
         <div>
             <div class="col-md-12">
-                <fieldset style="left: 0; margin-left: 50px;">
+                <fieldset style="left: 0; margin-left: 50px; position: none">
                     <div>
                         <div class="col-sm-12">
 
@@ -123,9 +126,9 @@
         </div>
     </div>
     <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-bottom: 20%; margin-left: -100px; margin-right: 20px; position: inherit">
+        <fieldset style="left: 0; margin-left: 0; margin-right: 20px; position: relative">
             <div class="col-md-12">
-                <img src="../img/SGS_LogoMarca.png" style="display: block; margin-left: auto; margin-right: auto;">
+                <img src="../img/SGS_LogoMarca.png" style="width:100%; height:100%;display: block; margin-left: auto; margin-right: auto;">
             </div>
         </fieldset>
     </div>

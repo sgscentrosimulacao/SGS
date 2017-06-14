@@ -16,9 +16,10 @@ include "../Control/selectDisciplina.php";
 <body>
 <?php
 include "navbar.php";
+include "navMenu.php";
 ?>
 <div>
-    <div class="col-md-4">
+    <div class="col-md-4 visible-lg visible-md visible-sm hidden-xs hidden-sm">
         <div>
             <div class="col-md-12">
                 <fieldset style="left: 0; margin-left: 50px;">
@@ -124,7 +125,7 @@ include "navbar.php";
         </div>
         <div>
             <div class="col-md-12" style="width: 100%;">
-                <fieldset>
+                <fieldset style="margin-bottom: 150px;">
                     <legend id="labelsLogin">Consulta</legend>
                     <table class="table">
                         <tr>

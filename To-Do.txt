@@ -1,5 +1,3 @@
-Marcelo
-
 TAREFAS A FAZER
 
 ? = Será;
@@ -26,7 +24,6 @@ Geral:
  - Permissões de visibilidade -> Tela principal e Tela principal ADMIN *****;
  - Implementar campos de "editar" e "remover" das tabelas *****
  - PDF do plano de ensino -> BLOB *****;
- - RESPONSIVIDADE;
  - Página SOBRE;
  - Implementar grabfocus nos devidos lugares;
  - Não apagar campos ao errar a inserção;
