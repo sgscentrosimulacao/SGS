@@ -1,11 +1,6 @@
 <?php
 include "../Control/sessionControl.php";
-include "../Control/controleCalendario.php";
-$info = array(
-        'tabela'=> 'tb_aulas',
-        'data' => 'dataInicio',
-        'titulo'=> 'nomeAula');
-
+include "../Control/selectCurso.php"
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -16,10 +11,7 @@ $info = array(
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style_index.css">
-    <script src="../js/jquery.js"></script>
-    <script src="../js/controlers.js"></script>
-
-    <title>SGS - Calendário</title>
+    <title>SGS - Consulta Curso</title>
 </head>
 <body>
 <?php
@@ -87,10 +79,10 @@ include "navMenu.php";
                             </div>
                             <div>
                                 <a href="consultaCurso.php"><button type="button" class="btn btn-default"
-                                                                    id="leftNavBarButtons">Curso</button></a>
+                                                                    id="leftNavBarButtonsAtivo">Curso</button></a>
                             </div>
                             <div>
-                                <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
+                                <a href="consultaConselho.php"><button type="button" class="btn btn-default"
                                                                        id="leftNavBarButtons">Conselho</button></a>
                             </div>
                             <div>
@@ -99,7 +91,7 @@ include "navMenu.php";
                             </div>
                             <div>
                                 <a href="calendario.php"><button type="button" class="btn btn-default"
-                                                                 id="leftNavBarButtonsAtivo">Calendário</button></a>
+                                                                 id="leftNavBarButtons">Calendário</button></a>
                             </div>
                         </div>
                     </div>
@@ -107,41 +99,65 @@ include "navMenu.php";
             </div>
         </div>
     </div>
-    <div class="col-md-8     zeroPadding">
-        <fieldset style="position: inherit; left: 0;right: 0">
-            <legend class="text-center" id="labelsLogin">Calendário de Reservas - 2017</legend>
+    <div class="col-md-8 zeroPadding teste">
+        <div>
+            <form action="consultaCurso.php" method="post">
+                <fieldset id="consulta">
+                    <legend id="labelsLogin">Consulta de Curso</legend>
 
-            <div class="calendario">
-                <?php
-                $eventos = montaEventos($info);
-                montaCalendario($eventos);
-                ?>
-                <div class="legends">
-                    <span class="legenda"><span class="blue"></span> Aulas Marcadas</span>
-                    <span class="legenda"><span class="red"></span> Hoje</span>
-                </div>
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
+                            <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
+                        </div>
+                        <div class="dropdown col-md-8" style="">
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                                <option value="1">Nome Curso</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
+                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
+                            </div>
+                            <div class="col-md-4">
+                                <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <div class="col-md-12" style="width: 100%;">
+                <fieldset style="margin-bottom: 150px">
+                    <legend id="labelsLogin">Consulta</legend>
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome Curso</th>
+                            <th class="text-center" >Editar</th>
+                            <th class="text-center">Remover</th>
+
+                        </tr>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>
+                                   <td>".$row['idCurso']."</td>
+                                   <td>".$row['nomeCurso']."</td>
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
+                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
+                            </tr>";
+                        }?>
+                    </table>
+                </fieldset>
             </div>
-
-            <script type="text/javascript" src="js/jquery.js"></script>
-            <script type="text/javascript" src="js/functions.js"></script>
-
-        </fieldset>
-        <?php
-        echo "<div>";
-            mostraAulas();
-        echo "</div>";
-        ?>
+        </div>
     </div>
 </div>
-
-
-
 <?php
 include "footer.php";
 ?>
 </body>
 </html>
-
-<?php
-
-?>

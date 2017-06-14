@@ -45,6 +45,10 @@ include "navMenu.php";
                                                                           id="leftNavBarButtons">Instituicão</button></a>
                             </div>
                             <div>
+                                <a href="cadastroCurso.php"><button type="button" class="btn btn-default"
+                                                                    id="leftNavBarButtons">Curso</button></a>
+                            </div>
+                            <div>
                                 <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
                                                                        id="leftNavBarButtons">Conselho</button></a>
                             </div>
@@ -72,6 +76,10 @@ include "navMenu.php";
                             <div>
                                 <a href="consultaInstituicao.php"><button type="button" class="btn btn-default"
                                                                           id="leftNavBarButtonsAtivo">Instituicão</button></a>
+                            </div>
+                            <div>
+                                <a href="consultaCurso.php"><button type="button" class="btn btn-default"
+                                                                    id="leftNavBarButtons">Curso</button></a>
                             </div>
                             <div>
                                 <a href="consultaConselho.php"><button type="button" class="btn btn-default"
