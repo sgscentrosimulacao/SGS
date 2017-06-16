@@ -43,7 +43,6 @@ function mostraSenha(field ,campo){
     }
 }
 
-
 $(function(){
     var data = new Date();
     var mesAtual = data.getMonth()+1;

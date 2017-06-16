@@ -7,10 +7,6 @@ TAREFAS A FAZER
 INDEX: 
  - Esqueci minha senha;
 
-Página Principal:
- - Inserção de cursos;
- - Pesquisa de cursos;
-
 Cadastro Disciplina:
  - Inserir possibilidade de mais horas;
  - (Tabela onde ira adicionando aulas relacionadas a disciplina)

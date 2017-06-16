@@ -135,6 +135,7 @@ include "navMenu.php";
             </form>
         </div>
         <div>
+
             <fieldset>
                 <table class="table">
                     <tr>
@@ -161,9 +162,14 @@ include "navMenu.php";
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['nomeInstituicao']}</td>    
                                    <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
                                    <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                                   <td class=\"text-center hidden-lg hidden-md hidden-sm\"><a class='btn btn-info btn-circle'><i class=\"glyphicon glyphicon-pencil\"></i></a></td>
+                                   <td class=\"text-center hidden-lg hidden-md hidden-sm\"><a href='?id={$row['idUsuario']}' class='btn btn-info btn-circle'><i class=\"glyphicon glyphicon-pencil\"></i></a></td>
                                    
                               </tr>";
+                    }
+                    if (isset($_GET['id'])){
+
+                        echo "<script> var minhaJanela = window.open('popUpConsultaUsuario.php','dados','width=280,height=225');
+                        //minhaJanela.document.write('<body><fieldset id=\'fieldsetPositionNone\' <div class=\'col-md-12\'><div class=\'editor-label col-md-4\' id=\'tipoPesquisaLabel\'><label for=\'tipoPesquisaLabel\' id=\'labelsLogin\'>ID:</label><label for=\'tipoPesquisaLabel\' id=\'labelsLogin\'></label></div></fieldset></div></body>\");</script>";
                     }
                     ?>
                 </table>
