@@ -9,7 +9,7 @@
                 <span class="icon-bar" style="background-color: #a0c7e7"></span>
             </button>
 
-            <a class="navbar-brand zeroPadding" href="index.php"><img src="..\img\SGS_Logo.png"
+            <a class="navbar-brand zeroPadding" href="paginaPrincipalAdmin.php"><img src="..\img\SGS_Logo.png"
                                                                       id="logoImg"></a>
             <div class="col-lg" id="divLogo"></div>
 

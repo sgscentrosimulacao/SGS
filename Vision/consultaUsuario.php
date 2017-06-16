@@ -162,15 +162,77 @@ include "navMenu.php";
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['nomeInstituicao']}</td>    
                                    <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
                                    <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                                   <td class=\"text-center hidden-lg hidden-md hidden-sm\"><a href='?id={$row['idUsuario']}' class='btn btn-info btn-circle'><i class=\"glyphicon glyphicon-pencil\"></i></a></td>
-                                   
-                              </tr>";
+                                   <td class=\"text-center hidden-lg hidden-md hidden-sm\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDados{$row['idUsuario']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                    
+                              </tr>
+   
+                              <div id=\"modalDados{$row['idUsuario']}\" class=\"modal fade\" role=\"dialog\">
+                                    <div class=\"modal-dialog\">
+                                        <div class=\"modal-content\">
+                                        <div class=\"modal-header\">
+                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                            <h4 class=\"modal-title\">Dados Usuário</h4>
+                                        </div>
+                                        <div class=\"modal-body\">
+                                            <div class='col-sm-12'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>ID:</label>
+                                                <label>".$row["idUsuario"]."</label>
+                                            </div>
+                                        </div>
+                                        <div class='col-md-12'>
+                                            <div class='col-sm-12'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Usuário:</label>
+                                                <label>".$row["usuario"]."</label>
+                                            </div>
+                                        </div>
+                                        <div class='col-md-12'>
+                                            <div class='col-sm-12'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Nome Usuário:</label>
+                                                <label>".$row["nomeUsuario"]."</label>
+                                            </div>
+                                        </div>
+                                        <div class='col-md-12'>
+                                            <div class='col-sm-12'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>E-mail:</label>
+                                                <label>".$row["email"]."</label>
+                                            </div>
+                                        </div>    
+                                        <div class='col-md-12'>
+                                            <div class='col-sm-12'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Nome Conselho:</label>
+                                                <label>".$row["nomeConselho"]."</label>
+                                            </div>
+                                        </div>
+                                        <div class='col-md-12'>
+                                            <div class='col-sm-12'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Número Conselho:</label>
+                                                <label>".$row["numeroConselho"]."</label>
+                                            </div>
+                                        </div>
+                                        <div class='col-md-12'>
+                                            <div class='col-sm-6'>
+                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Nome Instituição:</label>
+                                            </div>
+                                            <div class='col-sm-4'>
+                                                <input type='text' value='{$row["nomeInstituicao"]}'/>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class=\"modal-footer\">
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                              
+                              
+                              ";
                     }
-                    if (isset($_GET['id'])){
+                    /*if (isset($_GET['id'])){
 
-                        echo "<script> var minhaJanela = window.open('popUpConsultaUsuario.php','dados','width=280,height=225');
-                        //minhaJanela.document.write('<body><fieldset id=\'fieldsetPositionNone\' <div class=\'col-md-12\'><div class=\'editor-label col-md-4\' id=\'tipoPesquisaLabel\'><label for=\'tipoPesquisaLabel\' id=\'labelsLogin\'>ID:</label><label for=\'tipoPesquisaLabel\' id=\'labelsLogin\'></label></div></fieldset></div></body>\");</script>";
-                    }
+                        echo "<script> var minhaJanela = window.open('popUpConsultaUsuario.php?id={$_GET['id']}','dados','width=280,height=225');</script>";
+                    }*/
                     ?>
                 </table>
             </fieldset>

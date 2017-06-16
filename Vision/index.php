@@ -51,12 +51,12 @@
 <div class="corpo">
 <div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-2 sidenav zeroPadding">
+        <div class="col-sm-3 sidenav zeroPadding">
         </div>
-        <div class="col-sm-8 text-left" id="ColunaDoMeio">
+        <div class="col-sm-6 text-left" id="ColunaDoMeio">
             <form action="./../Control/autenticacao.php" method="post">
 
-            <fieldset>
+            <fieldset id="fieldsetPositionNone">
                 <legend><p id="labelsLogin">Login</p></legend>
 
                 <div class="col-md-12">
@@ -94,7 +94,7 @@
             </fieldset>
             </form>
         </div>
-        <div class="col-sm-2 sidenav zeroPadding"></div>
+        <div class="col-sm-3 sidenav zeroPadding"></div>
 
     </div>
 </div>

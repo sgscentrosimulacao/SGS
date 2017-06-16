@@ -1,10 +1,8 @@
 <?php
 require "../Control/controleDoBanco.php";
 
-
 $result = consultarUsuario();
 $result2 = selecionarUsuarioId();
-
 
 
 function consultarUsuario()
@@ -96,6 +94,7 @@ function selecionarUsuarioId(){
 
 
         $queryIdUsuario = mysqli_query($conn, $selectUsuarioId);
+
 
         fecharDatabase($conn);
         return $queryIdUsuario;
