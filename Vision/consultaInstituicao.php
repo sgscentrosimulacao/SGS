@@ -102,7 +102,7 @@ include "navMenu.php";
     <div class="col-md-8 zeroPadding teste">
         <div>
             <form action="consultaInstituicao.php" method="post">
-                <fieldset id="fieldsetPositionNone">
+                <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
                     <legend id="labelsLogin">Consulta de Instituição</legend>
 
                     <div class="col-md-12">
@@ -130,29 +130,65 @@ include "navMenu.php";
             </form>
         </div>
         <div>
-            <div class="col-md-12" style="width: 100%;">
-                <fieldset id="fieldsetPositionNone">
-                    <legend id="labelsLogin">Consulta</legend>
-                    <table class="table">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome Instituição</th>
-                            <th class="text-center" >Editar</th>
-                            <th class="text-center">Remover</th>
-
+            <fieldset id="fieldsetPositionNone">
+                <legend id="labelsLogin">Consulta</legend>
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Instituição</th>
+                        <th></th>
+                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                               <td>".$row['idInstituicao']."</td>
+                               <td>".$row['nomeInstituicao']."</td>
+                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosInstituicao{$row['idInstituicao']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                         </tr>
-                        <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                                   <td>".$row['idInstituicao']."</td>
-                                   <td>".$row['nomeInstituicao']."</td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                            </tr>";
-                        }?>
-                    </table>
-                </fieldset>
-            </div>
+                        
+                        <div id=\"modalDadosInstituicao{$row['idInstituicao']}\" class=\"modal fade\" role=\"dialog\">
+                            <div class=\"modal-dialog\">
+                                <div class=\"modal-content\">
+                                    <div class=\"modal-header\">
+                                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                        <h4 class=\"modal-title\" id='labelsLogin'>Dados da Instituição</h4>
+                                    </div>
+                                            
+                                    <div class=\"modal-body\">
+                                        
+                                        <form action='../Control/updateInstituicao.php' method='post'>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>ID:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' disabled value='{$row["idInstituicao"]}' name='fieldIdInstituicao'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Nome Instituição:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' name='fieldNomeInstituicao'/>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class=\"modal-footer\">
+                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                                <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                            </div>
+                                      </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
+                    }?>
+                </table>
+            </fieldset>
         </div>
     </div>
 </div>

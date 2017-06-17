@@ -127,39 +127,123 @@
 
         if(isset($_GET['id'])){
             echo "
-            <fieldset style='left: 0; right: 0; position: inherit;' >
+            <fieldset id='fieldsetPositionNone'>
                 <legend id=\"labelsLogin\">Aulas</legend>
                 <table class=\"table\">
                     <tr>
-                        <th>ID</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
                         <th>Nome Aula</th>
                         <th>Data Inicio</th>
                         <th>Data Fim</th>
-                        <th>Hora Inicio</th>
-                        <th>Hora Fim</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Fim</th>
                         <th>Nome Disciplina</th>
-                        <th>Curso</th>
-                        <th>Sala</th>
-                        <th class=\"text-center\" >Editar</th>
-                        <th class=\"text-center\">Remover</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Curso</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Sala</th>
                     </tr>";
 
 
 
                 while ($row = mysqli_fetch_assoc($result3)) {
                     echo " <tr>
-                           <td>".$row['idAula']."</td>
-                           <td>".$row['nomeAula']."</td>
-                           <td>".$row['dataInicio']."</td>
-                           <td>".$row['dataFim']."</td>
-                           <td>".$row['horarioInicio']."</td>
-                           <td>".$row['horarioFim']."</td>
-                           <td>".$row['nomeDisciplina']."</td> 
-                           <td>".$row['nomeCurso']."</td> 
-                           <td>".$row['nomeSala']."</td> 
-                           <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                           <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                    </tr>";}
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
+                           <td>{$row['nomeAula']}</td>
+                           <td>{$row['dataInicio']}</td>
+                           <td>{$row['dataFim']}</td>
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioInicio']}</td>
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioFim']}</td>
+                           <td>{$row['nomeDisciplina']}</td> 
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeCurso']}</td> 
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeSala']}</td> 
+                           <td class=\"text - center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row['idAula']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                    </tr>
+                    
+                    <div id=\"modalDadosAula{$row['idAula']}\" class=\"modal fade\" role=\"dialog\">
+                        <div class=\"modal-dialog\">
+                            <div class=\"modal-content\">
+                                <div class=\"modal-header\">
+                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                    <h4 class=\"modal-title\" id='labelsLogin'>Dados da Aula</h4>
+                                </div>        
+                                <div class=\"modal-body\">
+                                    
+                                    <form action='../Control/updateAula.php' method='post'>
+                                    
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>ID:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' disabled value='{$row["idAula"]}' name='fieldIdAula'/>
+                                        </div>
+                                    </div>
+                                
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Nome Aula:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row["nomeAula"]}' name='fieldNomeAula'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Data Inicio:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row["dataInicio"]}' name='fieldDataInicio'/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Data Fim:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row["dataFim"]}' name='fieldDataFim'/>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Hora Inicio:</label>
+                                          </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row["horarioInicio"]}' name='fieldHoraInicio'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Hora Fim:</label>
+                                          </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row["horarioFim"]}' name='fieldHoraFim'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Curso:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' name='fieldNomeCurso'/>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class=\"modal-footer\">
+                                        <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                        <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                        <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                    </div>
+                              </form>
+                            </div>
+                          </div>    
+                        </div>
+                     </div>";
+                }
                 echo "
                 </table>
             </fieldset>";

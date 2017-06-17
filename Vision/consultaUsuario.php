@@ -147,8 +147,6 @@ include "navMenu.php";
                         <th>Conselho</th>
                         <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">NºConselho</th>
                         <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Instituição</th>
-                        <th class="text-center visible-lg visible-md visible-sm hidden-xs hidden-sm" >Editar</th>
-                        <th class="text-center visible-lg visible-md visible-sm hidden-xs hidden-sm">Remover</th>
                         <th></th>
                     </tr>
                     <?php
@@ -161,12 +159,9 @@ include "navMenu.php";
                                    <td>{$row['nomeConselho']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['numeroConselho']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['nomeInstituicao']}</td>    
-                                   <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                                   <td class=\"text-center visible-lg visible-md visible-sm hidden-xs hidden-sm\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                                   <td class=\"text-center hidden-lg hidden-md hidden-sm\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDados{$row['idUsuario']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                                   <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDados{$row['idUsuario']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                     
                               </tr>
-   
                               <div id=\"modalDados{$row['idUsuario']}\" class=\"modal fade\" role=\"dialog\">
                                     <div class=\"modal-dialog\">
                                         <div class=\"modal-content\">
@@ -174,6 +169,7 @@ include "navMenu.php";
                                                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
                                                 <h4 class=\"modal-title\" id='labelsLogin'>Dados do Usuário</h4>
                                             </div>
+                                            
                                     <div class=\"modal-body\">
                                         
                                         <form action='../Control/updateUsuario.php' method='post'>
@@ -183,7 +179,7 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>ID:</label>
                                                 </div>
                                                 <div class='col-sm-4'>
-                                                    <input type='text' disabled value='{$row["idUsuario"]}' name='fieldIdUsuario'/>
+                                                    <input class=\"form-control\" type='text' disabled value='{$row["idUsuario"]}' name='fieldIdUsuario'/>
                                                 </div>
                                             </div>
                                         
@@ -192,7 +188,7 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>Usuário:</label>
                                                 </div>
                                                 <div class='col-sm-4'>
-                                                    <input type='text' value='{$row["usuario"]}' id='fieldUsuario' name='fieldUsuario'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["usuario"]}' id='fieldUsuario' name='fieldUsuario'/>
                                                 </div>
                                             </div>
                                         
@@ -201,7 +197,7 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>Nome Usuário:</label>
                                                 </div>
                                                 <div class='col-sm-4'>
-                                                    <input type='text' value='{$row["nomeUsuario"]}' name='fieldNomeUsuario'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' name='fieldNomeUsuario'/>
                                                 </div>
                                             </div>
                                         
@@ -210,7 +206,7 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>E-mail:</label>
                                                   </div>
                                                 <div class='col-sm-4'>
-                                                    <input type='text' value='{$row["email"]}' name='fieldEmail'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["email"]}' name='fieldEmail'/>
                                                 </div>
                                             </div>    
                                         
@@ -232,15 +228,15 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>Número Conselho:</label>
                                                 </div>
                                                 <div class='col-sm-4'>
-                                                    <input type='text' value='{$row["numeroConselho"]}' name='fieldNumeroConselho'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["numeroConselho"]}' name='fieldNumeroConselho'/>
                                                 </div>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-12'>
+                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>Nome Instituição:</label>
                                                 </div>
-                                                <div class='col-sm-12'>
+                                                <div class='col-sm-4'>
                                                     <select class=\"btn btn-default dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" name=\"dropInstituicao\">";
                                                         while ($row3 = mysqli_fetch_assoc($resultInstituicao)) {
                                                             echo "<option value={$row3["nomeInstituicao"]}>{$row3["nomeInstituicao"]}</option>";
@@ -251,9 +247,9 @@ include "navMenu.php";
                                             </div> 
                                         
                                             <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success'>Alterar</button>
-                                                <button class='btn btn-danger'>Excluir</button>
-                                                <button class='btn btn-warning' data-dismiss='modal'>Cancelar</button>
+                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                                <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
                                             </div>
                                       </form>
                                     </div>

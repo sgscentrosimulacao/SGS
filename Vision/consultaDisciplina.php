@@ -101,7 +101,7 @@ include "navMenu.php";
     </div>
     <div class="col-md-8 zeroPadding teste">
         <form action="consultaDisciplina.php" method="post">
-            <fieldset id="fieldsetPositionNone">
+            <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px">
                 <legend id="labelsLogin">Consulta de Disciplina</legend>
 
                 <div class="col-md-12">
@@ -130,83 +130,259 @@ include "navMenu.php";
             </fieldset>
         </form>
         <div>
-            <div class="col-md-12" style="width: 100%;">
-                <fieldset style="margin-bottom: 150px;">
-                    <legend id="labelsLogin">Consulta</legend>
-                    <table class="table">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome Disc.</th>
-                            <th>Descrição</th>
-                            <th>Visibilidade</th>
-                            <th>Alunos</th>
-                            <th>Curso</th>
-                            <th>Regente</th>
-                            <th>Visualizar</th>
-                            <th class="text-center" >Editar</th>
-                            <th class="text-center">Remover</th>
+            <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
+                <legend id="labelsLogin">Consulta</legend>
+                <table class="table">
+                    <tr>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
+                        <th>Nome Disc.</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Visibilidade</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Alunos</th>
+                        <th>Curso</th>
+                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Regente</th>
+                        <th>Visualizar</th>
+                        <th></th>
 
+                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['idDisciplina']}</td>
+                               <td>{$row['nomeDisciplina']}</td>
+                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['descricao']}</td>
+                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['visibilidade']}</td>
+                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['qntAlunos']}</td>
+                               <td>{$row['nomeCurso']}</td>
+                               <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
+                               <td class=\"text-center\"><a class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
+                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                         </tr>
-                        <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                                   <td>".$row['idDisciplina']."</td>
-                                   <td>".$row['nomeDisciplina']."</td>
-                                   <td>".$row['descricao']."</td>
-                                   <td>".$row['visibilidade']."</td>
-                                   <td>".$row['qntAlunos']."</td>
-                                   <td>".$row['nomeCurso']."</td>
-                                   <td>".$row['nomeUsuario']."</td> 
-                                   <td class=\"text-center\"><a href=\"?id={$row['idDisciplina']}\">Aulas</a></td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                            </tr>";
-                        }
+                        
+                        
+                        <div id=\"modalDadosDisciplina{$row['idDisciplina']}\" class=\"modal fade\" role=\"dialog\">
+                                    <div class=\"modal-dialog\">
+                                        <div class=\"modal-content\">
+                                            <div class=\"modal-header\">
+                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                                <h4 class=\"modal-title\" id='labelsLogin'>Dados da Disciplina</h4>
+                                            </div>
+                                            
+                                    <div class=\"modal-body\">
+                                        
+                                        <form action='../Control/updateDisciplina.php' method='post'>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>ID:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Nome Disciplina:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeDisciplina"]}' id='fieldNomeDisciplina' name='fieldUsuario'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Descrição:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["descricao"]}' name='fieldDescricao'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Visibilidade:</label>
+                                                  </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["visibilidade"]}' name='fieldVisibilidade'/>
+                                                </div>
+                                            </div>    
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Curso:</label>
+                                                  </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' name='fieldNomeCurso'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Regente:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' name='fieldNomeUsuario'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class=\"modal-footer\">
+                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                                <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                            </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>";
+                    }?>
+                </table>
+            </fieldset>
 
-                        ?>
-                    </table>
-                </fieldset>
-                <?php
-                if(isset($_GET['id'])){
+            <?php
+            if(isset($_GET['id'])){
+            echo "
+            <fieldset  style=\"margin-bottom: 150px\">
+                <legend id=\"labelsLogin\">Aulas</legend>
+                <table class=\"table\">
+                    <tr>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
+                        <th>Nome Aula</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Descrição</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Fim</th>
+                        <th>Data Inicio</th>
+                        <th>Data Fim</th>
+                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Cenário</th>
+                        <th>Curso</th>
+                        <th></th>
+                    </tr>";
+
+
+                        while ($row2 = mysqli_fetch_assoc($resutl2)) {
+                            echo " <tr>
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['idAula']}</td>
+                           <td>{$row2['nomeAula']}</td>
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['descricaoAula']}</td>
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['horarioInicio']}</td>
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['horarioFim']}</td>
+                           <td>{$row2['dataInicio']}</td>
+                           <td>{$row2['dataFim']}</td> 
+                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['cenario']}</td> 
+                           <td>{$row2['nomeCurso']}</td>
+                           <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row2['idAula']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                    </tr>
+                    
+                    <div id=\"modalDadosAula{$row2['idAula']}\" class=\"modal fade\" role=\"dialog\">
+                        <div class=\"modal-dialog\">
+                            <div class=\"modal-content\">
+                                <div class=\"modal-header\">
+                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                    <h4 class=\"modal-title\" id='labelsLogin'>Dados da Aula</h4>
+                                </div>        
+                                <div class=\"modal-body\">
+                                    
+                                    <form action='../Control/updateAula.php' method='post'>
+                                    
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>ID:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' disabled value='{$row2["idAula"]}' name='fieldIdAula'/>
+                                        </div>
+                                    </div>
+                                
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Nome Aula:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["nomeAula"]}' name='fieldNomeAula'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Descrição:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["descricaoAula"]}' name='fieldDescricaoAula'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Hora Inicio:</label>
+                                          </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["horarioInicio"]}' name='fieldHoraInicio'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Hora Fim:</label>
+                                          </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["horarioFim"]}' name='fieldHoraFim'/>
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Data Inicio:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["dataInicio"]}' name='fieldDataInicio'/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Data Fim:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["dataFim"]}' name='fieldDataFim'/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Cenário</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["cenario"]}' name='fieldCenario'/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class='col-md-12'>
+                                        <div class='col-sm-6'>
+                                            <label id='labelsLogin'>Curso:</label>
+                                        </div>
+                                        <div class='col-sm-4'>
+                                            <input class=\"form-control\" type='text' value='{$row2["nomeCurso"]}' name='fieldNomeCurso'/>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class=\"modal-footer\">
+                                        <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                        <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                        <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                    </div>
+                              </form>
+                            </div>
+                          </div>    
+                        </div>
+                     </div>";
+                    }
                 echo "
-                <fieldset  style=\"margin-bottom: 150px\">
-                    <legend id=\"labelsLogin\">Aulas</legend>
-                    <table class=\"table\">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome Aula</th>
-                            <th>Descrição</th>
-                            <th>Hora Inicio</th>
-                            <th>Hora Fim</th>
-                            <th>Data Inicio</th>
-                            <th>Data Fim</th>
-                            <th>Cenário</th>
-                            <th>Curso</th>
-                            <th class=\"text-center\" >Editar</th>
-                            <th class=\"text-center\">Remover</th>
-                        </tr>";
-
-
-                            while ($row2 = mysqli_fetch_assoc($resutl2)) {
-                                echo " <tr>
-                               <td>".$row2['idAula']."</td>
-                               <td>".$row2['nomeAula']."</td>
-                               <td>".$row2['descricaoAula']."</td>
-                               <td>".$row2['horarioInicio']."</td>
-                               <td>".$row2['horarioFim']."</td>
-                               <td>".$row2['dataInicio']."</td>
-                               <td>".$row2['dataFim']."</td> 
-                               <td>".$row2['cenario']."</td> 
-                               <td>".$row2['nomeCurso']."</td> 
-                               <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                               <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                        </tr>";}
-                    echo "
-                    </table>
-                </fieldset>";
-                }
-                ?>
-            </div>
+                </table>
+            </fieldset>";
+            }
+            ?>
         </div>
     </div>
 </div>

@@ -3,10 +3,10 @@
     <div class="container-fluid">
         <div class="navbar-header" id="navLogo">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
-                    style="background-color: #55a1fd">
-                <span class="icon-bar" style="background-color: #a0c7e7"></span>
-                <span class="icon-bar" style="background-color: #a0c7e7"></span>
-                <span class="icon-bar" style="background-color: #a0c7e7"></span>
+                    style="background-color: #447d8d">
+                <span class="icon-bar" style="background-color: white"></span>
+                <span class="icon-bar" style="background-color: white"></span>
+                <span class="icon-bar" style="background-color: white"></span>
             </button>
 
             <a class="navbar-brand zeroPadding" href="paginaPrincipalAdmin.php"><img src="..\img\SGS_Logo.png"

@@ -137,18 +137,55 @@ include "navMenu.php";
                         <tr>
                             <th>ID</th>
                             <th>Nome Curso</th>
-                            <th class="text-center" >Editar</th>
-                            <th class="text-center">Remover</th>
-
+                            <th></th>
                         </tr>
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>
                                    <td>".$row['idCurso']."</td>
                                    <td>".$row['nomeCurso']."</td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-pencil\"></i></td>
-                                   <td class=\"text-center\"><i class=\"glyphicon glyphicon-remove\"></i></td>
-                            </tr>";
+                                   <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosCurso{$row['idCurso']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                            </tr>
+                            <div id=\"modalDadosCurso{$row['idCurso']}\" class=\"modal fade\" role=\"dialog\">
+                            <div class=\"modal-dialog\">
+                                <div class=\"modal-content\">
+                                    <div class=\"modal-header\">
+                                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                        <h4 class=\"modal-title\" id='labelsLogin'>Dados do Curso</h4>
+                                    </div>
+                                            
+                                    <div class=\"modal-body\">
+                                        
+                                        <form action='../Control/updateCurso.php' method='post'>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>ID:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' disabled value='{$row["idCurso"]}' name='fieldIdCurso'/>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Nome Curso:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}'  name='fieldNomeCurso'/>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class=\"modal-footer\">
+                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                                <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                            </div>
+                                      </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
                         }?>
                     </table>
                 </fieldset>

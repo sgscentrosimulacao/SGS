@@ -13,8 +13,8 @@
     <div class="container-fluid">
         <div class="navbar-header" id="navLogo">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myMenu"
-                    style="background-color: #5cb3fd">
-                <span style="background-color: #a0c7e7">Menu</span>
+                    style="background-color: #447d8d; width: auto;">
+                <span style="color: white;">Menu</span>
             </button>
         </div>
         <div class="collapse navbar-collapse" id="myMenu">

@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="navbar-header" id="navLogo">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
-                    style="background-color: #5cb3fd">
+                    style="background-color: #447d8d">
                 <span class="icon-bar" style="background-color: #a0c7e7"></span>
                 <span class="icon-bar" style="background-color: #a0c7e7"></span>
                 <span class="icon-bar" style="background-color: #a0c7e7"></span>

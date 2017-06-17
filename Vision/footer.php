@@ -7,7 +7,7 @@
             <p>Powered by Informática Biomédica - UFCSPA</p>
         </div>
         <div class="col-md-4" id="footerDivRight">
-            <img src="../img/UFCSPA MINI.png" id="footerImgRight">
+            <img src="../img/UFCSPA MINI.png" id="footerImgRightLarge">
         </div>
     </div>
 </footer>
@@ -20,7 +20,7 @@
             <p id="footerText">Powered by Informática Biomédica - UFCSPA</p>
         </div>
         <div class="col-sm-4 text-center">
-            <img src="../img/UFCSPA_MINI.png" id="footerImgRight">
+            <img src="../img/UFCSPA_MINI.png" id="footerImgRightSmall">
         </div>
 </div>
 
