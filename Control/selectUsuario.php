@@ -1,5 +1,5 @@
 <?php
-require "../Control/controleDoBanco.php";
+include_once "../Control/controleDoBanco.php";
 
 $result = consultarUsuario();
 $result2 = selecionarUsuarioId();

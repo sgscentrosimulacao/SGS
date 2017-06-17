@@ -29,6 +29,8 @@
 
                 <li><a href="cadastroInstituicao.php" id="leftNavBarButtons">Instituicão</a></li>
 
+                <li><a href="cadastroCurso.php" id="leftNavBarButtons">Curso</a></li>
+
                 <li><a href="cadastroConselho.php" id="leftNavBarButtons">Conselho</a></li>
 
                 <li><a href="cadastroSala.php" id="leftNavBarButtons">Sala</a></li>
@@ -43,6 +45,8 @@
                 <li><a href="consultaItem.php" id="leftNavBarButtons">Item</a></li>
 
                 <li><a href="consultaInstituicao.php" id="leftNavBarButtons">Instituicão</a></li>
+
+                <li><a href="consultaCurso.php" id="leftNavBarButtons">Curso</a></li>
 
                 <li><a href="consultaConselho.php" id="leftNavBarButtons">Conselho</a></li>
 

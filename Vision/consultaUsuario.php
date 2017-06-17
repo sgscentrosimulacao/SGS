@@ -1,6 +1,7 @@
 <?php
 include "../Control/sessionControl.php";
 include "../Control/selectUsuario.php";
+include "../Control/showDrops.php";
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -169,70 +170,97 @@ include "navMenu.php";
                               <div id=\"modalDados{$row['idUsuario']}\" class=\"modal fade\" role=\"dialog\">
                                     <div class=\"modal-dialog\">
                                         <div class=\"modal-content\">
-                                        <div class=\"modal-header\">
-                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                                            <h4 class=\"modal-title\">Dados Usuário</h4>
-                                        </div>
-                                        <div class=\"modal-body\">
-                                            <div class='col-sm-12'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>ID:</label>
-                                                <label>".$row["idUsuario"]."</label>
+                                            <div class=\"modal-header\">
+                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                                <h4 class=\"modal-title\" id='labelsLogin'>Dados do Usuário</h4>
                                             </div>
-                                        </div>
-                                        <div class='col-md-12'>
-                                            <div class='col-sm-12'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Usuário:</label>
-                                                <label>".$row["usuario"]."</label>
+                                    <div class=\"modal-body\">
+                                        
+                                        <form action='../Control/updateUsuario.php' method='post'>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>ID:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input type='text' disabled value='{$row["idUsuario"]}' name='fieldIdUsuario'/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class='col-md-12'>
-                                            <div class='col-sm-12'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Nome Usuário:</label>
-                                                <label>".$row["nomeUsuario"]."</label>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Usuário:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input type='text' value='{$row["usuario"]}' id='fieldUsuario' name='fieldUsuario'/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class='col-md-12'>
-                                            <div class='col-sm-12'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>E-mail:</label>
-                                                <label>".$row["email"]."</label>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Nome Usuário:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input type='text' value='{$row["nomeUsuario"]}' name='fieldNomeUsuario'/>
+                                                </div>
                                             </div>
-                                        </div>    
-                                        <div class='col-md-12'>
-                                            <div class='col-sm-12'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Nome Conselho:</label>
-                                                <label>".$row["nomeConselho"]."</label>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>E-mail:</label>
+                                                  </div>
+                                                <div class='col-sm-4'>
+                                                    <input type='text' value='{$row["email"]}' name='fieldEmail'/>
+                                                </div>
+                                            </div>    
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Nome Conselho:</label>
+                                                  </div>
+                                                <div class='col-sm-4'>
+                                                    <select class=\"btn btn-default dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" name=\"dropConselho\">";
+                                                        while ($row2 = mysqli_fetch_assoc($resultConselho)) {
+                                                            echo "<option value={$row2["nomeConselho"]}>{$row2["nomeConselho"]}</option>";
+                                                        }
+                                                echo"</select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class='col-md-12'>
-                                            <div class='col-sm-12'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Número Conselho:</label>
-                                                <label>".$row["numeroConselho"]."</label>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-6'>
+                                                    <label id='labelsLogin'>Número Conselho:</label>
+                                                </div>
+                                                <div class='col-sm-4'>
+                                                    <input type='text' value='{$row["numeroConselho"]}' name='fieldNumeroConselho'/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class='col-md-12'>
-                                            <div class='col-sm-6'>
-                                                <label for='tipoPesquisaLabel' id='labelsLogin'>Nome Instituição:</label>
+                                        
+                                            <div class='col-md-12'>
+                                                <div class='col-sm-12'>
+                                                    <label id='labelsLogin'>Nome Instituição:</label>
+                                                </div>
+                                                <div class='col-sm-12'>
+                                                    <select class=\"btn btn-default dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" name=\"dropInstituicao\">";
+                                                        while ($row3 = mysqli_fetch_assoc($resultInstituicao)) {
+                                                            echo "<option value={$row3["nomeInstituicao"]}>{$row3["nomeInstituicao"]}</option>";
+                                                        }
+
+                                                echo "</select>
+                                                </div>
+                                            </div> 
+                                        
+                                            <div class=\"modal-footer\">
+                                                <button type='submit' class='btn btn-success'>Alterar</button>
+                                                <button class='btn btn-danger'>Excluir</button>
+                                                <button class='btn btn-warning' data-dismiss='modal'>Cancelar</button>
                                             </div>
-                                            <div class='col-sm-4'>
-                                                <input type='text' value='{$row["nomeInstituicao"]}'/>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class=\"modal-footer\">
-                                      
-                                      </div>
+                                      </form>
                                     </div>
                                   </div>
                                 </div>
-                              
-                              
-                              
-                              ";
+                              </div>";
                     }
-                    /*if (isset($_GET['id'])){
-
-                        echo "<script> var minhaJanela = window.open('popUpConsultaUsuario.php?id={$_GET['id']}','dados','width=280,height=225');</script>";
-                    }*/
                     ?>
                 </table>
             </fieldset>

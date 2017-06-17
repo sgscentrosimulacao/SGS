@@ -79,6 +79,10 @@
                                                                           id="leftNavBarButtons">Instituicão</button></a>
                             </div>
                             <div>
+                                <a href="cadastroCurso.php"><button type="button" class="btn btn-default"
+                                                                    id="leftNavBarButtons">Curso</button></a>
+                            </div>
+                            <div>
                                 <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
                                                                        id="leftNavBarButtons">Conselho</button></a>
                             </div>
@@ -106,6 +110,10 @@
                             <div>
                                 <a href="consultaInstituicao.php"><button type="button" class="btn btn-default"
                                                                           id="leftNavBarButtons">Instituicão</button></a>
+                            </div>
+                            <div>
+                                <a href="consultaCurso.php"><button type="button" class="btn btn-default"
+                                                                    id="leftNavBarButtons">Curso</button></a>
                             </div>
                             <div>
                                 <a href="cadastroConselho.php"><button type="button" class="btn btn-default"

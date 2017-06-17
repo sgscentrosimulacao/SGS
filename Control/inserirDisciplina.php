@@ -1,6 +1,6 @@
 <?php
 
-require "../Control/controleDoBanco.php";
+include_once "../Control/controleDoBanco.php";
 include "sessionControl.php";
 
 inserirDisciplina();
