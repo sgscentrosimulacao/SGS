@@ -235,10 +235,12 @@
                                     
                                     <div class=\"modal-footer\">
                                         <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
-                                        <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                        </form>
+                                        <form action='../Control/deleteAula.php' method='post'>
+                                            <button class='btn btn-danger' name='excluir' value='{$row['idAula']}' style='margin-top: 30px;'>Excluir</button>
+                                        </form>
                                         <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
                                     </div>
-                              </form>
                             </div>
                           </div>    
                         </div>

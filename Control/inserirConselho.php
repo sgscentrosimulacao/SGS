@@ -15,7 +15,7 @@ function inserirConselho(){
 
 
     if ($nomeConselho){
-        if ($conn->query($inserirConselho)== true){
+        if ($conn->query($inserirConselho) == true){
             echo '<SCRIPT>
                         confirm("Conselho cadastrado no sistema!");
                         window.location.href = "../Vision/cadastroConselho.php";

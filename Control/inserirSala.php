@@ -12,7 +12,7 @@ function inserirSala(){
 
     $conn = abrirDatabase();
 
-    $inserirSala = "INSERT INTO tb_sala(nomeSala, descricaoSala, idAula) VALUES ('{$nomeSala}','{$descricaoSala}',NULL )";
+    $inserirSala = "INSERT INTO tb_sala(nomeSala, descricaoSala) VALUES ('{$nomeSala}','{$descricaoSala}')";
 
 
     if ($nomeSala and $descricaoSala){

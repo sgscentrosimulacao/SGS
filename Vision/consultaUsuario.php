@@ -215,11 +215,7 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>Nome Conselho:</label>
                                                   </div>
                                                 <div class='col-sm-4'>
-                                                    <select class=\"btn btn-default dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" name=\"dropConselho\">";
-                                                        while ($row2 = mysqli_fetch_assoc($resultConselho)) {
-                                                            echo "<option value={$row2["nomeConselho"]}>{$row2["nomeConselho"]}</option>";
-                                                        }
-                                                echo"</select>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeConselho"]}' disabled name='fieldNomeConselho'/>
                                                 </div>
                                             </div>
                                         
@@ -237,22 +233,19 @@ include "navMenu.php";
                                                     <label id='labelsLogin'>Nome Instituição:</label>
                                                 </div>
                                                 <div class='col-sm-4'>
-                                                    <select class=\"btn btn-default dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" name=\"dropInstituicao\">";
-                                                        while ($row3 = mysqli_fetch_assoc($resultInstituicao)) {
-                                                            echo "<option value={$row3["nomeInstituicao"]}>{$row3["nomeInstituicao"]}</option>";
-                                                        }
-
-                                                echo "</select>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' disabled name='fieldNomeInstituicao'/>
                                                 </div>
                                             </div> 
                                         
                                             <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
-                                                <button class='btn btn-danger' style='margin-top: 30px;'>Excluir</button>
+                                                <button type='submit' class='btn btn-success' name='alterar' value='{$row['idUsuario']}' style='margin-top: 30px;'>Alterar</button>
+                                                </form>  
+                                                <form action='../Control/deleteUsuario.php' method='post'>
+                                                    <button class='btn btn-danger' name='excluir' value='{$row['idUsuario']}' style='margin-top: 30px;'>Excluir</button>
+                                                </form>
                                                 <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
-                                            </div>
-                                      </form>
-                                    </div>
+                                            </div>             
+                                      </div>
                                   </div>
                                 </div>
                               </div>";
@@ -261,7 +254,6 @@ include "navMenu.php";
                 </table>
             </fieldset>
         </div>
-
     </div>
 </div>
 <?php

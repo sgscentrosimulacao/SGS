@@ -23,7 +23,7 @@
                 <span class="icon-bar" style="background-color: white;"></span>
             </button>
 
-            <a class="navbar-brand zeroPadding" href="index.php"><img src="..\img\SGS_Logo.png"
+            <a class="navbar-brand zeroPadding" href="paginaPrincipalAdmin.php"><img src="..\img\SGS_Logo.png"
                                                                       id="logoImg"></a>
             <div class="col-lg" id="divLogo"></div>
 
@@ -134,7 +134,7 @@
         </div>
     </div>
     <div class="col-md-8 zeroPadding">
-        <fieldset style="left: 0; margin-left: 0; margin-right: 20px; position: relative">
+        <fieldset id="fieldsetPositionNone">
             <div class="col-md-12">
                 <img src="../img/SGS_LogoMarca.png" style="width:100%; height:100%;display: block; margin-left: auto; margin-right: auto;">
             </div>
