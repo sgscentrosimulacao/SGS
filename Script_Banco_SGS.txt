@@ -22,6 +22,7 @@ CREATE TABLE `tb_usuario`
   `idConselho` Int NOT NULL,
   `idInstituicao` Int NOT NULL,
   `estouCiente` Int NOT NULL,
+  `administrador` Int NOT NULL,
   PRIMARY KEY (`idUsuario`,`idConselho`,`idInstituicao`)
 )
 ;
@@ -153,6 +154,7 @@ ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituic
 
 ALTER TABLE `tb_aulas` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
+
 
 
 

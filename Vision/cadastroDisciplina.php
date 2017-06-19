@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="../css/style_index.css">
-    <script src="../js/controlers.js"></script>
+    <script src="../js/controlersInicio.js"></script>
 
     <title>SGS - Cadastro Disciplina</title>
 </head>
@@ -205,21 +205,9 @@ include "navMenu.php";
                             </div>
                             <div class="editor-label form-inline" style="padding-bottom: 5px">
                                 <input class="form-control" type="text" name="fieldDataInicio" id="fieldDataInicio"
-                                       placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )" />
+                                       placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )"/>
                             </div>
                         </div>
-                        <div class="col-md-6 zeroPadding">
-                            <div class="editor-label col-md-6">
-                                <label for="dataFimLabel" id="labelsLogin">Data de Termino</label>
-                            </div>
-                            <div class="editor-label form-inline" style="padding-bottom: 5px">
-                                <input class="form-control" type="text" name="fieldDataFim" id="fieldDataFim"
-                                       placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
                         <div class="col-md-6 zeroPadding">
                             <div class="editor-label col-md-6">
                                 <label for="horaInicioLabel" id="labelsLogin">Hora de início</label>
@@ -229,6 +217,19 @@ include "navMenu.php";
                                        placeholder="hh:mm" maxlength="5" onkeypress="mascaraHorario( this, event )" />
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-6 zeroPadding">
+                            <div class="editor-label col-md-6">
+                                <label for="dataFimLabel" id="labelsLogin">Data de Termino</label>
+                            </div>
+                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                                <input class="form-control" type="text" name="fieldDataFim" id="fieldDataFim"
+                                       placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )" />
+                            </div>
+                        </div>
+
                         <div class="col-md-6 zeroPadding">
                             <div class="editor-label col-md-6">
                                 <label for="dataFimLabel" id="labelsLogin">Hora de Termino</label>
@@ -245,7 +246,7 @@ include "navMenu.php";
                             <label for="disciplinaLabel" id="labelsLogin">Disciplina</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropDisciplina"
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropDisciplina" name="dropDisciplina"
                                     style="width: 100%">
                                 <?php
                                 while ($row2 = mysqli_fetch_assoc($resultDisciplina)) {
@@ -257,7 +258,7 @@ include "navMenu.php";
                             <label for="salaLabel" id="labelsLogin">Sala</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
+                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropSala" name="dropSala"
                                     style="width: 100%">
                                 <?php
                                 while ($row3 = mysqli_fetch_assoc($resultSalas)) {
@@ -272,7 +273,7 @@ include "navMenu.php";
                             <label for="cenarioLabel" id="labelsLogin">Cenário</label>
                         </div>
                         <div class="form-group" id="cenarioLabel">
-                        <textarea class="form-control" rows="5" id="cenarioLabel" style="width: 100%"
+                        <textarea class="form-control" rows="5" id="fieldCenarioAula" style="width: 100%"
                                   placeholder="Insira o cenário da aula" name="fieldCenarioAula"></textarea>
                         </div>
                     </div>
@@ -282,7 +283,7 @@ include "navMenu.php";
                             <label for="descricaoAulaLabel" id="labelsLogin">Descrição</label>
                         </div>
                         <div class="form-group" id="descricaoAulaLabel">
-                        <textarea class="form-control" rows="5" id="descricaoAulaLabel" style="width: 100%"
+                        <textarea class="form-control" rows="5" id="fieldDescricaoAula" style="width: 100%"
                                   placeholder="Insira a descrição da aula" name="fieldDescricaoAula"></textarea>
                         </div>
                     </div>
@@ -308,5 +309,6 @@ include "navMenu.php";
 <?php
 include "footer.php";
 ?>
+<script src="../js/controlersFim.js"></script>
 </body>
 </html>

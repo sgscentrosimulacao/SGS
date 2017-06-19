@@ -17,7 +17,7 @@ $info = array(
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style_index.css">
     <script src="../js/jquery.js"></script>
-    <script src="../js/controlers.js"></script>
+    <script src="../js/controlersInicio.js"></script>
 
     <title>SGS - Calendário</title>
 </head>
