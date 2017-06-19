@@ -2,6 +2,7 @@
 
 require "../Control/controleDoBanco.php";
 include "sessionControl.php";
+include "funcoes.php";
 
 inserirAula();
 
@@ -10,18 +11,13 @@ function inserirAula(){
 
     $nomeAula = $_POST['fieldNomeAula'];
 
-    $dmaI = explode('/',($_POST['fieldDataInicio']));
-    $dataInicio= $dmaI[2]."-".$dmaI[1]."-".$dmaI[0]."";
 
-    $dmaF = explode('/',($_POST['fieldDataFim']));
-    $dataFim= $dmaF[2]."-".$dmaF[1]."-".$dmaF[0]."";
+    $dataInicio= converteDataToSQL($_POST['fieldDataInicio']);
+    $dataFim= converteDataToSQL($_POST['fieldDataFim']);
 
+    $horaInicio = converteHoraToSQL($_POST['fieldHoraInicio']);
+    $horaFim = converteHoraToSQL($_POST['fieldHoraFim']);
 
-    $hmI = explode(':',($_POST['fieldHoraInicio']));
-    $horaInicio = $hmI[0].":".$hmI[1].":00";
-
-    $hmF = explode(':',($_POST['fieldHoraFim']));
-    $horaFim = $hmF[0].":".$hmF[1].":00";
     $cenario = $_POST['fieldCenarioAula'];
     $descricaoAula = $_POST['fieldDescricaoAula'];
     $dropDisciplina = $_POST['dropDisciplina'];
@@ -56,7 +52,6 @@ function inserirAula(){
 
     $inserirDisciplina = "INSERT INTO tb_aulas(nomeAula, descricaoAula, horarioInicio, dataInicio, cenario, idDisciplina, idCurso, horarioFim, dataFim, idSala)
                             VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$idDisciplina[0]}','{$idCurso[0]}','{$horaFim}','{$dataFim}','{$idSala[0]}')";
-
 
     if ($nomeAula and $dataInicio and $dataFim and $horaInicio and $horaFim){
         if ($conn->query($inserirDisciplina)==true){

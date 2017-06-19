@@ -30,8 +30,7 @@ function inserirDisciplina(){
 
 
 
-    $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso,
-                                                                                idUsuario, idConselho, idInstituicao)
+    $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao) 
                             VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$idCurso[0]}','{$idUsuario}',
                                                                             '{$idConselho}','{$idInstituicao}')";
 

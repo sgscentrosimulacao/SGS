@@ -1,5 +1,8 @@
 <?php
+
     include "../Control/sessionControl.php";
+
+
 ?>
 <!doctype html>
 <html lang="pt-br">

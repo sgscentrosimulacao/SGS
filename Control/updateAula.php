@@ -1,6 +1,7 @@
 <?php
 
 include_once "controleDoBanco.php";
+include "funcoes.php";
 
 updateAula();
 
@@ -13,8 +14,8 @@ function updateAula(){
     $descricaoAula = $_POST['fieldDescricaoAula'];
     $horaInicio = $_POST['fieldHoraInicio'];
     $horaFim = $_POST['fieldHoraFim'];
-    $dataInicio = $_POST['fieldDataInicio'];
-    $dataFim = $_POST['fieldDataFim'];
+    $dataInicio = converteDataToSQL($_POST['fieldDataInicio']);
+    $dataFim = converteDataToSQL($_POST['fieldDataFim']);
     $cenarioAula = $_POST['fieldCenario'];
 
     $updateAula = "UPDATE tb_aulas
@@ -23,10 +24,17 @@ function updateAula(){
 
 
     if ($conn->query($updateAula)==true){
+        if ($tela = $_GET['tela'] == "disciplina"){
         echo '<SCRIPT>
                         confirm("Aula alterada no sistema!");
                         window.location.href = "../Vision/consultaDisciplina.php";
                       </SCRIPT>';
+        }else{
+            echo '<SCRIPT>
+                        confirm("Aula alterada no sistema!");
+                        window.location.href = "../Vision/calendario.php";
+                      </SCRIPT>';
+        }
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar a aula no banco de dados!");

@@ -175,66 +175,38 @@ include "navMenu.php";
                                         <form action='../Control/updateUsuario.php' method='post'>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>ID:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
+                                                    <label id='labelsLogin' style='padding-top: 20px;'>ID:</label>
                                                     <input class=\"form-control\" type='text' disabled value='{$row["idUsuario"]}' name='fieldIdUsuario'/>
-                                                </div>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>Usuário:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
                                                     <input class=\"form-control\" type='text' value='{$row["usuario"]}' id='fieldUsuario' name='fieldUsuario'/>
-                                                </div>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>Nome Usuário:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
                                                     <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' name='fieldNomeUsuario'/>
-                                                </div>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>E-mail:</label>
-                                                  </div>
-                                                <div class='col-sm-4'>
                                                     <input class=\"form-control\" type='text' value='{$row["email"]}' name='fieldEmail'/>
-                                                </div>
                                             </div>    
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>Nome Conselho:</label>
-                                                  </div>
-                                                <div class='col-sm-4'>
                                                     <input class=\"form-control\" type='text' value='{$row["nomeConselho"]}' disabled name='fieldNomeConselho'/>
-                                                </div>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>Número Conselho:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
                                                     <input class=\"form-control\" type='text' value='{$row["numeroConselho"]}' name='fieldNumeroConselho'/>
-                                                </div>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
                                                     <label id='labelsLogin'>Nome Instituição:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
                                                     <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' disabled name='fieldNomeInstituicao'/>
-                                                </div>
                                             </div> 
                                         
                                             <div class=\"modal-footer\">

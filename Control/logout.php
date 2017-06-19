@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $_SESSION['idUsuario'] = null;
 $_SESSION['usuario'] = null;
 $_SESSION['senha'] = null;

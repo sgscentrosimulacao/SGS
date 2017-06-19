@@ -176,7 +176,7 @@ include "navMenu.php";
                                             </div>
                                             
                                             <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button type='submit' class='btn btn-success' name='alterar' value='{$row['idConselho']}' style='margin-top: 30px;'>Alterar</button>
                                                 </form>
                                                 <form action='../Control/deleteConselho.php' method='post'>
                                                     <button class='btn btn-danger' name='excluir' value='{$row['idConselho']}' style='margin-top: 30px;'>Excluir</button>

@@ -159,25 +159,17 @@ include "navMenu.php";
                                         <form action='../Control/updateInstituicao.php' method='post'>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>ID:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' disabled value='{$row["idInstituicao"]}' name='fieldIdInstituicao'/>
-                                                </div>
+                                                <label id='labelsLogin'>ID:</label>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idInstituicao"]}' name='fieldIdInstituicao'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Nome Instituição:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' name='fieldNomeInstituicao'/>
-                                                </div>
+                                                <label id='labelsLogin'>Nome Instituição:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' name='fieldNomeInstituicao'/>
                                             </div>
                                             
                                             <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button type='submit' class='btn btn-success' name='alterar' value='{$row['idInstituicao']}' style='margin-top: 30px;'>Alterar</button>
                                                 </form>
                                                 <form action='../Control/deleteInstituicao.php' method='post'>
                                                     <button class='btn btn-danger' name='excluir' value='{$row['idInstituicao']}' style='margin-top: 30px;'>Excluir</button>

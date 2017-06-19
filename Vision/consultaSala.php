@@ -160,34 +160,22 @@ include "navMenu.php";
                                         <form action='../Control/updateSala.php' method='post'>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>ID:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' disabled value='{$row["idSala"]}' name='fieldIdSala'/>
-                                                </div>
+                                                <label id='labelsLogin'>ID:</label>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idSala"]}' name='fieldIdSala'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Nome Sala:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeSala"]}' name='fieldNomeSala'/>
-                                                </div>
+                                                <label id='labelsLogin'>Nome Sala:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomeSala"]}' name='fieldNomeSala'/>
                                             </div>
                                             
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Descrição:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["descricaoSala"]}' name='fieldDescricaoSala'/>
-                                                </div>
+                                                <label id='labelsLogin'>Descrição:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["descricaoSala"]}' name='fieldDescricaoSala'/>
                                             </div>
                                             
                                             <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button type='submit' class='btn btn-success' name='alterar' value='{$row['idSala']}' style='margin-top: 30px;'>Alterar</button>
                                                 </form>
                                                 <form action='../Control/deleteSala.php' method='post'>
                                                     <button class='btn btn-danger' name='excluir' value='{$row['idSala']}' style='margin-top: 30px;'>Excluir</button>

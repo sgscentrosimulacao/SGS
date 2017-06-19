@@ -165,52 +165,32 @@ include "navMenu.php";
                                         <form action='../Control/updateItem.php' method='post'>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>ID:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' disabled value='{$row["idPeca"]}' name='fieldIdPeca'/>
-                                                </div>
+                                                <label id='labelsLogin'>ID:</label>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idPeca"]}' name='fieldIdPeca'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Nome Peça:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomePeca"]}' name='fieldNomePeca'/>
-                                                </div>
+                                                <label id='labelsLogin'>Nome Peça:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomePeca"]}' name='fieldNomePeca'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Descrição:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["descricao"]}' name='fieldDescricao'/>
-                                                </div>
+                                                <label id='labelsLogin'>Descrição:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["descricao"]}' name='fieldDescricao'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Sala:</label>
-                                                  </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeSala"]}' name='fieldNomeSala'/>
-                                                </div>
+                                                <label id='labelsLogin'>Sala:</label>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["nomeSala"]}' name='fieldNomeSala'/>
                                             </div>    
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Quantidade:</label>
-                                                  </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["quantidade"]}' name='fieldQuantidade'/>
-                                                </div>
+                                                <label id='labelsLogin'>Quantidade:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["quantidade"]}' name='fieldQuantidade'/>
                                             </div>
                                         
                                             <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success' style='margin-top: 30px;'>Alterar</button>
+                                                <button type='submit' class='btn btn-success' name='alterar' value='{$row['idPeca']}' style='margin-top: 30px;'>Alterar</button>
                                                 </form>
                                                 <form action='../Control/deleteItem.php' method='post'>
                                                     <button class='btn btn-danger' name='excluir' value='{$row['idPeca']}' style='margin-top: 30px;'>Excluir</button>

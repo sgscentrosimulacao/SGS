@@ -101,7 +101,7 @@ function consultarAulasData(){
 
 
         $selectAulas = "SELECT tb_aulas.idAula, tb_aulas.nomeAula, tb_aulas.dataInicio, tb_aulas.dataFim, 
-                                tb_aulas.horarioInicio, tb_aulas.horarioFim, tb_disciplina.nomeDisciplina,
+                                tb_aulas.horarioInicio, tb_aulas.horarioFim, tb_aulas.cenario, tb_aulas.descricaoAula, tb_disciplina.nomeDisciplina,
                                  tb_cursos.nomeCurso, tb_sala.nomeSala FROM tb_aulas 
 
                             LEFT JOIN tb_cursos ON tb_aulas.idCurso = tb_cursos.idCurso

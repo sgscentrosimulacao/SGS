@@ -1,6 +1,7 @@
 <?php
 include "../Control/sessionControl.php";
 include "../Control/selectDisciplina.php";
+include "../Control/funcoes.php";
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -148,11 +149,16 @@ include "navMenu.php";
                     </tr>
                     <?php
                     while ($row = mysqli_fetch_assoc($result)) {
+                        if ($row['visibilidade'] == 1){
+                            $visibilidade = "Sim";
+                        }else{
+                            $visibilidade = "Não";
+                        }
                         echo "<tr>
                                <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['idDisciplina']}</td>
                                <td>{$row['nomeDisciplina']}</td>
                                <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['descricao']}</td>
-                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['visibilidade']}</td>
+                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$visibilidade}</td>
                                <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['qntAlunos']}</td>
                                <td>{$row['nomeCurso']}</td>
                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
@@ -169,71 +175,43 @@ include "navMenu.php";
                                                 <h4 class=\"modal-title\" id='labelsLogin'>Dados da Disciplina</h4>
                                             </div>
                                             
-                                    <form class=\"modal-body\">
+                                    <div class=\"modal-body\">
                                         
-                                        <form action=\"../Control/updateDisciplina.php\" method=\"post\">
+                                        <form action='../Control/updateDisciplina.php' method='post'>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>ID:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina'/>
-                                                </div>
+                                                <label id='labelsLogin'>ID:</label>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Nome Disciplina:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeDisciplina"]}' name='fieldNomeDisciplina'/>
-                                                </div>
+                                                <label id='labelsLogin'>Nome Disciplina:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomeDisciplina"]}' name='fieldNomeDisciplina'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Quantidade de Alunos:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["qntAlunos"]}' name='fieldQntAlunos'/>
-                                                </div>
+                                                <label id='labelsLogin'>Quantidade de Alunos:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["qntAlunos"]}' name='fieldQntAlunos'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label for=\"comment\" id='labelsLogin'>Descrição:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricao'>{$row["descricao"]}</textarea>
-                                                </div>
+                                                <label for=\"comment\" id='labelsLogin'>Descrição:</label>
+                                                <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricao'>{$row["descricao"]}</textarea>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Visibilidade:</label>
-                                                  </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["visibilidade"]}' name='fieldVisibilidade'/>
-                                                </div>
+                                                <label id='labelsLogin'>Visibilidade:</label>
+                                                <label><input type=\"checkbox\" value=\"1\" name=\"fieldVisibilidade\">Disciplina visível para todos</label>
                                             </div>    
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Curso:</label>
-                                                  </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' disabled name='fieldNomeCurso'/>
-                                                </div>
+                                                <label id='labelsLogin'>Curso:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' disabled name='fieldNomeCurso'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <div class='col-sm-6'>
-                                                    <label id='labelsLogin'>Regente:</label>
-                                                </div>
-                                                <div class='col-sm-4'>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario'/>
-                                                </div>
+                                                <label id='labelsLogin'>Regente:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario'/>
                                             </div>
                                         
                                             <div class=\"modal-footer\">
@@ -279,8 +257,8 @@ include "navMenu.php";
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['descricaoAula']}</td>
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['horarioInicio']}</td>
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['horarioFim']}</td>
-                           <td>{$row2['dataInicio']}</td>
-                           <td>{$row2['dataFim']}</td> 
+                           <td>".converteDataFromSQL($row2['dataInicio'])."</td>
+                           <td>".converteDataFromSQL($row2['dataFim'])."</td> 
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['cenario']}</td> 
                            <td>{$row2['nomeCurso']}</td>
                            <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row2['idAula']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
@@ -295,98 +273,61 @@ include "navMenu.php";
                                 </div>        
                                 <div class=\"modal-body\">
                                     
-                                    <form action='../Control/updateAula.php' method='post'>
-                                    
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+                                    <form action='../Control/updateAula.php?tela=disciplina' method='post'>
+                                        <div class='col-md-12' style='padding-top: 20px;'>
                                             <label id='labelsLogin'>ID:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
                                             <input class=\"form-control\" type='text' disabled value='{$row2["idAula"]}' name='fieldIdAula'/>
                                         </div>
-                                    </div>
-                                
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+                                    
+                                        <div class='col-md-12'>
                                             <label id='labelsLogin'>Nome Aula:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
                                             <input class=\"form-control\" type='text' value='{$row2["nomeAula"]}' name='fieldNomeAula'/>
                                         </div>
-                                    </div>
-
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+    
+                                        <div class='col-md-12'>
                                             <label for=\"comment\" id='labelsLogin'>Descrição:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
                                             <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricaoAula'>{$row2["descricaoAula"]}</textarea>
                                         </div>
-                                    </div>
-
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+    
+                                        <div class='col-md-12'>
                                             <label id='labelsLogin'>Hora Inicio:</label>
-                                          </div>
-                                        <div class='col-sm-4'>
                                             <input class=\"form-control\" type='text' maxlength=\"5\" onkeypress=\"mascaraHorario( this, event )\" value='{$row2["horarioInicio"]}' name='fieldHoraInicio'/>
                                         </div>
-                                    </div>
-
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+    
+                                        <div class='col-md-12'>
                                             <label id='labelsLogin'>Hora Fim:</label>
-                                          </div>
-                                        <div class='col-sm-4'>
                                             <input class=\"form-control\" type='text' maxlength=\"5\" onkeypress=\"mascaraHorario( this, event )\" value='{$row2["horarioFim"]}' name='fieldHoraFim'/>
                                         </div>
-                                    </div>
-
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+    
+                                        <div class='col-md-12'>
                                             <label id='labelsLogin'>Data Inicio:</label>
+                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataInicio'])."' name='fieldDataInicio'/>
                                         </div>
-                                        <div class='col-sm-4'>
-                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='{$row2["dataInicio"]}' name='fieldDataInicio'/>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+                                        
+                                        <div class='col-md-12'>
                                             <label id='labelsLogin'>Data Fim:</label>
+                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataFim'])."' name='fieldDataFim'/>
                                         </div>
-                                        <div class='col-sm-4'>
-                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='{$row2["dataFim"]}' name='fieldDataFim'/>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+                                        
+                                        <div class='col-md-12'>
                                             <label for=\"comment\" id='labelsLogin'>Cenário:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
                                             <textarea class=\"form-control\" rows='3' type='text' name='fieldCenario'>{$row2["cenario"]}</textarea>
                                         </div>
-                                    </div>
-                                    
-                                    <div class='col-md-12'>
-                                        <div class='col-sm-6'>
+                                        
+                                        <div class='col-md-12'>
                                             <label id='labelsLogin'>Curso:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
                                             <input class=\"form-control\" type='text' value='{$row2["nomeCurso"]}' disabled name='fieldNomeCurso'/>
                                         </div>
-                                    </div>
-                                    
-                                    
-                                    <div class=\"modal-footer\">
-                                        <button type='submit' class='btn btn-success' name='alterarAula' value='{$row2['idAula']}' style='margin-top: 30px;'>Alterar</button>
-                                        </form>
-                                        <form action='../Control/deleteAula.php' method='post'>
-                                            <button class='btn btn-danger' name='excluir' value='{$row2['idAula']}' style='margin-top: 30px;'>Excluir</button>
-                                        </form>
-                                        <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
-                                    </div>
+                                        
+                                        </div>
+                                        <div class=\"modal-footer\">
+                                            <button type='submit' class='btn btn-success' name='alterarAula' value='{$row2['idAula']}' style='margin-top: 30px;'>Alterar</button>
+                                            </form>
+                                            <form action='../Control/deleteAula.php' method='post'>
+                                                <button class='btn btn-danger' name='excluir' value='{$row2['idAula']}' style='margin-top: 30px;'>Excluir</button>
+                                            </form>
+                                            <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                        </div>
                             </div>
                           </div>    
                         </div>
