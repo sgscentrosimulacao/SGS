@@ -30,7 +30,13 @@ function autenticarUsuario(){
         $_SESSION['numeroConselho'] = $row[5];
         $_SESSION['idConselho'] = $row[6];
         $_SESSION['idInstituicao'] = $row[7];
-        header("Location: ../Vision/paginaPrincipalAdmin.php");
+        $_SESSION['administrador'] = $row[9];
+
+        if ($_SESSION['administrador'] == 1){
+            header("Location: ../Vision/paginaPrincipalAdmin.php");
+        }else{
+            header("Location: ../Vision/paginaPrincipalUser.php");
+        }
 
     }else{
         echo '<SCRIPT>

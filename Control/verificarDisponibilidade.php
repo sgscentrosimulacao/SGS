@@ -2,7 +2,9 @@
 
 include_once "controleDoBanco.php";
 include "funcoes.php";
+
 verificarDisponibilidade();
+
 function verificarDisponibilidade(){
 
         $dataInicio = converteDataToSQL($_GET['dataInicio']);

@@ -13,6 +13,7 @@ function inserirUsuario(){
     $email = $_POST['fieldEmail'];
     $numeroConselho = $_POST['fieldNumeroCon'];
     $ciente = 1;
+    $admin = $_POST['dropAdmin'];
 
     $valorDropCurso = $_POST['dropConselho'];
     $selectIdConselho = "SELECT tb_conselho.idConselho FROM tb_conselho
@@ -33,8 +34,9 @@ function inserirUsuario(){
     //Não inserir no banco. Só para verificação
     $cSenha = sha1($_POST['fieldCSenha']);
 
-    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente) 
-        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','{$ciente}')";
+    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente, administrador)  
+        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','{$ciente}','{$admin}')";
+
 
 
 
@@ -45,8 +47,9 @@ function inserirUsuario(){
             if ($conn->query($inserirUsuario)==true){
                 echo '<SCRIPT>
                         confirm("O usuário foi inserido no sistema!");
-                        window.location.href = "../Vision/paginaPrincipalAdmin.php";
+                        window.location.href = "../Vision/cadastroUsuarioPP.php";
                       </SCRIPT>';
+
             }else{
                 echo '<SCRIPT>
                         confirm("O usuário não pode ser inserido!");

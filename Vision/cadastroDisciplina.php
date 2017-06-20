@@ -1,6 +1,7 @@
 <?php
     include "../Control/sessionControl.php";
     include "../Control/showDrops.php";
+    $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -19,94 +20,18 @@
 </head>
 <body>
 <?php
-include "navbar.php";
-include "navMenu.php";
+if ($_SESSION['administrador'] == 1){
+    include "navbarAdmin.php"; //NAV BAR
+    include "navMenuAdmin.php"; //NAV MENU
+    echo "<div>";
+    include "menuAdmin.php";   //MENU
+}else{
+    include "navbarUser.php"; //NAV BAR
+    include "navMenuUser.php"; //MENU
+    echo "<div>";
+    include "menuUser.php"; //NAV MENU
+}
 ?>
-<div>
-    <div class="col-md-4 visible-lg visible-md visible-sm hidden-xs hidden-sm">
-        <div>
-            <div class="col-md-12">
-                <fieldset style="left: 0; margin-left: 50px;">
-                    <div>
-                        <div class="col-sm-12">
-
-                            <h1><span class="label label-default" id="alinhadoCentro">Cadastrar</span></h1>
-
-                            <div>
-                                <a href="cadastroUsuarioPP.php"><button type="button" class="btn btn-default"
-                                                                        id="leftNavBarButtons"> Usuário</button></a>
-                            </div>
-                            <div>
-                                <a href="cadastroDisciplina.php"><button type="button" class="btn btn-default"
-                                                                         id="leftNavBarButtonsAtivo">Disciplina</button></a>
-                            </div>
-                            <div>
-                                <a href="cadastroItem.php"><button type="button" class="btn btn-default"
-                                                                   id="leftNavBarButtons">Item</button></a>
-                            </div>
-                            <div>
-                                <a href="cadastroInstituicao.php"><button type="button" class="btn btn-default"
-                                                                          id="leftNavBarButtons">Instituicão</button></a>
-                            </div>
-                            <div>
-                                <a href="cadastroCurso.php"><button type="button" class="btn btn-default"
-                                                                    id="leftNavBarButtons">Curso</button></a>
-                            </div>
-                            <div>
-                                <a href="cadastroConselho.php"><button type="button" class="btn btn-default"
-                                                                       id="leftNavBarButtons">Conselho</button></a>
-                            </div>
-                            <div>
-                                <a href="cadastroSala.php"><button type="button" class="btn btn-default"
-                                                                   id="leftNavBarButtons">Sala</button></a>
-                            </div>
-
-
-
-
-                            <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-
-
-
-                            <div>
-                                <a href="consultaUsuario.php"><button type="button" class="btn btn-default"
-                                                                      id="leftNavBarButtons"> Usuário</button></a>
-                            </div>
-                            <div>
-                                <a href="consultaDisciplina.php"><button type="button" class="btn btn-default"
-                                                                         id="leftNavBarButtons">Disciplina</button></a>
-                            </div>
-                            <div>
-                                <a href="consultaItem.php"><button type="button" class="btn btn-default"
-                                                                   id="leftNavBarButtons">Item</button></a>
-                            </div>
-                            <div>
-                                <a href="consultaInstituicao.php"><button type="button" class="btn btn-default"
-                                                                          id="leftNavBarButtons">Instituicão</button></a>
-                            </div>
-                            <div>
-                                <a href="consultaCurso.php"><button type="button" class="btn btn-default"
-                                                                    id="leftNavBarButtons">Curso</button></a>
-                            </div>
-                            <div>
-                                <a href="consultaConselho.php"><button type="button" class="btn btn-default"
-                                                                       id="leftNavBarButtons">Conselho</button></a>
-                            </div>
-                            <div>
-                                <a href="consultaSala.php"><button type="button" class="btn btn-default"
-                                                                   id="leftNavBarButtons">Sala</button></a>
-                            </div>
-                            <div>
-                                <a href="calendario.php"><button type="button" class="btn btn-default"
-                                                                 id="leftNavBarButtons">Calendário</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-
     <div class="col-md-8 zeroPadding teste">
 
         <div>
@@ -288,15 +213,15 @@ include "navMenu.php";
                         </div>
                     </div>
 
-                    <div class="col-md-12" style="margin-left:30px">
-                        <div class="col-md-4">
+                    <div class="col-md-12 text-center" >
+                        <div class="col-md-4 zeroPadding">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 zeroPadding">
 
                             <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 zeroPadding">
 
                         </div>
                     </div>

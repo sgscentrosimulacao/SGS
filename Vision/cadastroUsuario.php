@@ -44,7 +44,7 @@
             <div class="col-sm-3 sidenav zeroPadding">
             </div>
             <div class="col-sm-6 text-left" id="ColunaDoMeio">
-                <form action="./../Control/inserirUsuario.php" method="post">
+                <form action="../Control/inserirUsuario.php" method="post">
 
                     <fieldset id="fieldsetPositionNone">
                         <legend><p id="labelsLogin">Cadastro</p></legend>
@@ -99,30 +99,33 @@
                         </div>
 
                         <div class="col-md-12">
-                            <div class="editor-label col-md-2" id="conLabel" style="">
-                                <label for="conLabel" id="labelsLogin">Conselho</label>
+                            <div class="col-md-6" style="padding-left: 0px;">
+                                <div class="editor-label col-md-2" id="conLabel" style="">
+                                    <label for="conLabel" id="labelsLogin">Conselho</label>
+                                </div>
+                                <div>
+                                    <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropConselho">
+                                        <?php
+                                        while ($row = mysqli_fetch_assoc($resultConselho)) {
+                                            echo "<option value=\"{$row['nomeConselho']}\">".$row['nomeConselho']."</option>";
+                                        }?>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="dropdown col-md-4" style="">
-                                <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropConselho">
-                                    <?php
-                                    while ($row = mysqli_fetch_assoc($resultConselho)) {
-                                        echo "<option value=\"{$row['nomeConselho']}\">".$row['nomeConselho']."</option>";
-                                    }?>
-                                </select>
-                            </div>
-                            <div class="editor-label col-md-2" id="instituicaoLabel" style="padding-left: 0px">
-                                <label for="instituicaoLabel" id="labelsLogin">Instituição</label>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
-                                    <?php
-                                    while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
-                                        echo "<option value=\"{$row2['nomeInstituicao']}\">".$row2['nomeInstituicao']."</option>";
-                                    }?>
-                                </select>
+                            <div class="col-md-6" style="padding-right: 0px;">
+                                <div class="editor-label col-md-2" id="instituicaoLabel" style="padding-left: 0px">
+                                    <label for="instituicaoLabel" id="labelsLogin">Instituição</label>
+                                </div>
+                                <div>
+                                    <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
+                                        <?php
+                                        while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
+                                            echo "<option value=\"{$row2['nomeInstituicao']}\">".$row2['nomeInstituicao']."</option>";
+                                        }?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-
                         <div class="col-md-12">
                             <div class="editor-label col-md-6" id="numeroConLabel">
                                 <label for="numeroConLabel" id="labelsLogin">Número do Conselho</label>

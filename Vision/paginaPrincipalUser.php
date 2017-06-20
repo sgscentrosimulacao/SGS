@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style_index.css">
-    <title>SGS - Página Principal - ADMIN</title>
+    <title>SGS - Página Principal</title>
 </head>
 <body>
 <nav class="navbar">
@@ -24,14 +24,14 @@
                 <span class="icon-bar" style="background-color: white;"></span>
             </button>
 
-            <a class="navbar-brand zeroPadding" href="paginaPrincipalAdmin.php"><img src="..\img\SGS_Logo.png"
-                                                                      id="logoImg"></a>
+            <a class="navbar-brand zeroPadding" href="paginaPrincipalUser.php"><img src="..\img\SGS_Logo.png"
+                                                                                     id="logoImg"></a>
             <div class="col-lg" id="divLogo"></div>
 
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
+                <li class="navbar-inverse ativo"><a href="paginaPrincipalUser.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
 
@@ -40,9 +40,9 @@
                     <h4><span class="label label-default">
                         <?php
 
-                            echo "Olá, ".$_SESSION['nomeUsuario'];
+                        echo "Olá, ".$_SESSION['nomeUsuario'];
 
-                            echo "<a class=\"label label-default\" href='../Control/logout.php'>Sair</a>";
+                        echo "<a class=\"label label-default\" href='../Control/logout.php'>Sair</a>";
                         ?>
                     </span></h4>
                 </li>
@@ -51,11 +51,11 @@
     </div>
 </nav>
 <?php
-    include "navMenuAdmin.php";
+include "navMenuUser.php";
 ?>
 <div>
     <?php
-        include "menuAdmin.php";
+        include "menuUser.php";
     ?>
     <div class="col-md-8 zeroPadding">
         <fieldset id="fieldsetPositionNone">

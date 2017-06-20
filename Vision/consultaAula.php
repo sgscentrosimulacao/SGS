@@ -1,6 +1,7 @@
 <?php
-include "../Control/sessionControl.php";
-include "../Control/selectDisciplina.php";
+    include "../Control/sessionControl.php";
+    include "../Control/selectDisciplina.php";
+    $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -15,7 +16,7 @@ include "../Control/selectDisciplina.php";
 </head>
 <body>
 <?php
-include "navbar.php";
+include "navbarAdmin.php";
 ?>
     <div class="col-md-8 zeroPadding teste">
         <div>
