@@ -21,6 +21,7 @@ function inserirAula(){
     $cenario = $_POST['fieldCenarioAula'];
     $descricaoAula = $_POST['fieldDescricaoAula'];
     $dropDisciplina = $_POST['dropDisciplina'];
+    $aceita = 0;
 
     $conn = abrirDatabase();
 
@@ -50,19 +51,19 @@ function inserirAula(){
 
 
 
-    $inserirDisciplina = "INSERT INTO tb_aulas(nomeAula, descricaoAula, horarioInicio, dataInicio, cenario, idDisciplina, idCurso, horarioFim, dataFim, idSala)
-                            VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$idDisciplina[0]}','{$idCurso[0]}','{$horaFim}','{$dataFim}','{$idSala[0]}')";
+    $inserirDisciplina = "INSERT INTO tb_aulas(nomeAula, descricaoAula, horarioInicio, dataInicio, cenario, idDisciplina, idCurso, horarioFim, dataFim, idSala, aceita, comentarioAceita) 
+                            VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$idDisciplina[0]}','{$idCurso[0]}','{$horaFim}','{$dataFim}','{$idSala[0]}','{$aceita}',null)";
 
     if ($nomeAula and $dataInicio and $dataFim and $horaInicio and $horaFim){
         if ($conn->query($inserirDisciplina)==true){
 
             echo '<SCRIPT>
-                        confirm("Aula cadastrada no sistema!");
+                        confirm("Aula inserida na fila de solicitação!");
                         window.location.href = "../Vision/cadastroDisciplina.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
-                        confirm("Erro ao cadastrar a aula no banco de dados!");
+                        confirm("Erro ao cadastrar a aula na fila de requisições!");
                         window.location.href = "../Vision/cadastroDisciplina.php";
                       </SCRIPT>';
         }

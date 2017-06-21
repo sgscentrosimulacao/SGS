@@ -9,7 +9,6 @@ function consultarItem()
     $conn = abrirDatabase();
     if(isset($_POST['fieldPesquisar']) && $_POST['fieldPesquisar'] != null){
 
-
         $pesquisa = strtoupper ($_POST['fieldPesquisar']);
         $dropTipoPesquisa = $_POST['dropTipoPesquisa'];
 

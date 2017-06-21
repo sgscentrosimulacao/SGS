@@ -1,6 +1,6 @@
 /*
 Created: 26/05/2017
-Modified: 12/06/2017
+Modified: 19/06/2017
 Project: SGS_Centro_Simulacao
 Model: MySQL 5.6
 Database: MySQL 5.6
@@ -85,6 +85,8 @@ CREATE TABLE `tb_aulas`
   `horarioFim` Time NOT NULL,
   `dataFim` Date NOT NULL,
   `idSala` Int NOT NULL,
+  `aceita` Int NOT NULL,
+  `comentarioAceita` Char(200),
   PRIMARY KEY (`idAula`)
 )
 ;
@@ -154,7 +156,6 @@ ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituic
 
 ALTER TABLE `tb_aulas` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
-
 
 
 
@@ -240,3 +241,6 @@ INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Hab
 INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Realidade Virtual', '---');
 
 INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Simulacão Avançada', '---');
+
+
+INSERT INTO `tb_usuario` (`idUsuario`, `usuario`, `senha`, `nomeUsuario`, `email`, `numeroConselho`, `idConselho`, `idInstituicao`, `estouCiente`, `administrador`) VALUES (NULL, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrador', 'admin@ufcspa.edu.br', '1', '1', '1', '1', '1');
