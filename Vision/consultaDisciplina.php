@@ -65,19 +65,19 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
-                        <th>Nome Disc.</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Visibilidade</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Alunos</th>
-                        <th>Curso</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Regente</th>
-                        <th>Aulas</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
+                        <th id="labelsLogin">Nome Disc.</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Visibilidade</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Alunos</th>
+                        <th id="labelsLogin">Curso</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Regente</th>
+                        <th id="labelsLogin">Aulas</th>
                         <th></th>
 
                     </tr>
                     <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($resultSelectDisciplina)) {
                         if ($row['visibilidade'] == 1){
                             $visibilidade = "Sim";
                         }else{
@@ -166,20 +166,20 @@ if ($_SESSION['administrador'] == 1){
                 <legend id=\"labelsLogin\">Aulas</legend>
                 <table class=\"table\">
                     <tr>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
-                        <th>Nome Aula</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Descrição</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Fim</th>
-                        <th>Data Inicio</th>
-                        <th>Data Fim</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Cenário</th>
-                        <th>Curso</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
+                        <th id=\"labelsLogin\">Nome Aula</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Descrição</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Fim</th>
+                        <th id=\"labelsLogin\">Data Inicio</th>
+                        <th id=\"labelsLogin\">Data Fim</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Cenário</th>
+                        <th id=\"labelsLogin\">Curso</th>
                         <th></th>
                     </tr>";
 
 
-                        while ($row2 = mysqli_fetch_assoc($resutl2)) {
+                        while ($row2 = mysqli_fetch_assoc($resultSelectAulas)) {
                             echo " <tr>
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['idAula']}</td>
                            <td>{$row2['nomeAula']}</td>

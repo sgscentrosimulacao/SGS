@@ -64,15 +64,15 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
-                        <th>Nome Peça</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
-                        <th>Sala</th>
-                        <th>Quantidade</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
+                        <th id="labelsLogin">Nome Peça</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
+                        <th id="labelsLogin">Sala</th>
+                        <th id="labelsLogin">Quantidade</th>
                         <th></th>
                     </tr>
                     <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($selectItem)) {
                         echo "<tr>
                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idPeca']}</td>
                                <td>{$row['nomePeca']}</td>

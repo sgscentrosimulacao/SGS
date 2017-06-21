@@ -67,19 +67,26 @@ if ($_SESSION['administrador'] == 1){
         <div>
 
             <fieldset>
+                <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
-                        <th>Usuário</th>
-                        <th>Nome</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">E-mail</th>
-                        <th>Conselho</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">NºConselho</th>
-                        <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Instituição</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
+                        <th id="labelsLogin">Usuário</th>
+                        <th id="labelsLogin">Nome</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">E-mail</th>
+                        <th id="labelsLogin">Conselho</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">NºConselho</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Instituição</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Administrador</th>
                         <th></th>
                     </tr>
                     <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($resultSelectUsuario)) {
+                        if ($row["administrador"] == 1){
+                            $admin = "Sim";
+                        } else{
+                            $admin = "Não";
+                        }
                         echo "<tr>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['idUsuario']}</td>
                                    <td>{$row['usuario']}</td>
@@ -88,8 +95,9 @@ if ($_SESSION['administrador'] == 1){
                                    <td>{$row['nomeConselho']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['numeroConselho']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['nomeInstituicao']}</td>    
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$admin}</td>    
                                    <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDados{$row['idUsuario']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
-                    
+                                   
                               </tr>
                               <div id=\"modalDados{$row['idUsuario']}\" class=\"modal fade\" role=\"dialog\">
                                     <div class=\"modal-dialog\">
@@ -137,6 +145,12 @@ if ($_SESSION['administrador'] == 1){
                                                     <label id='labelsLogin'>Nome Instituição:</label>
                                                     <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' disabled name='fieldNomeInstituicao'/>
                                             </div> 
+                                        
+                                            <div class='col-md-12'>
+                                                    <label id='labelsLogin'>Administrador:</label>
+                                                    <label><input type=\"checkbox\" value=\"1\" name=\"fieldAdministrador\"></label>
+                                            </div> 
+                                        
                                         
                                             <div class=\"modal-footer\">
                                                 <button type='submit' class='btn btn-success' name='alterar' value='{$row['idUsuario']}' style='margin-top: 30px;'>Alterar</button>

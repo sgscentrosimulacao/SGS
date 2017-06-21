@@ -2,7 +2,7 @@
 require "../Control/controleDoBanco.php";
 
 
-$result = consultarInstituicao();
+$selectInstituicao = consultarInstituicao();
 
 function consultarInstituicao()
 {

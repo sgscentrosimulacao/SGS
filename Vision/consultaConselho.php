@@ -63,12 +63,12 @@ if ($_SESSION['administrador'] == 1){
                     <legend id="labelsLogin">Consulta</legend>
                     <table class="table">
                         <tr>
-                            <th>ID</th>
-                            <th>Nome Conselho</th>
-                            <th></th>
+                            <th id="labelsLogin">ID</th>
+                            <th id="labelsLogin">Nome Conselho</th>
+                            <th id="labelsLogin"></th>
                         </tr>
                         <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        while ($row = mysqli_fetch_assoc($resultSelectConselho)) {
                             echo "<tr>
                                    <td>".$row['idConselho']."</td>
                                    <td>".$row['nomeConselho']."</td>

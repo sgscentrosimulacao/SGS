@@ -1,10 +1,10 @@
 <?php
-require "controleDoBanco.php";
+include_once "controleDoBanco.php";
 
-$result = consultarDisciplina();
-$resutl2 = consultarAulas();
-$result3 = consultarAulasData();
-$result4 = consultarTodasAulas();
+$resultSelectDisciplina = consultarDisciplina();
+$resultSelectAulas = consultarAulas();
+$resultSelectAulasData = consultarAulasData();
+$SelectTodasAulas = consultarTodasAulas();
 
 
 
@@ -109,9 +109,8 @@ function consultarTodasAulas(){
 function consultarAulasData(){
 
     if(isset($_GET['id'])){
+
         $dataSelecionada = $_GET['id'];
-
-
 
         $selectAulas = "SELECT tb_aulas.idAula, tb_aulas.nomeAula, tb_aulas.dataInicio, tb_aulas.dataFim, 
                                 tb_aulas.horarioInicio, tb_aulas.horarioFim, tb_aulas.cenario, tb_aulas.descricaoAula, tb_disciplina.nomeDisciplina,

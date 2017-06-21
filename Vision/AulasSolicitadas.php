@@ -39,108 +39,115 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin"> Solicitações </legend>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3>Solicitações</h3></div>
                     <div class="panel-body">
                         <table class="table table-condensed" style="border-collapse:collapse;">
 
                             <thead>
                             <tr>
-                                <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
-                                <th>Nome Aula</th>
-                                <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
-                                <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Inicio</th>
-                                <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Fim</th>
-                                <th>Data Inicio</th>
-                                <th>Data Fim</th>
-                                <th class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Cenário</th>
-                                <th>Curso</th>
+                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
+                                <th id="labelsLogin">Nome Aula</th>
+                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
+                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Inicio</th>
+                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Fim</th>
+                                <th id="labelsLogin">Data Inicio</th>
+                                <th id="labelsLogin">Data Fim</th>
+                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Cenário</th>
+                                <th id="labelsLogin">Curso</th>
                                 <th></th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <?php
-                            while ($row = mysqli_fetch_assoc($result4)) {
-                            echo "<tr data-toggle=\"collapse\" data-target=\"#demo1\" class=\"accordion-toggle\">
-                                
-                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
-                                <td>{$row['nomeAula']}</td>
-                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricaoAula']}</td>
-                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioInicio']}</td>
-                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioFim']}</td>
-                                <td>".converteDataFromSQL($row['dataInicio'])."</td>
-                                <td>".converteDataFromSQL($row['dataFim'])."</td>
-                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['cenario']}</td>
-                                <td>{$row['nomeCurso']}</td>
-                                <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row['idAula']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td colspan=\"12\" class=\"hiddenRow\"><div class=\"accordian-body collapse\" id=\"demo1\">
+                            while ($row = mysqli_fetch_assoc($SelectTodasAulas)) {
+                                echo "<tr data-toggle=\"collapse\" data-target=\"#{$row['idAula']}\" class=\"accordion-toggle info\">
+                                    
+                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
+                                    <td>{$row['nomeAula']}</td>
+                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricaoAula']}</td>
+                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioInicio']}</td>
+                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioFim']}</td>
+                                    <td>".converteDataFromSQL($row['dataInicio'])."</td>
+                                    <td>".converteDataFromSQL($row['dataFim'])."</td>
+                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['cenario']}</td>
+                                    <td>{$row['nomeCurso']}</td>
+                                    <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row['idAula']}'><i class=\"glyphicon glyphicon-list\"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td colspan=\"12\" class=\"hiddenRow\"><div class=\"accordian-body collapse\" id=\"{$row['idAula']}\">
                                         <table class=\"table table-striped\">
-                                            <thead>
-                                            <div class=''>
-                                                <div class='col-md-12 form-control'>
-                                                    <h2><label id='labelsLogin'>Regente da Disciplina:</label>
-                                                    <label>{$row['nomeUsuario']}</label></h2>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class='col-md-6'>
-                                                    <label id='labelsLogin'>Nome Aula:</label>
-                                                    <label>{$row["nomeAula"]}</label>
-                                                </div>
-            
-                                                <div class='col-md-6'>
-                                                    <label id='labelsLogin'>Descrição:</label>
-                                                    <label>{$row["descricaoAula"]}</label>
-                                                </div>
-                                            
-                                            </div>
-                                                
-                                            <div>
-                                                <div class='col-md-3'>
-                                                    <label id='labelsLogin'>Hora Inicio:</label>
-                                                    <label>{$row["horarioInicio"]}</label>
-                                                </div>
-                                                <div class='col-md-3'>
-                                                    <label id='labelsLogin'>Hora Fim:</label>
-                                                    <label>{$row["horarioFim"]}</label>
-                                                </div>
-            
-                                                <div class='col-md-3'>
-                                                    <label id='labelsLogin'>Data Inicio:</label>
-                                                    <label>".converteDataFromSQL($row['dataInicio'])."</label>
-                                                </div>
-                                            
-                                                <div class='col-md-3'>
-                                                    <label id='labelsLogin'>Data Fim:</label>
-                                                    <label>".converteDataFromSQL($row['dataFim'])."</label>
-                                                </div>
-                                            </div>
-                                                
-                                            <div>
-                                                <div class='col-md-4'>
-                                                    <label id='labelsLogin'>Cenário:</label>
-                                                    <label>{$row['cenario']}</label>
+                                            <tr>
+                                                <div>
+                                                    <div class='col-md-12 form-control'>
+                                                        <label id='labelsLogin'>Regente da Disciplina:</label>
+                                                        <label>{$row['nomeUsuario']}</label></h2>
+                                                    </div>
                                                 </div>
                                                 
-                                                <div class='col-md-4'>
-                                                    <label id='labelsLogin'>Curso:</label>
-                                                    <label>{$row['nomeCurso']}</label>
-                                                </div>
-                                                <div class='col-md-4'>
-                                                    <td><a href=\"#\" class=\"btn btn-default btn-sm\"><i class=\"glyphicon glyphicon-cog\"></i></a></td>
+                                                <div>
+                                                    <div class='col-md-3'>
+                                                        <label id='labelsLogin'>Data Inicio:</label>
+                                                        <label>".converteDataFromSQL($row['dataInicio'])."</label>
+                                                    </div>
+                                                
+                                                    <div class='col-md-3'>
+                                                        <label id='labelsLogin'>Data Fim:</label>
+                                                        <label>".converteDataFromSQL($row['dataFim'])."</label>
+                                                    </div>
+                                                    
+                                                    <div class='col-md-3'>
+                                                        <label id='labelsLogin'>Hora Inicio:</label>
+                                                        <label>{$row["horarioInicio"]}</label>
+                                                    </div>
+                                                    
+                                                    <div class='col-md-3'>
+                                                        <label id='labelsLogin'>Hora Fim:</label>
+                                                        <label>{$row["horarioFim"]}</label>
+                                                    </div>
+                
                                                 </div>
                                                 
-                                            </div>
+                                                <div>
+                                                    <div class='col-md-6'>
+                                                        <label id='labelsLogin'>Nome Aula:</label>
+                                                        <label>{$row["nomeAula"]}</label>
+                                                    </div>
+                                                    
+                                                    <div class='col-md-6'>
+                                                        <label id='labelsLogin'>Curso:</label>
+                                                        <label>{$row['nomeCurso']}</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                                    
+                                                <div>
+                                                    <div class='col-md-6'>
+                                                        <label id='labelsLogin'>Cenário:</label>
+                                                        <label>{$row['cenario']}</label>
+                                                    </div>
+                                                    
+                                                    <div class='col-md-6'>
+                                                        <label id='labelsLogin'>Descrição:</label>
+                                                        <label>{$row["descricaoAula"]}</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div >
+                                                    <div class='col-md-4'></div>
+                                                    <div class='col-md-4'></div>
+                                                    <div class='col-md-4 text-right'>
+                                                        <a href=\"#\" class=\"btn btn-success\"><i class=\"glyphicon glyphicon-ok\" title='Aprovar aula'> Aprovar</i></a>
+                                                    </div>
+                                                    
+                                                </div>
+    </div>
                                             </tr>
-                                            </tbody>
                                         </table>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                               ";}?>
                             </tbody>
-                        </table>";}?>
+                        </table>
                     </div>
                 </div>
             </fieldset>

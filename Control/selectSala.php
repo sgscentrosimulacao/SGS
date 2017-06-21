@@ -2,7 +2,7 @@
 require "../Control/controleDoBanco.php";
 
 
-$result = consultarSala();
+$selectSala = consultarSala();
 
 function consultarSala()
 {

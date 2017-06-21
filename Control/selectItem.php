@@ -2,7 +2,7 @@
 require "../Control/controleDoBanco.php";
 
 
-$result = consultarItem();
+$selectItem = consultarItem();
 
 function consultarItem()
 {

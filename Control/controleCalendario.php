@@ -1,6 +1,7 @@
 <?php
-    include "conexaoCalendario.php";
-    include "funcoes.php";
+    include_once "conexaoCalendario.php";
+    include_once "funcoes.php";
+    include_once "selectDisciplina.php";
 
 
 
@@ -124,7 +125,7 @@
 
     function mostraAulas(){
 
-        include "selectDisciplina.php";
+
 
         if(isset($_GET['id'])){
             echo "
@@ -132,20 +133,20 @@
                 <legend id=\"labelsLogin\">Aulas</legend>
                 <table class=\"table\">
                     <tr>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
-                        <th>Nome Aula</th>
-                        <th>Data Inicio</th>
-                        <th>Data Fim</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Fim</th>
-                        <th>Nome Disciplina</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Curso</th>
-                        <th class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Sala</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
+                        <th id=\"labelsLogin\">Nome Aula</th>
+                        <th id=\"labelsLogin\">Data Inicio</th>
+                        <th id=\"labelsLogin\">Data Fim</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Fim</th>
+                        <th id=\"labelsLogin\">Nome Disciplina</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Curso</th>
+                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Sala</th>
                     </tr>";
 
 
 
-                while ($row = mysqli_fetch_assoc($result3)) {
+                while ($row = mysqli_fetch_assoc($resultSelectAulasData)) {
                    echo " <tr>
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
                            <td>{$row['nomeAula']}</td>

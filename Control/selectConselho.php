@@ -1,8 +1,7 @@
 <?php
 require "../Control/controleDoBanco.php";
 
-
-$result = consultarConselho();
+$resultSelectConselho = consultarConselho();
 
 function consultarConselho()
 {

@@ -62,14 +62,14 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th>ID</th>
-                        <th>Nome Sala</th>
-                        <th>Descrição</th>
-                        <th></th>
+                        <th id="labelsLogin">ID</th>
+                        <th id="labelsLogin">Nome Sala</th>
+                        <th id="labelsLogin">Descrição</th>
+                        <th id="labelsLogin"></th>
 
                     </tr>
                     <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($selectSala)) {
                         echo "<tr>
                                <td>".$row['idSala']."</td>
                                <td>".$row['nomeSala']."</td>
