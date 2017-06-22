@@ -12,7 +12,7 @@ function updateUsuario(){
     $nomeUsuario = $_POST['fieldNomeUsuario'];
     $email = $_POST['fieldEmail'];
     $numeroConselho = $_POST['fieldNumeroConselho'];
-    $admin = $_POST['fieldAdministrador'];
+    $admin = (isset($_POST['fieldAdministrador']))?1:0;
 
     $updateUsuario = "UPDATE tb_usuario
                         SET usuario = '{$usuario}', nomeUsuario= '{$nomeUsuario}', email = '{$email}', numeroConselho = '{$numeroConselho}', administrador = '{$admin}'

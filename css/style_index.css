@@ -16,6 +16,25 @@
 
 }
 
+#requisicoes:hover{
+    background-color: #447d8d;
+}
+
+#requisicoes:focus {
+    background-color: #447d8d;
+}
+
+#logout{
+    margin-left: 10px;
+}
+
+#logout:hover{
+    color: white;
+    margin-left: 10px;
+    background-color: #447d8d;
+}
+
+
 body{
     z-index: 4;
     overflow: auto;

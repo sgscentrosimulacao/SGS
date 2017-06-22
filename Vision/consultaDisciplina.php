@@ -65,7 +65,6 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
                         <th id="labelsLogin">Nome Disc.</th>
                         <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
                         <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Visibilidade</th>
@@ -78,84 +77,83 @@ if ($_SESSION['administrador'] == 1){
                     </tr>
                     <?php
                     while ($row = mysqli_fetch_assoc($resultSelectDisciplina)) {
-                        if ($row['visibilidade'] == 1){
-                            $visibilidade = "Sim";
-                        }else{
-                            $visibilidade = "Não";
-                        }
-                        echo "<tr>
-                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['idDisciplina']}</td>
-                               <td>{$row['nomeDisciplina']}</td>
-                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['descricao']}</td>
-                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$visibilidade}</td>
-                               <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['qntAlunos']}</td>
-                               <td>{$row['nomeCurso']}</td>
-                               <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
-                               <td class=\"text-center\"><a class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
-                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
-                        </tr>
-                        
-                        
-                        <div id=\"modalDadosDisciplina{$row['idDisciplina']}\" class=\"modal fade\" role=\"dialog\">
-                                    <div class=\"modal-dialog\">
-                                        <div class=\"modal-content\">
-                                            <div class=\"modal-header\">
-                                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                                                <h4 class=\"modal-title\" id='labelsLogin'>Dados da Disciplina</h4>
-                                            </div>
+                            if ($row['visibilidade'] == 1){
+                                $visibilidade = "Sim";
+                            }else{
+                                $visibilidade = "Não";
+                            }
+                            echo "<tr>
+                                   <td>{$row['nomeDisciplina']}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['descricao']}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$visibilidade}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['qntAlunos']}</td>
+                                   <td>{$row['nomeCurso']}</td>
+                                   <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
+                                   <td class=\"text-center\"><a class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
+                                   <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                            </tr>
+                            
+                            
+                            <div id=\"modalDadosDisciplina{$row['idDisciplina']}\" class=\"modal fade\" role=\"dialog\">
+                                        <div class=\"modal-dialog\">
+                                            <div class=\"modal-content\">
+                                                <div class=\"modal-header\">
+                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
+                                                    <h4 class=\"modal-title\" id='labelsLogin'>Dados da Disciplina</h4>
+                                                </div>
+                                                
+                                        <div class=\"modal-body\">
                                             
-                                    <div class=\"modal-body\">
-                                        
-                                        <form action='../Control/updateDisciplina.php' method='post'>
-                                        
-                                            <div class='col-md-12'>
-                                                <label id='labelsLogin'>ID:</label>
-                                                <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina'/>
-                                            </div>
-                                        
-                                            <div class='col-md-12'>
-                                                <label id='labelsLogin'>Nome Disciplina:</label>
-                                                <input class=\"form-control\" type='text' value='{$row["nomeDisciplina"]}' name='fieldNomeDisciplina'/>
-                                            </div>
-                                        
-                                            <div class='col-md-12'>
-                                                <label id='labelsLogin'>Quantidade de Alunos:</label>
-                                                <input class=\"form-control\" type='text' value='{$row["qntAlunos"]}' name='fieldQntAlunos'/>
-                                            </div>
-                                        
-                                            <div class='col-md-12'>
-                                                <label for=\"comment\" id='labelsLogin'>Descrição:</label>
-                                                <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricao'>{$row["descricao"]}</textarea>
-                                            </div>
-                                        
-                                            <div class='col-md-12'>
-                                                <label id='labelsLogin'>Visibilidade:</label>
-                                                <label><input type=\"checkbox\" value=\"1\" name=\"fieldVisibilidade\">Disciplina visível para todos</label>
-                                            </div>    
-                                        
-                                            <div class='col-md-12'>
-                                                <label id='labelsLogin'>Curso:</label>
-                                                <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' disabled name='fieldNomeCurso'/>
-                                            </div>
-                                        
-                                            <div class='col-md-12'>
-                                                <label id='labelsLogin'>Regente:</label>
-                                                <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario'/>
-                                            </div>
-                                        
-                                            <div class=\"modal-footer\">
-                                                <button type='submit' class='btn btn-success' name='alterar' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Alterar</button>
-                                                </form>
-                                                <form action='../Control/deleteDisciplina.php' method='post'>
-                                                    <button class='btn btn-danger' name='excluir' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Excluir</button>
-                                                </form>
-                                                <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
-                                            </div>
+                                            <form action='../Control/updateDisciplina.php' method='post'>
+                                            
+                                                <div class='col-md-12'>
+                                                    <label id='labelsLogin'>ID:</label>
+                                                    <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina'/>
+                                                </div>
+                                            
+                                                <div class='col-md-12'>
+                                                    <label id='labelsLogin'>Nome Disciplina:</label>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeDisciplina"]}' name='fieldNomeDisciplina'/>
+                                                </div>
+                                            
+                                                <div class='col-md-12'>
+                                                    <label id='labelsLogin'>Quantidade de Alunos:</label>
+                                                    <input class=\"form-control\" type='text' value='{$row["qntAlunos"]}' name='fieldQntAlunos'/>
+                                                </div>
+                                            
+                                                <div class='col-md-12'>
+                                                    <label for=\"comment\" id='labelsLogin'>Descrição:</label>
+                                                    <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricao'>{$row["descricao"]}</textarea>
+                                                </div>
+                                            
+                                                <div class='col-md-12'>
+                                                    <label id='labelsLogin'>Visibilidade:</label>
+                                                    <label><input type=\"checkbox\" value=\"1\" name=\"fieldVisibilidade\">Disciplina visível para todos</label>
+                                                </div>    
+                                            
+                                                <div class='col-md-12'>
+                                                    <label id='labelsLogin'>Curso:</label>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' disabled name='fieldNomeCurso'/>
+                                                </div>
+                                            
+                                                <div class='col-md-12'>
+                                                    <label id='labelsLogin'>Regente:</label>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario'/>
+                                                </div>
+                                            
+                                                <div class=\"modal-footer\">
+                                                    <button type='submit' class='btn btn-success' name='alterar' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Alterar</button>
+                                                    </form>
+                                                    <form action='../Control/deleteDisciplina.php' method='post'>
+                                                        <button class='btn btn-danger' name='excluir' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Excluir</button>
+                                                    </form>
+                                                    <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                                </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                              </div>";
-                    }?>
+                                  </div>";
+                        }?>
                 </table>
             </fieldset>
 
@@ -166,7 +164,6 @@ if ($_SESSION['administrador'] == 1){
                 <legend id=\"labelsLogin\">Aulas</legend>
                 <table class=\"table\">
                     <tr>
-                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
                         <th id=\"labelsLogin\">Nome Aula</th>
                         <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Descrição</th>
                         <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">Hora Inicio</th>
@@ -179,9 +176,8 @@ if ($_SESSION['administrador'] == 1){
                     </tr>";
 
 
-                        while ($row2 = mysqli_fetch_assoc($resultSelectAulas)) {
+                        while ($row2 = mysqli_fetch_assoc($resultSelectAulasIdDisciplina)) {
                             echo " <tr>
-                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['idAula']}</td>
                            <td>{$row2['nomeAula']}</td>
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['descricaoAula']}</td>
                            <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row2['horarioInicio']}</td>

@@ -174,7 +174,7 @@ if ($_SESSION['administrador'] == 1){
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropDisciplina" name="dropDisciplina"
                                     style="width: 100%">
                                 <?php
-                                while ($row2 = mysqli_fetch_assoc($resultDisciplina)) {
+                                while ($row2 = mysqli_fetch_assoc($resultDisciplinaId)) {
                                     echo "<option value=\"{$row2['nomeDisciplina']}\">".$row2['nomeDisciplina']."</option>";
                                 }?>
                             </select>

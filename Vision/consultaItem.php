@@ -64,7 +64,6 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
                         <th id="labelsLogin">Nome Peça</th>
                         <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
                         <th id="labelsLogin">Sala</th>
@@ -74,7 +73,6 @@ if ($_SESSION['administrador'] == 1){
                     <?php
                     while ($row = mysqli_fetch_assoc($selectItem)) {
                         echo "<tr>
-                               <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idPeca']}</td>
                                <td>{$row['nomePeca']}</td>
                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricao']}</td>
                                <td>{$row['nomeSala']}</td>

@@ -63,14 +63,12 @@ if ($_SESSION['administrador'] == 1){
                     <legend id="labelsLogin">Consulta</legend>
                     <table class="table">
                         <tr>
-                            <th id="labelsLogin">ID</th>
                             <th id="labelsLogin">Nome Conselho</th>
                             <th id="labelsLogin"></th>
                         </tr>
                         <?php
                         while ($row = mysqli_fetch_assoc($resultSelectConselho)) {
                             echo "<tr>
-                                   <td>".$row['idConselho']."</td>
                                    <td>".$row['nomeConselho']."</td>
                                    <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosConselho{$row['idConselho']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                             </tr>

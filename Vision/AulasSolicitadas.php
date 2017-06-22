@@ -31,9 +31,6 @@ if ($_SESSION['administrador'] == 1){
 }
 ?>
 <div class="col-md-8 zeroPadding">
-
-    <form action="../Control/inserirConselho.php" method="post">
-
         <div class="col-md-12">
             <fieldset id="fieldsetPositionNone">
                 <legend id="labelsLogin"> Solicitações </legend>
@@ -59,8 +56,8 @@ if ($_SESSION['administrador'] == 1){
 
                             <tbody>
                             <?php
-                            while ($row = mysqli_fetch_assoc($SelectTodasAulas)) {
-                                echo "<tr data-toggle=\"collapse\" data-target=\"#{$row['idAula']}\" class=\"accordion-toggle info\">
+                            while ($row = mysqli_fetch_assoc($resultSelectAulasNAprovadas)) {
+                                echo "<tr data-toggle=\"collapse\" data-target=\"#{$row['idAula']}\" class=\"accordion-toggle panel panel-primary\">
                                     
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
                                     <td>{$row['nomeAula']}</td>
@@ -70,7 +67,7 @@ if ($_SESSION['administrador'] == 1){
                                     <td>".converteDataFromSQL($row['dataInicio'])."</td>
                                     <td>".converteDataFromSQL($row['dataFim'])."</td>
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['cenario']}</td>
-                                    <td>{$row['nomeCurso']}</td>
+                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeCurso']}</td>
                                     <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row['idAula']}'><i class=\"glyphicon glyphicon-list\"></i></button></td>
                                 </tr>
                                 <tr>
@@ -136,7 +133,9 @@ if ($_SESSION['administrador'] == 1){
                                                     <div class='col-md-4'></div>
                                                     <div class='col-md-4'></div>
                                                     <div class='col-md-4 text-right'>
-                                                        <a href=\"#\" class=\"btn btn-success\"><i class=\"glyphicon glyphicon-ok\" title='Aprovar aula'> Aprovar</i></a>
+                                                        <form action='../Control/updateAprovacao.php' method='post'>
+                                                            <button class='btn btn-success' name='aprovarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-ok' title='Aprovar aula'> Aprovar</i></button>
+                                                        </form>
                                                     </div>
                                                     
                                                 </div>
@@ -152,9 +151,8 @@ if ($_SESSION['administrador'] == 1){
                 </div>
             </fieldset>
         </div>
-    </form>
 </div>
-</div>
+
 <?php
 include "footer.php";
 ?>

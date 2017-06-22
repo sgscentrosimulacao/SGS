@@ -2,7 +2,7 @@
 require "../Control/controleDoBanco.php";
 
 
-$selectCurso = consultarCurso();
+$resultSelectCurso = consultarCurso();
 
 function consultarCurso()
 {

@@ -2,7 +2,7 @@
 include_once "../Control/controleDoBanco.php";
 
 $resultSelectUsuario = consultarUsuario();
-$result2 = selecionarUsuarioId();
+$resultSelectUsuarioId = selecionarUsuarioId();
 
 
 function consultarUsuario()

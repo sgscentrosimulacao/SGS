@@ -41,7 +41,6 @@ function inserirAula(){
 
     $idCurso = mysqli_fetch_row($parseIdCurso);
 
-
     $valorDropSala = $_POST['dropSala'];
     $selectIdSala = "SELECT tb_sala.idSala FROM tb_sala
                         	WHERE tb_sala.nomeSala = '{$valorDropSala}'";

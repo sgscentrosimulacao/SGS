@@ -1,7 +1,7 @@
 <?php
     include_once "conexaoCalendario.php";
     include_once "funcoes.php";
-    include_once "selectDisciplina.php";
+
 
 
 
@@ -14,7 +14,7 @@
         $tabela = $info['tabela'];
         $data = $info['data'];
         $titulo = $info['titulo'];
-        $eventos = $pdo->prepare("SELECT * FROM tb_aulas WHERE `".$data."` >= NOW()");
+        $eventos = $pdo->prepare("SELECT * FROM tb_aulas WHERE `".$data."` >= NOW() AND tb_aulas.aceita = 1");
         $eventos->execute();
         $retorno = array();
         while($row = $eventos->fetchObject()){
@@ -103,7 +103,7 @@
                     $date = date('Y').'-'.$month.'-'.$dayNow;
                     if(in_array($date, array_keys($eventos))){
                         $evento = $eventos[$date];
-                        echo '<td class="evento"><a href="?id='.'2017'.'-'.$month.'-'.$numero.'" title="'.$evento['titulo'].'">'.$numero.'</a></td>';
+                        echo '<td class="evento"><a href="?id='.date('Y').'-'.$month.'-'.$numero.'" title="'.$evento['titulo'].'">'.$numero.'</a></td>';
                     }else{
                         echo '<td class="dia_'.$numero.'">'.$numero.'</td>';
                     }
@@ -125,15 +125,19 @@
 
     function mostraAulas(){
 
+        //include_once "selectDisciplina.php";
+
+
+
 
 
         if(isset($_GET['id'])){
+            $resultSelectTodasAulasDataAprovadas = consultarAulasAprovadasData();
             echo "
             <fieldset id='fieldsetPositionNone'>
                 <legend id=\"labelsLogin\">Aulas</legend>
                 <table class=\"table\">
                     <tr>
-                        <th id=\"labelsLogin\" class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">ID</th>
                         <th id=\"labelsLogin\">Nome Aula</th>
                         <th id=\"labelsLogin\">Data Inicio</th>
                         <th id=\"labelsLogin\">Data Fim</th>
@@ -146,9 +150,8 @@
 
 
 
-                while ($row = mysqli_fetch_assoc($resultSelectAulasData)) {
+                while ($row = mysqli_fetch_assoc($resultSelectTodasAulasDataAprovadas)) {
                    echo " <tr>
-                           <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
                            <td>{$row['nomeAula']}</td>
                            <td>".converteDataFromSQL($row['dataInicio'])."</td>
                            <td>".converteDataFromSQL($row['dataFim'])."</td>

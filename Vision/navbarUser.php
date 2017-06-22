@@ -1,3 +1,7 @@
+<?php
+    require_once "../Control/selectDisciplina.php";
+    $solicitacoes = ($resultSelectAulasNAprovadas->num_rows);
+?>
 <nav class="navbar">
     <!--navbar-fixed-top-->
     <div class="container-fluid">
@@ -20,6 +24,9 @@
                 <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="labelUsuario">
+                <li>
+                    <a href="aulasSolicitadas.php" class="btn btn-primary" id="requisicoes" style="margin-top:10px;margin-right: 10px; padding-top: 0px; padding-bottom: 0px;">Solicitações <span class="badge"><?php echo $solicitacoes?></span></a>
+                </li>
                 <li>
                     <h4><span class="label label-default">
                         <?php

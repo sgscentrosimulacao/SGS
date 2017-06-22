@@ -70,7 +70,6 @@ if ($_SESSION['administrador'] == 1){
                 <legend id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
                         <th id="labelsLogin">Usuário</th>
                         <th id="labelsLogin">Nome</th>
                         <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">E-mail</th>
@@ -88,7 +87,6 @@ if ($_SESSION['administrador'] == 1){
                             $admin = "Não";
                         }
                         echo "<tr>
-                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['idUsuario']}</td>
                                    <td>{$row['usuario']}</td>
                                    <td>{$row['nomeUsuario']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['email']}</td>
@@ -111,10 +109,10 @@ if ($_SESSION['administrador'] == 1){
                                         
                                         <form action='../Control/updateUsuario.php' method='post'>
                                         
-                                            <div class='col-md-12'>
+                                            <!--<div class='col-md-12'>
                                                     <label id='labelsLogin' style='padding-top: 20px;'>ID:</label>
                                                     <input class=\"form-control\" type='text' disabled value='{$row["idUsuario"]}' name='fieldIdUsuario'/>
-                                            </div>
+                                            </div>-->
                                         
                                             <div class='col-md-12'>
                                                     <label id='labelsLogin'>Usuário:</label>

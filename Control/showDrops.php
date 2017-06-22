@@ -3,6 +3,8 @@
 include_once "../Control/controleDoBanco.php";
 
 $resultDisciplina = showDisciplina();
+$resultDisciplinaId = showDisciplinaId();
+
 $resultCurso = showCursos();
 $resultSalas = showSalas();
 $resultConselho = showConselhos();
@@ -14,6 +16,21 @@ function showDisciplina(){
     $conn = abrirDatabase();
 
     $selectDisciplinas= "SELECT tb_disciplina.nomeDisciplina FROM tb_disciplina ORDER BY tb_disciplina.nomeDisciplina ASC";
+
+    $query = mysqli_query($conn, $selectDisciplinas);
+
+    fecharDatabase($conn);
+
+    return $query;
+
+}
+
+
+function showDisciplinaId(){
+
+    $conn = abrirDatabase();
+
+    $selectDisciplinas= "SELECT tb_disciplina.nomeDisciplina FROM tb_disciplina WHERE idUsuario = '{$_SESSION['idUsuario']}' ORDER BY tb_disciplina.nomeDisciplina ASC";
 
     $query = mysqli_query($conn, $selectDisciplinas);
 
