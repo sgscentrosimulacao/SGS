@@ -33,7 +33,7 @@ $itemSelecionado = basename(__FILE__, '.php');
 
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
-                    <legend id="labelsLogin"> Cadastrar Conselho</legend>
+                    <legend class="ajusteTitulos" style="width: 210px" id="labelsLogin"> Cadastrar Conselho</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">

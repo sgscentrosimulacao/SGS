@@ -135,7 +135,7 @@
             $resultSelectTodasAulasDataAprovadas = consultarAulasAprovadasData();
             echo "
             <fieldset id='fieldsetPositionNone'>
-                <legend id=\"labelsLogin\">Aulas</legend>
+                <legend class=\"ajusteTitulos\" style=\"width: 80px\" id=\"labelsLogin\">Aulas</legend>
                 <table class=\"table\">
                     <tr>
                         <th id=\"labelsLogin\">Nome Aula</th>

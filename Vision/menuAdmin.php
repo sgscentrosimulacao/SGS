@@ -1,7 +1,7 @@
 <div class="col-md-4 visible-lg visible-md visible-sm hidden-xs hidden-sm">
     <div >
         <div class="col-md-12">
-            <fieldset style="left: 0; margin-left: 50px;">
+            <fieldset style="left: 0; margin-left: 0px; margin-right: 40px">
                 <div>
                     <div class="col-sm-12">
 

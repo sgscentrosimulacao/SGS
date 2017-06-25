@@ -16,12 +16,16 @@
 
 }
 
-#requisicoes:hover{
+#requisicoes{
     background-color: #447d8d;
 }
 
+#requisicoes:hover{
+    background-color: #bf3056;
+}
+
 #requisicoes:focus {
-    background-color: #447d8d;
+    background-color: #bf3056;
 }
 
 #logout{
@@ -341,4 +345,12 @@ fieldset {
     position: inherit;
     left: 0;
     right: 0;
+}
+
+
+.ajusteTitulos{
+    border: 5px hidden #80bcb6;
+    border-radius:10px;
+    padding-left: 15px;
+
 }

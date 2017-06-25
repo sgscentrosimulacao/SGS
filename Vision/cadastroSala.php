@@ -31,7 +31,7 @@ if ($_SESSION['administrador'] == 1){
         <form action="../Control/inserirSala.php" method="post">
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
-                    <legend id="labelsLogin"> Cadastrar Sala</legend>
+                    <legend class="ajusteTitulos" style="width: 170px" id="labelsLogin"> Cadastrar Sala</legend>
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">
                             <label for="nomeSalaLabel" id="labelsLogin">Nome da Sala</label>

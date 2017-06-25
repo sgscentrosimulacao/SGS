@@ -33,7 +33,7 @@ if ($_SESSION['administrador'] == 1){
         <form action="../Control/inserirInstituicao.php" method="post">
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
-                    <legend id="labelsLogin"> Cadastrar Instituição</legend>
+                    <legend class="ajusteTitulos" style="width: 220px" id="labelsLogin"> Cadastrar Instituição</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">

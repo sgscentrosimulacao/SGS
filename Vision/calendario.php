@@ -35,35 +35,31 @@ if ($_SESSION['administrador'] == 1){
     include "menuUser.php"; //NAV MENU
 }
 ?>
-    <div class="col-md-8     zeroPadding">
-        <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
-            <legend class="text-center" id="labelsLogin">Calendário de Reservas - 2017</legend>
+<div class="col-md-8 zeroPadding">
+    <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
+        <legend class="ajusteTitulos" style="width: 255px" id="labelsLogin">Calendário de Reservas</legend>
 
-            <div class="calendario">
-                <?php
-                $eventos = montaEventos($info);
-                montaCalendario($eventos);
-                ?>
-                <div class="legends">
-                    <span class="legenda"><span class="blue"></span> Aulas Marcadas</span>
-                    <span class="legenda"><span class="red"></span> Hoje</span>
-                </div>
+        <div class="calendario">
+            <?php
+            $eventos = montaEventos($info);
+            montaCalendario($eventos);
+            ?>
+            <div class="legends">
+                <span class="legenda"><span class="blue"></span> Aulas Marcadas</span>
+                <span class="legenda"><span class="red"></span> Hoje</span>
             </div>
+        </div>
 
-            <script type="text/javascript" src="js/jquery.js"></script>
-            <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
 
-        </fieldset>
-        <?php
-        echo "<div>";
-            mostraAulas();
-        echo "</div>";
-        ?>
-    </div>
+    </fieldset>
+    <?php
+    echo "<div>";
+        mostraAulas();
+    echo "</div>";
+    ?>
 </div>
-
-
-
 <?php
 include "footer.php";
 ?>

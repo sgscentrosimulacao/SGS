@@ -31,7 +31,7 @@
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="active navbar-inverse ativo"><a href="index.php" id="navbarLetras">Página Inicial</a></li>
                 <li class="inativo"><a href="cadastroUsuario.php" id="navbarLetras">Cadastrar</a></li>
-                <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
+                <li class="inativo"><a href="sobre.php" id="navbarLetras">Sobre</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -57,7 +57,7 @@
             <form action="./../Control/autenticacao.php" method="post">
 
             <fieldset id="fieldsetPositionNone">
-                <legend><p id="labelsLogin">Login</p></legend>
+                <legend class="ajusteTitulos" style="width: 80px"><p id="labelsLogin">Login</p></legend>
 
                 <div class="col-md-12">
                     <div class="editor-label col-md-2" id="userLabel">

@@ -32,7 +32,7 @@ if ($_SESSION['administrador'] == 1){
         <div class="col-md-12">
             <form action="./../Control/inserirUsuarioPP.php" method="post">
                 <fieldset id="fieldsetPositionNone">
-                    <legend><p id="labelsLogin">Cadastrar Usuário</p></legend>
+                        <legend class="ajusteTitulos" style="width: 200px"><p id="labelsLogin">Cadastrar Usuário</p></legend>
 
                     <div class="col-md-12 text-center">
                         <div class="col-md-3"></div>

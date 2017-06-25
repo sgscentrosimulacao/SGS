@@ -39,7 +39,7 @@ if ($_SESSION['administrador'] == 1){
 
             <form action="../Control/inserirDisciplina.php" method="post">
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0;">
-                    <legend id="labelsLogin"> Cadastrar Disciplina</legend>
+                    <legend class="ajusteTitulos" style="width: 220px" id="labelsLogin"> Cadastrar Disciplina</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">
@@ -111,7 +111,7 @@ if ($_SESSION['administrador'] == 1){
             <div class="col-md-12">
             <form action="../Control/inserirAula.php" method="post">
                 <fieldset id="fieldsetPositionNone">
-                    <legend id="labelsLogin"> Cadastrar Aulas</legend>
+                    <legend class="ajusteTitulos" style="width: 180px" id="labelsLogin"> Cadastrar Aulas</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">

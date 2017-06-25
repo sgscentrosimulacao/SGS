@@ -1,7 +1,7 @@
 <?php
-include "../Control/sessionControl.php";
-include "../Control/showDrops.php";
-$itemSelecionado = basename(__FILE__, '.php');
+    include "../Control/sessionControl.php";
+    include "../Control/showDrops.php";
+    $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -32,7 +32,7 @@ if ($_SESSION['administrador'] == 1){
         <form action="../Control/inserirItem.php" method="post">
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
-                    <legend id="labelsLogin"> Cadastrar no Inventário</legend>
+                    <legend class="ajusteTitulos" style="width: 250px" id="labelsLogin"> Cadastrar no Inventário</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">

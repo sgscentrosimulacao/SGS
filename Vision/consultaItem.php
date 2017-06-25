@@ -32,7 +32,7 @@ if ($_SESSION['administrador'] == 1){
         <div>
             <form action="consultaItem.php" method="post">
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
-                    <legend id="labelsLogin">Consulta de Item</legend>
+                    <legend class="ajusteTitulos" style="width: 190px" id="labelsLogin">Consulta de Item</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
@@ -61,7 +61,7 @@ if ($_SESSION['administrador'] == 1){
         </div>
         <div>
             <fieldset id="fieldsetPositionNone">
-                <legend id="labelsLogin">Consulta</legend>
+                <legend class="ajusteTitulos" style="width: 120px" id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
                         <th id="labelsLogin">Nome Peça</th>
