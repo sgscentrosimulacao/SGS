@@ -10,6 +10,8 @@ function inserirDisciplina(){
 
     $conn = abrirDatabase();
 
+
+
     $nomeDisci = $_POST['fieldNomeDisci'];
     $qntAlunos = $_POST['fieldQntAlunos'];
 
@@ -27,6 +29,23 @@ function inserirDisciplina(){
     $idUsuario = $_SESSION['idUsuario'];
     $idConselho = $_SESSION['idConselho'];
     $idInstituicao = $_SESSION['idInstituicao'];
+
+
+    $uploaddir = $_SERVER['DOCUMENT_ROOT']."/SGS/SGS/planosDeEnsino/" ;
+
+    $nomeArquivo = "PE_".$_SESSION['idUsuario']."_".$_POST['fieldNomeDisci'];
+    $uploadfile = $uploaddir . basename($nomeArquivo);
+
+    echo '<pre>';
+    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+        echo "Arquivo válido e enviado com sucesso.\n";
+    } else {
+        echo "Possível ataque de upload de arquivo!\n";
+    }
+
+    echo 'Aqui está mais informações de debug:';
+    print_r($_FILES);
+    print "</pre>";
 
 
 

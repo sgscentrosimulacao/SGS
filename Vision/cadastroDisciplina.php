@@ -37,7 +37,7 @@ if ($_SESSION['administrador'] == 1){
         <div>
             <div class="col-md-12">
 
-            <form action="../Control/inserirDisciplina.php" method="post">
+            <form enctype="multipart/form-data" action="../Control/inserirDisciplina.php" method="post">
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0;">
                     <legend class="ajusteTitulos" style="width: 220px" id="labelsLogin"> Cadastrar Disciplina</legend>
 
@@ -74,13 +74,12 @@ if ($_SESSION['administrador'] == 1){
                                 }?>
 
                             </select>
-
                         </div>
-                        <div class="col-md-6 checkbox">
+                        <div class="col-md-4 checkbox">
                             <label><input type="checkbox" value="1" name="fieldVisibilidade">Disciplina visível para todos</label>
                         </div>
-
                     </div>
+
                     <div class="col-md-12">
                         <div class="form-group col-md-12">
                             <label for="descricaoDisciLabel" id="labelsLogin">Descrição</label>
@@ -91,15 +90,24 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                     </div>
 
-                    <div class="col-md-12" style="margin-left:30px">
-                        <div class="col-md-4">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label for="qntAlunosLabel" id="labelsLogin">Plano de Ensino</label>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-7">
+                            <input name="userfile" type="file"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 " style="margin-left:30px">
+                        <div class="col-md-4 ">
+                        </div>
+                        <div class="col-md-4 " style="margin-top: 20px;">
 
                             <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
 
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 ">
 
                         </div>
                     </div>

@@ -85,20 +85,50 @@
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
                     <legend class="ajusteTitulos" style="width: 190px" id="labelsLogin">Desenvolvedores</legend>
 
-                    <div class="col-md-12">
-                        <p>
-
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-
-                        </p>
+                    <div class="col-md-12 text-center">
+                        <div class="col-md-4" style="margin-top: 10px">
+                            <img src="../img/Desenvolvedor1.png" style="border 5px solid #80bcb6; border-radius: 100% ; width: 70px;height: 70px">
+                            <div id="labelsLogin"><b>Bruno Gomes Tavares</b></div>
+                        </div>
+                        <div class="col-md-4 text-center" style="margin-top: 10px">
+                            <img src="../img/Desenvolvedor2.png" style="border 5px solid #80bcb6; border-radius: 100%; width: 70px;height: 70px">
+                            <div id="labelsLogin"><b>Carlos G. M. Johansson</b></div>
+                        </div>
+                        <div class="col-md-4 text-center" style="margin-top: 10px">
+                            <img src="../img/Desenvolvedor3.png" style="border 5px solid #80bcb6 ; border-radius: 100%; width: 70px;height: 70px">
+                            <div id="labelsLogin"><b>Mayandre Bona</b></div>
+                        </div>
                     </div>
 
+                    <div class="col-md-12">
 
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <p id="textoSobre" align="justify">
+                                <br>
+                                Este site foi desenvolvido por alunos do curso de Informática Biomédica da UFCSPA em um projeto da
+                                disciplina de Engenharia de Software II, sob docência da profª Dra. Juliana Herbert. O projeto
+                                ultrapassou as paredes da sala de aula e se tornou algo muito maior e mais importante do que
+                                imaginávamos. Agradecemos a prof. Dra. Juliana por ter oportunizado que participássemos de algo desta
+                                proporção ainda na graduação. Agradecemos, também, a equipe do Centro de Simulação e seu coordenador, prof
+                                Dr. Newton Aerts por ter nos confiado esta missão. Esperamos que nosso software melhore e facilite
+                                a gerência do agendamento de salas do Centro, tornando-o mais eficaz e dinâmico.
+                                <br>
+                            </p>
+
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <img src="../img/informatica-biomedica-5.png" class="img-responsive" >
+                        </div>
+                        <div class="col-md-5">
+                            <img src="../img/UFCSPA_MINI.png" class="img-responsive">
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
 
                 </fieldset>
                 <div>
