@@ -354,3 +354,12 @@ fieldset {
     padding-left: 15px;
 
 }
+
+#textoSobre{
+    font-family: Tahoma;
+}
+
+#fonteSobre{
+    font-size: 12px;
+    text-align: right;
+}

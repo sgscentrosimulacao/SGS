@@ -55,20 +55,28 @@
             </div>
             <div class="col-sm-6 text-left" id="ColunaDoMeio">
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
-                    <legend class="ajusteTitulos" style="width: 130px" id="labelsLogin">Regimento</legend>
-                    <div class="col-md-12">
-                        <p>
+                    <legend class="ajusteTitulos" style="width: 165px" id="labelsLogin">Sobre o centro</legend>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p id="textoSobre">
 
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
-                            Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
+                            Construído dentro do complexo da Santa Casa de Misericórdia de Porto Alegre (ISCMPA), em
+                            parceria com a Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA), o
+                            Centro de Simulação Realística é um espaço voltado para ensino, pesquisa e treinamento de
+                            acadêmicos, residentes, médicos e demais profissionais da saúde das duas instituições. O
+                            local conta sala de simulação avançada, área de realidade virtual, sala de simulação de
+                            emergência, sala de habilidades, consultório e debriefing. Todos com equipamentos modernos
+                            para procedimentos clínicos e cirúrgicos, em manequins feitos de plástico e resina que
+                            imitam a pele humana. A estrutura ajudará a desenvolver desde habilidades técnicas até a
+                            maneira como se portar diante do paciente. <br>
+                            O Centro fica localizado junto ao prédio garagem da ISCMPA, 2º andar, na esquina das
+                            ruas Sarmento Leite e Oswaldo Aranha.<br><br>
 
+                            <p id="fonteSobre"><i><b>Fonte: UFCSPA, ISCMPA e Zero Hora</b></i></p>
 
                         </p>
                     </div>
+                    <div class="col-md-1"></div>
 
 
 
@@ -87,14 +95,19 @@
                             Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
                             Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto
 
-
                         </p>
                     </div>
 
 
 
                 </fieldset>
-                <img src="../img/SGS_LogoMarca.png">
+                <div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 text-center">
+                        <img src="../img/SGS_LogoMarca.png" class="img-responsive text-center">
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
             </div>
             <div class="col-sm-3 sidenav zeroPadding"></div>
 

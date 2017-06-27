@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/style_index.css">
     <title>SGS - Página Principal</title>
 </head>
-<body>
+<div>
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header" id="navLogo">
@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
                 <li class="navbar-inverse ativo"><a href="paginaPrincipalUser.php" id="navbarLetras">Página Principal</a></li>
-                <li class="inativo"><a href="#" id="navbarLetras">Sobre</a></li>
+                <li class="inativo"><a href="sobreInside.php" id="navbarLetras">Sobre</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right" id="labelUsuario">
@@ -53,18 +53,21 @@
 <?php
 include "navMenuUser.php";
 ?>
+    <body>
 <div>
     <?php
         include "menuUser.php";
     ?>
     <div class="col-md-8 zeroPadding">
-        <fieldset id="fieldsetPositionNone">
-            <div class="col-md-12">
-                <img src="../img/SGS_LogoMarca.png" style="width:100%; height:100%;display: block; margin-left: auto; margin-right: auto;">
-            </div>
-        </fieldset>
+        <div class="col-md-1 "></div>
+        <div class="col-md-10" style="width: 100%; height: 100%">
+            <img class="visible-lg visible-md visible-sm hidden-xs hidden-sm" src="../img/SGS_LogoMarca.png" style="margin-top: 100px;">
+            <img class="hidden-lg hidden-md hidden-sm" src="../img/SGS_LogoMarca3.png">
+        </div>
+        <div class="col-md-1 "></div>
     </div>
 </div>
+
 <?php
 include "footer.php";
 ?>

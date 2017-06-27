@@ -21,7 +21,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav" id="navbarLetras">
-                <li class="navbar-inverse ativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
+                <!--class="navbar-inverse ativo"-->
+                <li class="inativo"><a href="paginaPrincipalAdmin.php" id="navbarLetras">Página Principal</a></li>
                 <li class="inativo"><a href="sobreInside.php" id="navbarLetras">Sobre</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="labelUsuario">
