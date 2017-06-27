@@ -96,10 +96,10 @@ if ($_SESSION['administrador'] == 1){
         </div>
         <div class="col-md-12 text-center">
             <div class="col-md-1"></div>
-            <div class="col-md-5">
+            <div class="col-md-5 text-center">
                 <img src="../img/informatica-biomedica-5.png" class="img-responsive" >
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 text-center">
                 <img src="../img/UFCSPA_MINI.png" class="img-responsive">
             </div>
             <div class="col-md-1"></div>

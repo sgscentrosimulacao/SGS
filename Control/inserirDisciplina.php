@@ -36,16 +36,13 @@ function inserirDisciplina(){
     $nomeArquivo = "PE_".$_SESSION['idUsuario']."_".$_POST['fieldNomeDisci'];
     $uploadfile = $uploaddir . basename($nomeArquivo);
 
-    echo '<pre>';
     if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-        echo "Arquivo válido e enviado com sucesso.\n";
+        //echo "Arquivo válido e enviado com sucesso.\n";
     } else {
-        echo "Possível ataque de upload de arquivo!\n";
+        //echo "Possível ataque de upload de arquivo!\n";
     }
 
-    echo 'Aqui está mais informações de debug:';
-    print_r($_FILES);
-    print "</pre>";
+    //echo 'Aqui está mais informações de debug:';
 
 
 
