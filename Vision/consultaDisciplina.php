@@ -90,7 +90,7 @@ if ($_SESSION['administrador'] == 1){
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['qntAlunos']}</td>
                                    <td>{$row['nomeCurso']}</td>
                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
-                                   <td class=\"text-center\"><a title='Plano de ensino' class='btn btn-info btn-circle' href=\"{$row['caminhoPlano']}\"><i class='glyphicon glyphicon-save-file'></i></a></td>
+                                   <td class=\"text-center\"><a title='Plano de ensino' class='btn btn-info btn-circle' href=\"downloadPlano.php?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-save-file'></i></a></td>
                                    <td class=\"text-center\"><a title='Aulas' class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
                                    <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                             </tr>
@@ -142,15 +142,20 @@ if ($_SESSION['administrador'] == 1){
                                                     <label id='labelsLogin'>Regente:</label>
                                                     <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario'/>
                                                 </div>
-                                            
-                                                <div class=\"modal-footer\">
-                                                    <button type='submit' class='btn btn-success' name='alterar' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Alterar</button>
-                                                    </form>
-                                                    <form action='../Control/deleteDisciplina.php' method='post'>
-                                                        <button class='btn btn-danger' name='excluir' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Excluir</button>
-                                                    </form>
-                                                    <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
-                                                </div>
+                                                
+                                                <div class=\"modal-footer\">";
+                                                if ($_SESSION['administrador'] == 1) {
+                                                    echo "<button type='submit' class='btn btn-success' name='alterar' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Alterar</button>
+                                                          <label><a title='Plano de ensino da disciplina' class='btn btn-info' href=\"downloadPlano.php?id={$row['idDisciplina']}\" style='margin-top: 30px;'><i class='glyphicon glyphicon-save-file'> Plano de Ensino</i></a></label>
+                                                          </form>
+                                                          <form action='../Control/deleteDisciplina.php' method='post'>
+                                                            <button class='btn btn-danger' name='excluir' value='{$row['idDisciplina']}' >Excluir</button>
+                                                          </form>
+                                                          <button class='btn btn-warning' data-dismiss='modal' >Cancelar</button>";
+                                                }else{
+                                                echo "<button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;' >Cancelar</button>";
+                                                }
+                                                echo"</div>
                                         </div>
                                       </div>
                                     </div>
