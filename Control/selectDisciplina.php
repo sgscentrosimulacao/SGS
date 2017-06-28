@@ -29,14 +29,14 @@ function consultarDisciplina()
 
             case 1:
 
-                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                           
                                          WHERE UPPER(tb_disciplina.nomeDisciplina) LIKE '%{$pesquisa}%' AND (tb_disciplina.visibilidade = 1 OR tb_disciplina.idUsuario = '{$_SESSION['idUsuario']}')";
                 break;
             case 2:
-                 $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+                 $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                           
@@ -44,28 +44,28 @@ function consultarDisciplina()
 
                 break;
             case 3:
-                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                           
                                          WHERE UPPER(tb_instituicao.nomeInstituicao) LIKE '%{$pesquisa}%' AND (tb_disciplina.visibilidade = 1 OR tb_disciplina.idUsuario = '{$_SESSION['idUsuario']}')";
                 break;
             case 4:
-                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                           
                                          WHERE UPPER(tb_usuario.nomeUsuario) LIKE '%{$pesquisa}%' AND (tb_disciplina.visibilidade = 1 OR tb_disciplina.idUsuario = '{$_SESSION['idUsuario']}')";
                 break;
             case 5:
-                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                           
                                          WHERE UPPER(tb_usuario.numeroConselho) LIKE '%{$pesquisa}%' AND (tb_disciplina.visibilidade = 1 OR tb_disciplina.idUsuario = '{$_SESSION['idUsuario']}')";
                 break;
             case 6:
-                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+                $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                           
@@ -73,7 +73,7 @@ function consultarDisciplina()
                 break;
         }
     }else{
-        $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario FROM tb_disciplina 
+        $selectUsuario = "SELECT tb_disciplina.idDisciplina,tb_disciplina.nomeDisciplina,tb_disciplina.descricao,tb_disciplina.visibilidade,tb_disciplina.qntAlunos, tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_disciplina.planoDeEnsino, tb_disciplina.caminhoPlano FROM tb_disciplina 
                                         LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
                                         LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
                                         WHERE tb_disciplina.visibilidade = 1 OR tb_disciplina.idUsuario = '{$_SESSION['idUsuario']}'";

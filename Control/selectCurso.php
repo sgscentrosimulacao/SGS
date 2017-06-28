@@ -17,12 +17,22 @@ function consultarCurso()
 
             case 1:
 
-                $selectCurso = "SELECT * FROM tb_cursos WHERE UPPER(tb_cursos.nomeCurso) LIKE '%{$pesquisa}%'";
+                $selectCurso = "SELECT tb_cursos.idCurso,tb_cursos.nomeCurso, tb_instituicao.nomeInstituicao FROM tb_cursos 
+                                  LEFT JOIN tb_instituicao ON tb_cursos.idInstituicao = tb_instituicao.idInstituicao
+                                WHERE UPPER(tb_cursos.nomeCurso) LIKE '%{$pesquisa}%'";
+                break;
+
+            case 2:
+
+                $selectCurso = "SELECT tb_cursos.idCurso,tb_cursos.nomeCurso, tb_instituicao.nomeInstituicao FROM tb_cursos 
+                                  LEFT JOIN tb_instituicao ON tb_cursos.idInstituicao = tb_instituicao.idInstituicao
+                                WHERE UPPER(tb_instituicao.nomeInstituicao) LIKE '%{$pesquisa}%'";
                 break;
 
         }
     }else{
-        $selectCurso = "SELECT * FROM tb_cursos";
+        $selectCurso = "SELECT tb_cursos.idCurso,tb_cursos.nomeCurso, tb_instituicao.nomeInstituicao FROM tb_cursos 
+                                  LEFT JOIN tb_instituicao ON tb_cursos.idInstituicao = tb_instituicao.idInstituicao";
     }
 
     return mysqli_query($conn, $selectCurso);

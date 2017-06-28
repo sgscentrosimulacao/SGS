@@ -1,6 +1,6 @@
 /*
 Created: 26/05/2017
-Modified: 19/06/2017
+Modified: 28/06/2017
 Project: SGS_Centro_Simulacao
 Model: MySQL 5.6
 Database: MySQL 5.6
@@ -52,7 +52,9 @@ CREATE TABLE `tb_disciplina`
   `idCurso` Int NOT NULL,
   `idUsuario` Int NOT NULL,
   `idConselho` Int NOT NULL,
-  `idInstituicao` Int,
+  `idInstituicao` Int NOT NULL,
+  `planoDeEnsino` Char(200) NOT NULL,
+  `caminhoPlano` Char(200) NOT NULL,
   PRIMARY KEY (`idDisciplina`,`idCurso`)
 )
 ;
@@ -66,8 +68,12 @@ CREATE TABLE `tb_cursos`
 (
   `idCurso` Int NOT NULL AUTO_INCREMENT,
   `nomeCurso` Char(30) NOT NULL,
+  `idInstituicao` Int NOT NULL,
   PRIMARY KEY (`idCurso`)
 )
+;
+
+CREATE INDEX `IX_Inst_Cur_FK` ON `tb_cursos` (`idInstituicao`)
 ;
 
 -- Table tb_aulas
@@ -157,6 +163,10 @@ ALTER TABLE `tb_usuario` ADD CONSTRAINT `Inst_User_FK` FOREIGN KEY (`idInstituic
 ALTER TABLE `tb_aulas` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idSala`) REFERENCES `tb_sala` (`idSala`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
+ALTER TABLE `tb_cursos` ADD CONSTRAINT `Inst_Cur_FK` FOREIGN KEY (`idInstituicao`) REFERENCES `tb_instituicao` (`idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+
 
 
 
@@ -191,37 +201,37 @@ INSERT INTO `tb_conselho` (`idConselho`, `nomeConselho`) VALUES (NULL, 'CREFITO-
 
 
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Biomedicina - diurno');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Biomedicina - diurno', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Biomedicina - noturno');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Biomedicina - noturno', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Enfermagem');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Enfermagem', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Farmácia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Farmácia', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Física Médica');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Física Médica', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Fisioterapia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Fisioterapia', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Fonoaudiologia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Fonoaudiologia', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Gastronomia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Gastronomia', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Gestão em Saúde');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Gestão em Saúde', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Informática Biomédica');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Informática Biomédica', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Medicina');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Medicina', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Nutrição');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Nutrição', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Psicologia');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Psicologia', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Química Medicinal');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Química Medicinal', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Tecnologia em Alimentos');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Tecnologia em Alimentos', '1');
 
-INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`) VALUES (NULL, 'Toxicologia Analítica');
+INSERT INTO `tb_cursos` (`idCurso`, `nomeCurso`, `idInstituicao`) VALUES (NULL, 'Toxicologia Analítica', '1');
 
 
 

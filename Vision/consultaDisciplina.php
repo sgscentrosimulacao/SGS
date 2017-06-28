@@ -71,6 +71,7 @@ if ($_SESSION['administrador'] == 1){
                         <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Alunos</th>
                         <th id="labelsLogin">Curso</th>
                         <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Regente</th>
+                        <th id="labelsLogin">Plano</th>
                         <th id="labelsLogin">Aulas</th>
                         <th></th>
 
@@ -89,7 +90,8 @@ if ($_SESSION['administrador'] == 1){
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['qntAlunos']}</td>
                                    <td>{$row['nomeCurso']}</td>
                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
-                                   <td class=\"text-center\"><a class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
+                                   <td class=\"text-center\"><a title='Plano de ensino' class='btn btn-info btn-circle' href=\"{$row['caminhoPlano']}\"><i class='glyphicon glyphicon-save-file'></i></a></td>
+                                   <td class=\"text-center\"><a title='Aulas' class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
                                    <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                             </tr>
                             

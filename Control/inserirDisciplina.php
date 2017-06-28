@@ -31,10 +31,15 @@ function inserirDisciplina(){
     $idInstituicao = $_SESSION['idInstituicao'];
 
 
-    $uploaddir = $_SERVER['DOCUMENT_ROOT']."/SGS/SGS/planosDeEnsino/" ;
+    $uploaddir = $_SERVER['DOCUMENT_ROOT']."/SGS/SGS/planosDeEnsino/";
 
-    $nomeArquivo = "PE_".$_SESSION['idUsuario']."_".$_POST['fieldNomeDisci'];
-    $uploadfile = $uploaddir . basename($nomeArquivo);
+    $nomeDisciArquivo = str_replace(" ", "_", $_POST['fieldNomeDisci']);
+
+    $nomeArquivo = "PE_IdUser".$_SESSION['idUsuario']."_".$nomeDisciArquivo.".pdf";
+
+    $nome = basename($_FILES['userfile']['name']);
+
+    $uploadfile = $uploaddir . basename(date("YmdHis").".pdf");
 
     if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
         //echo "Arquivo válido e enviado com sucesso.\n";
@@ -42,13 +47,9 @@ function inserirDisciplina(){
         //echo "Possível ataque de upload de arquivo!\n";
     }
 
-    //echo 'Aqui está mais informações de debug:';
-
-
-
-    $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao) 
-                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$idCurso[0]}','{$idUsuario}',
-                                                                            '{$idConselho}','{$idInstituicao}')";
+    $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao, planoDeEnsino, caminhoPlano)   
+                                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$idCurso[0]}','{$idUsuario}',
+                                                                            '{$idConselho}','{$idInstituicao}', '{$nome}','{$uploadfile}')";
 
     if ($nomeDisci and $qntAlunos and $descricao){
         if ($conn->query($inserirDisciplina)==true){

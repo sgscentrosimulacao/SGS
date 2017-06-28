@@ -41,6 +41,7 @@ if ($_SESSION['administrador'] == 1){
                     <div class="dropdown col-md-8" style="">
                         <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
                             <option value="1">Nome Curso</option>
+                            <option value="2">Nome Instituição</option>
                         </select>
                     </div>
                 </div>
@@ -64,12 +65,14 @@ if ($_SESSION['administrador'] == 1){
             <table class="table">
                 <tr>
                     <th id="labelsLogin">Nome Curso</th>
+                    <th id="labelsLogin">Instituição</th>
                     <th id="labelsLogin"></th>
                 </tr>
                 <?php
                 while ($row = mysqli_fetch_assoc($resultSelectCurso)) {
                     echo "<tr>
                            <td>".$row['nomeCurso']."</td>
+                           <td>".$row['nomeInstituicao']."</td>
                            <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosCurso{$row['idCurso']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                     </tr>
                     <div id=\"modalDadosCurso{$row['idCurso']}\" class=\"modal fade\" role=\"dialog\">
@@ -85,21 +88,18 @@ if ($_SESSION['administrador'] == 1){
                                 <form action='../Control/updateCurso.php' method='post'>
                                 
                                     <div class='col-md-12'>
-                                        <div class='col-sm-6'>
-                                            <label id='labelsLogin'>ID:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
-                                            <input class=\"form-control\" type='text' disabled value='{$row["idCurso"]}' name='fieldIdCurso'/>
-                                        </div>
+                                        <label id='labelsLogin'>ID:</label>
+                                        <input class=\"form-control\" type='text' disabled value='{$row["idCurso"]}' name='fieldIdCurso'/>
                                     </div>
                                 
                                     <div class='col-md-12'>
-                                        <div class='col-sm-6'>
-                                            <label id='labelsLogin'>Nome Curso:</label>
-                                        </div>
-                                        <div class='col-sm-4'>
-                                            <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}'  name='fieldNomeCurso'/>
-                                        </div>
+                                        <label id='labelsLogin'>Nome Curso:</label>
+                                        <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}'  name='fieldNomeCurso'/>
+                                    </div>
+                                    
+                                    <div class='col-md-12'>
+                                        <label id='labelsLogin'>Nome Curso:</label>
+                                        <input class=\"form-control\" type='text' disabled value='{$row["nomeInstituicao"]}'  name='fieldNomeCurso'/>
                                     </div>
                                     
                                     <div class=\"modal-footer\">

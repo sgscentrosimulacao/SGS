@@ -1,5 +1,6 @@
 <?php
 include "../Control/sessionControl.php";
+include_once "../Control/showDrops.php";
 $itemSelecionado = basename(__FILE__, '.php');
 ?>
 
@@ -43,6 +44,19 @@ if ($_SESSION['administrador'] == 1){
                             <input class="form-control" id="fieldNomeCurso" name="fieldNomeCurso"
                                    placeholder="Insira o nome do curso" style="width: 100%" type="text">
                         </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label for="instituicaoLabel" id="labelsLogin">Instituição</label>
+                        </div>
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
+                                <?php
+                                while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
+                                    echo "<option value=\"{$row2['nomeInstituicao']}\">".$row2['nomeInstituicao']."</option>";
+                                }?>
+                            </select>
+
                     </div>
 
                     <div class="col-md-12" style="margin-left:30px">

@@ -7,12 +7,20 @@ inserirCurso();
 
 function inserirCurso(){
 
-    $nomeCurso = $_POST['fieldNomeCurso'];
-
     $conn = abrirDatabase();
 
-    $inserirCurso = "INSERT INTO tb_cursos(nomeCurso) VALUES ('{$nomeCurso}')";
+    $nomeCurso = $_POST['fieldNomeCurso'];
 
+    $valorDropInstituicao = $_POST['dropInstituicao'];
+    $selectIdInstituicao = "SELECT tb_instituicao.idInstituicao FROM tb_instituicao
+                        	  WHERE tb_instituicao.nomeInstituicao = '{$valorDropInstituicao}'";
+    $instituicao = $conn->query($selectIdInstituicao);
+
+    $idInstituicao = mysqli_fetch_row($instituicao);
+
+
+
+    $inserirCurso = "INSERT INTO tb_cursos(nomeCurso, idInstituicao) VALUES ('{$nomeCurso}', '{$idInstituicao[0]}')";
 
     if ($nomeCurso){
         if ($conn->query($inserirCurso)== true){
