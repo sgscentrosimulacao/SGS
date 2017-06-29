@@ -1,6 +1,6 @@
 <?php
-    include "../Control/sessionControl.php";
-    include "../Control/selectCurso.php";
+    include "../control/sessionControl.php";
+    include "../control/selectCurso.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -85,7 +85,7 @@ if ($_SESSION['administrador'] == 1){
                                     
                             <div class=\"modal-body\">
                                 
-                                <form action='../Control/updateCurso.php' method='post'>
+                                <form action='../control/updateCurso.php' method='post'>
                                 
                                     <div class='col-md-12'>
                                         <label id='labelsLogin'>ID:</label>
@@ -106,7 +106,7 @@ if ($_SESSION['administrador'] == 1){
                                         if ($_SESSION['administrador'] == 1) {
                                             echo "<button type='submit' class='btn btn-success' name='alterar' value='{$row['idCurso']}' style='margin-top: 30px;'>Alterar</button>
                                                   </form>
-                                                  <form action='../Control/deleteCurso.php' method='post'>
+                                                  <form action='../control/deleteCurso.php' method='post'>
                                                     <button class='btn btn-danger' name='excluir' value='{$row['idCurso']}' style='margin-top: 30px;'>Excluir</button>
                                                   </form>";
                                         }

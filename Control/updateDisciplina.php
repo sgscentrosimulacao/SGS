@@ -23,12 +23,12 @@ function updateDisciplina(){
     if ($conn->query($updateDisciplina)==true){
         echo '<SCRIPT>
                         confirm("Disciplina alterada no sistema!");
-                        window.location.href = "../Vision/consultaDisciplina.php";
+                        window.location.href = "../view/consultaDisciplina.php";
                       </SCRIPT>';
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar a disciplina no banco de dados!");
-                        window.location.href = "../Vision/consultaDisciplina.php";
+                        window.location.href = "../view/consultaDisciplina.php";
                       </SCRIPT>';
     }
 

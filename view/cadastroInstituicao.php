@@ -1,5 +1,5 @@
 <?php
-include "../Control/sessionControl.php";
+include "../control/sessionControl.php";
 $itemSelecionado = basename(__FILE__, '.php');
 ?>
 
@@ -30,7 +30,7 @@ if ($_SESSION['administrador'] == 1){
 ?>
     <div class="col-md-8 zeroPadding">
 
-        <form action="../Control/inserirInstituicao.php" method="post">
+        <form action="../control/inserirInstituicao.php" method="post">
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
                     <legend class="ajusteTitulos" style="width: 220px" id="labelsLogin"> Cadastrar Instituição</legend>

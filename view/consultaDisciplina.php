@@ -1,7 +1,7 @@
 <?php
-    include "../Control/sessionControl.php";
-    include "../Control/selectDisciplina.php";
-    include "../Control/funcoes.php";
+    include "../control/sessionControl.php";
+    include "../control/selectDisciplina.php";
+    include "../control/funcoes.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -106,7 +106,7 @@ if ($_SESSION['administrador'] == 1){
                                                 
                                         <div class=\"modal-body\">
                                             
-                                            <form action='../Control/updateDisciplina.php' method='post'>
+                                            <form action='../control/updateDisciplina.php' method='post'>
                                             
                                                 <div class='col-md-12'>
                                                     <label id='labelsLogin'>ID:</label>
@@ -148,7 +148,7 @@ if ($_SESSION['administrador'] == 1){
                                                     echo "<button type='submit' class='btn btn-success' name='alterar' value='{$row['idDisciplina']}' style='margin-top: 30px;'>Alterar</button>
                                                           <label><a title='Plano de ensino da disciplina' class='btn btn-info' href=\"downloadPlano.php?id={$row['idDisciplina']}\" style='margin-top: 30px;'><i class='glyphicon glyphicon-save-file'> Plano de Ensino</i></a></label>
                                                           </form>
-                                                          <form action='../Control/deleteDisciplina.php' method='post'>
+                                                          <form action='../control/deleteDisciplina.php' method='post'>
                                                             <button class='btn btn-danger' name='excluir' value='{$row['idDisciplina']}' >Excluir</button>
                                                           </form>
                                                           <button class='btn btn-warning' data-dismiss='modal' >Cancelar</button>";
@@ -205,7 +205,7 @@ if ($_SESSION['administrador'] == 1){
                                 </div>        
                                 <div class=\"modal-body\">
                                     
-                                    <form action='../Control/updateAula.php?tela=disciplina' method='post'>
+                                    <form action='../control/updateAula.php?tela=disciplina' method='post'>
                                         <div class='col-md-12' style='padding-top: 20px;'>
                                             <label id='labelsLogin'>ID:</label>
                                             <input class=\"form-control\" type='text' disabled value='{$row2["idAula"]}' name='fieldIdAula'/>
@@ -238,24 +238,10 @@ if ($_SESSION['administrador'] == 1){
                                         
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Data Fim:</label>
-                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataFim'])."' name='fieldDataFim'/>
-                                        </div>
-                                        
-                                        <div class='col-md-12'>
-                                            <label for=\"comment\" id='labelsLogin'>Cenário:</label>
-                                            <textarea class=\"form-control\" rows='3' type='text' name='fieldCenario'>{$row2["cenario"]}</textarea>
-                                        </div>
-                                        
-                                        <div class='col-md-12'>
-                                            <label id='labelsLogin'>Curso:</label>
-                                            <input class=\"form-control\" type='text' value='{$row2["nomeCurso"]}' disabled name='fieldNomeCurso'/>
-                                        </div>
-                                        
-                                        </div>
-                                        <div class=\"modal-footer\">
+                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataFim']). ">
                                             <button type='submit' class='btn btn-success' name='alterarAula' value='{$row2['idAula']}' style='margin-top: 30px;'>Alterar</button>
                                             </form>
-                                            <form action='../Control/deleteAula.php' method='post'>
+                                            <form action= method='post'>
                                                 <button class='btn btn-danger' name='excluir' value='{$row2['idAula']}' style='margin-top: 30px;'>Excluir</button>
                                             </form>
                                             <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>

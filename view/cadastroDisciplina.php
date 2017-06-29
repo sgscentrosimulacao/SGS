@@ -1,6 +1,6 @@
 <?php
-    include "../Control/sessionControl.php";
-    include "../Control/showDrops.php";
+    include "../control/sessionControl.php";
+    include "../control/showDrops.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -37,7 +37,7 @@ if ($_SESSION['administrador'] == 1){
         <div>
             <div class="col-md-12">
 
-            <form enctype="multipart/form-data" action="../Control/inserirDisciplina.php" method="post">
+            <form enctype="multipart/form-data" action="../control/inserirDisciplina.php" method="post">
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0;">
                     <legend class="ajusteTitulos" style="width: 220px" id="labelsLogin"> Cadastrar Disciplina</legend>
 
@@ -117,7 +117,7 @@ if ($_SESSION['administrador'] == 1){
         </div>
         <div>
             <div class="col-md-12">
-            <form action="../Control/inserirAula.php" method="post">
+            <form action="../control/inserirAula.php" method="post">
                 <fieldset id="fieldsetPositionNone">
                     <legend class="ajusteTitulos" style="width: 180px" id="labelsLogin"> Cadastrar Aulas</legend>
 

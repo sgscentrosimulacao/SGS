@@ -15,12 +15,12 @@ function deleteCurso(){
     if ($conn->query($deleteCurso)) {
         echo '<SCRIPT>
                             confirm("Curso excluído do sistema!");
-                            window.location.href = "../Vision/consultaCurso.php";
+                            window.location.href = "../view/consultaCurso.php";
                           </SCRIPT>';
     } else {
         echo '<SCRIPT>
                             confirm("O curso não pode ser excluído do banco. Verifique se o mesmo não possui usuários vinculados!");
-                            window.location.href = "../Vision/consultaCurso.php";
+                            window.location.href = "../view/consultaCurso.php";
                           </SCRIPT>';
     }
 

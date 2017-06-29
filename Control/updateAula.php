@@ -27,18 +27,18 @@ function updateAula(){
         if ($tela = $_GET['tela'] == "disciplina"){
         echo '<SCRIPT>
                         confirm("Aula alterada no sistema!");
-                        window.location.href = "../Vision/consultaDisciplina.php";
+                        window.location.href = "../view/consultaDisciplina.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Aula alterada no sistema!");
-                        window.location.href = "../Vision/calendario.php";
+                        window.location.href = "../view/calendario.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar a aula no banco de dados!");
-                        window.location.href = "../Vision/consultaDisciplina.php";
+                        window.location.href = "../view/consultaDisciplina.php";
                       </SCRIPT>';
     }
 

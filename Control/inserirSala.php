@@ -20,18 +20,18 @@ function inserirSala(){
         if ($conn->query($inserirSala)== true){
             echo '<SCRIPT>
                         confirm("Sala cadastrada no sistema!");
-                        window.location.href = "../Vision/cadastroSala.php";
+                        window.location.href = "../view/cadastroSala.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Erro ao cadastrar a sala no banco de dados!");
-                        window.location.href = "../Vision/cadastroSala.php";
+                        window.location.href = "../view/cadastroSala.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroSala.php";
+                        window.location.href = "../view/cadastroSala.php";
                       </SCRIPT>';
     }
 }

@@ -22,12 +22,12 @@ function updateUsuario(){
     if ($conn->query($updateUsuario)==true){
         echo '<SCRIPT>
                         confirm("Usuário alterado no sistema!");
-                        window.location.href = "../Vision/consultaUsuario.php";
+                        window.location.href = "../view/consultaUsuario.php";
                       </SCRIPT>';
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar o usuário no banco de dados!");
-                        window.location.href = "../Vision/consultaUsuario.php";
+                        window.location.href = "../view/consultaUsuario.php";
                       </SCRIPT>';
     }
 

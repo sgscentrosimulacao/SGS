@@ -18,18 +18,18 @@ function inserirConselho(){
         if ($conn->query($inserirConselho) == true){
             echo '<SCRIPT>
                         confirm("Conselho cadastrado no sistema!");
-                        window.location.href = "../Vision/cadastroConselho.php";
+                        window.location.href = "../view/cadastroConselho.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Erro ao cadastrar o conselho ao banco de dados!");
-                        window.location.href = "../Vision/cadastroConselho.php";
+                        window.location.href = "../view/cadastroConselho.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("O campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroConselho.php";
+                        window.location.href = "../view/cadastroConselho.php";
                       </SCRIPT>';
     }
 }

@@ -15,12 +15,12 @@ function deleteConselho(){
     if ($conn->query($deleteConselho)) {
         echo '<SCRIPT>
                             confirm("Conselho excluído do sistema!");
-                            window.location.href = "../Vision/consultaConselho.php";
+                            window.location.href = "../view/consultaConselho.php";
                           </SCRIPT>';
     } else {
         echo '<SCRIPT>
                             confirm("O conselho não pode ser excluído do banco. Verifique se o mesmo não possui usuários vinculados!");
-                            window.location.href = "../Vision/consultaConselho.php";
+                            window.location.href = "../view/consultaConselho.php";
                           </SCRIPT>';
     }
 

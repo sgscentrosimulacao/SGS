@@ -1,5 +1,5 @@
 <?php
-require "../Control/controleDoBanco.php";
+require "controleDoBanco.php";
 
 inserirUsuario();
 
@@ -47,25 +47,25 @@ function inserirUsuario(){
             if ($conn->query($inserirUsuario)==true){
                 echo '<SCRIPT>
                         confirm("O usuário foi inserido no sistema!");
-                        window.location.href = "../Vision/cadastroUsuarioPP.php";
+                        window.location.href = "../view/cadastroUsuarioPP.php";
                       </SCRIPT>';
 
             }else{
                 echo '<SCRIPT>
                         confirm("O usuário não pode ser inserido!");
-                        window.location.href = "../Vision/cadastroUsuarioPP.php";
+                        window.location.href = "../view/cadastroUsuarioPP.php";
                       </SCRIPT>';
             }
         }else{
             echo '<SCRIPT>
                         confirm("Senhas digitadas não são iguais!");
-                        window.location.href = "../Vision/cadastroUsuarioPP.php";
+                        window.location.href = "../view/cadastroUsuarioPP.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroUsuarioPP.php";
+                        window.location.href = "../view/cadastroUsuarioPP.php";
                         
                       </SCRIPT>';
     }

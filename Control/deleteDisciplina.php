@@ -15,12 +15,12 @@ function deleteDisciplina(){
     if ($conn->query($deleteDisciplina)) {
             echo '<SCRIPT>
                             confirm("Disciplina excluída do sistema!");
-                            window.location.href = "../Vision/consultaDisciplina.php";
+                            window.location.href = "../view/consultaDisciplina.php";
                           </SCRIPT>';
         } else {
             echo '<SCRIPT>
                             confirm("Disciplina não pode ser excluída do banco. Verifique se a mesma não possui aulas cadastradas!");
-                            window.location.href = "../Vision/consultaDisciplina.php";
+                            window.location.href = "../view/consultaDisciplina.php";
                           </SCRIPT>';
         }
 

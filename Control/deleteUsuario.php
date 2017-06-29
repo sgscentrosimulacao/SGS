@@ -18,12 +18,12 @@ function deleteUsuario(){
     if ($conn->query($deleteUsuario) == true) {
         echo '<SCRIPT>
                         confirm("Usuário excluído do sistema!");
-                        window.location.href = "../Vision/consultaUsuario.php";
+                        window.location.href = "../view/consultaUsuario.php";
                       </SCRIPT>';
     } else {
         echo '<SCRIPT>
                         confirm("Usuário não pode ser excluído do banco. Verifique se o mesmo não possui disciplinas cadastradas!");
-                        window.location.href = "../Vision/consultaUsuario.php";
+                        window.location.href = "../view/consultaUsuario.php";
                       </SCRIPT>';
     }
 

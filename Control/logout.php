@@ -11,6 +11,6 @@ $_SESSION['idInstituicao'] = null;
 session_unset();
 session_destroy();
 
-    header("Location: ../Vision/index.php");
+    header("Location: ../view/index.php");
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include_once "../Control/controleDoBanco.php";
+include_once "controleDoBanco.php";
 
 $resultDisciplina = showDisciplina();
 

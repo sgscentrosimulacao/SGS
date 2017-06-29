@@ -2,9 +2,6 @@
     include_once "conexaoCalendario.php";
     include_once "funcoes.php";
 
-
-
-
     function num($num){
         return ($num < 10) ? '0'.$num : $num;
     }
@@ -172,7 +169,7 @@
                                 </div>        
                                 <div class=\"modal-body\">
                                     
-                                    <form action='../Control/updateAula.php?tela=calendario' method='post'>
+                                    <form action='../control/updateAula.php?tela=calendario' method='post'>
                                     
                                     <div class='col-md-12' style='padding-top: 20px;'>
                                             <label id='labelsLogin'>ID:</label>
@@ -224,7 +221,7 @@
                                     <div class=\"modal-footer\">
                                         <button type='submit' class='btn btn-success' name='alterarAula' value='{$row['idAula']}' style='margin-top: 30px;'>Alterar</button>
                                         </form>
-                                        <form action='../Control/deleteAula.php' method='post'>
+                                        <form action='../control/deleteAula.php' method='post'>
                                             <button class='btn btn-danger' name='excluir' value='{$row['idAula']}' style='margin-top: 30px;'>Excluir</button>
                                         </form>
                                         <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
@@ -241,6 +238,4 @@
 
         }
     }
-
-
 ?>

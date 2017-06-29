@@ -21,12 +21,12 @@ function updateItem(){
     if ($conn->query($updatePeca)==true){
         echo '<SCRIPT>
                         confirm("Peça alterada no sistema!");
-                        window.location.href = "../Vision/consultaItem.php";
+                        window.location.href = "../view/consultaItem.php";
                       </SCRIPT>';
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar a peça no banco de dados!");
-                        window.location.href = "../Vision/consultaItem.php";
+                        window.location.href = "../view/consultaItem.php";
                       </SCRIPT>';
     }
 

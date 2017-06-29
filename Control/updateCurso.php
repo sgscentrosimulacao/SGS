@@ -19,12 +19,12 @@ function updateCurso(){
     if ($conn->query($updateCurso)==true){
         echo '<SCRIPT>
                         confirm("Curso alterado no sistema!");
-                        window.location.href = "../Vision/consultaCurso.php";
+                        window.location.href = "../view/consultaCurso.php";
                       </SCRIPT>';
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar o curso no banco de dados!");
-                        window.location.href = "../Vision/consultaCurso.php";
+                        window.location.href = "../view/consultaCurso.php";
                       </SCRIPT>';
     }
 

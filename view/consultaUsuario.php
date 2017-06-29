@@ -1,7 +1,7 @@
 <?php
-    include "../Control/sessionControl.php";
-    include "../Control/selectUsuario.php";
-    include "../Control/showDrops.php";
+    include "../control/sessionControl.php";
+    include "../control/selectUsuario.php";
+    include "../control/showDrops.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -107,7 +107,7 @@ if ($_SESSION['administrador'] == 1){
                                             
                                     <div class=\"modal-body\">
                                         
-                                        <form action='../Control/updateUsuario.php' method='post'>
+                                        <form action='../control/updateUsuario.php' method='post'>
                                         
                                             <!--<div class='col-md-12'>
                                                     <label id='labelsLogin' style='padding-top: 20px;'>ID:</label>
@@ -154,7 +154,7 @@ if ($_SESSION['administrador'] == 1){
                                             if ($_SESSION['administrador'] == 1) {
                                                 echo "<button type='submit' class='btn btn-success' name='alterar' value='{$row['idUsuario']}' style='margin-top: 30px;'>Alterar</button>
                                                       </form>  
-                                                      <form action='../Control/deleteUsuario.php' method='post'>
+                                                      <form action='../control/deleteUsuario.php' method='post'>
                                                         <button class='btn btn-danger' name='excluir' value='{$row['idUsuario']}' style='margin-top: 30px;'>Excluir</button>
                                                       </form>";
                                             }

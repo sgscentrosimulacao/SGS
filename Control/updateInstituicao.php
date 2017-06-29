@@ -19,12 +19,12 @@ function updateInstituicao(){
     if ($conn->query($updateInsituicao)==true){
         echo '<SCRIPT>
                         confirm("Instituição alterada no sistema!");
-                        window.location.href = "../Vision/consultaInstituicao.php";
+                        window.location.href = "../view/consultaInstituicao.php";
                       </SCRIPT>';
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar a instituição no banco de dados!");
-                        window.location.href = "../Vision/consultaInstituicao.php";
+                        window.location.href = "../view/consultaInstituicao.php";
                       </SCRIPT>';
     }
 

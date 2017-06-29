@@ -1,5 +1,5 @@
 <?php
-require "../Control/controleDoBanco.php";
+require "controleDoBanco.php";
 
 inserirUsuario();
 
@@ -46,35 +46,35 @@ function inserirUsuario(){
         if ($ciente ==1){
             if ($senha == $cSenha){
                 if ($conn->query($inserirUsuario)==true){
-                    //header("Location: ../Vision/index.php");
+                    //header("Location: ../view/index.php");
 
                     echo '<SCRIPT>
                             confirm("O usuário foi inserido no sistema!");
-                            window.location.href = "../Vision/index.php";
+                            window.location.href = "../view/index.php";
                           </SCRIPT>';
 
                 }else{
                     echo '<SCRIPT>
                             confirm("O usuário não pode ser inserido no sistema!");
-                            window.location.href = "../Vision/cadastroUsuario.php";
+                            window.location.href = "../view/cadastroUsuario.php";
                           </SCRIPT>';
                 }
             }else{
                 echo '<SCRIPT>
                             confirm("Senhas digitadas não são iguais!");
-                            window.location.href = "../Vision/cadastroUsuario.php";
+                            window.location.href = "../view/cadastroUsuario.php";
                           </SCRIPT>';
             }
         }else{
-            echo     '<SCRIPT>
+            echo '<SCRIPT>
                             confirm("É necessário aceitar os termos de uso!");
-                            window.location.href = "../Vision/cadastroUsuario.php";
+                            window.location.href = "../view/cadastroUsuario.php";
                           </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroUsuario.php";
+                        window.location.href = "../view/cadastroUsuario.php";
                         
                       </SCRIPT>';
     }

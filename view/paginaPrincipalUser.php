@@ -1,5 +1,5 @@
 <?php
-    include "../Control/sessionControl.php";
+    include "../control/sessionControl.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -42,7 +42,7 @@
 
                         echo "Olá, ".$_SESSION['nomeUsuario'];
 
-                        echo "<a class=\"label label-default\" href='../Control/logout.php'>Sair</a>";
+                        echo "<a class=\"label label-default\" href='../control/logout.php'>Sair</a>";
                         ?>
                     </span></h4>
                 </li>

@@ -54,7 +54,7 @@
         <div class="col-sm-3 sidenav zeroPadding">
         </div>
         <div class="col-sm-6 text-left" id="ColunaDoMeio">
-            <form action="./../Control/autenticacao.php" method="post">
+            <form action="../control/autenticacao.php" method="post">
 
             <fieldset id="fieldsetPositionNone">
                 <legend class="ajusteTitulos" style="width: 80px"><p id="labelsLogin">Login</p></legend>

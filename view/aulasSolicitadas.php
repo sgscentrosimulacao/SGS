@@ -1,8 +1,8 @@
 <?php
-include "../Control/sessionControl.php";
+include "../control/sessionControl.php";
 $itemSelecionado = basename(__FILE__, '.php');
-include "../Control/selectDisciplina.php";
-include "../Control/funcoes.php";
+include "../control/selectDisciplina.php";
+include "../control/funcoes.php";
 
 ?>
 <!doctype html>
@@ -133,7 +133,7 @@ if ($_SESSION['administrador'] == 1){
                                                     <div class='col-md-4'></div>
                                                     <div class='col-md-4'></div>
                                                     <div class='col-md-4 text-right'>
-                                                        <form action='../Control/updateAprovacao.php' method='post'>
+                                                        <form action='../control/updateAprovacao.php' method='post'>
                                                             <button class='btn btn-success' name='aprovarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-ok' title='Aprovar aula'> Aprovar</i></button>
                                                         </form>
                                                     </div>

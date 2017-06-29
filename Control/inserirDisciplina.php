@@ -1,6 +1,6 @@
 <?php
 
-include_once "../Control/controleDoBanco.php";
+include_once "controleDoBanco.php";
 include "sessionControl.php";
 
 inserirDisciplina();
@@ -55,18 +55,18 @@ function inserirDisciplina(){
         if ($conn->query($inserirDisciplina)==true){
             echo '<SCRIPT>
                         confirm("Disciplina cadastrada no sistema!");
-                        window.location.href = "../Vision/cadastroDisciplina.php";
+                        window.location.href = "../view/cadastroDisciplina.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Erro ao cadastrar a disciplina no banco de dados!");
-                        window.location.href = "../Vision/cadastroDisciplina.php";
+                        window.location.href = "../view/cadastroDisciplina.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroDisciplina.php";
+                        window.location.href = "../view/cadastroDisciplina.php";
                       </SCRIPT>';
     }
 }

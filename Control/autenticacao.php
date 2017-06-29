@@ -1,5 +1,5 @@
 <?php
-require "../Control/controleDoBanco.php";
+require "controleDoBanco.php";
 
 autenticarUsuario();
 
@@ -33,36 +33,19 @@ function autenticarUsuario(){
         $_SESSION['administrador'] = $row[9];
 
         if ($_SESSION['administrador'] == 1){
-            header("Location: ../Vision/paginaPrincipalAdmin.php");
+            header("Location: ../view/paginaPrincipalAdmin.php");
         }else{
-            header("Location: ../Vision/paginaPrincipalUser.php");
+            header("Location: ../view/paginaPrincipalUser.php");
         }
 
     }else{
         echo '<SCRIPT>
                     confirm("Usuário ou senha inválidos!");
-                    window.location.href = "../Vision/index.php";
+                    window.location.href = "../view/index.php";
               </SCRIPT>';
     }
     fecharDatabase($conn);
 }
-
-/*function mandarId(){
-    $query = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}'";
-    $teste = $conn->query($query);
-
-    $resultados = mysqli_fetch_array($teste);
-
-    $_SESSION['id'] = $resultados['idUsuario'];
-    $_SESSION['usuario'] = $resultados['usuario'];
-    $_SESSION['senha'] = $resultados['senha'];
-    $_SESSION['nomeUsuario'] = $resultados['nomeUsuario'];
-
-
-    return $resultados;
-
-}*/
-
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php
-    include "../Control/sessionControl.php";
-    include "../Control/controleCalendario.php";
+    include "../control/sessionControl.php";
+    include "../control/controleCalendario.php";
     $itemSelecionado = basename(__FILE__, '.php');
     $info = array(
             'tabela'=> 'tb_aulas',

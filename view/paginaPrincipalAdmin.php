@@ -1,5 +1,5 @@
 <?php
-    include "../Control/sessionControl.php";
+    include "../control/sessionControl.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>

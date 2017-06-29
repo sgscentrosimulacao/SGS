@@ -18,18 +18,18 @@ function inserirInstituicao(){
         if ($conn->query($inserirInstituicao)== true){
             echo '<SCRIPT>
                         confirm("Instituição cadastrada no sistema!");
-                        window.location.href = "../Vision/cadastroInstituicao.php";
+                        window.location.href = "../view/cadastroInstituicao.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Erro ao cadastrar a instituição ao banco de dados!");
-                        window.location.href = "../Vision/cadastroInstituicao.php";
+                        window.location.href = "../view/cadastroInstituicao.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("O campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroInstituicao.php";
+                        window.location.href = "../view/cadastroInstituicao.php";
                       </SCRIPT>';
     }
 }

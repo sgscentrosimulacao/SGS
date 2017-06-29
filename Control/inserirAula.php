@@ -1,6 +1,6 @@
 <?php
 
-require "../Control/controleDoBanco.php";
+require "controleDoBanco.php";
 include "sessionControl.php";
 include "funcoes.php";
 
@@ -58,18 +58,18 @@ function inserirAula(){
 
             echo '<SCRIPT>
                         confirm("Aula inserida na fila de solicitação!");
-                        window.location.href = "../Vision/cadastroDisciplina.php";
+                        window.location.href = "../view/cadastroDisciplina.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Erro ao cadastrar a aula na fila de requisições!");
-                        window.location.href = "../Vision/cadastroDisciplina.php";
+                        window.location.href = "../view/cadastroDisciplina.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroDisciplina.php";
+                        window.location.href = "../view/cadastroDisciplina.php";
                       </SCRIPT>';
     }
 }

@@ -20,12 +20,12 @@ function updateAprovacao(){
     if ($conn->query($updateAula)==true){
         echo '<SCRIPT>
                     confirm("Aula aprovada no sistema!");
-                    window.location.href = "../Vision/aulasSolicitadas.php";
+                    window.location.href = "../view/aulasSolicitadas.php";
                   </SCRIPT>';
     }else{
         echo '<SCRIPT>
                 confirm("Erro ao aprovar a aula no banco de dados!");
-                window.location.href = "../Vision/consultaDisciplina.php";
+                window.location.href = "../view/consultaDisciplina.php";
               </SCRIPT>';
     }
 

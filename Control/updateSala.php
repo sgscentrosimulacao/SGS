@@ -20,12 +20,12 @@ function updateSala(){
     if ($conn->query($updateSala)==true){
         echo '<SCRIPT>
                         confirm("Sala alterada no sistema!");
-                        window.location.href = "../Vision/consultaSala.php";
+                        window.location.href = "../view/consultaSala.php";
                       </SCRIPT>';
     }else{
         echo '<SCRIPT>
                         confirm("Erro ao alterar a sala no banco de dados!");
-                        window.location.href = "../Vision/consultaSala.php";
+                        window.location.href = "../view/consultaSala.php";
                       </SCRIPT>';
     }
 

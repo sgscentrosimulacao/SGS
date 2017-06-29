@@ -15,12 +15,12 @@ function deleteSala(){
     if ($conn->query($deleteSala)) {
         echo '<SCRIPT>
                             confirm("Sala excluída do sistema!");
-                            window.location.href = "../Vision/consultaSala.php";
+                            window.location.href = "../view/consultaSala.php";
                           </SCRIPT>';
     } else {
         echo '<SCRIPT>
                             confirm("A sala não pode ser excluída do banco. Verifique se a mesma não possui usuários vinculados!");
-                            window.location.href = "../Vision/consultaSala.php";
+                            window.location.href = "../view/consultaSala.php";
                           </SCRIPT>';
     }
 

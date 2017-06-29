@@ -1,6 +1,6 @@
 <?php
-    include "../Control/sessionControl.php";
-    include "../Control/selectInstituicao.php";
+    include "../control/sessionControl.php";
+    include "../control/selectItem.php";
     $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style_index.css">
-    <title>SGS - Consulta Instituição</title>
+    <title>SGS - Consulta Item</title>
 </head>
 <body>
 <?php
@@ -30,9 +30,9 @@ if ($_SESSION['administrador'] == 1){
 ?>
     <div class="col-md-8 zeroPadding teste">
         <div>
-            <form action="consultaInstituicao.php" method="post">
+            <form action="consultaItem.php" method="post">
                 <fieldset id="fieldsetPositionNone" style="margin-bottom: 0px;">
-                    <legend class="ajusteTitulos" style="width: 240px" id="labelsLogin">Consulta de Instituição</legend>
+                    <legend class="ajusteTitulos" style="width: 190px" id="labelsLogin">Consulta de Item</legend>
 
                     <div class="col-md-12">
                         <div class="editor-label col-md-4" id="tipoPesquisaLabel" style="">
@@ -40,7 +40,8 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                         <div class="dropdown col-md-8" style="">
                             <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
-                                <option value="1">Nome Instituição</option>
+                                <option value="1">Nome Peça</option>
+                                <option value="2">Sala</option>
                             </select>
                         </div>
                     </div>
@@ -48,7 +49,7 @@ if ($_SESSION['administrador'] == 1){
                         <div class="row">
                             <div class="col-md-8">
                                 <input class="form-control" id="fieldPesquisar" name="fieldPesquisar"
-                                       placeholder="Insira sua consulta" style="width: 100%" type="text">
+                                       placeholder="Insira sua consulta" style="margin-top:10px;width: 100%" type="text">
                             </div>
                             <div class="col-md-4">
                                 <input id="cadastrar" type="submit" value="Pesquisar" name="submit" class="btn btn-success">
@@ -63,44 +64,64 @@ if ($_SESSION['administrador'] == 1){
                 <legend class="ajusteTitulos" style="width: 120px" id="labelsLogin">Consulta</legend>
                 <table class="table">
                     <tr>
-                        <th id="labelsLogin">Nome Instituição</th>
+                        <th id="labelsLogin">Nome Peça</th>
+                        <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
+                        <th id="labelsLogin">Sala</th>
+                        <th id="labelsLogin">Quantidade</th>
                         <th></th>
                     </tr>
                     <?php
-                    while ($row = mysqli_fetch_assoc($selectInstituicao)) {
+                    while ($row = mysqli_fetch_assoc($selectItem)) {
                         echo "<tr>
-                               <td>".$row['nomeInstituicao']."</td>
-                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosInstituicao{$row['idInstituicao']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                               <td>{$row['nomePeca']}</td>
+                               <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricao']}</td>
+                               <td>{$row['nomeSala']}</td>
+                               <td>{$row['quantidade']}</td>
+                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosPeca{$row['idPeca']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                         </tr>
-                        
-                        <div id=\"modalDadosInstituicao{$row['idInstituicao']}\" class=\"modal fade\" role=\"dialog\">
+                        <div id=\"modalDadosPeca{$row['idPeca']}\" class=\"modal fade\" role=\"dialog\">
                             <div class=\"modal-dialog\">
                                 <div class=\"modal-content\">
                                     <div class=\"modal-header\">
                                         <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                                        <h4 class=\"modal-title\" id='labelsLogin'>Dados da Instituição</h4>
+                                        <h4 class=\"modal-title\" id='labelsLogin'>Dados da Peça</h4>
                                     </div>
-                                            
+                                    
                                     <div class=\"modal-body\">
                                         
-                                        <form action='../Control/updateInstituicao.php' method='post'>
+                                        <form action='../control/updateItem.php' method='post'>
                                         
                                             <div class='col-md-12'>
                                                 <label id='labelsLogin'>ID:</label>
-                                                <input class=\"form-control\" type='text' disabled value='{$row["idInstituicao"]}' name='fieldIdInstituicao'/>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idPeca"]}' name='fieldIdPeca'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
-                                                <label id='labelsLogin'>Nome Instituição:</label>
-                                                <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' name='fieldNomeInstituicao'/>
+                                                <label id='labelsLogin'>Nome Peça:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["nomePeca"]}' name='fieldNomePeca'/>
                                             </div>
-                                            
+                                        
+                                            <div class='col-md-12'>
+                                                <label id='labelsLogin'>Descrição:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["descricao"]}' name='fieldDescricao'/>
+                                            </div>
+                                        
+                                            <div class='col-md-12'>
+                                                <label id='labelsLogin'>Sala:</label>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["nomeSala"]}' name='fieldNomeSala'/>
+                                            </div>    
+                                        
+                                            <div class='col-md-12'>
+                                                <label id='labelsLogin'>Quantidade:</label>
+                                                <input class=\"form-control\" type='text' value='{$row["quantidade"]}' name='fieldQuantidade'/>
+                                            </div>
+                                        
                                             <div class=\"modal-footer\">";
                                             if ($_SESSION['administrador'] == 1) {
-                                                echo "<button type='submit' class='btn btn-success' name='alterar' value='{$row['idInstituicao']}' style='margin-top: 30px;'>Alterar</button>
+                                                echo "<button type='submit' class='btn btn-success' name='alterar' value='{$row['idPeca']}' style='margin-top: 30px;'>Alterar</button>
                                                       </form>
-                                                      <form action='../Control/deleteInstituicao.php' method='post'>
-                                                        <button class='btn btn-danger' name='excluir' value='{$row['idInstituicao']}' style='margin-top: 30px;'>Excluir</button>
+                                                      <form action='../control/deleteItem.php' method='post'>
+                                                        <button class='btn btn-danger' name='excluir' value='{$row['idPeca']}' style='margin-top: 30px;'>Excluir</button>
                                                       </form>";
                                             }
                                                 echo"<button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>

@@ -1,5 +1,5 @@
 <?php
-require "../Control/controleDoBanco.php";
+require "controleDoBanco.php";
 
 
 $selectInstituicao = consultarInstituicao();

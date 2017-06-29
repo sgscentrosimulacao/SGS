@@ -1,7 +1,7 @@
 <?php
-include "../Control/sessionControl.php";
-include "../Control/selectDisciplina.php";
-include "../Control/funcoes.php";
+include "../control/sessionControl.php";
+include "../control/selectDisciplina.php";
+include "../control/funcoes.php";
 $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>

@@ -1,5 +1,5 @@
 <?php
-include "../Control/sessionControl.php";
+include "../control/sessionControl.php";
 $itemSelecionado = basename(__FILE__, '.php');
 ?>
 <!doctype html>
@@ -11,37 +11,44 @@ $itemSelecionado = basename(__FILE__, '.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style_index.css">
-    <title>SGS - Cadastro Conselho</title>
+    <title>SGS - Cadastro Sala</title>
 </head>
 <body>
- <?php
-    if ($_SESSION['administrador'] == 1){
-        include "navbarAdmin.php"; //NAV BAR
-        include "navMenuAdmin.php"; //NAV MENU
-        echo "<div>";
-        include "menuAdmin.php";   //MENU
-    }else{
-        include "navbarUser.php"; //NAV BAR
-        include "navMenuUser.php"; //MENU
-        echo "<div>";
-        include "menuUser.php"; //NAV MENU
-    }
- ?>
+<?php
+if ($_SESSION['administrador'] == 1){
+    include "navbarAdmin.php"; //NAV BAR
+    include "navMenuAdmin.php"; //NAV MENU
+    echo "<div>";
+    include "menuAdmin.php";   //MENU
+}else{
+    include "navbarUser.php"; //NAV BAR
+    include "navMenuUser.php"; //MENU
+    echo "<div>";
+    include "menuUser.php"; //NAV MENU
+}
+?>
     <div class="col-md-8 zeroPadding">
-
-        <form action="../Control/inserirConselho.php" method="post">
-
+        <form action="../control/inserirSala.php" method="post">
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
-                    <legend class="ajusteTitulos" style="width: 210px" id="labelsLogin"> Cadastrar Conselho</legend>
-
+                    <legend class="ajusteTitulos" style="width: 170px" id="labelsLogin"> Cadastrar Sala</legend>
                     <div class="col-md-12">
                         <div class="editor-label col-md-6">
-                            <label for="nomeConselho" id="labelsLogin">Nome do Conselho</label>
+                            <label for="nomeSalaLabel" id="labelsLogin">Nome da Sala</label>
                         </div>
                         <div class="editor-label form-inline" style="padding-bottom: 5px">
-                            <input class="form-control" id="fieldNomeConselho" name="fieldNomeConselho"
-                                   placeholder="Insira o nome do conselho" style="width: 100%" type="text">
+                            <input class="form-control" id="fieldNomeSala" name="fieldNomeSala"
+                                   placeholder="Insira o nome da sala" style="width: 100%" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <label for="descricaoSalaLabel" id="labelsLogin">Descrição</label>
+                        </div>
+                        <div class="form-group" id="descricaoSalaLabel">
+                        <textarea class="form-control" rows="5" id="descricaoSalaLabel" style="width: 100%"
+                                  placeholder="Insira a descrição da sala" name="fieldDescricaoSala"></textarea>
                         </div>
                     </div>
 
@@ -57,6 +64,7 @@ $itemSelecionado = basename(__FILE__, '.php');
                 </fieldset>
             </div>
         </form>
+
     </div>
 </div>
 <?php

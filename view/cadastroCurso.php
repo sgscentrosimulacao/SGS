@@ -1,6 +1,6 @@
 <?php
-include "../Control/sessionControl.php";
-include_once "../Control/showDrops.php";
+include "../control/sessionControl.php";
+include_once "../control/showDrops.php";
 $itemSelecionado = basename(__FILE__, '.php');
 ?>
 
@@ -31,7 +31,7 @@ if ($_SESSION['administrador'] == 1){
 ?>
     <div class="col-md-8 zeroPadding">
 
-        <form action="../Control/inserirCurso.php" method="post">
+        <form action="../control/inserirCurso.php" method="post">
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
                     <legend class="ajusteTitulos" style="width: 180px" id="labelsLogin"> Cadastrar Curso</legend>

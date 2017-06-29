@@ -28,18 +28,18 @@ function inserirItem(){
         if ($conn->query($inserirItem)== true){
             echo '<SCRIPT>
                         confirm("Item cadastrado no sistema!");
-                        window.location.href = "../Vision/cadastroItem.php";
+                        window.location.href = "../view/cadastroItem.php";
                       </SCRIPT>';
         }else{
             echo '<SCRIPT>
                         confirm("Erro ao cadastrar o item no banco de dados!");
-                        window.location.href = "../Vision/cadastroItem.php";
+                        window.location.href = "../view/cadastroItem.php";
                       </SCRIPT>';
         }
     }else{
         echo '<SCRIPT>
                         confirm("Algum campo não foi preenchido!");
-                        window.location.href = "../Vision/cadastroItem.php";
+                        window.location.href = "../view/cadastroItem.php";
                       </SCRIPT>';
     }
 }
