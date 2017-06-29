@@ -11,9 +11,20 @@ function verificarDataEHora () {
         url: "../Control/verificarDisponibilidade.php?dataInicio="+dataInicio+"&horaInicio="+horaInicio+"&dataFim="+dataFim+"&horaFim="+horaFim,
         dataType: "text",
         success:function (result) {
-            if(result == 'true') {
+            if(result == 'Erro') {
 
-                alert('Datas indisponiveis');
+                $('#fieldDataInicio').css('background-color', 'red');
+                $('#fieldDataFim').css('background-color', 'red');
+                $('#fieldHoraInicio').css('background-color', 'red');
+                $('#fieldHoraFim').css('background-color', 'red');
+
+            }else{
+
+                $('#fieldDataInicio').css('background-color', 'none');
+                $('#fieldDataFim').css('background-color', 'none');
+                $('#fieldHoraInicio').css('background-color', 'none');
+                $('#fieldHoraFim').css('background-color', 'none');
+
             }
         }
     });
