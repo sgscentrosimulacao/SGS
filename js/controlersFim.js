@@ -18,7 +18,9 @@ function verificarDataEHora () {
                 $('#fieldGroupHoraInicio').attr("class","editor-label form-inline has-error");
                 $('#fieldGroupHoraFim').attr("class","editor-label form-inline has-error");
                 $('#alerta').attr("class", "alert alert-danger");
+                $('#cadastrarAula').attr('disabled', 'disabled');
                 window.location.href += "#alerta";
+
             }else{
 
                 $('#fieldGroupDataInicio').attr("class","editor-label form-inline");
@@ -26,10 +28,7 @@ function verificarDataEHora () {
                 $('#fieldGroupHoraInicio').attr("class","editor-label form-inline");
                 $('#fieldGroupHoraFim').attr("class","editor-label form-inline");
                 $('#alerta').attr("class", "alert alert-danger hidden");
-
-
-
-
+                $('#cadastrarAula').removeAttr('disabled', 'disabled');
             }
         }
     });

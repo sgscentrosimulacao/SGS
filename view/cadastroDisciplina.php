@@ -104,7 +104,7 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                         <div class="col-md-4 " style="margin-top: 20px;">
 
-                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+                            <input id="cadastrarDisciplina" type="submit" value="Enviar" name="submit" class="btn btn-success">
 
                         </div>
                         <div class="col-md-4 ">
@@ -231,7 +231,7 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                         <div class="col-md-4 zeroPadding">
 
-                            <input id="cadastrar" type="submit" value="Solicitar" name="submit" class="btn btn-success">
+                            <input id="cadastrarAula" type="submit" value="Solicitar" name="submit" class="btn btn-success">
 
                         </div>
                         <div class="col-md-4 zeroPadding">
