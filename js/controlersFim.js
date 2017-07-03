@@ -13,17 +13,22 @@ function verificarDataEHora () {
         success:function (result) {
             if(result == 'Erro') {
 
-                $('#fieldDataInicio').css('background-color', 'red');
-                $('#fieldDataFim').css('background-color', 'red');
-                $('#fieldHoraInicio').css('background-color', 'red');
-                $('#fieldHoraFim').css('background-color', 'red');
-
+                $('#fieldGroupDataInicio').attr("class","editor-label form-inline has-error");
+                $('#fieldGroupDataFim').attr("class","editor-label form-inline has-error");
+                $('#fieldGroupHoraInicio').attr("class","editor-label form-inline has-error");
+                $('#fieldGroupHoraFim').attr("class","editor-label form-inline has-error");
+                $('#alerta').attr("class", "alert alert-danger");
+                window.location.href += "#alerta";
             }else{
 
-                $('#fieldDataInicio').css('background-color', 'none');
-                $('#fieldDataFim').css('background-color', 'none');
-                $('#fieldHoraInicio').css('background-color', 'none');
-                $('#fieldHoraFim').css('background-color', 'none');
+                $('#fieldGroupDataInicio').attr("class","editor-label form-inline");
+                $('#fieldGroupDataFim').attr("class","editor-label form-inline");
+                $('#fieldGroupHoraInicio').attr("class","editor-label form-inline");
+                $('#fieldGroupHoraFim').attr("class","editor-label form-inline");
+                $('#alerta').attr("class", "alert alert-danger hidden");
+
+
+
 
             }
         }

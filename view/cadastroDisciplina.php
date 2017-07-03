@@ -136,7 +136,7 @@ if ($_SESSION['administrador'] == 1){
                             <div class="editor-label col-md-6">
                                 <label for="dataInicioLabel" id="labelsLogin">Data de início</label>
                             </div>
-                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <div class="editor-label form-inline" id="fieldGroupDataInicio" style="padding-bottom: 5px">
                                 <input class="form-control" type="text" name="fieldDataInicio" id="fieldDataInicio"
                                        placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )"/>
                             </div>
@@ -145,7 +145,7 @@ if ($_SESSION['administrador'] == 1){
                             <div class="editor-label col-md-6">
                                 <label for="horaInicioLabel" id="labelsLogin">Hora de início</label>
                             </div>
-                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <div class="editor-label form-inline" id="fieldGroupHoraInicio" style="padding-bottom: 5px">
                                 <input class="form-control" type="text" name="fieldHoraInicio" id="fieldHoraInicio"
                                        placeholder="hh:mm" maxlength="5" onkeypress="mascaraHorario( this, event )" />
                             </div>
@@ -157,7 +157,7 @@ if ($_SESSION['administrador'] == 1){
                             <div class="editor-label col-md-6">
                                 <label for="dataFimLabel" id="labelsLogin">Data de Termino</label>
                             </div>
-                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <div class="editor-label form-inline" id="fieldGroupDataFim" style="padding-bottom: 5px">
                                 <input class="form-control" type="text" name="fieldDataFim" id="fieldDataFim"
                                        placeholder="dd/mm/yyyy" maxlength="10" onkeypress="mascaraData( this, event )" />
                             </div>
@@ -167,7 +167,7 @@ if ($_SESSION['administrador'] == 1){
                             <div class="editor-label col-md-6">
                                 <label for="dataFimLabel" id="labelsLogin">Hora de Termino</label>
                             </div>
-                            <div class="editor-label form-inline" style="padding-bottom: 5px">
+                            <div class="editor-label form-inline" id="fieldGroupHoraFim" style="padding-bottom: 5px">
                                 <input class="form-control" type="text" name="fieldHoraFim" id="fieldHoraFim"
                                        placeholder="hh:mm" maxlength="5" onkeypress="mascaraHorario( this, event )" />
                             </div>
@@ -218,6 +218,11 @@ if ($_SESSION['administrador'] == 1){
                         <div class="form-group" id="descricaoAulaLabel">
                         <textarea class="form-control" rows="5" id="fieldDescricaoAula" style="width: 100%"
                                   placeholder="Insira a descrição da aula" name="fieldDescricaoAula"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="alert alert-danger hidden" id="alerta">
+                        <strong>Erro!</strong> As datas/horas escolhidas já possuem aulas marcadas!
                         </div>
                     </div>
 
