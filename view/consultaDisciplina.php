@@ -238,13 +238,17 @@ if ($_SESSION['administrador'] == 1){
                                         
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Data Fim:</label>
-                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataFim']). ">
-                                            <button type='submit' class='btn btn-success' name='alterarAula' value='{$row2['idAula']}' style='margin-top: 30px;'>Alterar</button>
-                                            </form>
-                                            <form action= method='post'>
-                                                <button class='btn btn-danger' name='excluir' value='{$row2['idAula']}' style='margin-top: 30px;'>Excluir</button>
-                                            </form>
-                                            <button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
+                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataFim'])."'>
+                                        </div>
+                                        <div class=\"modal-footer\">";
+                                        if ($_SESSION['administrador'] == 1) {
+
+                                            echo "<button type = 'submit' class='btn btn-success' name = 'alterarAula' value = '{$row2['idAula']}' style = 'margin-top: 30px;' > Alterar</button >                                            </form >
+                                            <form action = '../Control/deleteAula.php' method = 'post' >
+                                                <button class='btn btn-danger' name = 'excluir' value = '{$row2['idAula']}' style = 'margin-top: 30px;' > Excluir</button >
+                                            </form >";
+                                            }
+                                            echo "<button class='btn btn-warning' data-dismiss='modal' style='margin-top: 30px;'>Cancelar</button>
                                         </div>
                             </div>
                           </div>    
