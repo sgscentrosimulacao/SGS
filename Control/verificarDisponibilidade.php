@@ -15,7 +15,16 @@ function verificarDisponibilidade(){
 
     $conn = abrirDatabase();
 
-    $verificaDisponibilidade = "SELECT * FROM `tb_aulas` WHERE (((tb_aulas.horarioInicio BETWEEN '{$horaInicio}' AND '{$horaFim}')
+    $valorDropSala = $_GET['sala'];
+    $selectIdSala = "SELECT tb_sala.idSala FROM tb_sala
+                        	WHERE tb_sala.nomeSala = '{$valorDropSala}'";
+    $sala = $conn->query($selectIdSala);
+
+    $idSala = mysqli_fetch_row($sala);
+
+    $verificaDisponibilidade = "SELECT * FROM `tb_aulas` 
+                                      
+                                            WHERE tb_aulas.idSala = '{$idSala[0]}' AND (((tb_aulas.horarioInicio BETWEEN '{$horaInicio}' AND '{$horaFim}')
                                                         OR (tb_aulas.horarioFim BETWEEN '{$horaInicio}' AND '{$horaFim}'))
                                               AND ((tb_aulas.horarioInicio!= '{$horaFim}') AND (tb_aulas.horarioFim!= '{$horaInicio}')))
                                               
@@ -29,8 +38,8 @@ function verificarDisponibilidade(){
 
     if ((($queryDisponibilidade->num_rows)>0)){
         echo "Erro";
-    }else{
 
+    }else{
 
     }
 }

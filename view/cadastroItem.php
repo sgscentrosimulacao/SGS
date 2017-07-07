@@ -56,7 +56,7 @@ if ($_SESSION['administrador'] == 1){
                             <label for="salaLabel" id="labelsLogin">Sala</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
                                     style="width: 100%">
                                 <?php
                                 while ($row = mysqli_fetch_assoc($resultSalas)) {

@@ -104,10 +104,11 @@ function consultarAulasIdDisciplina(){
 
 function consultarAulasNAprovadas(){
 
-        $selectAulas = "SELECT tb_aulas.idAula,tb_aulas.nomeAula,tb_aulas.descricaoAula,tb_aulas.horarioInicio,tb_aulas.horarioFim,tb_aulas.dataInicio,tb_aulas.dataFim,tb_aulas.cenario,tb_cursos.nomeCurso, tb_usuario.nomeUsuario, tb_aulas.aceita FROM tb_aulas
+        $selectAulas = "SELECT tb_aulas.idAula,tb_aulas.nomeAula,tb_aulas.descricaoAula,tb_aulas.horarioInicio,tb_aulas.horarioFim,tb_aulas.dataInicio,tb_aulas.dataFim,tb_aulas.cenario,tb_cursos.nomeCurso, tb_usuario.nomeUsuario,tb_sala.nomeSala, tb_aulas.aceita FROM tb_aulas
 	                    LEFT JOIN tb_cursos ON tb_aulas.idCurso = tb_cursos.idCurso
 	                    LEFT JOIN tb_disciplina ON tb_aulas.idDisciplina = tb_disciplina.idDisciplina
 	                    LEFT JOIN tb_usuario ON tb_disciplina.idUsuario = tb_usuario.idUsuario
+	                    LEFT JOIN tb_sala ON tb_aulas.idSala = tb_sala.idSala
 	                    
 	                    WHERE tb_aulas.aceita = 0";
 

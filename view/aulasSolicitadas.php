@@ -105,16 +105,19 @@ if ($_SESSION['administrador'] == 1){
                                                 </div>
                                                 
                                                 <div>
-                                                    <div class='col-md-6'>
+                                                    <div class='col-md-4'>
                                                         <label id='labelsLogin'>Nome Aula:</label>
                                                         <label>{$row["nomeAula"]}</label>
                                                     </div>
                                                     
-                                                    <div class='col-md-6'>
+                                                    <div class='col-md-4'>
                                                         <label id='labelsLogin'>Curso:</label>
                                                         <label>{$row['nomeCurso']}</label>
                                                     </div>
-                                                    
+                                                    <div class='col-md-4'>
+                                                        <label id='labelsLogin'>Sala:</label>
+                                                        <label>{$row["nomeSala"]}</label>
+                                                     </div>
                                                 </div>
                                                     
                                                 <div>
@@ -122,7 +125,6 @@ if ($_SESSION['administrador'] == 1){
                                                         <label id='labelsLogin'>Cenário:</label>
                                                         <label>{$row['cenario']}</label>
                                                     </div>
-                                                    
                                                     <div class='col-md-6'>
                                                         <label id='labelsLogin'>Descrição:</label>
                                                         <label>{$row["descricaoAula"]}</label>

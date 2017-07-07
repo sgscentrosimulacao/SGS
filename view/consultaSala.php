@@ -38,7 +38,7 @@ if ($_SESSION['administrador'] == 1){
                             <label for="tipoPesquisaLabel" id="labelsLogin">Pesquisar por</label>
                         </div>
                         <div class="dropdown col-md-8" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropTipoPesquisa">
                                 <option value="1">Nome Sala</option>
                             </select>
                         </div>

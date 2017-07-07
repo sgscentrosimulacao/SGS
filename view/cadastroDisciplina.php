@@ -66,7 +66,7 @@ if ($_SESSION['administrador'] == 1){
                             <label for="cursoLabel" id="labelsLogin">Curso</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="dropCurso"
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropCurso"
                                     style="width: 100%">
                                 <?php
                                 while ($row = mysqli_fetch_assoc($resultCurso)) {
@@ -179,7 +179,7 @@ if ($_SESSION['administrador'] == 1){
                             <label for="disciplinaLabel" id="labelsLogin">Disciplina</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropDisciplina" name="dropDisciplina"
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" id="dropDisciplina" name="dropDisciplina"
                                     style="width: 100%">
                                 <?php
                                 while ($row2 = mysqli_fetch_assoc($resultDisciplinaId)) {
@@ -191,7 +191,7 @@ if ($_SESSION['administrador'] == 1){
                             <label for="salaLabel" id="labelsLogin">Sala</label>
                         </div>
                         <div class="dropdown col-md-4" style="">
-                            <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dropSala" name="dropSala"
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" id="dropSala" name="dropSala"
                                     style="width: 100%">
                                 <?php
                                 while ($row3 = mysqli_fetch_assoc($resultSalas)) {
@@ -222,7 +222,7 @@ if ($_SESSION['administrador'] == 1){
                     </div>
                     <div class="col-md-12">
                         <div class="alert alert-danger hidden" id="alerta">
-                        <strong>Erro!</strong> As datas/horas escolhidas já possuem aulas marcadas!
+                        <strong>Erro!</strong> As datas/horas/sala escolhidas já possuem aulas marcadas!
                         </div>
                     </div>
 
