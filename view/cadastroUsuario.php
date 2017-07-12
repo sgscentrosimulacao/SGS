@@ -1,5 +1,5 @@
 <?php
-    include "../Control/showDropsCadUser.php";
+    include "../control/showDropsCadUser.php";
 
 ?>
 <!doctype html>
@@ -45,7 +45,7 @@
             <div class="col-sm-3 sidenav zeroPadding">
             </div>
             <div class="col-sm-6 text-left" id="ColunaDoMeio">
-                <form action="../Control/inserirUsuario.php" method="post">
+                <form action="../control/inserirUsuario.php" method="post">
 
                     <fieldset id="fieldsetPositionNone">
                         <legend class="ajusteTitulos" style="width: 120px"><p id="labelsLogin">Cadastro</p></legend>

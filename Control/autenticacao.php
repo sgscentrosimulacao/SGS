@@ -10,11 +10,11 @@ function autenticarUsuario(){
 
     $conn = abrirDatabase();
 
-    $VerificarUsuario = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}'";
+    $VerificarUsuario = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}' AND aceito = 1";
 
     $verificacao = $conn->query($VerificarUsuario);
 
-    $query = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}'";
+    $query = "SELECT * FROM tb_usuario WHERE usuario = '{$usuario}' AND senha = '{$senha}' AND aceito = 1";
     $teste = $conn->query($query);
 
     $row = mysqli_fetch_row($teste);

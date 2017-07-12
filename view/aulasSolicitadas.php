@@ -33,7 +33,7 @@ if ($_SESSION['administrador'] == 1){
 <div class="col-md-8 zeroPadding">
         <div class="col-md-12">
             <fieldset id="fieldsetPositionNone">
-                <legend id="labelsLogin"> Solicitações </legend>
+                <legend class="ajusteTitulos" style="width: 190px" id="labelsLogin"> Aulas Solicitadas </legend>
 
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -41,7 +41,7 @@ if ($_SESSION['administrador'] == 1){
 
                             <thead>
                             <tr>
-                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>
+                                <!--<th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>-->
                                 <th id="labelsLogin">Nome Aula</th>
                                 <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
                                 <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Inicio</th>
@@ -59,7 +59,6 @@ if ($_SESSION['administrador'] == 1){
                             while ($row = mysqli_fetch_assoc($resultSelectAulasNAprovadas)) {
                                 echo "<tr data-toggle=\"collapse\" data-target=\"#{$row['idAula']}\" class=\"accordion-toggle panel panel-primary\">
                                     
-                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['idAula']}</td>
                                     <td>{$row['nomeAula']}</td>
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricaoAula']}</td>
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioInicio']}</td>
@@ -131,18 +130,22 @@ if ($_SESSION['administrador'] == 1){
                                                     </div>
                                                 </div>
                                                 
-                                                <div >
+                                                <div class='col-md-12' >
                                                     <div class='col-md-4'></div>
-                                                    <div class='col-md-4'></div>
+                                                    <div class='col-md-4 text-right'>
+                                                        <form action='../control/updateAprovacao.php' method='post'>
+                                                            <button class='btn btn-success' name='reprovarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-remove' title='Aprovar aula'> Reprovar</i></button>
+                                                        </form>
+                                                    </div>
                                                     <div class='col-md-4 text-right'>
                                                         <form action='../control/updateAprovacao.php' method='post'>
                                                             <button class='btn btn-success' name='aprovarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-ok' title='Aprovar aula'> Aprovar</i></button>
                                                         </form>
-                                                    </div>
+                                                </div>
                                                     
                                                 </div>
-    </div>
                                             </tr>
+                                            </div>
                                         </table>
                                     </td>
                                 </tr>

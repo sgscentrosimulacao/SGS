@@ -3,6 +3,7 @@ include_once "controleDoBanco.php";
 
 $resultSelectUsuario = consultarUsuario();
 $resultSelectUsuarioId = selecionarUsuarioId();
+$resultSelectUsuarioNAprovado = consultarUsuariosNAprovados();
 
 
 function consultarUsuario()
@@ -99,6 +100,20 @@ function selecionarUsuarioId(){
         fecharDatabase($conn);
         return $queryIdUsuario;
     }
+}
+
+
+function consultarUsuariosNAprovados(){
+
+    $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email,tb_conselho.nomeConselho,tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao FROM tb_usuario
+                        LEFT JOIN tb_conselho ON tb_conselho.idConselho = tb_usuario.idConselho
+                        LEFT JOIN tb_instituicao ON tb_instituicao.idInstituicao = tb_usuario.idInstituicao
+                        
+                    WHERE tb_usuario.aceito = 0";
+
+    $conn = abrirDatabase();
+
+    return mysqli_query($conn, $selectUsuario);
 }
 
 ?>

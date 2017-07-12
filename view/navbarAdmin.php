@@ -1,6 +1,10 @@
 <?php
     require_once "../control/selectDisciplina.php";
-    $solicitacoes = ($resultSelectAulasNAprovadas->num_rows);
+    require_once "../control/selectUsuario.php";
+
+    $solicitacoes = ($resultSelectUsuarioNAprovado->num_rows);
+    $solicitacoes2 = ($resultSelectAulasNAprovadas->num_rows);
+
 ?>
 
 <nav class="navbar">
@@ -27,7 +31,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right" id="labelUsuario">
                 <li>
-                    <a href="aulasSolicitadas.php" class="btn btn-primary" id="requisicoes" style="margin-top:10px;margin-right: 10px; padding-top: 0px; padding-bottom: 0px;">Solicitações <span class="badge"><?php echo $solicitacoes?></span></a>
+                    <a href="usuariosSolicitados.php" title="Usuários Solicitados" class="btn btn-primary" id="requisicoes" style="margin-top:10px;margin-right: 10px; padding-top: 0px; padding-bottom: 0px;"><i class="glyphicon glyphicon-user"></i>     <span class="badge"><?php echo $solicitacoes?></span></a>
+                </li>
+                <li>
+                    <a href="aulasSolicitadas.php" title="Aulas Solicitadas" class="btn btn-primary" id="requisicoes" style="margin-top:10px;margin-right: 10px; padding-top: 0px; padding-bottom: 0px;"><i class="glyphicon glyphicon-book"></i>        <span class="badge"><?php echo $solicitacoes2?></span></a>
                 </li>
                 <li>
                     <h4><span class="label label-default">

@@ -369,34 +369,39 @@ idInstituicao</RefColNames>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="84" parent="15" name="Cons_User_FK">
+    <column id="84" parent="15" name="aceito">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="85" parent="15" name="Cons_User_FK">
       <ColNames>idConselho</ColNames>
     </index>
-    <index id="85" parent="15" name="Inst_User_FK">
+    <index id="86" parent="15" name="Inst_User_FK">
       <ColNames>idInstituicao</ColNames>
     </index>
-    <index id="86" parent="15" name="UK_usuario">
+    <index id="87" parent="15" name="UK_usuario">
       <ColNames>usuario</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="87" parent="15" name="PRIMARY">
+    <key id="88" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuario
 idConselho
 idInstituicao</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="88" parent="15" name="UK_usuario">
+    <key id="89" parent="15" name="UK_usuario">
       <ColNames>usuario</ColNames>
       <UnderlyingIndexName>UK_usuario</UnderlyingIndexName>
     </key>
-    <foreign-key id="89" parent="15" name="Cons_User_FK">
+    <foreign-key id="90" parent="15" name="Cons_User_FK">
       <ColNames>idConselho</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_conselho</RefTableName>
       <RefColNames>idConselho</RefColNames>
     </foreign-key>
-    <foreign-key id="90" parent="15" name="Inst_User_FK">
+    <foreign-key id="91" parent="15" name="Inst_User_FK">
       <ColNames>idInstituicao</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_instituicao</RefTableName>

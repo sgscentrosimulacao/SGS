@@ -14,6 +14,7 @@ function inserirUsuario(){
     $numeroConselho = $_POST['fieldNumeroCon'];
     $ciente = (isset($_POST['estouCiente']))?1:0;
     $admin = 0;
+    $aceito = 0;
 
     $valorDropCurso = $_POST['dropConselho'];
     $selectIdConselho = "SELECT tb_conselho.idConselho FROM tb_conselho
@@ -35,8 +36,8 @@ function inserirUsuario(){
     $cSenha = sha1($_POST['fieldCSenha']);
 
 
-    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente, administrador) 
-        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','{$ciente}','{$admin}')";
+    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente, administrador, aceito)  
+        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','{$ciente}','{$admin}','{$aceito}')";
 
 
 
@@ -49,7 +50,7 @@ function inserirUsuario(){
                     //header("Location: ../view/index.php");
 
                     echo '<SCRIPT>
-                            confirm("O usuário foi inserido no sistema!");
+                            confirm("O usuário foi inserido na fila de aprovação!");
                             window.location.href = "../view/index.php";
                           </SCRIPT>';
 

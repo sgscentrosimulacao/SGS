@@ -31,7 +31,7 @@ function verificarDisponibilidade(){
                                               AND
                                               
                                               ((tb_aulas.dataInicio BETWEEN '{$dataInicio}' AND '{$dataFim}')
-                                                        OR (tb_aulas.dataFim BETWEEN '{$dataInicio}' AND '{$dataFim}'))";
+                                                        OR (tb_aulas.dataFim BETWEEN '{$dataInicio}' AND '{$dataFim}')) AND tb_aulas.aceita = 1";
 
     $queryDisponibilidade = $conn->query($verificaDisponibilidade);
 

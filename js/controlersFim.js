@@ -9,7 +9,7 @@ function verificarDataEHora () {
 
     $.ajax({
         method: "GET",
-        url: "../Control/verificarDisponibilidade.php?dataInicio="+dataInicio+"&horaInicio="+horaInicio+"&dataFim="+dataFim+"&horaFim="+horaFim+"&sala="+sala,
+        url: "../control/verificarDisponibilidade.php?dataInicio="+dataInicio+"&horaInicio="+horaInicio+"&dataFim="+dataFim+"&horaFim="+horaFim+"&sala="+sala,
         dataType: "text",
         success:function (result) {
             if(result == 'Erro') {
