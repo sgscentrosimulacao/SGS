@@ -130,18 +130,19 @@ if ($_SESSION['administrador'] == 1){
                                                     </div>
                                                 </div>
                                                 
-                                                <div class='col-md-12' >
-                                                    <div class='col-md-4'></div>
-                                                    <div class='col-md-4 text-right'>
-                                                        <form action='../control/updateAprovacao.php' method='post'>
-                                                            <button class='btn btn-success' name='reprovarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-remove' title='Aprovar aula'> Reprovar</i></button>
+                                                <div class='col-md-12 '>
+                                                    <div class='col-md-1'></div>
+                                                    <div class='col-md-5 text-right'>
+                                                        <form action='../control/deleteAula.php' method='post'>
+                                                            <button class='btn btn-danger' name='rejeitarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-remove' title='Rejeitar aula'> Rejeitar</i></button>
                                                         </form>
                                                     </div>
-                                                    <div class='col-md-4 text-right'>
+                                                    <div class='col-md-5 text-left'>
                                                         <form action='../control/updateAprovacao.php' method='post'>
                                                             <button class='btn btn-success' name='aprovarAula' value='{$row['idAula']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-ok' title='Aprovar aula'> Aprovar</i></button>
                                                         </form>
-                                                </div>
+                                                    </div>
+                                                    <div class='col-md-1'></div>
                                                     
                                                 </div>
                                             </tr>

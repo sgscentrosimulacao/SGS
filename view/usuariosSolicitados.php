@@ -109,17 +109,18 @@ if ($_SESSION['administrador'] == 1){
                                                 </div>
                                                     
                                                 <div class='col-md-12'>
-                                                    <div class='col-md-4'></div>
-                                                    <div class='col-md-4 text-right'>
+                                                    <div class='col-md-1'></div>
+                                                    <div class='col-md-5 text-right'>
+                                                        <form action='../control/updateAprovacaoUser.php' method='post'>
+                                                            <button class='btn btn-danger' name='rejeitarUsuario' value='{$row['idUsuario']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-remove' title='Rejeitar aula'> Rejeitar</i></button>
+                                                        </form>
+                                                    </div>
+                                                    <div class='col-md-5 text-left'>
                                                         <form action='../control/updateAprovacaoUser.php' method='post'>
                                                             <button class='btn btn-success' name='aprovarUsuario' value='{$row['idUsuario']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-ok' title='Aprovar aula'> Aprovar</i></button>
                                                         </form>
                                                     </div>
-                                                    <div class='col-md-4 text-right'>
-                                                        <form action='../control/updateAprovacaoUser.php' method='post'>
-                                                            <button class='btn btn-success' name='aprovarUsuario' value='{$row['idUsuario']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-ok' title='Aprovar aula'> Aprovar</i></button>
-                                                        </form>
-                                                    </div>
+                                                    <div class='col-md-1'></div>
                                                 </div>
                                             </tr>
                                           </div>
