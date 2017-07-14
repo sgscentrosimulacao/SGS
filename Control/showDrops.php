@@ -9,7 +9,7 @@ $resultCurso = showCursos();
 $resultSalas = showSalas();
 $resultConselho = showConselhos();
 $resultInstituicao = showInstituicao();
-
+$resultItens = showItens();
 
 function showDisciplina(){
 
@@ -86,6 +86,19 @@ function showInstituicao(){
     $selectConselho= "SELECT tb_instituicao.nomeInstituicao FROM tb_instituicao ORDER BY tb_instituicao.nomeInstituicao ASC";
 
     $query = mysqli_query($conn, $selectConselho);
+
+    fecharDatabase($conn);
+
+    return $query;
+}
+
+function showItens(){
+
+    $conn = abrirDatabase();
+
+    $selectItem= "SELECT tb_inventario.nomePeca, tb_inventario.idPeca FROM tb_inventario ORDER BY tb_inventario.nomePeca ASC";
+
+    $query = mysqli_query($conn, $selectItem);
 
     fecharDatabase($conn);
 

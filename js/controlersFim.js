@@ -1,3 +1,37 @@
+function adicionarPecas(){
+
+    var dropItem = $('#dropItem').val();
+    var qnt = $('#fieldQnt').val();
+    var dropSala = $('#dropSala').val();
+
+    $.ajax({
+
+        method: "GET",
+        url: "../control/adicionarItem.php?dropItem="+dropItem+"&qnt="+qnt+"&dropSala="+dropSala,
+        dataType: "text",
+        success:function (result) {
+            if (result == 'Erro') {
+                $('#tabelaItens').html("teste")
+
+
+            } else {
+
+
+            }
+        }
+
+    });
+}
+
+$('#btnAdicionarItem').on('click', function (e) {
+
+    adicionarPecas();
+
+});
+
+
+
+
 
 function verificarDataEHora () {
 

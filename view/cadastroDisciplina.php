@@ -201,6 +201,49 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                     </div>
 
+                    <div class="col-md-12" style="padding-top: 5px;">
+                        <div class="editor-label col-md-2" id="itensLabel" style="">
+                            <label for="itensLabel" id="labelsLogin">Peças</label>
+                        </div>
+                        <div class="dropdown col-md-4" style="">
+                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" id="dropItem" name="dropItem"
+                                    style="width: 100%">
+                                <?php
+                                while ($row4 = mysqli_fetch_assoc($resultItens)) {
+                                    echo "<option value=\"{$row4['idPeca']}\">".$row4['nomePeca']."</option>";
+                                }?>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" id="fieldQnt" name="fieldQnt"
+                                   placeholder="Quantidade" style="width: 100%" type="number">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-info" id="btnAdicionarItem">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label col-md-6">
+                            <label for="nomeAulaLabel" id="labelsLogin">Itens adicionados</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="editor-label form-inline">
+                            <table class="table-bordered" id="tabelaItens">
+                                <tr>
+                                    <th id="labelsLogin">Item</th>
+                                    <th id="labelsLogin">Quantidade</th>
+                                </tr>
+                                <tr>
+                                    <td>Cabeça</td>
+                                    <td>2</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
                     <div class="col-md-12">
                         <div class="form-group col-md-12">
                             <label for="cenarioLabel" id="labelsLogin">Cenário</label>
