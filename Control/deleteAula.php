@@ -13,10 +13,17 @@ function deleteAula(){
 
 
     if ($conn->query($deleteAula)) {
-        echo '<SCRIPT>
+        if ($tela = $_GET['tela'] == "disciplina") {
+            echo '<SCRIPT>
                             confirm("Aula excluída do sistema!");
                             window.location.href = "../view/consultaDisciplina.php";
                           </SCRIPT>';
+        }else{
+            echo '<SCRIPT>
+                            confirm("Aula excluída do sistema!");
+                            window.location.href = "../view/calendario.php";
+                          </SCRIPT>';
+        }
     } else {
         echo '<SCRIPT>
                             confirm("Aula não pode ser excluída do banco!");

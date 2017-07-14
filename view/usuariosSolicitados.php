@@ -111,7 +111,7 @@ if ($_SESSION['administrador'] == 1){
                                                 <div class='col-md-12'>
                                                     <div class='col-md-1'></div>
                                                     <div class='col-md-5 text-right'>
-                                                        <form action='../control/updateAprovacaoUser.php' method='post'>
+                                                        <form action='../control/deleteRequisicaoUser.php' method='post'>
                                                             <button class='btn btn-danger' name='rejeitarUsuario' value='{$row['idUsuario']}' style='margin-top: 30px;'><i class='glyphicon glyphicon-remove' title='Rejeitar aula'> Rejeitar</i></button>
                                                         </form>
                                                     </div>

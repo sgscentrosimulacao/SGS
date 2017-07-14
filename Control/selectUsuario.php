@@ -24,7 +24,7 @@ function consultarUsuario()
                                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                                     
-                                        WHERE UPPER(tb_usuario.nomeUsuario) LIKE '%{$pesquisa}%'";
+                                        WHERE UPPER(tb_usuario.nomeUsuario) LIKE '%{$pesquisa}%' AND tb_usuario.aceito = 1";
                 break;
             case 2:
                 $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao, tb_usuario.administrador FROM tb_usuario
@@ -32,7 +32,7 @@ function consultarUsuario()
                                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                                     
-                                        WHERE UPPER(tb_usuario.usuario) LIKE '%{$pesquisa}%'";
+                                        WHERE UPPER(tb_usuario.usuario) LIKE '%{$pesquisa}%' AND tb_usuario.aceito = 1";
                 break;
             case 3:
                 $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao, tb_usuario.administrador FROM tb_usuario
@@ -40,7 +40,7 @@ function consultarUsuario()
                                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                                     
-                                        WHERE UPPER(tb_usuario.email) LIKE '%{$pesquisa}%'";
+                                        WHERE UPPER(tb_usuario.email) LIKE '%{$pesquisa}%' AND tb_usuario.aceito = 1";
                 break;
             case 4:
                 $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao, tb_usuario.administrador FROM tb_usuario
@@ -48,7 +48,7 @@ function consultarUsuario()
                                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                                     
-                                        WHERE UPPER(tb_conselho.nomeConselho) LIKE '%{$pesquisa}%'";
+                                        WHERE UPPER(tb_conselho.nomeConselho) LIKE '%{$pesquisa}%' AND tb_usuario.aceito = 1";
                 break;
             case 5:
                 $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao, tb_usuario.administrador FROM tb_usuario
@@ -56,7 +56,7 @@ function consultarUsuario()
                                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                                     
-                                        WHERE UPPER(tb_usuario.numeroConselho) LIKE '%{$pesquisa}%'";
+                                        WHERE UPPER(tb_usuario.numeroConselho) LIKE '%{$pesquisa}%' AND tb_usuario.aceito = 1";
                 break;
             case 6:
                 $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao, tb_usuario.administrador FROM tb_usuario
@@ -64,14 +64,16 @@ function consultarUsuario()
                                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                                     
-                                        WHERE UPPER(tb_instituicao.nomeInstituicao) LIKE '%{$pesquisa}%'";
+                                        WHERE UPPER(tb_instituicao.nomeInstituicao) LIKE '%{$pesquisa}%' AND tb_usuario.aceito = 1";
                 break;
         }
     }else{
         $selectUsuario = "SELECT tb_usuario.idUsuario, tb_usuario.usuario, tb_usuario.nomeUsuario, tb_usuario.email, tb_conselho.nomeConselho, tb_usuario.numeroConselho, tb_instituicao.nomeInstituicao, tb_usuario.administrador FROM tb_usuario
 
                 LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
-                LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao";
+                LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
+                
+                WHERE tb_usuario.aceito = 1";
     }
         $query = mysqli_query($conn, $selectUsuario);
 
@@ -91,7 +93,7 @@ function selecionarUsuarioId(){
                         LEFT JOIN tb_conselho ON tb_usuario.idConselho = tb_conselho.idConselho 
                         LEFT JOIN tb_instituicao ON tb_usuario.idInstituicao = tb_instituicao.idInstituicao
                     
-                          WHERE tb_usuario.idUsuario = {$id}";
+                          WHERE tb_usuario.idUsuario = '{$id}' AND tb_usuario.aceito = 1";
 
 
         $queryIdUsuario = mysqli_query($conn, $selectUsuarioId);
