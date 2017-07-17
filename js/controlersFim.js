@@ -1,3 +1,29 @@
+function mostrarPecas(){
+
+    var dropSala = $('#dropSala').val();
+
+    $.ajax({
+
+        method: "GET",
+        url: "../control/mostrarPecas.php?dropSala="+dropSala,
+        dataType: "text",
+        success:function (result) {
+            var dropItens = JSON.parse(this.responseText);
+
+            alert(dropItens[0]["nomePeca"]);
+
+            for(var i = 0; i.length; i ++){
+                $('#dropItem').append('<option value=1>'+dropItens[i]['nomePeca']+'</option>');
+            }
+            alert("TESTE");
+        }
+
+    });
+}
+
+
+
+
 function adicionarPecas(){
 
     var dropItem = $('#dropItem').val();
@@ -11,7 +37,7 @@ function adicionarPecas(){
         dataType: "text",
         success:function (result) {
             if (result == 'Erro') {
-                $('#tabelaItens').html("teste")
+                $('#tabelaItens > tbody:last-child').append('<tr><td>'+dropItem+'</td><td>'+qnt+'</td></tr>');
 
 
             } else {
@@ -28,7 +54,6 @@ $('#btnAdicionarItem').on('click', function (e) {
     adicionarPecas();
 
 });
-
 
 
 
@@ -100,4 +125,7 @@ $('#dropSala').on('blur', function (e) {
 
     verificarDataEHora();
 
+}).on('change', function(e) {
+    mostrarPecas();
 });
+

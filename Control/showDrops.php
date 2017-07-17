@@ -93,16 +93,15 @@ function showInstituicao(){
 }
 
 function showItens(){
-
     $conn = abrirDatabase();
 
-    $selectItem= "SELECT tb_inventario.nomePeca, tb_inventario.idPeca FROM tb_inventario ORDER BY tb_inventario.nomePeca ASC";
+    $selectItem= "SELECT tb_inventario.idPeca, tb_inventario.nomePeca, tb_inventario.quantidade FROM tb_inventario ORDER BY tb_inventario.nomePeca ASC";
 
     $query = mysqli_query($conn, $selectItem);
 
     fecharDatabase($conn);
 
     return $query;
-
 }
+
 ?>

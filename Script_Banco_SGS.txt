@@ -1,6 +1,6 @@
 /*
 Created: 26/05/2017
-Modified: 28/06/2017
+Modified: 12/07/2017
 Project: SGS_Centro_Simulacao
 Model: MySQL 5.6
 Database: MySQL 5.6
@@ -111,8 +111,12 @@ CREATE TABLE `tb_sala`
   `idSala` Int NOT NULL AUTO_INCREMENT,
   `nomeSala` Char(50) NOT NULL,
   `descricaoSala` Char(100) NOT NULL,
+  `idPeca` Int,
   PRIMARY KEY (`idSala`)
 )
+;
+
+CREATE INDEX `Inven_Sala_FK` ON `tb_sala` (`idPeca`)
 ;
 
 -- Table tb_inventario
@@ -122,13 +126,13 @@ CREATE TABLE `tb_inventario`
   `idPeca` Int NOT NULL AUTO_INCREMENT,
   `nomePeca` Char(100) NOT NULL,
   `descricao` Char(200) NOT NULL,
-  `idSala` Int,
+  `idSala` Int NOT NULL,
   `quantidade` Int NOT NULL,
   PRIMARY KEY (`idPeca`)
 )
 ;
 
-CREATE INDEX `IX_Relationship8` ON `tb_inventario` (`idSala`)
+CREATE INDEX `IX_Sala_Inven_FK` ON `tb_inventario` (`idSala`)
 ;
 
 -- Table tb_instituicao
@@ -166,6 +170,10 @@ ALTER TABLE `tb_aulas` ADD CONSTRAINT `Aula_Sala_FK` FOREIGN KEY (`idSala`) REFE
 
 ALTER TABLE `tb_cursos` ADD CONSTRAINT `Inst_Cur_FK` FOREIGN KEY (`idInstituicao`) REFERENCES `tb_instituicao` (`idInstituicao`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
+
+ALTER TABLE `tb_sala` ADD CONSTRAINT `Inven_Sala_FK` FOREIGN KEY (`idPeca`) REFERENCES `tb_inventario` (`idPeca`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
 
 
 

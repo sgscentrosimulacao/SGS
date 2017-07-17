@@ -14,6 +14,8 @@ function adicionarItem(){
     $dropSala = $_GET['dropSala'];
     $qnt = $_GET['qnt'];
 
+    $disponibilidadeItem = "SELECT * FROM tb_aulas";
+
 
 
 }

@@ -223,15 +223,15 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-6">
+                    <div class="col-md-12" hidden>
+                        <div class="editor-label text-center col-md-12" style="padding-top: 15px;">
                             <label for="nomeAulaLabel" id="labelsLogin">Itens adicionados</label>
                         </div>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12" hidden>
                         <div class="editor-label form-inline">
-                            <table class="table-bordered" id="tabelaItens">
+                            <table class="table" id="tabelaItens">
                                 <tr>
                                     <th id="labelsLogin">Item</th>
                                     <th id="labelsLogin">Quantidade</th>
