@@ -55,22 +55,24 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="tb_aulas" />
+        <option name="myItemId" value="tb_instituicao" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="controlersFim.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/js/controlersFim.js">
+            <file leaf-file-name="adicionarItem.php" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/control/adicionarItem.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="80">
-                    <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="20" selection-end-column="7" />
-                    <folding />
+                  <state relative-caret-position="460">
+                    <caret line="32" column="121" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="32" selection-end-column="121" />
+                    <folding>
+                      <marker date="1500406913701" expanded="true" signature="416:1383" ph="SELECT * FRO... tb_aulas" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -85,7 +87,7 @@
     <favorites_list name="SGS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,28 +147,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/downloadPlano.php" />
-        <option value="$PROJECT_DIR$/view/index.php" />
-        <option value="$PROJECT_DIR$/view/navbarUser.php" />
-        <option value="$PROJECT_DIR$/view/paginaPrincipalAdmin.php" />
-        <option value="$PROJECT_DIR$/view/paginaPrincipalUser.php" />
         <option value="$PROJECT_DIR$/view/sobreInside.php" />
         <option value="$PROJECT_DIR$/control/logout.php" />
         <option value="$PROJECT_DIR$/control/autenticacao.php" />
         <option value="$PROJECT_DIR$/control/controleCalendario.php" />
         <option value="$PROJECT_DIR$/control/controleDoBanco.php" />
-        <option value="$PROJECT_DIR$/control/inserirAula.php" />
-        <option value="$PROJECT_DIR$/control/inserirDisciplina.php" />
-        <option value="$PROJECT_DIR$/control/inserirUsuario.php" />
         <option value="$PROJECT_DIR$/control/selectConselho.php" />
         <option value="$PROJECT_DIR$/control/selectCurso.php" />
         <option value="$PROJECT_DIR$/control/selectInstituicao.php" />
         <option value="$PROJECT_DIR$/control/selectItem.php" />
         <option value="$PROJECT_DIR$/control/selectSala.php" />
         <option value="$PROJECT_DIR$/control/sessionControl.php" />
-        <option value="$PROJECT_DIR$/control/showDropsCadUser.php" />
-        <option value="$PROJECT_DIR$/control/verificarDisponibilidade.php" />
-        <option value="$PROJECT_DIR$/view/cadastroItem.php" />
         <option value="$PROJECT_DIR$/view/consultaConselho.php" />
         <option value="$PROJECT_DIR$/view/consultaCurso.php" />
         <option value="$PROJECT_DIR$/view/consultaDisciplina.php" />
@@ -181,7 +172,6 @@
         <option value="$PROJECT_DIR$/Control/inserirUsuario.php" />
         <option value="$PROJECT_DIR$/Control/selectUsuario.php" />
         <option value="$PROJECT_DIR$/Control/updateAprovacaoUser.php" />
-        <option value="$PROJECT_DIR$/control/inserirUsuarioPP.php" />
         <option value="$PROJECT_DIR$/css/style_index.css" />
         <option value="$PROJECT_DIR$/view/navbarAdmin.php" />
         <option value="$PROJECT_DIR$/control/deleteAula.php" />
@@ -191,11 +181,23 @@
         <option value="$PROJECT_DIR$/control/selectUsuario.php" />
         <option value="$PROJECT_DIR$/control/deleteRequisicaoUser.php" />
         <option value="$PROJECT_DIR$/control/selectDisciplina.php" />
-        <option value="$PROJECT_DIR$/control/adicionarItem.php" />
-        <option value="$PROJECT_DIR$/control/mostrarPecas.php" />
-        <option value="$PROJECT_DIR$/js/controlersFim.js" />
-        <option value="$PROJECT_DIR$/view/cadastroDisciplina.php" />
         <option value="$PROJECT_DIR$/control/showDrops.php" />
+        <option value="$PROJECT_DIR$/view/cadastroUsuarioPP.php" />
+        <option value="$PROJECT_DIR$/control/inserirUsuarioPP.php" />
+        <option value="$PROJECT_DIR$/control/inserirUsuario.php" />
+        <option value="$PROJECT_DIR$/view/cadastroUsuario.php" />
+        <option value="$PROJECT_DIR$/control/showDropsCadUser.php" />
+        <option value="$PROJECT_DIR$/control/inserirDisciplina.php" />
+        <option value="$PROJECT_DIR$/control/inserirAula.php" />
+        <option value="$PROJECT_DIR$/view/cadastroItem.php" />
+        <option value="$PROJECT_DIR$/control/inserirItem.php" />
+        <option value="$PROJECT_DIR$/view/cadastroCurso.php" />
+        <option value="$PROJECT_DIR$/control/inserirCurso.php" />
+        <option value="$PROJECT_DIR$/view/cadastroDisciplina.php" />
+        <option value="$PROJECT_DIR$/control/mostrarPecas.php" />
+        <option value="$PROJECT_DIR$/control/verificarDisponibilidade.php" />
+        <option value="$PROJECT_DIR$/js/controlersFim.js" />
+        <option value="$PROJECT_DIR$/control/adicionarItem.php" />
       </list>
     </option>
   </component>
@@ -207,9 +209,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1352" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1376" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -228,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,6 +272,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -480,11 +482,12 @@
       <workItem from="1500062579768" duration="3585000" />
       <workItem from="1500295993530" duration="2906000" />
       <workItem from="1500309140547" duration="6488000" />
+      <workItem from="1500392069747" duration="12549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313798000" />
+    <option name="totallyTimeSpent" value="326347000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,12 +499,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1352" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13469985" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13529412" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.50292826" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15812592" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15882353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -537,53 +540,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/control/updateInstituicao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/updateItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/updateSala.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/updateUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/inserirCurso.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-446">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controlersInicio.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -596,21 +552,6 @@
         <state relative-caret-position="-780">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/cadastroItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-346">
-          <caret line="58" column="71" lean-forward="false" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/cadastroUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -670,22 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/inserirAula.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding>
-            <marker date="1499445823352" expanded="true" signature="640:766" ph="SELECT idDis... tb_disciplina" />
-            <marker date="1499445823352" expanded="true" signature="916:1166" ph="SELECT tb_cu... tb_disciplina" />
-            <marker date="1499445823352" expanded="true" signature="1334:1437" ph="SELECT tb_sa... tb_sala" />
-            <marker date="1499445823352" expanded="true" signature="1550:1919" ph="INSERT INTO tb_aulas... " />
-            <marker date="1499445823352" expanded="true" signature="2080:2267" ph="..." />
-            <marker date="1499445823352" expanded="true" signature="2311:2509" ph="..." />
-            <marker date="1499445823352" expanded="true" signature="2555:2736" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -742,37 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/cadastroUsuarioPP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2866">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/inserirUsuarioPP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/inserirUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="52" column="81" lean-forward="false" selection-start-line="52" selection-start-column="81" selection-end-line="52" selection-end-column="81" />
-          <folding>
-            <marker date="1499879743471" expanded="true" signature="463:587" ph="SELECT tb_co... tb_conselho" />
-            <marker date="1499879743471" expanded="true" signature="772:919" ph="SELECT tb_in... tb_instituicao" />
-            <marker date="1499879743471" expanded="true" signature="1149:1446" ph="INSERT INTO tb_usuario... " />
-            <marker date="1499879743471" expanded="true" signature="1752:1945" ph="..." />
-            <marker date="1499879743471" expanded="true" signature="2006:2208" ph="..." />
-            <marker date="1499879743471" expanded="true" signature="2278:2469" ph="..." />
-            <marker date="1499879743471" expanded="true" signature="2527:2724" ph="..." />
-            <marker date="1499879743471" expanded="true" signature="2770:2973" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,49 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/adicionarItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1500301980281" expanded="true" signature="267:289" ph="SELECT * FRO... tb_aulas" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controlersFim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/mostrarPecas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding>
-            <marker date="1500315139396" expanded="true" signature="128:321" ph="SELECT tb_in... tb_inventario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/verificarDisponibilidade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <marker date="1499877766129" expanded="true" signature="405:508" ph="SELECT tb_sa... tb_sala" />
-            <marker date="1499877766129" expanded="true" signature="625:757" ph="SELECT * FRO... tb_aulas" />
-            <marker date="1499877766129" expanded="true" signature="625:1201" ph="SELECT * FRO... tb_aulas" />
-            <marker date="1499877766129" expanded="true" signature="625:1478" ph="SELECT * FRO... tb_aulas" />
-            <marker date="1499877766129" expanded="true" signature="625:1502" ph="SELECT * FRO... tb_aulas" />
-            <marker date="1499877766129" expanded="true" signature="625:1510" ph="SELECT * FRO... tb_aulas" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/consultaDisciplina.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1099,24 +950,209 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/control/showDrops.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="-1280">
+          <caret line="17" column="88" lean-forward="false" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
           <folding>
-            <marker date="1500315620334" expanded="true" signature="369:465" ph="SELECT tb_di... tb_disciplina" />
-            <marker date="1500315620334" expanded="true" signature="661:802" ph="SELECT tb_di... tb_disciplina" />
-            <marker date="1500315620334" expanded="true" signature="986:1060" ph="SELECT tb_cu... tb_cursos" />
-            <marker date="1500315620334" expanded="true" signature="1236:1302" ph="SELECT tb_sa... tb_sala" />
-            <marker date="1500315620334" expanded="true" signature="1484:1570" ph="SELECT tb_co... tb_conselho" />
-            <marker date="1500315620334" expanded="true" signature="1757:1858" ph="SELECT tb_in... tb_instituicao" />
-            <marker date="1500315620334" expanded="true" signature="2034:2166" ph="SELECT tb_in... tb_inventario" />
+            <marker date="1500393915697" expanded="true" signature="371:495" ph="SELECT tb_di... tb_disciplina" />
+            <marker date="1500393915697" expanded="true" signature="691:860" ph="SELECT tb_di... tb_disciplina" />
+            <marker date="1500393915697" expanded="true" signature="1044:1137" ph="SELECT tb_cu... tb_cursos" />
+            <marker date="1500393915697" expanded="true" signature="1313:1395" ph="SELECT tb_sa... tb_sala" />
+            <marker date="1500393915697" expanded="true" signature="1577:1687" ph="SELECT tb_co... tb_conselho" />
+            <marker date="1500393915697" expanded="true" signature="1874:2005" ph="SELECT tb_in... tb_instituicao" />
+            <marker date="1500393915697" expanded="true" signature="2183:2315" ph="SELECT tb_in... tb_inventario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/cadastroUsuarioPP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="89" column="30" lean-forward="true" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/showDropsCadUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1500394652623" expanded="true" signature="200:310" ph="SELECT tb_co... tb_conselho" />
+            <marker date="1500394652623" expanded="true" signature="497:627" ph="SELECT tb_in... tb_instituicao" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1500394514855" expanded="true" signature="602:824" ph="INSERT INTO tb_usuario... " />
+            <marker date="1500394514855" expanded="true" signature="602:842" ph="INSERT INTO tb_usuario... " />
+            <marker date="1500394514855" expanded="true" signature="602:897" ph="INSERT INTO tb_usuario... " />
+            <marker date="1500394514855" expanded="true" signature="1200:1393" ph="..." />
+            <marker date="1500394514855" expanded="true" signature="1454:1656" ph="..." />
+            <marker date="1500394514855" expanded="true" signature="1726:1917" ph="..." />
+            <marker date="1500394514855" expanded="true" signature="1975:2172" ph="..." />
+            <marker date="1500394514855" expanded="true" signature="2218:2421" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/cadastroUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirUsuarioPP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1500394185789" expanded="true" signature="586:882" ph="INSERT INTO tb_usuario... " />
+            <marker date="1500394185789" expanded="true" signature="1089:1272" ph="..." />
+            <marker date="1500394185789" expanded="true" signature="1325:1506" ph="..." />
+            <marker date="1500394185789" expanded="true" signature="1564:1745" ph="..." />
+            <marker date="1500394185789" expanded="true" signature="1791:1996" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirDisciplina.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <marker date="1500395026504" expanded="true" signature="1115:1555" ph="INSERT INTO tb_disciplina... " />
+            <marker date="1500395026504" expanded="true" signature="1688:1871" ph="..." />
+            <marker date="1500395026504" expanded="true" signature="1915:2114" ph="..." />
+            <marker date="1500395026504" expanded="true" signature="2160:2341" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirConselho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499445823352" expanded="true" signature="222:286" ph="INSERT INTO tb_conselho... " />
+            <marker date="1499445823352" expanded="true" signature="393:572" ph="..." />
+            <marker date="1499445823352" expanded="true" signature="616:811" ph="..." />
+            <marker date="1499445823352" expanded="true" signature="857:1032" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/cadastroItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="63" column="35" lean-forward="true" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <marker date="1500396714506" expanded="true" signature="334:472" ph="INSERT INTO tb_inventario... " />
+            <marker date="1500396714506" expanded="true" signature="606:777" ph="..." />
+            <marker date="1500396714506" expanded="true" signature="821:1008" ph="..." />
+            <marker date="1500396714506" expanded="true" signature="1054:1229" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirCurso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding>
+            <marker date="1500396968859" expanded="true" signature="257:350" ph="INSERT INTO tb_cursos... " />
+            <marker date="1500396968859" expanded="true" signature="449:622" ph="..." />
+            <marker date="1500396968859" expanded="true" signature="666:855" ph="..." />
+            <marker date="1500396968859" expanded="true" signature="901:1073" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/cadastroCurso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="55" column="79" lean-forward="false" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/mostrarPecas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <marker date="1500400897834" expanded="true" signature="128:321" ph="SELECT tb_in... tb_inventario" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/cadastroDisciplina.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="215" column="30" lean-forward="true" selection-start-line="215" selection-start-column="30" selection-end-line="215" selection-end-column="30" />
+        <state relative-caret-position="-806">
+          <caret line="214" column="53" lean-forward="false" selection-start-line="214" selection-start-column="53" selection-end-line="214" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/inserirAula.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <marker date="1500396482568" expanded="true" signature="663:702" ph="SELECT * FRO... tb_cursos" />
+            <marker date="1500396482568" expanded="true" signature="663:876" ph="SELECT tb_cu... tb_cursos" />
+            <marker date="1500396482568" expanded="true" signature="663:893" ph="SELECT tb_cu... tb_cursos" />
+            <marker date="1500396482568" expanded="true" signature="1007:1344" ph="INSERT INTO tb_aulas... " />
+            <marker date="1500396482568" expanded="true" signature="1007:1374" ph="INSERT INTO tb_aulas... " />
+            <marker date="1500396482568" expanded="true" signature="1535:1722" ph="..." />
+            <marker date="1500396482568" expanded="true" signature="1766:1964" ph="..." />
+            <marker date="1500396482568" expanded="true" signature="2010:2191" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/adicionarItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="32" column="121" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="32" selection-end-column="121" />
+          <folding>
+            <marker date="1500406913701" expanded="true" signature="416:1383" ph="SELECT * FRO... tb_aulas" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/verificarDisponibilidade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1500403922806" expanded="true" signature="413:545" ph="SELECT * FRO... tb_aulas" />
+            <marker date="1500403922806" expanded="true" signature="413:988" ph="SELECT * FRO... tb_aulas" />
+            <marker date="1500403922806" expanded="true" signature="413:1265" ph="SELECT * FRO... tb_aulas" />
+            <marker date="1500403922806" expanded="true" signature="413:1289" ph="SELECT * FRO... tb_aulas" />
+            <marker date="1500403922806" expanded="true" signature="413:1297" ph="SELECT * FRO... tb_aulas" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controlersFim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding />
         </state>
       </provider>

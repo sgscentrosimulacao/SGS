@@ -15,6 +15,7 @@ include_once "controleDoBanco.php";
     $objItens = null;
     while ($assoc = mysqli_fetch_assoc($query)) {
         $objItens[$i]['nomePeca'] = $assoc['nomePeca'];
+        $objItens[$i]['idPeca'] = $assoc['idPeca'];
         $i++;
     }
 

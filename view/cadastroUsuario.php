@@ -1,5 +1,5 @@
 <?php
-    include "../control/showDropsCadUser.php";
+    include_once "../control/showDropsCadUser.php";
 
 ?>
 <!doctype html>
@@ -108,7 +108,7 @@
                                     <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropConselho">
                                         <?php
                                         while ($row = mysqli_fetch_assoc($resultConselho)) {
-                                            echo "<option value=\"{$row['nomeConselho']}\">".$row['nomeConselho']."</option>";
+                                            echo "<option value=\"{$row['idConselho']}\">".$row['nomeConselho']."</option>";
                                         }?>
                                     </select>
                                 </div>
@@ -121,7 +121,7 @@
                                     <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
                                         <?php
                                         while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
-                                            echo "<option value=\"{$row2['nomeInstituicao']}\">".$row2['nomeInstituicao']."</option>";
+                                            echo "<option value=\"{$row2['idInstituicao']}\">".$row2['nomeInstituicao']."</option>";
                                         }?>
                                     </select>
                                 </div>

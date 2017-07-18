@@ -10,18 +10,9 @@ function inserirDisciplina(){
 
     $conn = abrirDatabase();
 
-
-
     $nomeDisci = $_POST['fieldNomeDisci'];
     $qntAlunos = $_POST['fieldQntAlunos'];
-
-    $valorDropCurso = $_POST['dropCurso'];
-    $selectIdCurso = "SELECT tb_cursos.idCurso FROM tb_cursos
-                        	WHERE tb_cursos.nomeCurso = '{$valorDropCurso}'";
-    $curso = $conn->query($selectIdCurso);
-
-    $idCurso = mysqli_fetch_row($curso);
-
+    $dropCurso = $_POST['dropCurso'];
     $visibilidade = (isset($_POST['fieldVisibilidade']))?1:0;
 
     $descricao = $_POST['fieldDescricaoDisci'];
@@ -48,7 +39,7 @@ function inserirDisciplina(){
     }
 
     $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao, planoDeEnsino, caminhoPlano)   
-                                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$idCurso[0]}','{$idUsuario}',
+                                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$dropCurso}','{$idUsuario}',
                                                                             '{$idConselho}','{$idInstituicao}', '{$nome}','{$uploadfile}')";
 
     if ($nomeDisci and $qntAlunos and $descricao){

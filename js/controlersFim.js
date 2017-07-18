@@ -8,38 +8,35 @@ function mostrarPecas(){
         url: "../control/mostrarPecas.php?dropSala="+dropSala,
         dataType: "text",
         success:function (result) {
-            var dropItens = JSON.parse(this.responseText);
 
-            alert(dropItens[0]["nomePeca"]);
-
-            for(var i = 0; i.length; i ++){
-                $('#dropItem').append('<option value=1>'+dropItens[i]['nomePeca']+'</option>');
+            $('#dropItem').empty();
+            var dropItens = JSON.parse(result);
+            if(dropItens != null && typeof dropItens != undefined && dropItens.length > 0 ){
+                for(var i = 0; dropItens.length; i ++){
+                    $('#dropItem').append('<option value="'+dropItens[i]['idPeca']+'">'+dropItens[i]['nomePeca']+'</option>');
+                }
             }
-            alert("TESTE");
         }
-
     });
 }
-
-
-
 
 function adicionarPecas(){
 
     var dropItem = $('#dropItem').val();
     var qnt = $('#fieldQnt').val();
-    var dropSala = $('#dropSala').val();
+    var dataInicio = $('#fieldDataInicio').val();
+    var horaInicio = $('#fieldHoraInicio').val();
+    var dataFim = $('#fieldDataFim').val();
+    var horaFim = $('#fieldHoraFim').val();
 
     $.ajax({
 
         method: "GET",
-        url: "../control/adicionarItem.php?dropItem="+dropItem+"&qnt="+qnt+"&dropSala="+dropSala,
+        url: "../control/adicionarItem.php?dropItem="+dropItem+"&qnt="+qnt+"&dataInicio="+dataInicio+"&horaInicio="+horaInicio+"&dataFim="+dataFim+"&horaFim="+horaFim,
         dataType: "text",
         success:function (result) {
             if (result == 'Erro') {
                 $('#tabelaItens > tbody:last-child').append('<tr><td>'+dropItem+'</td><td>'+qnt+'</td></tr>');
-
-
             } else {
 
 
@@ -122,9 +119,7 @@ $('#fieldHoraFim').on('blur', function (e) {
 });
 
 $('#dropSala').on('blur', function (e) {
-
     verificarDataEHora();
-
 }).on('change', function(e) {
     mostrarPecas();
 });

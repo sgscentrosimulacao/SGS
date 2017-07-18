@@ -70,7 +70,7 @@ if ($_SESSION['administrador'] == 1){
                                     style="width: 100%">
                                 <?php
                                 while ($row = mysqli_fetch_assoc($resultCurso)) {
-                                    echo "<option value=\"{$row['nomeCurso']}\">".$row['nomeCurso']."</option>";
+                                    echo "<option value=\"{$row['idCurso']}\">".$row['nomeCurso']."</option>";
                                 }?>
 
                             </select>
@@ -183,7 +183,7 @@ if ($_SESSION['administrador'] == 1){
                                     style="width: 100%">
                                 <?php
                                 while ($row2 = mysqli_fetch_assoc($resultDisciplinaId)) {
-                                    echo "<option value=\"{$row2['nomeDisciplina']}\">".$row2['nomeDisciplina']."</option>";
+                                    echo "<option value=\"{$row2['idDisciplina']}\">".$row2['nomeDisciplina']."</option>";
                                 }?>
                             </select>
                         </div>
@@ -195,7 +195,7 @@ if ($_SESSION['administrador'] == 1){
                                     style="width: 100%">
                                 <?php
                                 while ($row3 = mysqli_fetch_assoc($resultSalas)) {
-                                    echo "<option value=\"{$row3['nomeSala']}\">".$row3['nomeSala']."</option>";
+                                    echo "<option value=\"{$row3['idSala']}\">".$row3['nomeSala']."</option>";
                                 }?>
                             </select>
                         </div>
@@ -208,10 +208,7 @@ if ($_SESSION['administrador'] == 1){
                         <div class="dropdown col-md-4" style="">
                             <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" id="dropItem" name="dropItem"
                                     style="width: 100%">
-                                <?php
-                                while ($row4 = mysqli_fetch_assoc($resultItens)) {
-                                    echo "<option value=\"{$row4['idPeca']}\">".$row4['nomePeca']."</option>";
-                                }?>
+
                             </select>
                         </div>
                         <div class="col-md-2">
@@ -223,13 +220,13 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                     </div>
 
-                    <div class="col-md-12" hidden>
+                    <div class="col-md-12">
                         <div class="editor-label text-center col-md-12" style="padding-top: 15px;">
                             <label for="nomeAulaLabel" id="labelsLogin">Itens adicionados</label>
                         </div>
                     </div>
 
-                    <div class="col-md-12" hidden>
+                    <div class="col-md-12">
                         <div class="editor-label form-inline">
                             <table class="table" id="tabelaItens">
                                 <tr>

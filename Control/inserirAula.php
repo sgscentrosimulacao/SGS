@@ -10,48 +10,29 @@ inserirAula();
 function inserirAula(){
 
     $nomeAula = $_POST['fieldNomeAula'];
-
-
     $dataInicio= converteDataToSQL($_POST['fieldDataInicio']);
     $dataFim= converteDataToSQL($_POST['fieldDataFim']);
-
     $horaInicio = converteHoraToSQL($_POST['fieldHoraInicio']);
     $horaFim = converteHoraToSQL($_POST['fieldHoraFim']);
-
     $cenario = $_POST['fieldCenarioAula'];
     $descricaoAula = $_POST['fieldDescricaoAula'];
     $dropDisciplina = $_POST['dropDisciplina'];
+    $dropSala = $_POST['dropSala'];
     $aceita = 0;
 
     $conn = abrirDatabase();
 
-    $selectNomeDisciplina = "SELECT idDisciplina FROM tb_disciplina
-	                              WHERE tb_disciplina.nomeDisciplina = '{$dropDisciplina}'";
+    $selectCurso = "SELECT tb_cursos.idCurso FROM tb_cursos
+                        LEFT JOIN tb_disciplina ON tb_cursos.idCurso = tb_disciplina.idCurso
+                      
+                      WHERE tb_disciplina.idDisciplina = {$dropDisciplina}";
 
-    $parseIdDisciplina = $conn->query($selectNomeDisciplina);
+    $curso = $conn->query($selectCurso);
 
-    $idDisciplina = mysqli_fetch_row($parseIdDisciplina);
-
-    $selectNomeCurso = "SELECT tb_cursos.idCurso FROM tb_disciplina
-                            LEFT JOIN tb_cursos ON tb_disciplina.idCurso = tb_cursos.idCurso
-                            
-                            WHERE tb_disciplina.nomeDisciplina = '{$dropDisciplina}'";
-
-    $parseIdCurso = $conn->query($selectNomeCurso);
-
-    $idCurso = mysqli_fetch_row($parseIdCurso);
-
-    $valorDropSala = $_POST['dropSala'];
-    $selectIdSala = "SELECT tb_sala.idSala FROM tb_sala
-                        	WHERE tb_sala.nomeSala = '{$valorDropSala}'";
-    $sala = $conn->query($selectIdSala);
-
-    $idSala = mysqli_fetch_row($sala);
-
-
+    $idCurso = mysqli_fetch_row($curso);
 
     $inserirDisciplina = "INSERT INTO tb_aulas(nomeAula, descricaoAula, horarioInicio, dataInicio, cenario, idDisciplina, idCurso, horarioFim, dataFim, idSala, aceita, comentarioAceita) 
-                            VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$idDisciplina[0]}','{$idCurso[0]}','{$horaFim}','{$dataFim}','{$idSala[0]}','{$aceita}',null)";
+                            VALUES('{$nomeAula}','{$descricaoAula}','{$horaInicio}','{$dataInicio}','{$cenario}','{$dropDisciplina}','{$idCurso[0]}','{$horaFim}','{$dataFim}','{$dropSala}','{$aceita}',null)";
 
     if ($nomeAula and $dataInicio and $dataFim and $horaInicio and $horaFim){
         if ($conn->query($inserirDisciplina)==true){

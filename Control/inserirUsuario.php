@@ -13,34 +13,17 @@ function inserirUsuario(){
     $email = $_POST['fieldEmail'];
     $numeroConselho = $_POST['fieldNumeroCon'];
     $ciente = (isset($_POST['estouCiente']))?1:0;
+    $dropConselho = $_POST['dropConselho'];
+    $dropInstituicao = $_POST['dropInstituicao'];
     $admin = 0;
     $aceito = 0;
-
-    $valorDropCurso = $_POST['dropConselho'];
-    $selectIdConselho = "SELECT tb_conselho.idConselho FROM tb_conselho
-                        	WHERE tb_conselho.nomeConselho = '{$valorDropCurso}'";
-    $conselho = $conn->query($selectIdConselho);
-
-    $idConselho = mysqli_fetch_row($conselho);
-
-
-    $valorDropInstituicao = $_POST['dropInstituicao'];
-    $selectIdInstituicao = "SELECT tb_instituicao.idInstituicao FROM tb_instituicao
-                        	  WHERE tb_instituicao.nomeInstituicao = '{$valorDropInstituicao}'";
-    $instituicao = $conn->query($selectIdInstituicao);
-
-    $idInstituicao = mysqli_fetch_row($instituicao);
-
 
     //Não inserir no banco. Só para verificação
     $cSenha = sha1($_POST['fieldCSenha']);
 
 
     $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente, administrador, aceito)  
-        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$idConselho[0]}','{$idInstituicao[0]}','{$ciente}','{$admin}','{$aceito}')";
-
-
-
+        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$dropConselho}','{$dropInstituicao}','{$ciente}','{$admin}','{$aceito}')";
 
 
     if ($usuario and $senha and $cSenha and $nome and $email and $numeroConselho){

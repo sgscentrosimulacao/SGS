@@ -53,7 +53,7 @@ if ($_SESSION['administrador'] == 1){
                             <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
                                 <?php
                                 while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
-                                    echo "<option value=\"{$row2['nomeInstituicao']}\">".$row2['nomeInstituicao']."</option>";
+                                    echo "<option value=\"{$row2['idInstituicao']}\">".$row2['nomeInstituicao']."</option>";
                                 }?>
                             </select>
 

@@ -60,7 +60,7 @@ if ($_SESSION['administrador'] == 1){
                                     style="width: 100%">
                                 <?php
                                 while ($row = mysqli_fetch_assoc($resultSalas)) {
-                                    echo "<option value=\"{$row['nomeSala']}\">".$row['nomeSala']."</option>";
+                                    echo "<option value=\"{$row['idSala']}\">".$row['nomeSala']."</option>";
                                 }?>
                             </select>
                         </div>

@@ -12,15 +12,9 @@ function inserirItem(){
     $nomePeça = $_POST['fieldNomePeca'];
     $descricaoPeca = $_POST['fieldDescricaoPeca'];
     $quantidade = $_POST['fieldQuantidade'];
+    $dropSala = $_POST['dropSala'];
 
-    $valorDropSala = $_POST['dropSala'];
-    $selectIdSala = "SELECT tb_sala.idSala FROM tb_sala
-                        	WHERE tb_sala.nomeSala = '{$valorDropSala}'";
-    $sala = $conn->query($selectIdSala);
-
-    $idSala = mysqli_fetch_row($sala);
-
-    $inserirItem = "INSERT INTO tb_inventario(nomePeca, descricao, idSala, quantidade) VALUES ('{$nomePeça}','{$descricaoPeca}','{$idSala[0]}','{$quantidade}')";
+    $inserirItem = "INSERT INTO tb_inventario(nomePeca, descricao, idSala, quantidade) VALUES ('{$nomePeça}','{$descricaoPeca}','{$dropSala}','{$quantidade}')";
 
 
     if ($nomePeça and $descricaoPeca and $quantidade){
