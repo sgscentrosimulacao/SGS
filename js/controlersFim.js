@@ -13,14 +13,17 @@ function mostrarPecas(){
             var dropItens = JSON.parse(result);
             if(dropItens != null && typeof dropItens != undefined && dropItens.length > 0 ){
                 for(var i = 0; dropItens.length; i ++){
-                    $('#dropItem').append('<option value="'+dropItens[i]['idPeca']+'">'+dropItens[i]['nomePeca']+'</option>');
+                    //$('#itens').append('<option value="'+dropItens[i]['idPeca']+'">'+dropItens[i]['nomePeca']+'</option>');
+                    $("#itens").append("<li><label for=\'itensLabel\'>"+dropItens[i]['nomePeca']+" <a class='btn btn-circle-lg' href='../view/infoItem.php?id="+dropItens[i]['idPeca']+"'> <i class='glyphicon glyphicon-info-sign' ></i></a></label></li>");
+
+                    //<a href='../view/infoItem.php?id="+dropItens[i][idPeca]+"'></a>
                 }
             }
         }
     });
 }
 
-function adicionarPecas(){
+/*function adicionarPecas(){
 
     var dropItem = $('#dropItem').val();
     var qnt = $('#fieldQnt').val();
@@ -51,7 +54,7 @@ $('#btnAdicionarItem').on('click', function (e) {
     adicionarPecas();
 
 });
-
+*/
 
 
 

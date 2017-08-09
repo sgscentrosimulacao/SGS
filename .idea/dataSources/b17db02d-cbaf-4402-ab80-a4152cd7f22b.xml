@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="sgs_centro_simulacao@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
     <root id="1"/>
     <schema id="2" parent="1" name="sgs_centro_simulacao">
       <Current>1</Current>
@@ -84,12 +84,12 @@
       <Position>13</Position>
       <DataType>char(200)|0</DataType>
     </column>
-    <index id="29" parent="8" name="IX_Relationship6">
+    <index id="29" parent="8" name="IX_Relationship10">
+      <ColNames>idSala</ColNames>
+    </index>
+    <index id="30" parent="8" name="IX_Relationship6">
       <ColNames>idDisciplina
 idCurso</ColNames>
-    </index>
-    <index id="30" parent="8" name="IX_Relationship10">
-      <ColNames>idSala</ColNames>
     </index>
     <key id="31" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -277,13 +277,14 @@ idInstituicao</RefColNames>
     <column id="65" parent="13" name="idSala">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="66" parent="13" name="quantidade">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="67" parent="13" name="IX_Relationship8">
+    <index id="67" parent="13" name="IX_Sala_Inven_FK">
       <ColNames>idSala</ColNames>
     </index>
     <key id="68" parent="13" name="PRIMARY">
@@ -313,95 +314,108 @@ idInstituicao</RefColNames>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="73" parent="14" name="PRIMARY">
+    <column id="73" parent="14" name="idPeca">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="74" parent="14" name="Inven_Sala_FK">
+      <ColNames>idPeca</ColNames>
+    </index>
+    <key id="75" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idSala</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="74" parent="15" name="idUsuario">
+    <foreign-key id="76" parent="14" name="Inven_Sala_FK">
+      <ColNames>idPeca</ColNames>
+      <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
+      <RefTableName>tb_inventario</RefTableName>
+      <RefColNames>idPeca</RefColNames>
+    </foreign-key>
+    <column id="77" parent="15" name="idUsuario">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="75" parent="15" name="usuario">
+    <column id="78" parent="15" name="usuario">
       <Position>2</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="76" parent="15" name="senha">
+    <column id="79" parent="15" name="senha">
       <Position>3</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="77" parent="15" name="nomeUsuario">
+    <column id="80" parent="15" name="nomeUsuario">
       <Position>4</Position>
       <DataType>char(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="78" parent="15" name="email">
+    <column id="81" parent="15" name="email">
       <Position>5</Position>
       <DataType>char(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="15" name="numeroConselho">
+    <column id="82" parent="15" name="numeroConselho">
       <Position>6</Position>
       <DataType>char(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="80" parent="15" name="idConselho">
+    <column id="83" parent="15" name="idConselho">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="81" parent="15" name="idInstituicao">
+    <column id="84" parent="15" name="idInstituicao">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="82" parent="15" name="estouCiente">
+    <column id="85" parent="15" name="estouCiente">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="83" parent="15" name="administrador">
+    <column id="86" parent="15" name="administrador">
       <Position>10</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="84" parent="15" name="aceito">
+    <column id="87" parent="15" name="aceito">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="85" parent="15" name="Cons_User_FK">
+    <index id="88" parent="15" name="Cons_User_FK">
       <ColNames>idConselho</ColNames>
     </index>
-    <index id="86" parent="15" name="Inst_User_FK">
+    <index id="89" parent="15" name="Inst_User_FK">
       <ColNames>idInstituicao</ColNames>
     </index>
-    <index id="87" parent="15" name="UK_usuario">
+    <index id="90" parent="15" name="UK_usuario">
       <ColNames>usuario</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="88" parent="15" name="PRIMARY">
+    <key id="91" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuario
 idConselho
 idInstituicao</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="89" parent="15" name="UK_usuario">
+    <key id="92" parent="15" name="UK_usuario">
       <ColNames>usuario</ColNames>
       <UnderlyingIndexName>UK_usuario</UnderlyingIndexName>
     </key>
-    <foreign-key id="90" parent="15" name="Cons_User_FK">
+    <foreign-key id="93" parent="15" name="Cons_User_FK">
       <ColNames>idConselho</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_conselho</RefTableName>
       <RefColNames>idConselho</RefColNames>
     </foreign-key>
-    <foreign-key id="91" parent="15" name="Inst_User_FK">
+    <foreign-key id="94" parent="15" name="Inst_User_FK">
       <ColNames>idInstituicao</ColNames>
       <RefSchemaName>sgs_centro_simulacao</RefSchemaName>
       <RefTableName>tb_instituicao</RefTableName>

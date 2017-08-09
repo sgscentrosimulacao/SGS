@@ -203,22 +203,29 @@ if ($_SESSION['administrador'] == 1){
 
                     <div class="col-md-12" style="padding-top: 5px;">
                         <div class="editor-label col-md-2" id="itensLabel" style="">
-                            <label for="itensLabel" id="labelsLogin">Peças</label>
+                            <label for="itensLabel" id="labelsLogin">Peças na sala:</label>
                         </div>
-                        <div class="dropdown col-md-4" style="">
-                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" id="dropItem" name="dropItem"
+                        <div class="dropdown col-md-4">
+                            <ul id="itens">
+
+                            </ul>
+
+                            <!--<select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" id="dropItem" name="dropItem"
                                     style="width: 100%">
 
-                            </select>
+                            </select>-->
                         </div>
-                        <div class="col-md-2">
+
+                    </div>
+
+                    <!--
+                    <div class="col-md-2">
                             <input class="form-control" id="fieldQnt" name="fieldQnt"
                                    placeholder="Quantidade" style="width: 100%" type="number">
                         </div>
                         <div class="col-md-2">
                             <button class="btn btn-info" id="btnAdicionarItem">Adicionar</button>
                         </div>
-                    </div>
 
                     <div class="col-md-12">
                         <div class="editor-label text-center col-md-12" style="padding-top: 15px;">
@@ -239,7 +246,7 @@ if ($_SESSION['administrador'] == 1){
                                 </tr>
                             </table>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="col-md-12">
                         <div class="form-group col-md-12">
