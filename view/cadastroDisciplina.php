@@ -205,6 +205,11 @@ if ($_SESSION['administrador'] == 1){
                         <div class="editor-label col-md-2" id="itensLabel" style="">
                             <label for="itensLabel" id="labelsLogin">Peças na sala:</label>
                         </div>
+
+
+                    </div>
+
+                    <div class="col-md-12">
                         <div class="dropdown col-md-4">
                             <ul id="itens">
 
@@ -215,7 +220,6 @@ if ($_SESSION['administrador'] == 1){
 
                             </select>-->
                         </div>
-
                     </div>
 
                     <!--
