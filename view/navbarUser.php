@@ -31,7 +31,7 @@
                     <h4><span class="label label-default">
                         <?php
 
-                        echo "Olá, ".$_SESSION['nomeUsuario'];
+                        echo "Olá, <a href='perfilUsuario.php?id=".$_SESSION['idUsuario']."' title='Ver Perfil' style='color: white;'>".$_SESSION['nomeUsuario']."</a>";
 
                         echo "<a class=\"label label-default\" href='../control/logout.php'>Sair</a>";
                         ?>

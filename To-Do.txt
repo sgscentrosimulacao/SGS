@@ -6,7 +6,6 @@ TAREFAS A FAZER
 
 ***** Não Permitir adicionar aulas com horarios iguais *********
 
-********* Organizar as datas cadastradas no updateAula *****************
 
 
 INDEX: 
@@ -21,8 +20,17 @@ Consultar Sala:
 
 Geral:
  - Visibilidade das Disciplinas*****;
- - Permissões de visibilidade -> Tela principal e Tela principal ADMIN *****;
- - PDF do plano de ensino -> BLOB *****;
- - Página SOBRE;
  - Implementar grabfocus nos devidos lugares;
  - Não apagar campos ao errar a inserção;
+
+
+Consultar Disciplina:
+ - Tabela com todas
+ - Dados da disciplina
+
+Consultar sala:
+ - itens dentro
+ - descrição
+ 
+
+COLOCAR EM TODAS AS PAGINAS CONTATO DO CENTRO

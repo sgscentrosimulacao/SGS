@@ -17,7 +17,7 @@ $itemSelecionado = basename(__FILE__, '.php');
 
     <link rel="stylesheet" href="../css/style_index.css">
 
-    <title>SGS - Cadastro Disciplina</title>
+    <title>SGS - Informação Item</title>
 </head>
 <body>
 <?php
@@ -35,7 +35,7 @@ if ($_SESSION['administrador'] == 1){
 ?>
 <div class="col-md-8 zeroPadding teste">
     <fieldset id="fieldsetPositionNone" style="margin-bottom: 0;">
-        <legend class="ajusteTitulos" style="width: 150px" id="labelsLogin">Item</legend>
+        <legend class="ajusteTitulos" style="width: 80px" id="labelsLogin">Item</legend>
 
 
         <?php
@@ -45,59 +45,65 @@ if ($_SESSION['administrador'] == 1){
             echo "
 
                     <div class='col-md-12'>
-                        <div class='col-md-6'>
+                        <div class='col-md-8 zeroPadding'>
+                        
                             <div class='editor-label col-md-12'>
                                 <label for='nomeSalaLabel' id='labelsLogin'>Pertence a Sala</label>
                             </div>
+                            
                             <div class='editor-label form-inline' style='padding-bottom: 5px'>
                                 <label class='form-control' id='fieldNomeSala' style='width: 100%'>{$row2['nomeSala']}</label>
                             </div>
+                            
+                            <div class='editor-label col-md-6'>
+                                <label for='nomePecaLabel' id='labelsLogin'>Nome da Peça</label>
+                            </div>
+                            
+                            <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                                <label class='form-control' id='fieldNomePeca' style='width: 100%'>{$row['nomePeca']}</label>
+                            </div>
+                            
+                            <div class='editor-label col-md-6'>
+                                <label for='nomeDescLabel' id='labelsLogin'>Descrição</label>
+                            </div>
+                            
+                            <div class='editor-label form-inline' style='padding - bottom: 5px'>
+                                <textarea class='form-control' rows='5' id='fieldDescPeca' style='background-color:white; width: 100%' disabled>{$row['descricao']}</textarea>
+                            </div>
+                            
                         </div>
-                        </div>
-                        <div class='col-md-6'>
+                        
+                        <div class='col-md-4 text-center'>
                             <div class='editor-label col-md-12'>
                                 <label for='nomeSalaLabel' id='labelsLogin'>Imagem</label>
                             </div>
                             <div class='col-md-12' style='padding-bottom: 5px'>
-                                <img src='../img/user_default.png'>
+                                <img src='../img/item_default.png'>
                             </div>
+                            
+                            <div class='editor-label col-md-6'>
+                                <label for='fieldQntPeca' id='labelsLogin'>Quantidade</label>
+                            </div>
+                            <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                                <label class='form-control' id='fieldQntPeca' style='width: 100%'>{$row['quantidade']}</label>
+                            </div>
+                            
                         </div>
                     </div>
-                    
-                                  
-                    
-                     <div class='col-md-9'>
-                        <div class='editor-label col-md-6'>
-                            <label for='nomePecaLabel' id='labelsLogin'>Nome da Peça</label>
-                        </div>
-                        <div class='editor-label form-inline' style='padding-bottom: 5px'>
-                            <label class='form-control' id='fieldNomePeca' style='width: 100%'>{$row['nomePeca']}</label>
-                        </div>
-                    </div>
-                   
-                    <div class='col-md-3'>
-                        <div class='editor-label col-md-6'>
-                            <label for='fieldQntPeca' id='labelsLogin'>Quantidade</label>
-                        </div>
-                        <div class='editor-label form-inline' style='padding-bottom: 5px'>
-                            <label class='form-control' id='fieldQntPeca' style='width: 100%'>{$row['quantidade']}</label>
-                        </div>
-                    </div>
-                    
-                    <div class='col-md-12'>
-                        <div class='editor-label col-md-6'>
-                            <label for='nomeDescLabel' id='labelsLogin'>Descrição</label>
-                        </div>
-                        <div class='editor-label form-inline' style='padding - bottom: 5px'>
-                            <textarea class='form-control' id='fieldDescPeca' style='width: 100%' disabled>{$row['descricao']}</textarea>
-                        </div>
-                    </div>
-                    
-                    
                     ";
-
             }
         }?>
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="cadastroDisciplina.php" class="btn btn-danger" title="Voltar para Cadastro de Aula"><i class="glyphicon glyphicon-arrow-left"> Voltar</i></a>
+            </div>
+        </div>
     </fieldset>
 
 

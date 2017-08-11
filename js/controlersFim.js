@@ -2,6 +2,7 @@ function mostrarPecas(){
 
     var dropSala = $('#dropSala').val();
 
+
     $.ajax({
 
         method: "GET",
@@ -12,9 +13,12 @@ function mostrarPecas(){
             $('#dropItem').empty();
             var dropItens = JSON.parse(result);
             if(dropItens != null && typeof dropItens != undefined && dropItens.length > 0 ){
+
+                $("#itens").empty();
+
                 for(var i = 0; dropItens.length; i ++){
                     //$('#itens').append('<option value="'+dropItens[i]['idPeca']+'">'+dropItens[i]['nomePeca']+'</option>');
-                    $("#itens").append("<li><label for=\'itensLabel\'>"+dropItens[i]['nomePeca']+" <a class='btn btn-circle-lg' href='../view/infoItem.php?id="+dropItens[i]['idPeca']+"'> <i class='glyphicon glyphicon-info-sign' ></i></a></label></li>");
+                    $("#itens").append("<li><label for=\'itensLabel\'>"+dropItens[i]['nomePeca']+" <a class='btn btn-circle-lg' title='Ver item' href='../view/infoItem.php?id="+dropItens[i]['idPeca']+"'> <i class='glyphicon glyphicon-info-sign' ></i></a></label></li>");
 
                     //<a href='../view/infoItem.php?id="+dropItens[i][idPeca]+"'></a>
                 }
