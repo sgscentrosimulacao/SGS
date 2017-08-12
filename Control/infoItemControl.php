@@ -11,7 +11,7 @@ function pegarSala(){
     $selectItem= "SELECT tb_sala.nomeSala FROM tb_inventario
 	                  LEFT JOIN tb_sala ON tb_sala.idSala = tb_inventario.idSala
 	                  
-                    WHERE tb_inventario.idPeca = 4";
+                    WHERE tb_inventario.idPeca = {$_GET['id']}";
 
     $query = mysqli_query($conn, $selectItem);
 

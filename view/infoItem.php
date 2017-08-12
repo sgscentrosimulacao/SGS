@@ -43,25 +43,29 @@ if ($_SESSION['administrador'] == 1){
             while ($row2 = mysqli_fetch_assoc($pegarSala)) {
 
             echo "
-                    <div class='col-md-8'>
-                        <div class='editor-label col-md-6'>
-                            <label for='nomeSalaLabel' id='labelsLogin'>Pertence a Sala</label>
-                        </div>
-                        <div class='editor-label form-inline' style='padding-bottom: 5px'>
-                            <label class='form-control' id='fieldNomeSala' style='width: 100%'>{$row2['nomeSala']}</label>
-                        </div>
-                    </div>
-                    
-                    <div class='col-md-4'>
-                        <div class='editor-label col-md-6'>
-                            <label for='nomeSalaLabel' id='labelsLogin'>Imagem</label>
-                        </div>
-                        <div class='editor-label form-inline' style='padding-bottom: 5px'>
-                            
-                        </div>
-                    </div>
-                    
 
+                    <div class='col-md-12'>
+                        <div class='col-md-6'>
+                            <div class='editor-label col-md-12'>
+                                <label for='nomeSalaLabel' id='labelsLogin'>Pertence a Sala</label>
+                            </div>
+                            <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                                <label class='form-control' id='fieldNomeSala' style='width: 100%'>{$row2['nomeSala']}</label>
+                            </div>
+                        </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class='editor-label col-md-12'>
+                                <label for='nomeSalaLabel' id='labelsLogin'>Imagem</label>
+                            </div>
+                            <div class='col-md-12' style='padding-bottom: 5px'>
+                                <img src='../img/user_default.png'>
+                            </div>
+                        </div>
+                    </div>
+                    
+                                  
+                    
                      <div class='col-md-9'>
                         <div class='editor-label col-md-6'>
                             <label for='nomePecaLabel' id='labelsLogin'>Nome da Peça</label>
@@ -71,16 +75,14 @@ if ($_SESSION['administrador'] == 1){
                         </div>
                     </div>
                    
-                   
-                   <div class='col-md-3'>
+                    <div class='col-md-3'>
                         <div class='editor-label col-md-6'>
                             <label for='fieldQntPeca' id='labelsLogin'>Quantidade</label>
                         </div>
                         <div class='editor-label form-inline' style='padding-bottom: 5px'>
                             <label class='form-control' id='fieldQntPeca' style='width: 100%'>{$row['quantidade']}</label>
                         </div>
-                   </div>
-                    
+                    </div>
                     
                     <div class='col-md-12'>
                         <div class='editor-label col-md-6'>
