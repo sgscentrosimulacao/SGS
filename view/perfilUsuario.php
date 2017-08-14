@@ -35,7 +35,7 @@ if ($_SESSION['administrador'] == 1){
 ?>
 <div class="col-md-8 zeroPadding teste">
     <fieldset id="fieldsetPositionNone" style="margin-bottom: 0;">
-        <legend class="ajusteTitulos" style="width: 100px" id="labelsLogin">Usuário</legend>
+        <legend class="ajusteTitulos" style="width: 100px" id="labelsLogin">Perfil</legend>
 
 
         <?php
@@ -107,7 +107,13 @@ if ($_SESSION['administrador'] == 1){
                                     <label for='nomeSalaLabel' id='labelsLogin'>Imagem</label>
                                 </div>
                                 <div class='col-md-12' style='padding-bottom: 5px'>
-                                    <img src='../img/user_default.png'>
+                                    ";
+                                if ($row['image'] == null){
+                                    echo "<img src='../img/userPics/user_default.png'>";
+                                }else{
+                                    echo "<img src='../img/userPics/user_default.png'>";
+                                }
+                                echo"
                                 </div>
                                 
                                 <div class='editor-label col-md-6'>

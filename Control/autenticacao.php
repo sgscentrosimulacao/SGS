@@ -31,6 +31,8 @@ function autenticarUsuario(){
         $_SESSION['idConselho'] = $row[6];
         $_SESSION['idInstituicao'] = $row[7];
         $_SESSION['administrador'] = $row[9];
+        $_SESSION['image'] = $row[10];
+
 
         if ($_SESSION['administrador'] == 1){
             header("Location: ../view/paginaPrincipalAdmin.php");

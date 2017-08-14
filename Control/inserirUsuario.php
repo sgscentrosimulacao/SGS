@@ -22,8 +22,8 @@ function inserirUsuario(){
     $cSenha = sha1($_POST['fieldCSenha']);
 
 
-    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente, administrador, aceito)  
-        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$dropConselho}','{$dropInstituicao}','{$ciente}','{$admin}','{$aceito}')";
+    $inserirUsuario = "INSERT INTO tb_usuario(usuario, senha, nomeUsuario, email, numeroConselho, idConselho, idInstituicao, estouCiente, administrador, aceito, image)  
+        VALUES ('{$usuario}','{$senha}','{$nome}','{$email}','{$numeroConselho}','{$dropConselho}','{$dropInstituicao}','{$ciente}','{$admin}','{$aceito}', NULL )";
 
 
     if ($usuario and $senha and $cSenha and $nome and $email and $numeroConselho){

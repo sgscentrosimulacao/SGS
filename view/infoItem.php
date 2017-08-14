@@ -78,7 +78,13 @@ if ($_SESSION['administrador'] == 1){
                                 <label for='nomeSalaLabel' id='labelsLogin'>Imagem</label>
                             </div>
                             <div class='col-md-12' style='padding-bottom: 5px'>
-                                <img src='../img/item_default.png'>
+                                    ";
+                                if ($row['image'] == null){
+                                    echo "<img src='../img/itemPics/item_default.png'>";
+                                }else{
+                                    echo "<img src='../img/itemPics/{$row['image']}'>";
+                                }
+                                echo"
                             </div>
                             
                             <div class='editor-label col-md-6'>

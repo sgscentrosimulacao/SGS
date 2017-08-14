@@ -29,7 +29,8 @@ if ($_SESSION['administrador'] == 1){
 }
 ?>
     <div class="col-md-8 zeroPadding">
-        <form action="../control/inserirItem.php" method="post">
+        <form enctype="multipart/form-data" action="../control/inserirItem.php" method="post">
+        <!--<form action="../control/inserirItem.php" method="post">-->
             <div class="col-md-12">
                 <fieldset id="fieldsetPositionNone">
                     <legend class="ajusteTitulos" style="width: 250px" id="labelsLogin"> Cadastrar no Inventário</legend>
@@ -75,15 +76,23 @@ if ($_SESSION['administrador'] == 1){
                         <textarea class="form-control" rows="5" id="descricaoPecaLabel" style="width: 100%"
                                   placeholder="Insira a descrição da peça" name="fieldDescricaoPeca"></textarea>
                         </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="imagemPecaLabel" id="labelsLogin">Imagem</label>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input name="userfile" type="file"/>
+                        </div>
                     </div>
 
-                    <div class="col-md-12" style="margin-left:30px">
+                    <div class="col-md-12" style="padding-top: 30px;">
                         <div class="col-md-4">
                         </div>
                         <div class="col-md-4">
-
                             <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
-
+                        </div>
+                        <div class="col-md-4">
                         </div>
                     </div>
                 </fieldset>

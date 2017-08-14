@@ -22,7 +22,7 @@ function inserirDisciplina(){
     $idInstituicao = $_SESSION['idInstituicao'];
 
 
-    $uploaddir = $_SERVER['DOCUMENT_ROOT']."/SGS/SGS/planosDeEnsino/";
+    $uploaddir = $_SERVER['DOCUMENT_ROOT']."/SGS/planosDeEnsino/";
 
     $nomeDisciArquivo = str_replace(" ", "_", $_POST['fieldNomeDisci']);
 
@@ -32,27 +32,41 @@ function inserirDisciplina(){
 
     $uploadfile = $uploaddir . basename(date("YmdHis").".pdf");
 
-    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-        //echo "Arquivo válido e enviado com sucesso.\n";
-    } else {
-        //echo "Possível ataque de upload de arquivo!\n";
-    }
+    if (!file_exists($_FILES['userfile']['tmp_name']) || !is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+        $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao, planoDeEnsino, caminhoPlano)   
+                                            VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$dropCurso}','{$idUsuario}',
+                                                                            '{$idConselho}','{$idInstituicao}', NULL , NULL )";
+        $planoInserido = 0;
 
-    $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao, planoDeEnsino, caminhoPlano)   
+
+    } else {
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+            $inserirDisciplina = "INSERT INTO tb_disciplina(nomeDisciplina, descricao, visibilidade, qntAlunos, idCurso, idUsuario, idConselho, idInstituicao, planoDeEnsino, caminhoPlano)   
                                             VALUES('{$nomeDisci}','{$descricao}','{$visibilidade}','{$qntAlunos}','{$dropCurso}','{$idUsuario}',
                                                                             '{$idConselho}','{$idInstituicao}', '{$nome}','{$uploadfile}')";
+            $planoInserido = 1;
+        }
+    }
+
 
     if ($nomeDisci and $qntAlunos and $descricao){
-        if ($conn->query($inserirDisciplina)==true){
+        if ($planoInserido == 0) {
             echo '<SCRIPT>
-                        confirm("Disciplina cadastrada no sistema!");
-                        window.location.href = "../view/cadastroDisciplina.php";
-                      </SCRIPT>';
+                            confirm("Plano de ensino não inserido!");
+                            window.location.href = "../view/cadastroDisciplina.php";
+                          </SCRIPT>';
         }else{
-            echo '<SCRIPT>
-                        confirm("Erro ao cadastrar a disciplina no banco de dados!");
-                        window.location.href = "../view/cadastroDisciplina.php";
-                      </SCRIPT>';
+            if ($conn->query($inserirDisciplina) == true) {
+                echo '<SCRIPT>
+                            confirm("Disciplina cadastrada no sistema!");
+                            window.location.href = "../view/cadastroDisciplina.php";
+                          </SCRIPT>';
+            } else {
+                echo '<SCRIPT>
+                            confirm("Erro ao cadastrar a disciplina no banco de dados!");
+                            window.location.href = "../view/cadastroDisciplina.php";
+                          </SCRIPT>';
+            }
         }
     }else{
         echo '<SCRIPT>

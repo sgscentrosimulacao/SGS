@@ -18,7 +18,13 @@
 
 
                         <h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1>
-                        
+
+                        <div>
+                            <a href="perfilUsuario.php?id=<?php echo $_SESSION['idUsuario']?>"><button type="button" class="btn btn-default"
+                                                                                                       id="leftNavBarButtons<?php echo ($itemSelecionado == 'perfilUsuario') ? 'Ativo':''; ?>">
+                                    Meu Perfil</button></a>
+                        </div>
+
                         <div>
                             <a href="consultaUsuario.php"><button type="button" class="btn btn-default"
                                                                   id="leftNavBarButtons<?php echo ($itemSelecionado == 'consultaUsuario') ? 'Ativo':''; ?>">

@@ -27,6 +27,8 @@
                 <li><h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1></li>
 
 
+                <li><a href="perfilUsuario.php?id=<?php echo $_SESSION['idUsuario']?>" id="leftNavBarButtons"> Meu Perfil</a></li>
+
                 <li><a href="consultaUsuario.php" id="leftNavBarButtons"> Usuário</a></li>
 
                 <li><a href="consultaDisciplina.php" id="leftNavBarButtons">Disciplina</a></li>
@@ -42,6 +44,7 @@
                 <li><a href="consultaSala.php" id="leftNavBarButtons">Sala</a></li>
 
                 <li><a href="calendario.php" id="leftNavBarButtons">Calendário</a></li>
+
             </ul>
         </div>
     </div>
