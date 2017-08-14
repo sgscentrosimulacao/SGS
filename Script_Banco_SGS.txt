@@ -24,6 +24,8 @@ CREATE TABLE `tb_usuario`
   `estouCiente` Int NOT NULL,
   `administrador` Int NOT NULL,
   `aceito` Int NOT NULL,
+  `image` Char(200),
+
   PRIMARY KEY (`idUsuario`,`idConselho`,`idInstituicao`)
 )
 ;
@@ -128,6 +130,8 @@ CREATE TABLE `tb_inventario`
   `descricao` Char(200) NOT NULL,
   `idSala` Int NOT NULL,
   `quantidade` Int NOT NULL,
+  `image` Char(200),
+
   PRIMARY KEY (`idPeca`)
 )
 ;
@@ -262,4 +266,4 @@ INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Rea
 INSERT INTO `tb_sala` (`idSala`, `nomeSala`, `descricaoSala`) VALUES (NULL, 'Simulacão Avançada', '---');
 
 
-INSERT INTO `tb_usuario` (`idUsuario`, `usuario`, `senha`, `nomeUsuario`, `email`, `numeroConselho`, `idConselho`, `idInstituicao`, `estouCiente`, `administrador`, `aceito`) VALUES (NULL, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrador', 'admin@ufcspa.edu.br', '1', '1', '1', '1', '1','1');
+INSERT INTO `tb_usuario` (`idUsuario`, `usuario`, `senha`, `nomeUsuario`, `email`, `numeroConselho`, `idConselho`, `idInstituicao`, `estouCiente`, `administrador`, `aceito`, `image`) VALUES (NULL, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrador', 'admin@ufcspa.edu.br', '1', '1', '1', '1', '1','1', NULL);
