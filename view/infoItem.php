@@ -82,7 +82,7 @@ if ($_SESSION['administrador'] == 1){
                                 if ($row['image'] == null){
                                     echo "<img src='../img/itemPics/item_default.png'>";
                                 }else{
-                                    echo "<img src='../img/itemPics/{$row['image']}'>";
+                                    echo "<img src='../img/itemPics/{$row['image']}' style='height: 250px; width: 250px;'>";
                                 }
                                 echo"
                             </div>

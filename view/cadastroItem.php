@@ -21,85 +21,101 @@ if ($_SESSION['administrador'] == 1){
     include "navMenuAdmin.php"; //NAV MENU
     echo "<div>";
     include "menuAdmin.php";   //MENU
-}else{
-    include "navbarUser.php"; //NAV BAR
-    include "navMenuUser.php"; //MENU
-    echo "<div>";
-    include "menuUser.php"; //NAV MENU
-}
-?>
-    <div class="col-md-8 zeroPadding">
-        <form enctype="multipart/form-data" action="../control/inserirItem.php" method="post">
-        <!--<form action="../control/inserirItem.php" method="post">-->
-            <div class="col-md-12">
-                <fieldset id="fieldsetPositionNone">
-                    <legend class="ajusteTitulos" style="width: 250px" id="labelsLogin"> Cadastrar no Inventário</legend>
+    echo"
+        <div class='col-md-8 zeroPadding'>
+        <form enctype='multipart/form-data' action='../control/inserirItem.php' method='post'>
+        <!--<form action='../control/inserirItem.php' method='post'>-->
+            <div class='col-md-12'>
+                <fieldset id='fieldsetPositionNone'>
+                    <legend class='ajusteTitulos' style='width: 250px' id='labelsLogin'> Cadastrar no Inventário</legend>
 
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-6">
-                            <label for="nomePecaLabel" id="labelsLogin">Nome da peça</label>
+                    <div class='col-md-12'>
+                        <div class='editor-label col-md-6'>
+                            <label for='nomePecaLabel' id='labelsLogin'>Nome da peça</label>
                         </div>
-                        <div class="editor-label form-inline" style="padding-bottom: 5px">
-                            <input class="form-control" id="fieldNomePeca" name="fieldNomePeca"
-                                   placeholder="Insira o nome da peça" style="width: 100%" type="text">
+                        <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                            <input class='form-control' id='fieldNomePeca' name='fieldNomePeca'
+                                   placeholder='Insira o nome da peça' style='width: 100%' type='text'>
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                                <label for="quantidadeLabel" id="labelsLogin">Quantidade</label>
+                    <div class='col-md-12'>
+                        <div class='col-md-3'>
+                                <label for='quantidadeLabel' id='labelsLogin'>Quantidade</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-control" id="fieldQuantidade" name="fieldQuantidade"
-                                       placeholder="Insira quantidade" style="width: 100%" type="number">
+                        <div class='col-md-4'>
+                            <input class='form-control' id='fieldQuantidade' name='fieldQuantidade'
+                                       placeholder='Insira quantidade' style='width: 100%' type='number'>
                         </div>
-                        <div class="editor-label col-md-1" id="salaLabel" style="">
-                            <label for="salaLabel" id="labelsLogin">Sala</label>
+                        <div class='editor-label col-md-1' id='salaLabel' style=''>
+                            <label for='salaLabel' id='labelsLogin'>Sala</label>
                         </div>
-                        <div class="dropdown col-md-4" style="">
-                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropSala"
-                                    style="width: 100%">
-                                <?php
+                        <div class='dropdown col-md-4' style=''>
+                            <select class='form-control dropdown-toggle' type='button' data-toggle='dropdown' name='dropSala'
+                                    style='width: 100%'>
+                                    ";
+
                                 while ($row = mysqli_fetch_assoc($resultSalas)) {
-                                    echo "<option value=\"{$row['idSala']}\">".$row['nomeSala']."</option>";
-                                }?>
+                                    echo "<option value='{$row['idSala']}'>".$row['nomeSala']."</option>";
+                                }
+                            echo"
                             </select>
                         </div>
 
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="form-group col-md-12">
-                            <label for="descricaoPecaLabel" id="labelsLogin">Descrição</label>
+                    <div class='col-md-12'>
+                        <div class='form-group col-md-12'>
+                            <label for='descricaoPecaLabel' id='labelsLogin'>Descrição</label>
                         </div>
-                        <div class="form-group" id="descricaoPecaLabel">
-                        <textarea class="form-control" rows="5" id="descricaoPecaLabel" style="width: 100%"
-                                  placeholder="Insira a descrição da peça" name="fieldDescricaoPeca"></textarea>
-                        </div>
-
-                        <div class="form-group col-md-12">
-                            <label for="imagemPecaLabel" id="labelsLogin">Imagem</label>
+                        <div class='form-group' id='descricaoPecaLabel'>
+                        <textarea class='form-control' rows='5' id='descricaoPecaLabel' style='width: 100%'
+                                  placeholder='Insira a descrição da peça' name='fieldDescricaoPeca'></textarea>
                         </div>
 
-                        <div class="col-md-12">
-                            <input name="userfile" type="file"/>
+                        <div class='form-group col-md-12'>
+                            <label for='imagemPecaLabel' id='labelsLogin'>Imagem</label>
+                        </div>
+
+                        <div class='col-md-12'>
+                            <input name='userfile' type='file'/>
                         </div>
                     </div>
 
-                    <div class="col-md-12" style="padding-top: 30px;">
-                        <div class="col-md-4">
+                    <div class='col-md-12' style='padding-top: 30px;'>
+                        <div class='col-md-4'>
                         </div>
-                        <div class="col-md-4">
-                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+                        <div class='col-md-4'>
+                            <input id='cadastrar' type='submit' value='Enviar' name='submit' class='btn btn-success'>
                         </div>
-                        <div class="col-md-4">
+                        <div class='col-md-4'>
                         </div>
                     </div>
                 </fieldset>
             </div>
         </form>
     </div>
-</div>
+</div>";
+    
+}else{
+    include "navbarUser.php"; //NAV BAR
+    include "navMenuUser.php"; //MENU
+    echo "<div>";
+    include "menuUser.php"; //NAV MENU
+    echo "
+    <fieldset id='fieldsetPositionNone'>
+        <div class='col-md-12 text-center'>
+            <h1 id='labelsLogin'>Você não tem permissão para acessar esta página!</h1>
+            <img src='../img/warning.png' style='width: 150px; height: 150px;'>
+        </div>
+        <div class='col-md-12 text-center'>
+            <a href='paginaPrincipalUser.php' class='btn btn-success'><i class='glyphicon glyphicon-arrow-left'> Voltar</i></a>
+        </div>
+     </fieldset>
+    
+    ";
+}
+?>
 <?php
 include "footer.php";
 ?>

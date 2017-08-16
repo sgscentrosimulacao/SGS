@@ -146,7 +146,14 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                     <label id='labelsLogin'>Administrador:</label>
-                                                    <label><input type=\"checkbox\" value=\"1\" name=\"fieldAdministrador\"></label>
+                                                    ";
+                                                if ($admin == "Sim"){
+                                                    echo "<label><input type='checkbox' value='1' checked name='fieldAdministrador'></label>";
+                                                } else{
+                                                    echo "<label><input type='checkbox' value='0' name='fieldAdministrador'></label>";
+                                                }
+                                            echo "
+                                                    
                                             </div> 
                                         
                                         

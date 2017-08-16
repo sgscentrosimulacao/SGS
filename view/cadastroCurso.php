@@ -22,55 +22,68 @@ if ($_SESSION['administrador'] == 1){
     include "navMenuAdmin.php"; //NAV MENU
     echo "<div>";
     include "menuAdmin.php";   //MENU
-}else{
-    include "navbarUser.php"; //NAV BAR
-    include "navMenuUser.php"; //MENU
-    echo "<div>";
-    include "menuUser.php"; //NAV MENU
-}
-?>
-    <div class="col-md-8 zeroPadding">
+    echo"
+        <div class='col-md-8 zeroPadding'>
 
-        <form action="../control/inserirCurso.php" method="post">
-            <div class="col-md-12">
-                <fieldset id="fieldsetPositionNone">
-                    <legend class="ajusteTitulos" style="width: 180px" id="labelsLogin"> Cadastrar Curso</legend>
+        <form action='../control/inserirCurso.php' method='post'>
+            <div class='col-md-12'>
+                <fieldset id='fieldsetPositionNone'>
+                    <legend class='ajusteTitulos' style='width: 180px' id='labelsLogin'> Cadastrar Curso</legend>
 
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-6">
-                            <label for="nomeCurso" id="labelsLogin">Nome do Curso</label>
+                    <div class='col-md-12'>
+                        <div class='editor-label col-md-6'>
+                            <label for='nomeCurso' id='labelsLogin'>Nome do Curso</label>
                         </div>
-                        <div class="editor-label form-inline" style="padding-bottom: 5px">
-                            <input class="form-control" id="fieldNomeCurso" name="fieldNomeCurso"
-                                   placeholder="Insira o nome do curso" style="width: 100%" type="text">
+                        <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                            <input class='form-control' id='fieldNomeCurso' name='fieldNomeCurso'
+                                   placeholder='Insira o nome do curso' style='width: 100%' type='text'>
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="col-md-6">
-                            <label for="instituicaoLabel" id="labelsLogin">Instituição</label>
+                    <div class='col-md-12'>
+                        <div class='col-md-6'>
+                            <label for='instituicaoLabel' id='labelsLogin'>Instituição</label>
                         </div>
-                            <select class="form-control dropdown-toggle" type="button" data-toggle="dropdown" name="dropInstituicao">
-                                <?php
+                            <select class='form-control dropdown-toggle' type='button' data-toggle='dropdown' name='dropInstituicao'>";
                                 while ($row2 = mysqli_fetch_assoc($resultInstituicao)) {
-                                    echo "<option value=\"{$row2['idInstituicao']}\">".$row2['nomeInstituicao']."</option>";
-                                }?>
+                                    echo "<option value='{$row2['idInstituicao']}'>{$row2['nomeInstituicao']}</option>";
+                                }
+                                echo"
                             </select>
-
                     </div>
 
-                    <div class="col-md-12" style="margin-left:30px">
-                        <div class="col-md-4">
+                    <div class='col-md-12' style='margin-left:30px'>
+                        <div class='col-md-4'>
                         </div>
-                        <div class="col-md-4">
-                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
+                        <div class='col-md-4'>
+                            <input id='cadastrar' type='submit' value='Enviar' name='submit' class='btn btn-success'>
                         </div>
                     </div>
                 </fieldset>
             </div>
         </form>
     </div>
-</div>
+</div>";
+    
+}else{
+    include "navbarUser.php"; //NAV BAR
+    include "navMenuUser.php"; //MENU
+    echo "<div>";
+    include "menuUser.php"; //NAV MENU
+    echo "
+    <fieldset id='fieldsetPositionNone'>
+        <div class='col-md-12 text-center'>
+            <h1 id='labelsLogin'>Você não tem permissão para acessar esta página!</h1>
+            <img src='../img/warning.png' style='width: 150px; height: 150px;'>
+        </div>
+        <div class='col-md-12 text-center'>
+            <a href='paginaPrincipalUser.php' class='btn btn-success'><i class='glyphicon glyphicon-arrow-left'> Voltar</i></a>
+        </div>
+     </fieldset>
+    
+    ";
+}
+?>
 <?php
 include "footer.php";
 ?>
