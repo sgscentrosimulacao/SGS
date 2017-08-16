@@ -20,53 +20,68 @@ if ($_SESSION['administrador'] == 1){
     include "navMenuAdmin.php"; //NAV MENU
     echo "<div>";
     include "menuAdmin.php";   //MENU
+    echo"
+        <div class='col-md-8 zeroPadding'>
+            <form action='../control/inserirSala.php' method='post'>
+                <div class='col-md-12'>
+                    <fieldset id='fieldsetPositionNone'>
+                        <legend class='ajusteTitulos' style='width: 170px' id='labelsLogin'> Cadastrar Sala</legend>
+                        <div class='col-md-12'>
+                            <div class='editor-label col-md-6'>
+                                <label for='nomeSalaLabel' id='labelsLogin'>Nome da Sala</label>
+                            </div>
+                            <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                                <input class='form-control' id='fieldNomeSala' name='fieldNomeSala'
+                                       placeholder='Insira o nome da sala' style='width: 100%' type='text'>
+                            </div>
+                        </div>
+    
+                        <div class='col-md-12'>
+                            <div class='form-group col-md-12'>
+                                <label for='descricaoSalaLabel' id='labelsLogin'>Descrição</label>
+                            </div>
+                            <div class='form-group' id='descricaoSalaLabel'>
+                            <textarea class='form-control' rows='5' id='descricaoSalaLabel' style='width: 100%'
+                                      placeholder='Insira a descrição da sala' name='fieldDescricaoSala'></textarea>
+                            </div>
+                        </div>
+    
+                        <div class='col-md-12' style='margin-left:30px'>
+                            <div class='col-md-4'>
+                            </div>
+                            <div class='col-md-4'>
+    
+                                <input id='cadastrar' type='submit' value='Enviar' name='submit' class='btn btn-success'>
+    
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+    
+        </div>
+    </div>
+    ";
 }else{
     include "navbarUser.php"; //NAV BAR
     include "navMenuUser.php"; //MENU
     echo "<div>";
     include "menuUser.php"; //NAV MENU
+    echo "
+    <fieldset id='fieldsetPositionNone'>
+        <div class='col-md-12 text-center'>
+            <h1 id='labelsLogin'>Você não tem permissão para acessar esta página!</h1>
+            <img src='../img/warning.png' style='width: 150px; height: 150px;'>
+        </div>
+        <div class='col-md-12 text-center'>
+            <a href='paginaPrincipalUser.php' class='btn btn-success'><i class='glyphicon glyphicon-arrow-left'> Voltar</i></a>
+        </div>
+     </fieldset>
+    
+    ";
 }
 ?>
-    <div class="col-md-8 zeroPadding">
-        <form action="../control/inserirSala.php" method="post">
-            <div class="col-md-12">
-                <fieldset id="fieldsetPositionNone">
-                    <legend class="ajusteTitulos" style="width: 170px" id="labelsLogin"> Cadastrar Sala</legend>
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-6">
-                            <label for="nomeSalaLabel" id="labelsLogin">Nome da Sala</label>
-                        </div>
-                        <div class="editor-label form-inline" style="padding-bottom: 5px">
-                            <input class="form-control" id="fieldNomeSala" name="fieldNomeSala"
-                                   placeholder="Insira o nome da sala" style="width: 100%" type="text">
-                        </div>
-                    </div>
 
-                    <div class="col-md-12">
-                        <div class="form-group col-md-12">
-                            <label for="descricaoSalaLabel" id="labelsLogin">Descrição</label>
-                        </div>
-                        <div class="form-group" id="descricaoSalaLabel">
-                        <textarea class="form-control" rows="5" id="descricaoSalaLabel" style="width: 100%"
-                                  placeholder="Insira a descrição da sala" name="fieldDescricaoSala"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12" style="margin-left:30px">
-                        <div class="col-md-4">
-                        </div>
-                        <div class="col-md-4">
-
-                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
-
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </form>
-
-    </div>
-</div>
 <?php
 include "footer.php";
 ?>

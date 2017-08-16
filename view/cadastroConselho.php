@@ -20,45 +20,60 @@ $itemSelecionado = basename(__FILE__, '.php');
         include "navMenuAdmin.php"; //NAV MENU
         echo "<div>";
         include "menuAdmin.php";   //MENU
+        echo"
+            <div class='col-md-8 zeroPadding'>
+
+            <form action='../control/inserirConselho.php' method='post'>
+    
+                <div class='col-md-12'>
+                    <fieldset id='fieldsetPositionNone'>
+                        <legend class='ajusteTitulos' style='width: 210px' id='labelsLogin'> Cadastrar Conselho</legend>
+    
+                        <div class='col-md-12'>
+                            <div class='editor-label col-md-6'>
+                                <label for='nomeConselho' id='labelsLogin'>Nome do Conselho</label>
+                            </div>
+                            <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                                <input class='form-control' id='fieldNomeConselho' name='fieldNomeConselho'
+                                       placeholder='Insira o nome do conselho' style='width: 100%' type='text'>
+                            </div>
+                        </div>
+    
+                        <div class='col-md-12' style='margin-left:30px'>
+                            <div class='col-md-4'>
+                            </div>
+                            <div class='col-md-4'>
+    
+                                <input id='cadastrar' type='submit' value='Enviar' name='submit' class='btn btn-success'>
+    
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>";
     }else{
         include "navbarUser.php"; //NAV BAR
         include "navMenuUser.php"; //MENU
         echo "<div>";
         include "menuUser.php"; //NAV MENU
+        echo "
+        <fieldset id='fieldsetPositionNone'>
+            <div class='col-md-12 text-center'>
+                <h1 id='labelsLogin'>Você não tem permissão para acessar esta página!</h1>
+                <img src='../img/warning.png' style='width: 150px; height: 150px;'>
+            </div>
+            <div class='col-md-12 text-center'>
+                <a href='paginaPrincipalUser.php' class='btn btn-success'><i class='glyphicon glyphicon-arrow-left'> Voltar</i></a>
+            </div>
+         </fieldset>
+        
+        ";
+
     }
  ?>
-    <div class="col-md-8 zeroPadding">
 
-        <form action="../control/inserirConselho.php" method="post">
-
-            <div class="col-md-12">
-                <fieldset id="fieldsetPositionNone">
-                    <legend class="ajusteTitulos" style="width: 210px" id="labelsLogin"> Cadastrar Conselho</legend>
-
-                    <div class="col-md-12">
-                        <div class="editor-label col-md-6">
-                            <label for="nomeConselho" id="labelsLogin">Nome do Conselho</label>
-                        </div>
-                        <div class="editor-label form-inline" style="padding-bottom: 5px">
-                            <input class="form-control" id="fieldNomeConselho" name="fieldNomeConselho"
-                                   placeholder="Insira o nome do conselho" style="width: 100%" type="text">
-                        </div>
-                    </div>
-
-                    <div class="col-md-12" style="margin-left:30px">
-                        <div class="col-md-4">
-                        </div>
-                        <div class="col-md-4">
-
-                            <input id="cadastrar" type="submit" value="Enviar" name="submit" class="btn btn-success">
-
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </form>
-    </div>
-</div>
 <?php
 include "footer.php";
 ?>

@@ -119,7 +119,7 @@ if ($_SESSION['administrador'] == 1){
                                 <div class='editor-label col-md-6'>
                                     <label for='fieldQntPeca' id='labelsLogin'>Administrador</label>
                                 </div>
-                                <div class='editor-label form-inline' style='padding-bottom: 5px'>
+                                <div class='editor-label form-inline'>
                                     <label class='form-control' id='fieldQntPeca' style='width: 100%'>{$administrador}</label>
                                 </div>
                                 

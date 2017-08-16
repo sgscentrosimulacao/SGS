@@ -70,7 +70,7 @@ if ($_SESSION['administrador'] == 1){
                     while ($row = mysqli_fetch_assoc($selectInstituicao)) {
                         echo "<tr>
                                <td>".$row['nomeInstituicao']."</td>
-                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosInstituicao{$row['idInstituicao']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosInstituicao{$row['idInstituicao']}' title='Ver dados'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                         </tr>
                         
                         <div id=\"modalDadosInstituicao{$row['idInstituicao']}\" class=\"modal fade\" role=\"dialog\">
@@ -87,7 +87,7 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                 <label id='labelsLogin'>ID:</label>
-                                                <input class=\"form-control\" type='text' disabled value='{$row["idInstituicao"]}' name='fieldIdInstituicao'/>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idInstituicao"]}' name='fieldIdInstituicao' title='Dado não pode ser alterado' style='background-color: white;'/>
                                             </div>
                                         
                                             <div class='col-md-12'>

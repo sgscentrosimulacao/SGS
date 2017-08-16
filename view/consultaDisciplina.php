@@ -80,8 +80,10 @@ if ($_SESSION['administrador'] == 1){
                     while ($row = mysqli_fetch_assoc($resultSelectDisciplina)) {
                             if ($row['visibilidade'] == 1){
                                 $visibilidade = "Sim";
+                                $campoVisibilidade = 1;
                             }else{
                                 $visibilidade = "Não";
+                                $campoVisibilidade = 0;
                             }
                             echo "<tr>
                                    <td>{$row['nomeDisciplina']}</td>
@@ -92,7 +94,7 @@ if ($_SESSION['administrador'] == 1){
                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeUsuario']}</td> 
                                    <td class=\"text-center\"><a title='Plano de ensino' class='btn btn-info btn-circle' href=\"downloadPlano.php?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-save-file'></i></a></td>
                                    <td class=\"text-center\"><a title='Aulas' class='btn btn-info btn-circle' href=\"?id={$row['idDisciplina']}\"><i class='glyphicon glyphicon-book'></i></a></td>
-                                   <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                                   <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosDisciplina{$row['idDisciplina']}' title='Ver dados'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                             </tr>
                             
                             
@@ -110,7 +112,7 @@ if ($_SESSION['administrador'] == 1){
                                             
                                                 <div class='col-md-12'>
                                                     <label id='labelsLogin'>ID:</label>
-                                                    <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina'/>
+                                                    <input class=\"form-control\" type='text' disabled value='{$row["idDisciplina"]}' name='fieldIdDisciplina' title='Dado não pode ser alterado' style='background-color: white;'/>
                                                 </div>
                                             
                                                 <div class='col-md-12'>
@@ -129,18 +131,23 @@ if ($_SESSION['administrador'] == 1){
                                                 </div>
                                             
                                                 <div class='col-md-12'>
-                                                    <label id='labelsLogin'>Visibilidade:</label>
-                                                    <label><input type=\"checkbox\" value=\"1\" name=\"fieldVisibilidade\">Disciplina visível para todos</label>
+                                                    <label id='labelsLogin'>Visibilidade:</label>";
+                                                        if ($campoVisibilidade == 1){
+                                                            echo "<label><input type=\"checkbox\" checked value=\"1\" name=\"fieldVisibilidade\">Disciplina visível para todos</label>";
+                                                        }else{
+                                                                echo "<label><input type=\"checkbox\" value=\"0\" name=\"fieldVisibilidade\">Disciplina visível para todos</label>";
+                                                            }
+                                                echo "
                                                 </div>    
                                             
                                                 <div class='col-md-12'>
                                                     <label id='labelsLogin'>Curso:</label>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' disabled name='fieldNomeCurso'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeCurso"]}' disabled name='fieldNomeCurso' title='Dado não pode ser alterado' style='background-color: white;'/>
                                                 </div>
                                             
                                                 <div class='col-md-12'>
                                                     <label id='labelsLogin'>Regente:</label>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeUsuario"]}' disabled name='fieldNomeUsuario' title='Dado não pode ser alterado' style='background-color: white;'/>
                                                 </div>
                                                 
                                                 <div class=\"modal-footer\">";

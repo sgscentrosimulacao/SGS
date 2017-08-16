@@ -95,22 +95,22 @@ if ($_SESSION['administrador'] == 1){
             <div class="col-md-1"></div>
         </div>
         <div class="col-md-12 text-center">
-            <div class="col-md-1"></div>
-            <div class="col-md-5 text-center">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 text-center">
                 <img src="../img/informatica-biomedica-5.png" class="img-responsive" >
             </div>
-            <div class="col-md-5 text-center">
+            <div class="col-md-4 text-center">
                 <img src="../img/UFCSPA_MINI.png" class="img-responsive">
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
         </div>
     </fieldset>
     <div>
-        <div class="col-md-1"></div>
-        <div class="col-md-10 text-center" style="margin-bottom: 100px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center" style="margin-bottom: 100px">
             <img src="../img/SGS_LogoMarca.png" class="img-responsive text-center">
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 <div class="col-md-3 zeroPadding"></div>

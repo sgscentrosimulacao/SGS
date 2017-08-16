@@ -77,7 +77,8 @@ if ($_SESSION['administrador'] == 1){
                                <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricao']}</td>
                                <td>{$row['nomeSala']}</td>
                                <td>{$row['quantidade']}</td>
-                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosPeca{$row['idPeca']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                               <td class='text-center'><a class='btn btn-info btn-circle' title='Ver item' href='infoItem.php?id={$row['idPeca']}'><i class='glyphicon glyphicon-info-sign'></i></a></td>
+                               <td class='text-center'><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosPeca{$row['idPeca']}' title='Ver dados'><i class='glyphicon glyphicon-pencil'></i></button></td>
                         </tr>
                         <div id=\"modalDadosPeca{$row['idPeca']}\" class=\"modal fade\" role=\"dialog\">
                             <div class=\"modal-dialog\">
@@ -93,7 +94,7 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                 <label id='labelsLogin'>ID:</label>
-                                                <input class=\"form-control\" type='text' disabled value='{$row["idPeca"]}' name='fieldIdPeca'/>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idPeca"]}' name='fieldIdPeca' title='Dado não pode ser alterado' style='background-color: white;'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
@@ -108,7 +109,7 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                 <label id='labelsLogin'>Sala:</label>
-                                                <input class=\"form-control\" type='text' disabled value='{$row["nomeSala"]}' name='fieldNomeSala'/>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["nomeSala"]}' name='fieldNomeSala' title='Dado não pode ser alterado' style='background-color: white;'/>
                                             </div>    
                                         
                                             <div class='col-md-12'>

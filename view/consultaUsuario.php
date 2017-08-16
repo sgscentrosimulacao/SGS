@@ -93,8 +93,9 @@ if ($_SESSION['administrador'] == 1){
                                    <td>{$row['nomeConselho']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['numeroConselho']}</td>
                                    <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$row['nomeInstituicao']}</td>    
-                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$admin}</td>    
-                                   <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDados{$row['idUsuario']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm'>{$admin}</td>
+                                   <td class='visible-lg visible-md visible-sm hidden-xs hidden-sm text-center'><a class='btn btn-info btn-circle' href='perfilUsuario.php?id={$row['idUsuario']}' title='Ver perfil'><i class='glyphicon glyphicon-user'></i></a></td>    
+                                   <td class='text-center'><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDados{$row['idUsuario']}' title='Ver dados'><i class='glyphicon glyphicon-pencil'></i></button></td>
                                    
                               </tr>
                               <div id=\"modalDados{$row['idUsuario']}\" class=\"modal fade\" role=\"dialog\">
@@ -131,7 +132,7 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                     <label id='labelsLogin'>Nome Conselho:</label>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeConselho"]}' disabled name='fieldNomeConselho'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeConselho"]}' disabled name='fieldNomeConselho' title='Dado não pode ser alterado' style='background-color: white;'/>
                                             </div>
                                         
                                             <div class='col-md-12'>
@@ -141,7 +142,7 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                     <label id='labelsLogin'>Nome Instituição:</label>
-                                                    <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' disabled name='fieldNomeInstituicao'/>
+                                                    <input class=\"form-control\" type='text' value='{$row["nomeInstituicao"]}' disabled name='fieldNomeInstituicao' title='Dado não pode ser alterado' style='background-color: white;'/>
                                             </div> 
                                         
                                             <div class='col-md-12'>

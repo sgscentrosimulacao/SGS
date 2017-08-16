@@ -72,7 +72,7 @@ if ($_SESSION['administrador'] == 1){
                         echo "<tr>
                                <td>".$row['nomeSala']."</td>
                                <td>".$row['descricaoSala']."</td>
-                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosSala{$row['idSala']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                               <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosSala{$row['idSala']}' title='Ver dados'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                         </tr>
                         <div id=\"modalDadosSala{$row['idSala']}\" class=\"modal fade\" role=\"dialog\">
                             <div class=\"modal-dialog\">
@@ -88,7 +88,7 @@ if ($_SESSION['administrador'] == 1){
                                         
                                             <div class='col-md-12'>
                                                 <label id='labelsLogin'>ID:</label>
-                                                <input class=\"form-control\" type='text' disabled value='{$row["idSala"]}' name='fieldIdSala'/>
+                                                <input class=\"form-control\" type='text' disabled value='{$row["idSala"]}' name='fieldIdSala' title='Dado não pode ser alterado' style='background-color: white;'/>
                                             </div>
                                         
                                             <div class='col-md-12'>

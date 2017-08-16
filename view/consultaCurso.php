@@ -73,7 +73,7 @@ if ($_SESSION['administrador'] == 1){
                     echo "<tr>
                            <td>".$row['nomeCurso']."</td>
                            <td>".$row['nomeInstituicao']."</td>
-                           <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosCurso{$row['idCurso']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
+                           <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosCurso{$row['idCurso']}' title='Ver dados'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                     </tr>
                     <div id=\"modalDadosCurso{$row['idCurso']}\" class=\"modal fade\" role=\"dialog\">
                     <div class=\"modal-dialog\">
@@ -89,7 +89,7 @@ if ($_SESSION['administrador'] == 1){
                                 
                                     <div class='col-md-12'>
                                         <label id='labelsLogin'>ID:</label>
-                                        <input class=\"form-control\" type='text' disabled value='{$row["idCurso"]}' name='fieldIdCurso'/>
+                                        <input class=\"form-control\" type='text' disabled value='{$row["idCurso"]}' name='fieldIdCurso' title='Dado não pode ser alterado' style='background-color: white;'/>
                                     </div>
                                 
                                     <div class='col-md-12'>
@@ -99,7 +99,7 @@ if ($_SESSION['administrador'] == 1){
                                     
                                     <div class='col-md-12'>
                                         <label id='labelsLogin'>Nome Curso:</label>
-                                        <input class=\"form-control\" type='text' disabled value='{$row["nomeInstituicao"]}'  name='fieldNomeCurso'/>
+                                        <input class=\"form-control\" type='text' disabled value='{$row["nomeInstituicao"]}'  name='fieldNomeCurso' title='Dado não pode ser alterado' style='background-color: white;'/>
                                     </div>
                                     
                                     <div class=\"modal-footer\">";

@@ -26,11 +26,6 @@
                         </div>
 
                         <div>
-                            <a href="consultaUsuario.php"><button type="button" class="btn btn-default"
-                                                                  id="leftNavBarButtons<?php echo ($itemSelecionado == 'consultaUsuario') ? 'Ativo':''; ?>">
-                                    Usuário</button></a>
-                        </div>
-                        <div>
                             <a href="consultaDisciplina.php"><button type="button" class="btn btn-default"
                                                                      id="leftNavBarButtons<?php echo ($itemSelecionado == 'consultaDisciplina') ? 'Ativo':''; ?>">
                                     Disciplina</button></a>

@@ -13,12 +13,9 @@
                 <li><a href="cadastroDisciplina.php" id="leftNavBarButtons">Disciplina</a></li>
 
 
-
                 <li><h1><span class="label label-default" id="alinhadoCentro">Consultar</span></h1></li>
 
                 <li><a href="perfilUsuario.php?id=<?php echo $_SESSION['idUsuario']?>" id="leftNavBarButtons"> Meu Perfil</a></li>
-
-                <li><a href="consultaUsuario.php" id="leftNavBarButtons"> Usuário</a></li>
 
                 <li><a href="consultaDisciplina.php" id="leftNavBarButtons">Disciplina</a></li>
 
