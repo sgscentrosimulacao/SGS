@@ -42,13 +42,13 @@ if ($_SESSION['administrador'] == 1){
                             <thead>
                             <tr>
                                 <!--<th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">ID</th>-->
-                                <th id="labelsLogin">Nome Aula</th>
-                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>
+                                <th id="labelsLogin" style="width: 10%;">Nome Aula</th>
+                                <!--<th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Descrição</th>-->
                                 <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Inicio</th>
                                 <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Hora Fim</th>
                                 <th id="labelsLogin">Data Inicio</th>
                                 <th id="labelsLogin">Data Fim</th>
-                                <th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Cenário</th>
+                                <!--<th id="labelsLogin" class="visible-lg visible-md visible-sm hidden-xs hidden-sm">Cenário</th>-->
                                 <th id="labelsLogin">Curso</th>
                                 <th></th>
                             </tr>
@@ -60,12 +60,12 @@ if ($_SESSION['administrador'] == 1){
                                 echo "<tr data-toggle=\"collapse\" data-target=\"#{$row['idAula']}\" class=\"accordion-toggle panel panel-primary\">
                                     
                                     <td>{$row['nomeAula']}</td>
-                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricaoAula']}</td>
+                                    <!--<td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['descricaoAula']}</td>-->
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioInicio']}</td>
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['horarioFim']}</td>
                                     <td>".converteDataFromSQL($row['dataInicio'])."</td>
                                     <td>".converteDataFromSQL($row['dataFim'])."</td>
-                                    <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['cenario']}</td>
+                                    <!--<td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['cenario']}</td>-->
                                     <td class=\"visible-lg visible-md visible-sm hidden-xs hidden-sm\">{$row['nomeCurso']}</td>
                                     <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row['idAula']}'><i class=\"glyphicon glyphicon-list\"></i></button></td>
                                 </tr>
@@ -74,13 +74,13 @@ if ($_SESSION['administrador'] == 1){
                                         <table class=\"table table-striped\">
                                             <tr>
                                                 <div>
-                                                    <div class='col-md-12 form-control'>
-                                                        <label id='labelsLogin'>Regente da Disciplina:</label>
-                                                        <label>{$row['nomeUsuario']}</label></h2>
+                                                    <div class='col-md-12 form-control' style='background-color: #bf3056;'>
+                                                        <label style='color: white;'>Regente da Disciplina:</label>
+                                                        <label style='color: white;'>{$row['nomeUsuario']}</label></h2>
                                                     </div>
                                                 </div>
                                                 
-                                                <div>
+                                                <div style='margin-top: 20px;'>
                                                     <div class='col-md-3'>
                                                         <label id='labelsLogin'>Data Inicio:</label>
                                                         <label>".converteDataFromSQL($row['dataInicio'])."</label>
@@ -121,12 +121,20 @@ if ($_SESSION['administrador'] == 1){
                                                     
                                                 <div>
                                                     <div class='col-md-6'>
-                                                        <label id='labelsLogin'>Cenário:</label>
-                                                        <label>{$row['cenario']}</label>
+                                                        <div class='col-md-12 zeroPadding'>
+                                                            <label id='labelsLogin'>Cenário:</label>
+                                                        </div> 
+                                                        <div class='col-md-12 zeroPadding'>
+                                                            <textarea class='form-control' disabled rows='5'>{$row['cenario']}</textarea>
+                                                        </div>
                                                     </div>
                                                     <div class='col-md-6'>
-                                                        <label id='labelsLogin'>Descrição:</label>
-                                                        <label>{$row["descricaoAula"]}</label>
+                                                        <div class='col-md-12 zeroPadding'>
+                                                            <label id='labelsLogin'>Descrição:</label>
+                                                        </div>
+                                                        <div class='col-md-12 zeroPadding'>
+                                                            <textarea class='form-control' disabled rows='5'>{$row["descricaoAula"]}</textarea>
+                                                         </div>
                                                     </div>
                                                 </div>
                                                 

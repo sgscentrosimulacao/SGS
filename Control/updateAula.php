@@ -20,8 +20,7 @@ function updateAula(){
 
     $updateAula = "UPDATE tb_aulas
                         SET nomeAula = '{$nomeAula}', descricaoAula= '{$descricaoAula}', horarioInicio = '{$horaInicio}', horarioFim = '{$horaFim}', dataInicio = '{$dataInicio}', dataFim = '{$dataFim}', cenario = '{$cenarioAula}'
-                          WHERE idAula = '{$id}'";
-
+                      WHERE idAula = '{$id}'";
 
     if ($conn->query($updateAula)==true){
         if ($tela = $_GET['tela'] == "disciplina"){

@@ -129,7 +129,7 @@ if ($_SESSION['administrador'] == 1){
                                                     <label for=\"comment\" id='labelsLogin'>Descrição:</label>
                                                     <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricao'>{$row["descricao"]}</textarea>
                                                 </div>
-                                            
+                                                
                                                 <div class='col-md-12'>
                                                     <label id='labelsLogin'>Visibilidade:</label>";
                                                         if ($campoVisibilidade == 1){
@@ -203,51 +203,56 @@ if ($_SESSION['administrador'] == 1){
                            <td class=\"text-center\"><button type='button' class='btn btn-info btn-circle' data-toggle='modal' data-target='#modalDadosAula{$row2['idAula']}'><i class=\"glyphicon glyphicon-pencil\"></i></button></td>
                     </tr>
                     
-                    <div id=\"modalDadosAula{$row2['idAula']}\" class=\"modal fade\" role=\"dialog\">
-                        <div class=\"modal-dialog\">
-                            <div class=\"modal-content\">
-                                <div class=\"modal-header\">
-                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>
-                                    <h4 class=\"modal-title\" id='labelsLogin'>Dados da Aula</h4>
+                    <div id='modalDadosAula{$row2['idAula']}' class='modal fade' role='dialog'>
+                        <div class='modal-dialog'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                                    <h4 class='modal-title' id='labelsLogin'>Dados da Aula</h4>
                                 </div>        
-                                <div class=\"modal-body\">
+                                <div class='modal-body'>
                                     
                                     <form action='../control/updateAula.php?tela=disciplina' method='post'>
                                         <div class='col-md-12' style='padding-top: 20px;'>
                                             <label id='labelsLogin'>ID:</label>
-                                            <input class=\"form-control\" type='text' disabled value='{$row2["idAula"]}' name='fieldIdAula'/>
+                                            <input class='form-control' type='text' disabled value='{$row2["idAula"]}' name='fieldIdAula'/>
                                         </div>
                                     
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Nome Aula:</label>
-                                            <input class=\"form-control\" type='text' value='{$row2["nomeAula"]}' name='fieldNomeAula'/>
+                                            <input class='form-control' type='text' value='{$row2["nomeAula"]}' name='fieldNomeAula'/>
                                         </div>
     
                                         <div class='col-md-12'>
-                                            <label for=\"comment\" id='labelsLogin'>Descrição:</label>
-                                            <textarea class=\"form-control\" rows='3' type='text' name='fieldDescricaoAula'>{$row2["descricaoAula"]}</textarea>
+                                            <label for='comment' id='labelsLogin'>Descrição:</label>
+                                            <textarea class='form-control' rows='3' type='text' name='fieldDescricaoAula'>{$row2["descricaoAula"]}</textarea>
                                         </div>
+                                        
+                                        <div class='col-md-12'>
+                                            <label for='comment' id='labelsLogin'>Cenário:</label>
+                                            <textarea class='form-control' rows='3' type='text' name='fieldCenario'>{$row2['cenario']}</textarea>
+                                         </div>
     
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Hora Inicio:</label>
-                                            <input class=\"form-control\" type='text' maxlength=\"5\" onkeypress=\"mascaraHorario( this, event )\" value='{$row2["horarioInicio"]}' name='fieldHoraInicio'/>
+                                            <input class='form-control' type='text' maxlength='5' onkeypress='mascaraHorario( this, event )' value='{$row2["horarioInicio"]}' name='fieldHoraInicio'/>
                                         </div>
     
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Hora Fim:</label>
-                                            <input class=\"form-control\" type='text' maxlength=\"5\" onkeypress=\"mascaraHorario( this, event )\" value='{$row2["horarioFim"]}' name='fieldHoraFim'/>
+                                            <input class='form-control' type='text' maxlength='5' onkeypress='mascaraHorario( this, event )' value='{$row2["horarioFim"]}' name='fieldHoraFim'/>
                                         </div>
     
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Data Inicio:</label>
-                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataInicio'])."' name='fieldDataInicio'/>
+                                            <input class='form-control' type='text' onkeypress='mascaraData( this, event )' maxlength='10' value='".converteDataFromSQL($row2['dataInicio'])."' name='fieldDataInicio'/>
                                         </div>
                                         
                                         <div class='col-md-12'>
                                             <label id='labelsLogin'>Data Fim:</label>
-                                            <input class=\"form-control\" type='text' onkeypress=\"mascaraData( this, event )\" maxlength='10' value='".converteDataFromSQL($row2['dataFim'])."'>
+                                            <input class='form-control' type='text' onkeypress='mascaraData( this, event )' maxlength='10' value='".converteDataFromSQL($row2['dataFim'])."'  name='fieldDataFim'>
                                         </div>
-                                        <div class=\"modal-footer\">";
+                                        <div class='modal-footer'>";
                                         if ($_SESSION['administrador'] == 1) {
 
                                             echo "<button type = 'submit' class='btn btn-success' name = 'alterarAula' value = '{$row2['idAula']}' style = 'margin-top: 30px;' > Alterar</button >                                            </form >
